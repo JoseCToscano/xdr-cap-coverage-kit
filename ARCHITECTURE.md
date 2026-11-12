@@ -97,7 +97,7 @@ MDX for developers.stellar.org. Fixed outline from the RFP: validated vs unvalid
 
 ## 8. CI
 
-`.github/workflows/ci.yml` (draft): schema and round-trip checks in JS, Rust and Go on every PR; repros on buggy and fixed pins; later the harness against wallet-backend in a container. Target: under 10 minutes per PR.
+`ci/github-actions.yml` (copy to `.github/workflows/` to turn it on): schema and round-trip checks in JS, Rust and Go on every PR; repros on buggy and fixed pins; later the harness against wallet-backend in a container. Target: under 10 minutes per PR.
 
 ## 9. How findings go upstream
 
