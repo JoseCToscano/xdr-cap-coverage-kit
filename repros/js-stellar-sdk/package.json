@@ -1,0 +1,10 @@
+{
+  "name": "repros-js-stellar-sdk",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "sdk-17-2-0": "npm:@stellar/stellar-sdk@17.2.0",
+    "sdk-17-2-1": "npm:@stellar/stellar-sdk@17.2.1",
+    "sdk-17-3-0": "npm:@stellar/stellar-sdk@17.3.0"
+  }
+}

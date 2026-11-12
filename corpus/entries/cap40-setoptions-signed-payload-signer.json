@@ -1,0 +1,114 @@
+{
+  "schema_version": "0.1.0",
+  "id": "cap40-setoptions-signed-payload-signer",
+  "title": "SetOptions adds a signed-payload (P...) signer over the source account's own key",
+  "caps": [
+    "CAP-0040"
+  ],
+  "protocol": {
+    "introduced_in": 19,
+    "captured_on": 28,
+    "xdr_ref": "stellar-xdr 28.0.0 (d0f1330e43c3a2c0c616da30698b24140d4eea72) xdr: 9c9c145953e80990d6ff1ae3a6a973a0ce6d0694 features: <none>"
+  },
+  "network": {
+    "passphrase": "Test SDF Network ; September 2015",
+    "expected_tx_hash": "d9f78749cd01297cd5f22c7f2c798c9eec93d56f399e1c4cc2f8977ca52b9fed"
+  },
+  "xdr": {
+    "type": "TransactionEnvelope",
+    "base64": "AAAAAgAAAABErUcYWjDpHCReiwWCsZHifZn7QPn/SMoNfhJk7IebIAAAAGQAQ7VsAAAAAQAAAAEAAAAAAAAAAAAAAABqle05AAAAAAAAAAEAAAAAAAAABQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAANErUcYWjDpHCReiwWCsZHifZn7QPn/SMoNfhJk7IebIAAAAAPerb4AAAAAAQAAAAAAAAAB7IebIAAAAECvKxLr2jwSP9d9vVX5Uitmt+t0cGP9GPTSB06kpIDGqb6Fe8kZJ2k5DAluVGTOTMybeGP48PGXR1OUpY2P9XEJ",
+    "sha256": "7bbbcb0681f9b7b8310547745fdfd59203f0c39f0684360aafa46de8ccdf90b7"
+  },
+  "provenance": {
+    "kind": "testnet",
+    "ledger": 4437357,
+    "tx_hash": "d9f78749cd01297cd5f22c7f2c798c9eec93d56f399e1c4cc2f8977ca52b9fed",
+    "source_url": "https://horizon-testnet.stellar.org/transactions/d9f78749cd01297cd5f22c7f2c798c9eec93d56f399e1c4cc2f8977ca52b9fed",
+    "captured_at": "2026-08-31T21:06:12Z",
+    "tool": "tools/make-entry.mjs (cap40-setoptions-signed-payload-signer.mjs)"
+  },
+  "expected": {
+    "json": {
+      "tx": {
+        "tx": {
+          "source_account": "GBCK2RYYLIYOSHBEL2FQLAVRSHRH3GP3ID476SGKBV7BEZHMQ6NSBB7B",
+          "fee": 100,
+          "seq_num": "19058298900709377",
+          "cond": {
+            "time": {
+              "min_time": "0",
+              "max_time": "1788210489"
+            }
+          },
+          "memo": "none",
+          "operations": [
+            {
+              "source_account": null,
+              "body": {
+                "set_options": {
+                  "inflation_dest": null,
+                  "clear_flags": null,
+                  "set_flags": null,
+                  "master_weight": null,
+                  "low_threshold": null,
+                  "med_threshold": null,
+                  "high_threshold": null,
+                  "home_domain": null,
+                  "signer": {
+                    "key": "PBCK2RYYLIYOSHBEL2FQLAVRSHRH3GP3ID476SGKBV7BEZHMQ6NSAAAAAAB55LN6AANMS",
+                    "weight": 1
+                  }
+                }
+              }
+            }
+          ],
+          "ext": "v0"
+        },
+        "signatures": [
+          {
+            "hint": "ec879b20",
+            "signature": "af2b12ebda3c123fd77dbd55f9522b66b7eb747063fd18f4d2074ea4a480c6a9be857bc9192769390c096e5464ce4ccc9b7863f8f0f197475394a58d8ff57109"
+          }
+        ]
+      }
+    },
+    "checks": [
+      {
+        "id": "signer-is-p-strkey",
+        "path": "/tx/tx/operations/0/body/set_options/signer/key",
+        "op": "strkey",
+        "value": "PBCK2RYYLIYOSHBEL2FQLAVRSHRH3GP3ID476SGKBV7BEZHMQ6NSAAAAAAB55LN6AANMS",
+        "note": "Store and return the full P... key. Truncating it to 32 bytes (wallet-backend #716) or rejecting it in a 33-byte column (#729) are both bugs."
+      },
+      {
+        "id": "signer-weight",
+        "path": "/tx/tx/operations/0/body/set_options/signer/weight",
+        "op": "equals",
+        "value": 1,
+        "note": "Weight 1 signer."
+      },
+      {
+        "id": "same-key-as-source",
+        "path": "/tx/tx/source_account",
+        "op": "strkey",
+        "value": "GBCK2RYYLIYOSHBEL2FQLAVRSHRH3GP3ID476SGKBV7BEZHMQ6NSBB7B",
+        "note": "The P signer wraps the same ed25519 key as the source. Reducing P to its base G makes two different signers look identical."
+      }
+    ]
+  },
+  "tags": [
+    "signed-payload"
+  ],
+  "linked_issues": [
+    {
+      "url": "https://github.com/stellar/wallet-backend/pull/729",
+      "role": "reproduces",
+      "component": "wallet-backend ingest (signer state changes)"
+    },
+    {
+      "url": "https://github.com/stellar/wallet-backend/issues/716",
+      "role": "related",
+      "component": "wallet-backend AddressBytea"
+    }
+  ]
+}

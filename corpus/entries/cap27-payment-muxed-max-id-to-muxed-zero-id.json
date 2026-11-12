@@ -1,0 +1,106 @@
+{
+  "schema_version": "0.1.0",
+  "id": "cap27-payment-muxed-max-id-to-muxed-zero-id",
+  "title": "Payment from a muxed source with ID 2^64-1 to a muxed destination with ID 0",
+  "caps": [
+    "CAP-0027"
+  ],
+  "protocol": {
+    "introduced_in": 13,
+    "captured_on": 30,
+    "xdr_ref": "stellar-xdr 28.0.0 (d0f1330e43c3a2c0c616da30698b24140d4eea72) xdr: 9c9c145953e80990d6ff1ae3a6a973a0ce6d0694 features: <none>"
+  },
+  "network": {
+    "passphrase": "Test SDF Network ; September 2015",
+    "expected_tx_hash": "fae7b0f2674229543ea86e147902924c538ef77f48a54c4060c4baeaec0489b0"
+  },
+  "xdr": {
+    "type": "TransactionEnvelope",
+    "base64": "AAAAAgAAAQD//////////41RpLGKQeoGYeuEtPQp0e+J//CUDPDAHxdtA5DZeQGrAAAD6ABW+HkAAAABAAAAAQAAAAAAAAAAAAAAAGr2PLYAAAAAAAAAAQAAAAAAAAABAAABAAAAAAAAAAAAeKYmhIbhPolLS0HWxGQia8s01aH8tPQa+6YNVHd2OZ0AAAAAAAAAAACYloAAAAAAAAAAAdl5AasAAABA5e0HFDLJJYRy/sAgZV3QH/eWg4ynZ+eYwE3jmNM7+GP+lgtgh5plcQCeVTeLBQgPa7x9nZDfLt87TxVjYVDjAw==",
+    "sha256": "c7c7ac1308f6dc8fdc6c90caec12b2fc233f1943eee309024697b9a01f7f8bca"
+  },
+  "provenance": {
+    "kind": "testnet",
+    "ledger": 5699707,
+    "tx_hash": "fae7b0f2674229543ea86e147902924c538ef77f48a54c4060c4baeaec0489b0",
+    "source_url": "https://horizon-testnet.stellar.org/transactions/fae7b0f2674229543ea86e147902924c538ef77f48a54c4060c4baeaec0489b0",
+    "captured_at": "2026-11-12T22:22:59Z",
+    "tool": "tools/make-entry.mjs (cap27-payment-muxed-max-id-to-muxed-zero-id.mjs)"
+  },
+  "expected": {
+    "json": {
+      "tx": {
+        "tx": {
+          "source_account": "MCGVDJFRRJA6UBTB5OCLJ5BJ2HXYT77QSQGPBQA7C5WQHEGZPEA2X77777777777777F4",
+          "fee": 1000,
+          "seq_num": "24480046571847681",
+          "cond": {
+            "time": {
+              "min_time": "0",
+              "max_time": "1794522294"
+            }
+          },
+          "memo": "none",
+          "operations": [
+            {
+              "source_account": null,
+              "body": {
+                "payment": {
+                  "destination": "MB4KMJUEQ3QT5CKLJNA5NRDEEJV4WNGVUH6LJ5A27OTA2VDXOY4Z2AAAAAAAAAAAAB55K",
+                  "asset": "native",
+                  "amount": "10000000"
+                }
+              }
+            }
+          ],
+          "ext": "v0"
+        },
+        "signatures": [
+          {
+            "hint": "d97901ab",
+            "signature": "e5ed071432c9258472fec020655dd01ff796838ca767e798c04de398d33bf863fe960b60879a6571009e55378b05080f6bbc7d9d90df2edf3b4f15636150e303"
+          }
+        ]
+      }
+    },
+    "checks": [
+      {
+        "id": "source-muxed-max-id",
+        "path": "/tx/tx/source_account",
+        "op": "strkey",
+        "value": "MCGVDJFRRJA6UBTB5OCLJ5BJ2HXYT77QSQGPBQA7C5WQHEGZPEA2X77777777777777F4",
+        "note": "Muxed ID 18446744073709551615. Readers that store the ID in a signed int64 or a JS number get it wrong."
+      },
+      {
+        "id": "destination-muxed-zero-id",
+        "path": "/tx/tx/operations/0/body/payment/destination",
+        "op": "strkey",
+        "value": "MB4KMJUEQ3QT5CKLJNA5NRDEEJV4WNGVUH6LJ5A27OTA2VDXOY4Z2AAAAAAAAAAAAB55K",
+        "note": "Muxed ID 0 is still a muxed account. It must not be shown as the plain G address or have its ID dropped as 'empty'."
+      },
+      {
+        "id": "amount",
+        "path": "/tx/tx/operations/0/body/payment/amount",
+        "op": "equals",
+        "value": "10000000",
+        "note": "1 XLM in stroops, as a string."
+      }
+    ]
+  },
+  "tags": [
+    "muxed",
+    "muxed-max-id"
+  ],
+  "linked_issues": [
+    {
+      "url": "https://github.com/stellar/js-stellar-sdk/issues/1785",
+      "role": "regression",
+      "component": "muxed ID parsing"
+    },
+    {
+      "url": "https://github.com/stellar/wallet-backend/issues/716",
+      "role": "related",
+      "component": "muxed participants"
+    }
+  ]
+}

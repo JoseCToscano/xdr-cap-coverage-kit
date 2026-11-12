@@ -1,0 +1,74 @@
+package types
+
+// Repro for stellar/wallet-backend #716 and #729. Copied into
+// internal/indexer/types/ of a wallet-backend checkout by run.sh.
+// It only uses names that exist both before and after the fixes, so the
+// same file compiles on every pinned commit.
+//
+// #716 https://github.com/stellar/wallet-backend/issues/716
+//   AddressBytea stored version byte + first 32 payload bytes of an M...
+//   address. Reading the row back gave a strkey that does not decode.
+// #729 https://github.com/stellar/wallet-backend/pull/729
+//   The signer column could not hold a P... (CAP-40) key. Value() returned
+//   an error, the COPY failed, and ingestion retried the same ledger forever.
+
+import (
+	"database/sql"
+	"database/sql/driver"
+	"reflect"
+	"testing"
+
+	"github.com/stellar/go-stellar-sdk/strkey"
+)
+
+// Real addresses from the kit's corpus (testnet ledgers 5699707 and 4437357).
+const (
+	muxedMaxID = "MCGVDJFRRJA6UBTB5OCLJ5BJ2HXYT77QSQGPBQA7C5WQHEGZPEA2X77777777777777F4"
+	muxedBase  = "GCGVDJFRRJA6UBTB5OCLJ5BJ2HXYT77QSQGPBQA7C5WQHEGZPEA2XQ77"
+	pSigner    = "PBCK2RYYLIYOSHBEL2FQLAVRSHRH3GP3ID476SGKBV7BEZHMQ6NSAAAAAAB55LN6AANMS"
+)
+
+// #716: a muxed address written through AddressBytea must read back as
+// something that still decodes.
+func TestRepro716MuxedAddressRoundTrip(t *testing.T) {
+	stored, err := AddressBytea(muxedMaxID).Value()
+	if err != nil {
+		t.Logf("Value() rejected the muxed address: %v", err)
+		t.Fatalf("FAIL #716: a muxed participant cannot be written")
+	}
+	var back AddressBytea
+	if err := back.Scan(stored); err != nil {
+		t.Fatalf("FAIL #716: stored row cannot be read back: %v", err)
+	}
+	if _, _, err := strkey.DecodeAny(string(back)); err != nil {
+		t.Fatalf("FAIL #716: wrote %s, read back %s, which does not decode: %v", muxedMaxID, back, err)
+	}
+	t.Logf("PASS #716: wrote %s, read back %s (decodes; base account %s)", muxedMaxID, back, muxedBase)
+}
+
+// #729: the type of StateChange.SignerAccountID must round-trip a P... key.
+// We reach the column type through reflection so this file compiles both
+// before the fix (NullAddressBytea) and after it (NullSignerKeyBytea).
+func TestRepro729SignedPayloadSignerColumn(t *testing.T) {
+	f, ok := reflect.TypeOf(StateChange{}).FieldByName("SignerAccountID")
+	if !ok {
+		t.Fatal("StateChange has no SignerAccountID field at this commit")
+	}
+	col := reflect.New(f.Type).Elem()
+	col.Field(0).SetString(pSigner) // the inner strkey string
+	col.FieldByName("Valid").SetBool(true)
+
+	stored, err := col.Interface().(driver.Valuer).Value()
+	if err != nil {
+		t.Fatalf("FAIL #729: column type %s rejects the P signer: %v (in ingestion this fails the COPY and the ledger is retried forever)", f.Type, err)
+	}
+	back := reflect.New(f.Type)
+	if err := back.Interface().(sql.Scanner).Scan(stored); err != nil {
+		t.Fatalf("FAIL #729: column type %s cannot read back the stored P signer: %v", f.Type, err)
+	}
+	got := back.Elem().Field(0).String()
+	if got != pSigner {
+		t.Fatalf("FAIL #729: column type %s wrote %s, read back %s", f.Type, pSigner, got)
+	}
+	t.Logf("PASS #729: column type %s stores and returns %s (%d bytes)", f.Type, got, len(stored.([]byte)))
+}

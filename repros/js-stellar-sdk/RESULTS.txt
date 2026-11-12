@@ -1,0 +1,12 @@
+[#1789] sdk-17-2-1: FAIL - XDR has 2 entries, native has 1: {"1":20}
+[#1789] sdk-17-3-0: PASS - threw TypeError: scvMap has more than one key that converts to "1"; read the raw map entries instead
+[#1785] sdk-17-2-1: FAIL muxed id canonical - "0x10" -> M-address same as id 16, id() = "0x10"
+[#1785] sdk-17-2-1: FAIL offerId not rounded - asked for 9007199254740993, operation encodes 9007199254740992
+[#1785] sdk-17-3-0: PASS muxed id canonical - "0x10" rejected: id is not a valid uint64 string: 0x10
+[#1785] sdk-17-3-0: PASS offerId not rounded - unsafe number rejected: offerId must be a non-negative safe integer; pass a larger ID as a bigint or a decimal string
+[#1766] issuers (byte order): GBGLLK7WVV47X5NLXTFPZQTJ3BONEZI62S4ILNMGT4SBV3PQUW5CTECA < GB2CFOMIOWMANDRSYRCIVFE23MUQ2D2OGW46AGYO4XY2DZQA7YTHIJGX; text order says the opposite
+[#1766] sdk-17-2-0: FAIL - valid pair rejected: Assets are not in lexicographic order
+[#1766] issuers (byte order): GBGLLK7WVV47X5NLXTFPZQTJ3BONEZI62S4ILNMGT4SBV3PQUW5CTECA < GB2CFOMIOWMANDRSYRCIVFE23MUQ2D2OGW46AGYO4XY2DZQA7YTHIJGX; text order says the opposite
+[#1766] sdk-17-2-1: PASS - pool asset accepted in network (byte) order
+
+all repros behaved as expected

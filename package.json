@@ -1,0 +1,16 @@
+{
+  "name": "xdr-cap-coverage-kit",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "license": "Apache-2.0",
+  "scripts": {
+    "check": "node tools/check-corpus.mjs",
+    "repros": "bash repros/js-stellar-sdk/run.sh"
+  },
+  "dependencies": {
+    "@stellar/stellar-sdk": "17.4.0",
+    "ajv": "^8.17.1",
+    "ajv-formats": "^3.0.1"
+  }
+}

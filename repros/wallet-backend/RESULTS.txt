@@ -1,0 +1,34 @@
+== 716-buggy @ 79ea2acd 2026-08-27 build(deps): upgrade to protocol 28 (go-stellar-sdk v0.7.3, core/rpc 28) (#715)
+=== RUN   TestRepro716MuxedAddressRoundTrip
+    zz_repro_test.go:44: FAIL #716: wrote MCGVDJFRRJA6UBTB5OCLJ5BJ2HXYT77QSQGPBQA7C5WQHEGZPEA2X77777777777777F4, read back MCGVDJFRRJA6UBTB5OCLJ5BJ2HXYT77QSQGPBQA7C5WQHEGZPEA2WCWA, which does not decode: invalid payload length 32, expected 40
+--- FAIL: TestRepro716MuxedAddressRoundTrip (0.00s)
+FAIL
+FAIL	github.com/stellar/wallet-backend/internal/indexer/types	0.004s
+FAIL
+== 716-fixed @ 6e5a5910 2026-08-27 fix(indexer): reduce muxed addresses to their base account (#693)
+=== RUN   TestRepro716MuxedAddressRoundTrip
+    zz_repro_test.go:46: PASS #716: wrote MCGVDJFRRJA6UBTB5OCLJ5BJ2HXYT77QSQGPBQA7C5WQHEGZPEA2X77777777777777F4, read back GCGVDJFRRJA6UBTB5OCLJ5BJ2HXYT77QSQGPBQA7C5WQHEGZPEA2XQ77 (decodes; base account GCGVDJFRRJA6UBTB5OCLJ5BJ2HXYT77QSQGPBQA7C5WQHEGZPEA2XQ77)
+--- PASS: TestRepro716MuxedAddressRoundTrip (0.00s)
+ok  	github.com/stellar/wallet-backend/internal/indexer/types	0.003s
+== 729-buggy @ 2a0a84ea 2026-09-04 ci: make deploying a dev image to shared dev opt-in (#725)
+=== RUN   TestRepro729SignedPayloadSignerColumn
+    zz_repro_test.go:63: FAIL #729: column type types.NullAddressBytea rejects the P signer: stellar address PBCK2RYYLIYOSHBEL2FQLAVRSHRH3GP3ID476SGKBV7BEZHMQ6NSAAAAAAB55LN6AANMS has a 40-byte key payload; the account_id column stores only 32-byte account/contract keys (in ingestion this fails the COPY and the ledger is retried forever)
+--- FAIL: TestRepro729SignedPayloadSignerColumn (0.00s)
+FAIL
+FAIL	github.com/stellar/wallet-backend/internal/indexer/types	0.004s
+FAIL
+== 729-fixed @ 2c873353 2026-09-08 fix: handle CAP-40 signed-payload signers in ingestion (#729)
+=== RUN   TestRepro729SignedPayloadSignerColumn
+    zz_repro_test.go:73: PASS #729: column type types.NullSignerKeyBytea stores and returns PBCK2RYYLIYOSHBEL2FQLAVRSHRH3GP3ID476SGKBV7BEZHMQ6NSAAAAAAB55LN6AANMS (41 bytes)
+--- PASS: TestRepro729SignedPayloadSignerColumn (0.00s)
+ok  	github.com/stellar/wallet-backend/internal/indexer/types	0.004s
+== head @ 3e22515a 2026-11-12 fix(services): cap Blend decimals at 70 on ingest and when serving pools (#802)
+=== RUN   TestRepro716MuxedAddressRoundTrip
+    zz_repro_test.go:46: PASS #716: wrote MCGVDJFRRJA6UBTB5OCLJ5BJ2HXYT77QSQGPBQA7C5WQHEGZPEA2X77777777777777F4, read back GCGVDJFRRJA6UBTB5OCLJ5BJ2HXYT77QSQGPBQA7C5WQHEGZPEA2XQ77 (decodes; base account GCGVDJFRRJA6UBTB5OCLJ5BJ2HXYT77QSQGPBQA7C5WQHEGZPEA2XQ77)
+--- PASS: TestRepro716MuxedAddressRoundTrip (0.00s)
+=== RUN   TestRepro729SignedPayloadSignerColumn
+    zz_repro_test.go:73: PASS #729: column type types.NullSignerKeyBytea stores and returns PBCK2RYYLIYOSHBEL2FQLAVRSHRH3GP3ID476SGKBV7BEZHMQ6NSAAAAAAB55LN6AANMS (41 bytes)
+--- PASS: TestRepro729SignedPayloadSignerColumn (0.00s)
+ok  	github.com/stellar/wallet-backend/internal/indexer/types	0.004s
+
+all repros behaved as expected
