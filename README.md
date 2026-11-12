@@ -1,38 +1,33 @@
 # xdr-cap-coverage-kit
 
-A shared test kit for code that reads the Stellar ledger. Draft, built for the SCF #46 RFP "XDR/CAP-Coverage Audit Tool and Indexer-Hardening Guide".
+A test kit for code that reads the Stellar ledger. Early draft, written for the SCF #46 RFP "XDR/CAP-Coverage Audit Tool and Indexer-Hardening Guide".
 
-The idea: keep a corpus of rare but valid XDR, one entry per shape, tagged with the CAP that introduced it. Every entry carries the values a reader must decode. Then run that corpus through indexers (wallet-backend first) and through the JS, Go and Rust SDKs, and report where they get it wrong. A bug fixed in one SDK becomes a test for all of them.
+The idea is simple. Keep a corpus of rare but valid XDR, one entry per shape, each tagged with the CAP that introduced it and the values a reader should decode. Run it through indexers (wallet-backend first) and through the JS, Go and Rust SDKs, and report where they get it wrong. A bug fixed in one SDK then becomes a test for all of them.
 
-## What is here today
+## What works today
 
-| Path | What it is | Status |
-|---|---|---|
-| `schema/corpus-entry.schema.json` | Draft schema for one corpus entry | Draft v0 |
-| `corpus/entries/` | 3 sample entries: 2 captured from testnet history, 1 synthetic | All pass checks |
-| `corpus/specs/`, `tools/make-entry.mjs` | How each entry is built. Refuses to write an entry that does not re-encode to the same bytes | Works |
-| `tools/check-corpus.mjs` | Schema, sha256, Rust and JS round-trip, JS vs Rust JSON, tx hash, semantic checks | Works |
-| `runners/go/` | Go round-trip with go-stellar-sdk (starter) | Works |
-| `repros/js-stellar-sdk/` | js-stellar-sdk #1789, #1785, #1766 on pinned buggy and fixed versions | Reproduced |
-| `repros/wallet-backend/` | wallet-backend #716 and #729 on pinned pre-fix and fix commits | Reproduced (unit level) |
-| `ARCHITECTURE.md` | Proposed design, milestones, upgrade process | Draft |
+- `schema/corpus-entry.schema.json`: draft schema for one corpus entry.
+- `corpus/entries/`: 3 sample entries. Two are real testnet transactions (a CAP-40 signed-payload signer from ledger 4437357, and a payment from muxed ID 2^64-1 to muxed ID 0 from ledger 5699707). One is synthetic and marked as such.
+- `tools/check-corpus.mjs`: checks every entry against the schema, re-encodes it in Rust (rs-stellar-xdr via the `stellar` CLI) and JS (js-stellar-sdk), compares their JSON, recomputes the tx hash and runs the per-entry checks.
+- `runners/go/`: the same round-trip in Go with go-stellar-sdk.
+- `repros/`: five known bugs reproduced on the version that had them and passing on the version that fixed them: js-stellar-sdk #1789, #1785, #1766 and wallet-backend #716, #729. Details and real output in `repros/README.md`.
 
-Not built yet: the replay harness, the indexer adapter, the linter, the guide. Those are the grant work. See ARCHITECTURE.md.
+Not built yet: the replay harness, the indexer adapter, the linter and the guide. That is the grant work. The plan is in `ARCHITECTURE.md`.
 
 ## Run it
 
-Needs Node 22+, Go 1.25+, and the `stellar` CLI (used as the rs-stellar-xdr reference decoder).
+You need Node 22+, Go 1.25+ and the `stellar` CLI (tested with 30.0.1).
 
 ```sh
 npm ci
-node tools/check-corpus.mjs          # corpus checks, JS + Rust
-(cd runners/go && go run .)          # corpus checks, Go
-bash repros/js-stellar-sdk/run.sh    # 3 SDK bugs, buggy vs fixed
-bash repros/wallet-backend/run.sh    # 2 indexer bugs, pre-fix vs fix (clones wallet-backend)
+node tools/check-corpus.mjs           # corpus checks in JS and Rust
+(cd runners/go && go run .)           # corpus checks in Go
+bash repros/js-stellar-sdk/run.sh     # 3 SDK bugs, buggy vs fixed
+bash repros/wallet-backend/run.sh     # 2 indexer bugs, pre-fix vs fix (clones wallet-backend)
 ```
 
-Everything runs offline after the first install. No keys, no funds.
+No keys and no funds are needed. After the first install everything runs offline, except the wallet-backend repro, which clones that repo.
 
 ## License
 
-Apache-2.0.
+Apache-2.0
