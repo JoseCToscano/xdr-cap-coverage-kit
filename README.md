@@ -1,6 +1,6 @@
 # xdr-cap-coverage-kit
 
-A test kit for code that reads the Stellar ledger. Early draft, written for the SCF #46 RFP "XDR/CAP-Coverage Audit Tool and Indexer-Hardening Guide".
+A test kit for code that reads the Stellar ledger.
 
 The idea is simple. Keep a corpus of rare but valid XDR, one entry per shape, each tagged with the CAP that introduced it and the values a reader should decode. Run it through indexers (wallet-backend first) and through the JS, Go and Rust SDKs, and report where they get it wrong. A bug fixed in one SDK then becomes a test for all of them.
 

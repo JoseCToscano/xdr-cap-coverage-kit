@@ -1,6 +1,6 @@
-# Architecture (proposal draft)
+# Architecture
 
-Status: draft for the SCF #46 RFP 02 proposal, Nov 2026. Parts marked "built" exist in this repo and run. The rest is the plan.
+Status: Nov 2026. Parts marked "built" exist in this repo and run. The rest is the plan.
 
 ## Goals and limits
 
@@ -57,13 +57,13 @@ Three sources, in order of preference:
 2. **Local core.** For shapes that are rare on public networks (SAC `trust()` under CAP-73, muxed contract `W...` addresses under CAP-84, deep auth trees, max-length vectors), a scripted run against quickstart (local stellar-core + RPC) submits the transaction, pulls the LedgerCloseMeta through `getLedgers`, and slices out the transaction, its meta and its events. Runs for both passphrases by replaying the same script with a standalone network configured with each passphrase, so the hashes differ and both are recorded.
 3. **Synthetic.** SDK builders, only when 1 and 2 are not possible yet. Always flagged.
 
-Rust is the main generator language (rs-stellar-xdr is the reference for the round-trip check the RFP names). The JS prototype here moves to Rust in M1.
+Rust is the main generator language (rs-stellar-xdr is the reference for the round-trip check). The JS prototype here moves to Rust in M1.
 
 Agreement with stellar-core goldens: stellar-core #5435 added `--check-lcm`, with goldens stamped by protocol version. The validator decodes those golden files with the same code path and checks every corpus LCM entry for the same tx shape agrees field by field.
 
 ## 3. CAP tagging and coverage manifest
 
-`coverage.json` (M1) lists every CAP from protocol 13 to 30 that changed XDR or meta, with the shapes it introduced and the entry IDs that cover each one. Coverage gaps are explicit rows, not silence. First pass priority: the shapes the RFP lists (issuer sort, muxed source and destination, muxed and offer IDs, max-length vectors, nested auth, colliding map keys), then the CAP-67 unified events, CAP-73, CAP-71 auth delegation, CAP-84 muxed contracts and CAP-88 ms close time.
+`coverage.json` (M1) lists every CAP from protocol 13 to 30 that changed XDR or meta, with the shapes it introduced and the entry IDs that cover each one. Coverage gaps are explicit rows, not silence. First pass priority: the shapes indexers most often get wrong (issuer sort, muxed source and destination, muxed and offer IDs, max-length vectors, nested auth, colliding map keys), then the CAP-67 unified events, CAP-73, CAP-71 auth delegation, CAP-84 muxed contracts and CAP-88 ms close time.
 
 ## 4. Replay harness
 
@@ -89,11 +89,11 @@ A Go `go/analysis` analyzer for wallet-backend style code. Rules:
 - `XCK002` recursion over auth trees or nested ScVals with no depth or size cap.
 - `XCK003` participants taken from the envelope instead of the meta.
 
-Acceptance: flags seeded violations in a fixture package and runs clean on current wallet-backend. If cut, the guide's checklist covers the same three rules and the budget drops to about $57.5k.
+Acceptance: flags seeded violations in a fixture package and runs clean on current wallet-backend. If cut, the guide's checklist covers the same three rules.
 
 ## 7. Hardening guide
 
-MDX for developers.stellar.org. Fixed outline from the RFP: validated vs unvalidated fields, recommended caps, participants from meta, muxed and signed-payload handling including SEP-23 strkeys, checklist. The field table is generated from the corpus manifest so the two cannot drift. Publication waits for review by a core or platform engineer.
+MDX for developers.stellar.org. Fixed outline: validated vs unvalidated fields, recommended caps, participants from meta, muxed and signed-payload handling including SEP-23 strkeys, checklist. The field table is generated from the corpus manifest so the two cannot drift. Publication waits for review by a core or platform engineer.
 
 ## 8. CI
 
@@ -120,15 +120,14 @@ M4 covers this through the first upgrade after delivery.
 
 ## Milestones
 
-| Milestone | Amount | Deliverables | Acceptance (from the RFP) |
-|---|---|---|---|
-| M1 | $25,000 | Hardening guide draft; corpus and Rust generator; per-CAP coverage manifest | Entries round-trip through rs-stellar-xdr and agree with `--check-lcm` goldens |
-| M2 | $25,000 | Replay harness, adapter interface, wallet-backend reference adapter (Galexie layout); JS, Go and Rust runners; findings against wallet-backend and the 3 SDKs, issues filed | Harness reproduces wallet-backend #729, #731, #716 on pre-fix commits and passes on fixes; runner reproduces js-stellar-sdk #1766, #1785, #1789 on pre-fix tags |
-| M3 | $7,500 | Linter (3 rules) and self-audit checklist | Flags seeded violations, clean on current wallet-backend |
-| M4 | $7,500 | Production release with protocol 30 coverage, CI, maintenance plan through the first protocol upgrade | Release tagged, CI green, upgrade runbook exercised |
-| Total | $65,000 | | Without the linter: about $57,500 |
+| Milestone | Deliverables | Acceptance |
+|---|---|---|
+| M1 | Hardening guide draft; corpus and Rust generator; per-CAP coverage manifest | Entries round-trip through rs-stellar-xdr and agree with `--check-lcm` goldens |
+| M2 | Replay harness, adapter interface, wallet-backend reference adapter (Galexie layout); JS, Go and Rust runners; findings against wallet-backend and the 3 SDKs, issues filed | Harness reproduces wallet-backend #729, #731, #716 on pre-fix commits and passes on fixes; runner reproduces js-stellar-sdk #1766, #1785, #1789 on pre-fix tags |
+| M3 | Linter (3 rules) and self-audit checklist | Flags seeded violations, clean on current wallet-backend |
+| M4 | Production release with protocol 30 coverage, CI, maintenance plan through the first protocol upgrade | Release tagged, CI green, upgrade runbook exercised |
 
-## Already done (pre-proposal)
+## Already done
 
 - Draft schema and 3 sample entries, all passing schema, Rust, JS and Go round-trip and semantic checks.
 - js-stellar-sdk #1789, #1785 and #1766 reproduced on pinned buggy and fixed versions.
