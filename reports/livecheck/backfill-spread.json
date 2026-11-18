@@ -1,0 +1,2789 @@
+{
+ "generated_by": "tools/livecheck/backfill.mjs",
+ "net": "pubnet",
+ "name": "spread",
+ "chunks": 134,
+ "summary": {
+  "ledgers": 33500,
+  "txs": 10100779,
+  "segments": 20235058,
+  "ms": 20172434,
+  "ledger_min": 58800000,
+  "ledger_max": 65400499,
+  "close_time_min": 1757133270,
+  "close_time_max": 1794288537,
+  "protocol": {
+   "23": 4000,
+   "24": 6500,
+   "25": 8000,
+   "26": 4500,
+   "27": 5500,
+   "28": 1500,
+   "29": 3500
+  },
+  "readers": {
+   "js": {
+    "ok": 33500,
+    "roundtrip_ok": 33500
+   },
+   "go": {
+    "ok": 33500,
+    "roundtrip_ok": 33500
+   },
+   "rust": {
+    "ok": 33500,
+    "roundtrip_ok": 33500,
+    "json_roundtrip_ok": 33500
+   }
+  },
+  "flag_counts": {
+   "long_tail": 23382,
+   "bug_shape": 90
+  },
+  "flagged_txs": {
+   "long_tail": 17626,
+   "bug_shape": 90
+  },
+  "details": [],
+  "arms": {
+   "PathPaymentStrictSendResult.offer_cross_self": {
+    "class": "long_tail",
+    "txs": 302,
+    "caps": [],
+    "examples": [
+     {
+      "tx": "4ba64b4d82cba126cc4903cdd54a6d52ba184d3ee3bd8f43306f4ef0eef7e5bb",
+      "ledger": 58800000,
+      "segments": [
+       "E41",
+       "P23"
+      ]
+     },
+     {
+      "tx": "0d817296594ce23c93057b706fe10dabea91ff0063a256ce8b9f411095c46619",
+      "ledger": 58800004,
+      "segments": [
+       "E95",
+       "P80"
+      ]
+     },
+     {
+      "tx": "cbfa1bd37d01da4ddb5ef7bd38537b78d84b1f7a7eb0c353b31ae68945abdfa4",
+      "ledger": 58800005,
+      "segments": [
+       "E54",
+       "P114"
+      ]
+     }
+    ]
+   },
+   "ClaimPredicate.and": {
+    "class": "long_tail",
+    "txs": 388,
+    "caps": [],
+    "examples": [
+     {
+      "tx": "a5b23c3ed20da4f14ef7bf9b92199751b172b0cae3d0e91137804ffe89a2f5f9",
+      "ledger": 58800005,
+      "segments": [
+       "E17",
+       "P77"
+      ]
+     },
+     {
+      "tx": "c75374c28579bab71038d2f67d73cea4eec97a698e4bb9d15a1f284708fb8a51",
+      "ledger": 59000127,
+      "segments": [
+       "E167",
+       "P154"
+      ]
+     },
+     {
+      "tx": "bc85fc15e4a7b0a11083fd4fccebe4e0b18af64c50838ba31458670b8cc53239",
+      "ledger": 59000152,
+      "segments": [
+       "E206",
+       "P46"
+      ]
+     }
+    ]
+   },
+   "ClaimClaimableBalanceResult.not_authorized": {
+    "class": "long_tail",
+    "txs": 3,
+    "caps": [
+     "CAP-0023"
+    ],
+    "examples": [
+     {
+      "tx": "40061cf9d78700964ccbcbbabe588dbcf7087648126988de449a300f902abd40",
+      "ledger": 58800006,
+      "segments": [
+       "E42",
+       "P80"
+      ]
+     },
+     {
+      "tx": "5383a502f7ac0459fc5e8a0948ebfcdaff9241a8beeb0e6ea9acd049d5f54071",
+      "ledger": 58800024,
+      "segments": [
+       "E89",
+       "P18"
+      ]
+     },
+     {
+      "tx": "402bc9ad9e11b4f0006eb824fa1ca1421e6363ffd60dfab2cdba084470f560cb",
+      "ledger": 61500381,
+      "segments": [
+       "E105",
+       "P107"
+      ]
+     }
+    ]
+   },
+   "ChangeTrustResult.low_reserve": {
+    "class": "long_tail",
+    "txs": 1263,
+    "caps": [],
+    "examples": [
+     {
+      "tx": "6f4e1649e20acf784ddab767cf05f1e472a2076b725b7e2d217d02a47493c9b3",
+      "ledger": 58800007,
+      "segments": [
+       "E21",
+       "P8"
+      ]
+     },
+     {
+      "tx": "f916d99d66daf4d47d08389d27bd4b1fbe7c8298b7200ac09055504ad1819b89",
+      "ledger": 58800054,
+      "segments": [
+       "E114",
+       "P63"
+      ]
+     },
+     {
+      "tx": "c6f04ed959bfab1f2b445b40c955aeadbcf9e3de97b5226699e838b87c7cb894",
+      "ledger": 58800060,
+      "segments": [
+       "E46",
+       "P67"
+      ]
+     }
+    ]
+   },
+   "ClawbackResult.not_clawback_enabled": {
+    "class": "long_tail",
+    "txs": 419,
+    "caps": [
+     "CAP-0035"
+    ],
+    "examples": [
+     {
+      "tx": "fbd7dd9fb1f8b6ce20ac2ae1fc95a2993dafb54e5eb7ae71808a393dfdcafa84",
+      "ledger": 58800023,
+      "segments": [
+       "E113",
+       "P13"
+      ]
+     },
+     {
+      "tx": "cf162f76d5dad83d6c90cdd7740a48cbb95ad2672b9ddbdb5cda39dd88e1e4e8",
+      "ledger": 58800033,
+      "segments": [
+       "E12",
+       "P9"
+      ]
+     },
+     {
+      "tx": "a71647b0c024215b1a34f0d8a6b3662f45fcf1b2e6f1ee4b945527ae6e15ef5b",
+      "ledger": 58800043,
+      "segments": [
+       "E115",
+       "P86"
+      ]
+     }
+    ]
+   },
+   "SetOptionsResult.low_reserve": {
+    "class": "long_tail",
+    "txs": 251,
+    "caps": [],
+    "examples": [
+     {
+      "tx": "7898651e149c6b91cbbfd73522d19545033c25164ae2a086405e7f699d45bffc",
+      "ledger": 58800032,
+      "segments": [
+       "E94",
+       "P75"
+      ]
+     },
+     {
+      "tx": "05520dd239bd52e25cdd8237c2e58c026beddd66984f2733a235162ff09de1bf",
+      "ledger": 58800479,
+      "segments": [
+       "E16",
+       "P7"
+      ]
+     },
+     {
+      "tx": "897188f79e8855a962513c32ee19f7f7347f65ca21b5dccb60d580e87d74ae94",
+      "ledger": 58900024,
+      "segments": [
+       "E208",
+       "P75"
+      ]
+     }
+    ]
+   },
+   "CreateClaimableBalanceResult.low_reserve": {
+    "class": "long_tail",
+    "txs": 1199,
+    "caps": [
+     "CAP-0023"
+    ],
+    "examples": [
+     {
+      "tx": "5d661b618d0bfe8fd75c53dd02babba6dd050edd228eb718bc376994a79f210c",
+      "ledger": 58800080,
+      "segments": [
+       "E118",
+       "P45"
+      ]
+     },
+     {
+      "tx": "c042947b3ba65cddd3c6581aee4ecb87857ea9472a40892402f7928108c984d5",
+      "ledger": 58800083,
+      "segments": [
+       "E10",
+       "P107"
+      ]
+     },
+     {
+      "tx": "6cf9a40c294fe5020c0920379a700c282d559fd1f7cd47b7de55550f13157137",
+      "ledger": 58800101,
+      "segments": [
+       "E84",
+       "P56"
+      ]
+     }
+    ]
+   },
+   "LedgerEntryData.data": {
+    "class": "long_tail",
+    "txs": 2015,
+    "caps": [],
+    "examples": [
+     {
+      "tx": "12d9a601bb840c56bbaffd8a3d6d69fb98172f353502d9283963cbf222c4528f",
+      "ledger": 58800093,
+      "segments": [
+       "E11",
+       "P41"
+      ]
+     },
+     {
+      "tx": "ec03e2b5c750a289f860365020378dc7bebfc68aedf92b1635a37281175b8c5d",
+      "ledger": 58900379,
+      "segments": [
+       "E19",
+       "P8"
+      ]
+     },
+     {
+      "tx": "c01fcefc62efadfcb3faa0d4a4abe8047167bc290c3a3cec1688e2d49e78f266",
+      "ledger": 58900457,
+      "segments": [
+       "E29",
+       "P109"
+      ]
+     }
+    ]
+   },
+   "DataEntryExt.v0": {
+    "class": "long_tail",
+    "txs": 2015,
+    "caps": [],
+    "examples": [
+     {
+      "tx": "12d9a601bb840c56bbaffd8a3d6d69fb98172f353502d9283963cbf222c4528f",
+      "ledger": 58800093,
+      "segments": [
+       "E11",
+       "P41"
+      ]
+     },
+     {
+      "tx": "ec03e2b5c750a289f860365020378dc7bebfc68aedf92b1635a37281175b8c5d",
+      "ledger": 58900379,
+      "segments": [
+       "E19",
+       "P8"
+      ]
+     },
+     {
+      "tx": "c01fcefc62efadfcb3faa0d4a4abe8047167bc290c3a3cec1688e2d49e78f266",
+      "ledger": 58900457,
+      "segments": [
+       "E29",
+       "P109"
+      ]
+     }
+    ]
+   },
+   "LedgerKey.data": {
+    "class": "long_tail",
+    "txs": 1560,
+    "caps": [],
+    "examples": [
+     {
+      "tx": "12d9a601bb840c56bbaffd8a3d6d69fb98172f353502d9283963cbf222c4528f",
+      "ledger": 58800093,
+      "segments": [
+       "E11",
+       "P41"
+      ]
+     },
+     {
+      "tx": "d5fad3cbe216c3d63cbe74cfe74f7273d22aee150a8bd6ae7449fac08343aa7a",
+      "ledger": 59000166,
+      "segments": [
+       "E261",
+       "P57"
+      ]
+     },
+     {
+      "tx": "f1f222bb3d9551401c96dd8bf827f61287b3833ca87224b76fd9fbe26bd85de2",
+      "ledger": 59200014,
+      "segments": [
+       "E95",
+       "P122"
+      ]
+     }
+    ]
+   },
+   "ClaimClaimableBalanceResult.does_not_exist": {
+    "class": "long_tail",
+    "txs": 145,
+    "caps": [
+     "CAP-0023"
+    ],
+    "examples": [
+     {
+      "tx": "f94ae62ea798a5855bbbc965d63ca33a9947dbc3c31766fab25d344e309250ee",
+      "ledger": 58800137,
+      "segments": [
+       "E23",
+       "P84"
+      ]
+     },
+     {
+      "tx": "0789db4a0930abff1eebe3c362ced537198fc4e00afbe48cd6790f0560ee6bc1",
+      "ledger": 58800145,
+      "segments": [
+       "E73",
+       "P62"
+      ]
+     },
+     {
+      "tx": "ca77389ff4ebb51a8fe37e0fa4856fe14d8be4d468bfa06237a008633756dceb",
+      "ledger": 58800332,
+      "segments": [
+       "E129",
+       "P117"
+      ]
+     }
+    ]
+   },
+   "ClawbackResult.underfunded": {
+    "class": "long_tail",
+    "txs": 13,
+    "caps": [
+     "CAP-0035"
+    ],
+    "examples": [
+     {
+      "tx": "de596ca1b59e5a2c3aaec9bac4f813d0047d0e3c0107de2c3b5fbcb1ea67b9e5",
+      "ledger": 58800178,
+      "segments": [
+       "E73",
+       "P116"
+      ]
+     },
+     {
+      "tx": "1da1aea5a30e45007beaed1b45c230dfe34fe385ccf4d11e8654b21b43110d72",
+      "ledger": 59500177,
+      "segments": [
+       "E14",
+       "P105"
+      ]
+     },
+     {
+      "tx": "74db04708adc3949e04aae2377b454aa26c6e3a1b6b550d5dbdefa0d9a33217b",
+      "ledger": 59500181,
+      "segments": [
+       "E179",
+       "P66"
+      ]
+     }
+    ]
+   },
+   "muxed.id_ge_2^53 (JS-unsafe, #1785 shape)": {
+    "class": "bug_shape",
+    "txs": 89,
+    "caps": [
+     "CAP-0027",
+     "CAP-0046",
+     "CAP-0067"
+    ],
+    "examples": [
+     {
+      "tx": "d60311c21b5006388cbe03d0ac3f0074b63b028000768c0bdbf1d08b7a3ae307",
+      "ledger": 58800181,
+      "segments": [
+       "E56",
+       "P108"
+      ]
+     },
+     {
+      "tx": "ac5be89d961b0178ed9438f0b7bdb10fd6cc8ecf3ca87ab0c7a918102f99b3a0",
+      "ledger": 58800209,
+      "segments": [
+       "E37",
+       "P126"
+      ]
+     },
+     {
+      "tx": "5be0965f9ee73061c90e9084743cce52809c8cbb6c6746e1c2b006a900dacd52",
+      "ledger": 58900067,
+      "segments": [
+       "E106",
+       "P169"
+      ]
+     }
+    ]
+   },
+   "ManageBuyOfferResult.buy_no_trust": {
+    "class": "long_tail",
+    "txs": 186,
+    "caps": [],
+    "examples": [
+     {
+      "tx": "d0c62087e1a2f84392064f52dbfe18c6d2ff828d49d1a41a09fe1a09b0e22ed3",
+      "ledger": 58800208,
+      "segments": [
+       "E87",
+       "P107"
+      ]
+     },
+     {
+      "tx": "3ffd9b526d74024e93c002ccbe3dc51d629144e30385290bef0fc311c0e21384",
+      "ledger": 58800226,
+      "segments": [
+       "E163",
+       "P132"
+      ]
+     },
+     {
+      "tx": "11c76acce62e49d1e46a32cd8945630f5806d26c4e6f163e306d15488b556022",
+      "ledger": 58800395,
+      "segments": [
+       "E39",
+       "P21"
+      ]
+     }
+    ]
+   },
+   "ClawbackClaimableBalanceResult.does_not_exist": {
+    "class": "long_tail",
+    "txs": 507,
+    "caps": [
+     "CAP-0023",
+     "CAP-0035"
+    ],
+    "examples": [
+     {
+      "tx": "01aa24eaef6249fc61e3a086ce2fa105c340bad7f0e8707e5a9a95c797ecbaf7",
+      "ledger": 58800280,
+      "segments": [
+       "E41",
+       "P117"
+      ]
+     },
+     {
+      "tx": "b2788dcf0029b7325e2f8da4d798c06696f816b1b3673d3983d07f7b513b9c33",
+      "ledger": 58800284,
+      "segments": [
+       "E81",
+       "P13"
+      ]
+     },
+     {
+      "tx": "ec949da6cdfcf4d8c433f8e06d59dcec15be9f8b24a4a077012229f8dcd981f9",
+      "ledger": 58800288,
+      "segments": [
+       "E107",
+       "P106"
+      ]
+     }
+    ]
+   },
+   "CreateAccountResult.already_exist": {
+    "class": "long_tail",
+    "txs": 96,
+    "caps": [],
+    "examples": [
+     {
+      "tx": "f3de58608690ef9ec71ab175db44c45d0c2cf15464bd495e895691e1ddd36d6e",
+      "ledger": 58800375,
+      "segments": [
+       "E92",
+       "P88"
+      ]
+     },
+     {
+      "tx": "9264a80e5107a9ae82cd7224b951e4298a710272f5b0aacdf5dbb2c1869761d3",
+      "ledger": 59400062,
+      "segments": [
+       "E247",
+       "P185"
+      ]
+     },
+     {
+      "tx": "e3a6733d539efdd02387f256d2fb2f0e6ef72987bf61177287416f5497a9a63a",
+      "ledger": 59700240,
+      "segments": [
+       "E10",
+       "P87"
+      ]
+     }
+    ]
+   },
+   "OperationBody.liquidity_pool_withdraw": {
+    "class": "long_tail",
+    "txs": 209,
+    "caps": [
+     "CAP-0038"
+    ],
+    "examples": [
+     {
+      "tx": "87a3eac94da43436adbd528464e88d6e3b9bce7b1a0f2b9eed0f3daf2f54dc2e",
+      "ledger": 58800388,
+      "segments": [
+       "E63",
+       "P13"
+      ]
+     },
+     {
+      "tx": "a77121808c866f6d6e17a5ac1e12ef4b4814fef2c329df75283b23252573a399",
+      "ledger": 58900040,
+      "segments": [
+       "E34",
+       "P237"
+      ]
+     },
+     {
+      "tx": "163185b82d35ed6c124dd5f7bec03db72b22e22cc4882f1ccca47e8ee54e7db6",
+      "ledger": 58900066,
+      "segments": [
+       "E98",
+       "P283"
+      ]
+     }
+    ]
+   },
+   "ChangeTrustAsset.pool_share": {
+    "class": "long_tail",
+    "txs": 319,
+    "caps": [
+     "CAP-0038"
+    ],
+    "examples": [
+     {
+      "tx": "87a3eac94da43436adbd528464e88d6e3b9bce7b1a0f2b9eed0f3daf2f54dc2e",
+      "ledger": 58800388,
+      "segments": [
+       "E63",
+       "P13"
+      ]
+     },
+     {
+      "tx": "43aafb4ba426568bf2127fff61a523ddb387f434fbee035d6366ec12903d8a78",
+      "ledger": 58900084,
+      "segments": [
+       "E84",
+       "P62"
+      ]
+     },
+     {
+      "tx": "9cd00fa2f80d7c1bd14fc179a945110457a67d7f44182e239eb88717214a2542",
+      "ledger": 58900217,
+      "segments": [
+       "E37",
+       "P110"
+      ]
+     }
+    ]
+   },
+   "LiquidityPoolParameters.liquidity_pool_constant_product": {
+    "class": "long_tail",
+    "txs": 319,
+    "caps": [
+     "CAP-0038"
+    ],
+    "examples": [
+     {
+      "tx": "87a3eac94da43436adbd528464e88d6e3b9bce7b1a0f2b9eed0f3daf2f54dc2e",
+      "ledger": 58800388,
+      "segments": [
+       "E63",
+       "P13"
+      ]
+     },
+     {
+      "tx": "43aafb4ba426568bf2127fff61a523ddb387f434fbee035d6366ec12903d8a78",
+      "ledger": 58900084,
+      "segments": [
+       "E84",
+       "P62"
+      ]
+     },
+     {
+      "tx": "9cd00fa2f80d7c1bd14fc179a945110457a67d7f44182e239eb88717214a2542",
+      "ledger": 58900217,
+      "segments": [
+       "E37",
+       "P110"
+      ]
+     }
+    ]
+   },
+   "OperationResultTr.liquidity_pool_withdraw": {
+    "class": "long_tail",
+    "txs": 209,
+    "caps": [
+     "CAP-0038"
+    ],
+    "examples": [
+     {
+      "tx": "87a3eac94da43436adbd528464e88d6e3b9bce7b1a0f2b9eed0f3daf2f54dc2e",
+      "ledger": 58800388,
+      "segments": [
+       "E63",
+       "P13"
+      ]
+     },
+     {
+      "tx": "a77121808c866f6d6e17a5ac1e12ef4b4814fef2c329df75283b23252573a399",
+      "ledger": 58900040,
+      "segments": [
+       "E34",
+       "P237"
+      ]
+     },
+     {
+      "tx": "163185b82d35ed6c124dd5f7bec03db72b22e22cc4882f1ccca47e8ee54e7db6",
+      "ledger": 58900066,
+      "segments": [
+       "E98",
+       "P283"
+      ]
+     }
+    ]
+   },
+   "LiquidityPoolWithdrawResult.success": {
+    "class": "long_tail",
+    "txs": 198,
+    "caps": [
+     "CAP-0038"
+    ],
+    "examples": [
+     {
+      "tx": "87a3eac94da43436adbd528464e88d6e3b9bce7b1a0f2b9eed0f3daf2f54dc2e",
+      "ledger": 58800388,
+      "segments": [
+       "E63",
+       "P13"
+      ]
+     },
+     {
+      "tx": "a77121808c866f6d6e17a5ac1e12ef4b4814fef2c329df75283b23252573a399",
+      "ledger": 58900040,
+      "segments": [
+       "E34",
+       "P237"
+      ]
+     },
+     {
+      "tx": "163185b82d35ed6c124dd5f7bec03db72b22e22cc4882f1ccca47e8ee54e7db6",
+      "ledger": 58900066,
+      "segments": [
+       "E98",
+       "P283"
+      ]
+     }
+    ]
+   },
+   "ManageBuyOfferResult.cross_self": {
+    "class": "long_tail",
+    "txs": 1278,
+    "caps": [],
+    "examples": [
+     {
+      "tx": "327079f5b75fcace61647e45b47ca43a8cf37171630ede06fbe0ea1ab67a6207",
+      "ledger": 58800415,
+      "segments": [
+       "E43",
+       "P19"
+      ]
+     },
+     {
+      "tx": "aa36d7633abaa85e2c47a8e4742d94dc7cd34d2e66e2434063d8a344c36089c0",
+      "ledger": 58900188,
+      "segments": [
+       "E149",
+       "P79"
+      ]
+     },
+     {
+      "tx": "29cd200982c308fd9c4b83bc269d8503350e30a22c48c6378bd4d4fa937d7b9e",
+      "ledger": 59000161,
+      "segments": [
+       "E83",
+       "P219"
+      ]
+     }
+    ]
+   },
+   "PaymentResult.src_not_authorized": {
+    "class": "long_tail",
+    "txs": 1219,
+    "caps": [],
+    "examples": [
+     {
+      "tx": "53f075f4126908562ca3ef7f3972fe38002514f6f8a8cb3b7f917a020aa1bd7e",
+      "ledger": 58900006,
+      "segments": [
+       "E1",
+       "P150"
+      ]
+     },
+     {
+      "tx": "4f4487515c3afbdf3f026f111461e4a073d522adf2ef44aa588a74b1f49ee888",
+      "ledger": 58900020,
+      "segments": [
+       "E81",
+       "P125"
+      ]
+     },
+     {
+      "tx": "a1702515448d3a1d3b048fb58a7ad29f96728c40dc53550635e9c535ffac1ac5",
+      "ledger": 58900040,
+      "segments": [
+       "E67",
+       "P265"
+      ]
+     }
+    ]
+   },
+   "SetTrustLineFlagsResult.no_trust_line": {
+    "class": "long_tail",
+    "txs": 909,
+    "caps": [],
+    "examples": [
+     {
+      "tx": "f1adc2558bad5c7850e26d5e029affa673035b931a2e72ca946af6ba3326893b",
+      "ledger": 58900032,
+      "segments": [
+       "E18",
+       "P33"
+      ]
+     },
+     {
+      "tx": "6858f7ae8f80a392c1e96b1772df8d7964be9a825663903a345ff5f471d7d423",
+      "ledger": 58900033,
+      "segments": [
+       "E144",
+       "P104"
+      ]
+     },
+     {
+      "tx": "312a093f5ff0ce6bc4302ff396329fb5e142d7511ef1bda07abec5cd3f710332",
+      "ledger": 58900034,
+      "segments": [
+       "E88",
+       "P18"
+      ]
+     }
+    ]
+   },
+   "Memo.return": {
+    "class": "long_tail",
+    "txs": 723,
+    "caps": [],
+    "examples": [
+     {
+      "tx": "a8e72588fd2f00730d00397afea73237c06bf5084c984375db300efe28e53cda",
+      "ledger": 58900124,
+      "segments": [
+       "E157",
+       "P11"
+      ]
+     },
+     {
+      "tx": "f07537b45aab72aab56a4a7ecddb85b364a68cef51aa145de476eeb5b77fdbcb",
+      "ledger": 58900129,
+      "segments": [
+       "E163",
+       "P123"
+      ]
+     },
+     {
+      "tx": "e3cb8769eb1be0cd1cb756a5bd7392fbda4b8db5a02a06fc9b263a7007e46caf",
+      "ledger": 58900134,
+      "segments": [
+       "E141",
+       "P45"
+      ]
+     }
+    ]
+   },
+   "OperationBody.bump_sequence": {
+    "class": "long_tail",
+    "txs": 126,
+    "caps": [],
+    "examples": [
+     {
+      "tx": "17f4a9112592de31c05f8883c86a5141dd86628092934a3f148f7a7e2cddecb8",
+      "ledger": 58900207,
+      "segments": [
+       "E25",
+       "P31"
+      ]
+     },
+     {
+      "tx": "50970cfafa1d2db2ce0aa1a6863916139d691d322e31bed0d6a1c7b80efb971d",
+      "ledger": 58900212,
+      "segments": [
+       "E112",
+       "P23"
+      ]
+     },
+     {
+      "tx": "46f00f869be0b226d56a54b3fbb677daa4edaa1ceb6dcb86dbec2f38e696e724",
+      "ledger": 58900217,
+      "segments": [
+       "E85",
+       "P66"
+      ]
+     }
+    ]
+   },
+   "OperationResultTr.bump_sequence": {
+    "class": "long_tail",
+    "txs": 126,
+    "caps": [],
+    "examples": [
+     {
+      "tx": "17f4a9112592de31c05f8883c86a5141dd86628092934a3f148f7a7e2cddecb8",
+      "ledger": 58900207,
+      "segments": [
+       "E25",
+       "P31"
+      ]
+     },
+     {
+      "tx": "50970cfafa1d2db2ce0aa1a6863916139d691d322e31bed0d6a1c7b80efb971d",
+      "ledger": 58900212,
+      "segments": [
+       "E112",
+       "P23"
+      ]
+     },
+     {
+      "tx": "46f00f869be0b226d56a54b3fbb677daa4edaa1ceb6dcb86dbec2f38e696e724",
+      "ledger": 58900217,
+      "segments": [
+       "E85",
+       "P66"
+      ]
+     }
+    ]
+   },
+   "BumpSequenceResult.success": {
+    "class": "long_tail",
+    "txs": 126,
+    "caps": [],
+    "examples": [
+     {
+      "tx": "17f4a9112592de31c05f8883c86a5141dd86628092934a3f148f7a7e2cddecb8",
+      "ledger": 58900207,
+      "segments": [
+       "E25",
+       "P31"
+      ]
+     },
+     {
+      "tx": "50970cfafa1d2db2ce0aa1a6863916139d691d322e31bed0d6a1c7b80efb971d",
+      "ledger": 58900212,
+      "segments": [
+       "E112",
+       "P23"
+      ]
+     },
+     {
+      "tx": "46f00f869be0b226d56a54b3fbb677daa4edaa1ceb6dcb86dbec2f38e696e724",
+      "ledger": 58900217,
+      "segments": [
+       "E85",
+       "P66"
+      ]
+     }
+    ]
+   },
+   "SorobanTransactionDataExt.v1": {
+    "class": "long_tail",
+    "txs": 275,
+    "caps": [
+     "CAP-0046"
+    ],
+    "examples": [
+     {
+      "tx": "1e548a65f68a2ebaad215ac48ff5cb5776c63adb3aed14a34206ccf5e31b04d5",
+      "ledger": 58900468,
+      "segments": [
+       "E280",
+       "P282"
+      ]
+     },
+     {
+      "tx": "66d585a854cc282a971f56c3295314f71e2f78b4b47eb6ac58b61b3a85049e88",
+      "ledger": 59600078,
+      "segments": [
+       "E203",
+       "P222"
+      ]
+     },
+     {
+      "tx": "e5ae640f9b6330cafa3c6df3a63a8e32f1c364dab0c4198a389bfef886e8da41",
+      "ledger": 59800099,
+      "segments": [
+       "E171",
+       "P168"
+      ]
+     }
+    ]
+   },
+   "LedgerEntryChange.restored": {
+    "class": "long_tail",
+    "txs": 275,
+    "caps": [],
+    "examples": [
+     {
+      "tx": "1e548a65f68a2ebaad215ac48ff5cb5776c63adb3aed14a34206ccf5e31b04d5",
+      "ledger": 58900468,
+      "segments": [
+       "E280",
+       "P282"
+      ]
+     },
+     {
+      "tx": "66d585a854cc282a971f56c3295314f71e2f78b4b47eb6ac58b61b3a85049e88",
+      "ledger": 59600078,
+      "segments": [
+       "E203",
+       "P222"
+      ]
+     },
+     {
+      "tx": "e5ae640f9b6330cafa3c6df3a63a8e32f1c364dab0c4198a389bfef886e8da41",
+      "ledger": 59800099,
+      "segments": [
+       "E171",
+       "P168"
+      ]
+     }
+    ]
+   },
+   "PathPaymentStrictSendResult.line_full": {
+    "class": "long_tail",
+    "txs": 334,
+    "caps": [],
+    "examples": [
+     {
+      "tx": "1d8c4a33153d7d35b6027a98c6676bd757cb22b50849e35ae0da113ef8c80e8f",
+      "ledger": 58900493,
+      "segments": [
+       "E36",
+       "P29"
+      ]
+     },
+     {
+      "tx": "1b7ec93fdfe2f27ee9dbc4d8d53549f69736ea2c06c84fe1f3e30bee6027ba38",
+      "ledger": 58900497,
+      "segments": [
+       "E86",
+       "P83"
+      ]
+     },
+     {
+      "tx": "740ddc0b5f0e7b7b183b1129e5f0e6a4af111cb7db892deaed70809cb3515cb7",
+      "ledger": 60600045,
+      "segments": [
+       "E21",
+       "P98"
+      ]
+     }
+    ]
+   },
+   "ChangeTrustResult.no_issuer": {
+    "class": "long_tail",
+    "txs": 47,
+    "caps": [],
+    "examples": [
+     {
+      "tx": "ca67c961270ac6bcf5d9df4fae924d472050a4f76e797cdc82735c837fd76333",
+      "ledger": 59000115,
+      "segments": [
+       "E112",
+       "P43"
+      ]
+     },
+     {
+      "tx": "0825ad1ba1f309a0913ae59218d3ef88a2f8e0e76f046d1c408611ffd08e9994",
+      "ledger": 59000142,
+      "segments": [
+       "E94",
+       "P5"
+      ]
+     },
+     {
+      "tx": "69cb01f7dcdbfa75ec04ce4d7ef482ca757470c9ea4492798ab54b1464476919",
+      "ledger": 59000166,
+      "segments": [
+       "E311",
+       "P1"
+      ]
+     }
+    ]
+   },
+   "LiquidityPoolDepositResult.underfunded": {
+    "class": "long_tail",
+    "txs": 1313,
+    "caps": [
+     "CAP-0038"
+    ],
+    "examples": [
+     {
+      "tx": "a1a9c77f2b671f0ecf31bceaa9be74ef0ab370cb1cec5d1777f9c6c900193128",
+      "ledger": 59000165,
+      "segments": [
+       "E141",
+       "P163"
+      ]
+     },
+     {
+      "tx": "10317f8bfb59ba278f5a9d1b8d8e0719d09f6030f19afa40ff86c7e06b127664",
+      "ledger": 59200495,
+      "segments": [
+       "E109",
+       "P23"
+      ]
+     },
+     {
+      "tx": "861679c6457278567634b08b485a05f3f25bb4169d15067e50891dff7a9839b9",
+      "ledger": 59500287,
+      "segments": [
+       "E72",
+       "P143"
+      ]
+     }
+    ]
+   },
+   "ManageBuyOfferResult.sell_not_authorized": {
+    "class": "long_tail",
+    "txs": 44,
+    "caps": [],
+    "examples": [
+     {
+      "tx": "751d30cc86dd22bc422a7beda2b7affd9f97444bdc346b5a1befcacb5e97fa69",
+      "ledger": 59100077,
+      "segments": [
+       "E1",
+       "P51"
+      ]
+     },
+     {
+      "tx": "f42320fd0d3832c6850e0f1c78d61d8a330b1caa0832e3c1583ef5a1529f0420",
+      "ledger": 59500346,
+      "segments": [
+       "E43",
+       "P138"
+      ]
+     },
+     {
+      "tx": "46061f609e47533e583e42da204677f2d5b1044ba9e6361d25850cb8e9ecec45",
+      "ledger": 59700275,
+      "segments": [
+       "E14",
+       "P46"
+      ]
+     }
+    ]
+   },
+   "ScErrorCode.missing_value": {
+    "class": "long_tail",
+    "txs": 12,
+    "caps": [],
+    "examples": [
+     {
+      "tx": "f5c10b9895202cf65a6e08fcddae6d60dada40bbe9e605f22626ecd9117a2cb4",
+      "ledger": 59100237,
+      "segments": [
+       "E159",
+       "P182"
+      ]
+     },
+     {
+      "tx": "7d4e1e5df8c7bf9ae06ab77ef5f76de4bf3148befc58438688ba4b53d1c9e8f4",
+      "ledger": 60000061,
+      "segments": [
+       "E475",
+       "P494"
+      ]
+     },
+     {
+      "tx": "f6187016cec3dfeec7027e3d033bac7eaafd89e9f0fc5418f9e07bf2acaf7609",
+      "ledger": 60700127,
+      "segments": [
+       "E181",
+       "P196"
+      ]
+     }
+    ]
+   },
+   "SignerKey.pre_auth_tx": {
+    "class": "long_tail",
+    "txs": 621,
+    "caps": [],
+    "examples": [
+     {
+      "tx": "da78c0aa3334765b7d86e7f34725beafe294f82b7f0eb71003186bda87b38599",
+      "ledger": 59200016,
+      "segments": [
+       "E96",
+       "P146"
+      ]
+     },
+     {
+      "tx": "959aad4a43a884b10107c9f4e448d1519268f9a6f70c339f75ba02e12beba4f0",
+      "ledger": 59200022,
+      "segments": [
+       "E109",
+       "P87"
+      ]
+     },
+     {
+      "tx": "da68415c8e83d65997d012cda992530fb0d8b12aae647b80e0e95aa451d121b8",
+      "ledger": 59200024,
+      "segments": [
+       "E66",
+       "P51"
+      ]
+     }
+    ]
+   },
+   "PathPaymentStrictReceiveResult.offer_cross_self": {
+    "class": "long_tail",
+    "txs": 2,
+    "caps": [],
+    "examples": [
+     {
+      "tx": "ea03d2268a26d015375016f47d26a3721dba1fbaa8695387d5709e02e3fbf03a",
+      "ledger": 59200106,
+      "segments": [
+       "E61",
+       "P35"
+      ]
+     },
+     {
+      "tx": "807a2a834d9f87c834129e204b344512eed301bd0023a1d4d81fdb3f2035c643",
+      "ledger": 61500309,
+      "segments": [
+       "E29",
+       "P21"
+      ]
+     }
+    ]
+   },
+   "ChangeTrustResult.cannot_delete": {
+    "class": "long_tail",
+    "txs": 19,
+    "caps": [],
+    "examples": [
+     {
+      "tx": "51bfc9f010b2bbab8ee4e291f8f39374eee090fcb754bba1758a99f9b89a8ef6",
+      "ledger": 59200207,
+      "segments": [
+       "E8",
+       "P64"
+      ]
+     },
+     {
+      "tx": "9054ee74ec3b790fd4ba4a05db54a4a4b38b93a811cb360431cdc523dde65edc",
+      "ledger": 59200209,
+      "segments": [
+       "E140",
+       "P11"
+      ]
+     },
+     {
+      "tx": "bd0ff66aff2462f3c45293925f19cd6f8e21915c55319dd872707327fcc55a19",
+      "ledger": 59200371,
+      "segments": [
+       "E111",
+       "P72"
+      ]
+     }
+    ]
+   },
+   "OperationBody.revoke_sponsorship": {
+    "class": "long_tail",
+    "txs": 11,
+    "caps": [
+     "CAP-0033"
+    ],
+    "examples": [
+     {
+      "tx": "7aa8b63b664d6395dfade8265916d0fb9dfcdf2b067dfb9203fd7ba0560b40e8",
+      "ledger": 59200323,
+      "segments": [
+       "E101",
+       "P66"
+      ]
+     },
+     {
+      "tx": "a62c908f3fdbda68f4c4930ebd40df3a2289ffc3e0f83b61307185f44b8f2d7e",
+      "ledger": 60200155,
+      "segments": [
+       "E56",
+       "P107"
+      ]
+     },
+     {
+      "tx": "174abf7c772461c19a2c3b1e2158c26b84b704767700cbf01a5608bf49043632",
+      "ledger": 60200156,
+      "segments": [
+       "E112",
+       "P13"
+      ]
+     }
+    ]
+   },
+   "RevokeSponsorshipOp.ledger_entry": {
+    "class": "long_tail",
+    "txs": 11,
+    "caps": [
+     "CAP-0033"
+    ],
+    "examples": [
+     {
+      "tx": "7aa8b63b664d6395dfade8265916d0fb9dfcdf2b067dfb9203fd7ba0560b40e8",
+      "ledger": 59200323,
+      "segments": [
+       "E101",
+       "P66"
+      ]
+     },
+     {
+      "tx": "a62c908f3fdbda68f4c4930ebd40df3a2289ffc3e0f83b61307185f44b8f2d7e",
+      "ledger": 60200155,
+      "segments": [
+       "E56",
+       "P107"
+      ]
+     },
+     {
+      "tx": "174abf7c772461c19a2c3b1e2158c26b84b704767700cbf01a5608bf49043632",
+      "ledger": 60200156,
+      "segments": [
+       "E112",
+       "P13"
+      ]
+     }
+    ]
+   },
+   "OperationResultTr.revoke_sponsorship": {
+    "class": "long_tail",
+    "txs": 11,
+    "caps": [
+     "CAP-0033"
+    ],
+    "examples": [
+     {
+      "tx": "7aa8b63b664d6395dfade8265916d0fb9dfcdf2b067dfb9203fd7ba0560b40e8",
+      "ledger": 59200323,
+      "segments": [
+       "E101",
+       "P66"
+      ]
+     },
+     {
+      "tx": "a62c908f3fdbda68f4c4930ebd40df3a2289ffc3e0f83b61307185f44b8f2d7e",
+      "ledger": 60200155,
+      "segments": [
+       "E56",
+       "P107"
+      ]
+     },
+     {
+      "tx": "174abf7c772461c19a2c3b1e2158c26b84b704767700cbf01a5608bf49043632",
+      "ledger": 60200156,
+      "segments": [
+       "E112",
+       "P13"
+      ]
+     }
+    ]
+   },
+   "RevokeSponsorshipResult.success": {
+    "class": "long_tail",
+    "txs": 8,
+    "caps": [
+     "CAP-0033"
+    ],
+    "examples": [
+     {
+      "tx": "7aa8b63b664d6395dfade8265916d0fb9dfcdf2b067dfb9203fd7ba0560b40e8",
+      "ledger": 59200323,
+      "segments": [
+       "E101",
+       "P66"
+      ]
+     },
+     {
+      "tx": "a62c908f3fdbda68f4c4930ebd40df3a2289ffc3e0f83b61307185f44b8f2d7e",
+      "ledger": 60200155,
+      "segments": [
+       "E56",
+       "P107"
+      ]
+     },
+     {
+      "tx": "174abf7c772461c19a2c3b1e2158c26b84b704767700cbf01a5608bf49043632",
+      "ledger": 60200156,
+      "segments": [
+       "E112",
+       "P13"
+      ]
+     }
+    ]
+   },
+   "RevokeSponsorshipResult.not_sponsor": {
+    "class": "long_tail",
+    "txs": 4,
+    "caps": [
+     "CAP-0033"
+    ],
+    "examples": [
+     {
+      "tx": "7aa8b63b664d6395dfade8265916d0fb9dfcdf2b067dfb9203fd7ba0560b40e8",
+      "ledger": 59200323,
+      "segments": [
+       "E101",
+       "P66"
+      ]
+     },
+     {
+      "tx": "a62c908f3fdbda68f4c4930ebd40df3a2289ffc3e0f83b61307185f44b8f2d7e",
+      "ledger": 60200155,
+      "segments": [
+       "E56",
+       "P107"
+      ]
+     },
+     {
+      "tx": "174abf7c772461c19a2c3b1e2158c26b84b704767700cbf01a5608bf49043632",
+      "ledger": 60200156,
+      "segments": [
+       "E112",
+       "P13"
+      ]
+     }
+    ]
+   },
+   "PathPaymentStrictSendResult.src_not_authorized": {
+    "class": "long_tail",
+    "txs": 29,
+    "caps": [],
+    "examples": [
+     {
+      "tx": "affc81e06eb38a56b9aaef1752f8dcaa3262b72af6ccf29ba44947819ec151b6",
+      "ledger": 59200393,
+      "segments": [
+       "E42",
+       "P84"
+      ]
+     },
+     {
+      "tx": "c448b84dcd547ae2efb6d23be57ab9210d53ac9afa1250b32380c39912a7a154",
+      "ledger": 59300107,
+      "segments": [
+       "E65",
+       "P40"
+      ]
+     },
+     {
+      "tx": "8e3e6abe194281d56fbdd5a74683854641d102a74dc593c22abddccf2ee3e19e",
+      "ledger": 59400218,
+      "segments": [
+       "E291",
+       "P185"
+      ]
+     }
+    ]
+   },
+   "PathPaymentStrictSendResult.not_authorized": {
+    "class": "long_tail",
+    "txs": 66,
+    "caps": [],
+    "examples": [
+     {
+      "tx": "c69fb15866066fda8a4f31a1737e70eaf4b0c7409a76379bdeb7be99972c78cf",
+      "ledger": 59400482,
+      "segments": [
+       "E67",
+       "P132"
+      ]
+     },
+     {
+      "tx": "008d6683284593425f369468122f34470d7aff86a0da02ddc2773288ef75e52e",
+      "ledger": 59400486,
+      "segments": [
+       "E102",
+       "P88"
+      ]
+     },
+     {
+      "tx": "c2e9f2581fb7c2be4a23ddda528d92c04598e7694177035b1448727f05f778fd",
+      "ledger": 59400491,
+      "segments": [
+       "E36",
+       "P147"
+      ]
+     }
+    ]
+   },
+   "OperationResult.op_too_many_subentries": {
+    "class": "long_tail",
+    "txs": 308,
+    "caps": [],
+    "examples": [
+     {
+      "tx": "d254b3af2c6021fd4893b9473a5c7c604533289aabe9478244012d73ddca0c97",
+      "ledger": 59500243,
+      "segments": [
+       "E132",
+       "P60"
+      ]
+     },
+     {
+      "tx": "e86819043236cad94cf1601ad8aad87085c1baf08e6b3a7c72be9c7edfac9fdf",
+      "ledger": 60000171,
+      "segments": [
+       "E149",
+       "P198"
+      ]
+     },
+     {
+      "tx": "a46c3bb324e041f7c18ad24af4685be811fff050b58f8ac80d120643c70aca28",
+      "ledger": 60000174,
+      "segments": [
+       "E111",
+       "P35"
+      ]
+     }
+    ]
+   },
+   "ManageDataResult.low_reserve": {
+    "class": "long_tail",
+    "txs": 2,
+    "caps": [],
+    "examples": [
+     {
+      "tx": "7b7387274cbda09991d6896f77a1c34e3100fe2a856325f40352fb38e1400bd9",
+      "ledger": 59500248,
+      "segments": [
+       "E160",
+       "P48"
+      ]
+     },
+     {
+      "tx": "5d029810a0c276e36cd8912f6fd9e6bf653742b273444cbd024b490f28e33ff7",
+      "ledger": 65200302,
+      "segments": [
+       "E38",
+       "P96"
+      ]
+     }
+    ]
+   },
+   "InvokeHostFunctionResult.resource_limit_exceeded": {
+    "class": "long_tail",
+    "txs": 294,
+    "caps": [
+     "CAP-0046"
+    ],
+    "examples": [
+     {
+      "tx": "dee3e48fb7cd89edaf95d69eb95aa5be9577c4b26a6c70051a5826f4915447d2",
+      "ledger": 59500277,
+      "segments": [
+       "E158",
+       "P157"
+      ]
+     },
+     {
+      "tx": "bf99bbedc137d9f6f474d2830b94992c49f11f8314fe98cdefed58283f08a61c",
+      "ledger": 59800325,
+      "segments": [
+       "E189",
+       "P186"
+      ]
+     },
+     {
+      "tx": "eb5072732cad002652e67391085de6fad1278e26b85d94577c07c363725922c1",
+      "ledger": 61200021,
+      "segments": [
+       "E205",
+       "P249"
+      ]
+     }
+    ]
+   },
+   "ScError.budget": {
+    "class": "long_tail",
+    "txs": 314,
+    "caps": [],
+    "examples": [
+     {
+      "tx": "dee3e48fb7cd89edaf95d69eb95aa5be9577c4b26a6c70051a5826f4915447d2",
+      "ledger": 59500277,
+      "segments": [
+       "E158",
+       "P157"
+      ]
+     },
+     {
+      "tx": "bf99bbedc137d9f6f474d2830b94992c49f11f8314fe98cdefed58283f08a61c",
+      "ledger": 59800325,
+      "segments": [
+       "E189",
+       "P186"
+      ]
+     },
+     {
+      "tx": "b63f308cf33364d413e2d179098a5e29e25ffe40f2ebdfd409e8624b77a8cca7",
+      "ledger": 61000066,
+      "segments": [
+       "E222",
+       "P219"
+      ]
+     }
+    ]
+   },
+   "HostFunction.create_contract_v2": {
+    "class": "long_tail",
+    "txs": 88,
+    "caps": [
+     "CAP-0046"
+    ],
+    "examples": [
+     {
+      "tx": "dbe97fc96cf44a9dc0d52609975c0879a5ee06d11f392a6173c0821367b07df4",
+      "ledger": 59600299,
+      "segments": [
+       "E174",
+       "P174"
+      ]
+     },
+     {
+      "tx": "82bc3557c48b61dc1795a3e41acbd19725aae082a60e45b8c83f595318eee04c",
+      "ledger": 59600369,
+      "segments": [
+       "E150",
+       "P200"
+      ]
+     },
+     {
+      "tx": "c5e664a336e8265a805e6dd08daabb152264cdee0935013663bd4b80297336fe",
+      "ledger": 59600441,
+      "segments": [
+       "E176",
+       "P148"
+      ]
+     }
+    ]
+   },
+   "ContractIdPreimage.address": {
+    "class": "long_tail",
+    "txs": 105,
+    "caps": [
+     "CAP-0046"
+    ],
+    "examples": [
+     {
+      "tx": "dbe97fc96cf44a9dc0d52609975c0879a5ee06d11f392a6173c0821367b07df4",
+      "ledger": 59600299,
+      "segments": [
+       "E174",
+       "P174"
+      ]
+     },
+     {
+      "tx": "82bc3557c48b61dc1795a3e41acbd19725aae082a60e45b8c83f595318eee04c",
+      "ledger": 59600369,
+      "segments": [
+       "E150",
+       "P200"
+      ]
+     },
+     {
+      "tx": "c5e664a336e8265a805e6dd08daabb152264cdee0935013663bd4b80297336fe",
+      "ledger": 59600441,
+      "segments": [
+       "E176",
+       "P148"
+      ]
+     }
+    ]
+   },
+   "SorobanAuthorizedFunction.create_contract_v2_host_fn": {
+    "class": "long_tail",
+    "txs": 105,
+    "caps": [
+     "CAP-0046"
+    ],
+    "examples": [
+     {
+      "tx": "dbe97fc96cf44a9dc0d52609975c0879a5ee06d11f392a6173c0821367b07df4",
+      "ledger": 59600299,
+      "segments": [
+       "E174",
+       "P174"
+      ]
+     },
+     {
+      "tx": "82bc3557c48b61dc1795a3e41acbd19725aae082a60e45b8c83f595318eee04c",
+      "ledger": 59600369,
+      "segments": [
+       "E150",
+       "P200"
+      ]
+     },
+     {
+      "tx": "c5e664a336e8265a805e6dd08daabb152264cdee0935013663bd4b80297336fe",
+      "ledger": 59600441,
+      "segments": [
+       "E176",
+       "P148"
+      ]
+     }
+    ]
+   },
+   "LiquidityPoolDepositResult.no_trust": {
+    "class": "long_tail",
+    "txs": 68,
+    "caps": [
+     "CAP-0038"
+    ],
+    "examples": [
+     {
+      "tx": "d08b83c275da1065d3a65c1345942cbb699bb1d7c1d9d82754d04745a0fde806",
+      "ledger": 59600429,
+      "segments": [
+       "E5",
+       "P75"
+      ]
+     },
+     {
+      "tx": "aab75190311339b4a7e0ce4d7697b4d11d243a4bb4f672e02d01735ad5add6e7",
+      "ledger": 59600436,
+      "segments": [
+       "E85",
+       "P18"
+      ]
+     },
+     {
+      "tx": "63e78c7b50e5983ae659c1063d0620d08c6614ec57c7b9efd398fde99fc4dc08",
+      "ledger": 59800245,
+      "segments": [
+       "E234",
+       "P171"
+      ]
+     }
+    ]
+   },
+   "HostFunction.upload_contract_wasm": {
+    "class": "long_tail",
+    "txs": 35,
+    "caps": [
+     "CAP-0046"
+    ],
+    "examples": [
+     {
+      "tx": "0a92aaad1eea692616203e05c76c771193592b994e26228f1d891d116d7612b5",
+      "ledger": 59600429,
+      "segments": [
+       "E181",
+       "P137"
+      ]
+     },
+     {
+      "tx": "5306449993146d9eddc6d18bcca14c2fb75cc3cd04f4f3d30216f6a00a55fa85",
+      "ledger": 60500002,
+      "segments": [
+       "E299",
+       "P256"
+      ]
+     },
+     {
+      "tx": "c411c979dc2891a862de2dd9af9a0cdfa0c8a2c9551a6120bec65d9884643834",
+      "ledger": 60500034,
+      "segments": [
+       "E152",
+       "P181"
+      ]
+     }
+    ]
+   },
+   "LedgerEntryData.contract_code": {
+    "class": "long_tail",
+    "txs": 30,
+    "caps": [],
+    "examples": [
+     {
+      "tx": "0a92aaad1eea692616203e05c76c771193592b994e26228f1d891d116d7612b5",
+      "ledger": 59600429,
+      "segments": [
+       "E181",
+       "P137"
+      ]
+     },
+     {
+      "tx": "5306449993146d9eddc6d18bcca14c2fb75cc3cd04f4f3d30216f6a00a55fa85",
+      "ledger": 60500002,
+      "segments": [
+       "E299",
+       "P256"
+      ]
+     },
+     {
+      "tx": "c411c979dc2891a862de2dd9af9a0cdfa0c8a2c9551a6120bec65d9884643834",
+      "ledger": 60500034,
+      "segments": [
+       "E152",
+       "P181"
+      ]
+     }
+    ]
+   },
+   "ContractCodeEntryExt.v1": {
+    "class": "long_tail",
+    "txs": 30,
+    "caps": [],
+    "examples": [
+     {
+      "tx": "0a92aaad1eea692616203e05c76c771193592b994e26228f1d891d116d7612b5",
+      "ledger": 59600429,
+      "segments": [
+       "E181",
+       "P137"
+      ]
+     },
+     {
+      "tx": "5306449993146d9eddc6d18bcca14c2fb75cc3cd04f4f3d30216f6a00a55fa85",
+      "ledger": 60500002,
+      "segments": [
+       "E299",
+       "P256"
+      ]
+     },
+     {
+      "tx": "c411c979dc2891a862de2dd9af9a0cdfa0c8a2c9551a6120bec65d9884643834",
+      "ledger": 60500034,
+      "segments": [
+       "E152",
+       "P181"
+      ]
+     }
+    ]
+   },
+   "CreateClaimableBalanceResult.underfunded": {
+    "class": "long_tail",
+    "txs": 9,
+    "caps": [
+     "CAP-0023"
+    ],
+    "examples": [
+     {
+      "tx": "d84f13209575004c349d0608279fd75c286f76a5997e4a96313269784db72e41",
+      "ledger": 59700195,
+      "segments": [
+       "E282",
+       "P134"
+      ]
+     },
+     {
+      "tx": "3ad48d7500055af999fac754527b5b7eeb0b26b052e80529383f758e21490f96",
+      "ledger": 59700198,
+      "segments": [
+       "E186",
+       "P3"
+      ]
+     },
+     {
+      "tx": "23c2c11b93ddaf4f2cbc5cc4691baa2c65c464cb5f2c529500f526349402e18c",
+      "ledger": 59700200,
+      "segments": [
+       "E277",
+       "P212"
+      ]
+     }
+    ]
+   },
+   "ManageSellOfferResult.sell_no_trust": {
+    "class": "long_tail",
+    "txs": 401,
+    "caps": [],
+    "examples": [
+     {
+      "tx": "3004bc402e442c5792516dbb4d15dcafb81dcb87fc811057943a939c584fa157",
+      "ledger": 60000340,
+      "segments": [
+       "E29",
+       "P154"
+      ]
+     },
+     {
+      "tx": "ec038c48efcbd0e5b5bd51d3c4f5403ea43bb857abb7e7f2d391522d7ed889cd",
+      "ledger": 60000341,
+      "segments": [
+       "E155",
+       "P78"
+      ]
+     },
+     {
+      "tx": "cbee4f794967e8e53e4126fde151d2d41e1411ee03923fef7dd0fa200a7c8365",
+      "ledger": 60000342,
+      "segments": [
+       "E130",
+       "P334"
+      ]
+     }
+    ]
+   },
+   "LiquidityPoolWithdrawResult.no_trust": {
+    "class": "long_tail",
+    "txs": 2,
+    "caps": [
+     "CAP-0038"
+    ],
+    "examples": [
+     {
+      "tx": "845115146e712ef827bcd3f50248c4b70c1725a20ab6395673dfbce4b9768b2a",
+      "ledger": 60000433,
+      "segments": [
+       "E45",
+       "P166"
+      ]
+     },
+     {
+      "tx": "fc978a5a545720d9160f1ee668b73f3599ba6db6664d410b1f5ce354cb83f29c",
+      "ledger": 63000269,
+      "segments": [
+       "E113",
+       "P125"
+      ]
+     }
+    ]
+   },
+   "AccountMergeResult.has_sub_entries": {
+    "class": "long_tail",
+    "txs": 7,
+    "caps": [],
+    "examples": [
+     {
+      "tx": "dbd33f718b0713af39ea13431b572e48779a913fabc2b69eb0d22ef3a45ba05b",
+      "ledger": 60100048,
+      "segments": [
+       "E74",
+       "P182"
+      ]
+     },
+     {
+      "tx": "12bf67fa01253b8a5b5b688b33e03594e6158d11aa99a3a368519ebda172348e",
+      "ledger": 60100057,
+      "segments": [
+       "E38",
+       "P113"
+      ]
+     },
+     {
+      "tx": "2580a422509536257f7f1bf792e9d236b40e27c6a1e45906b230ce48542cd125",
+      "ledger": 60100063,
+      "segments": [
+       "E109",
+       "P20"
+      ]
+     }
+    ]
+   },
+   "AccountMergeResult.is_sponsor": {
+    "class": "long_tail",
+    "txs": 5,
+    "caps": [
+     "CAP-0033"
+    ],
+    "examples": [
+     {
+      "tx": "bf8e857a95013ea8b3da22d0d1d876855a6f58cb1378547e165c071548b42c05",
+      "ledger": 60100056,
+      "segments": [
+       "E179",
+       "P25"
+      ]
+     },
+     {
+      "tx": "4c0d12867090b9da803c980267e76d29bf7e35d544399f07486776b62f33d14b",
+      "ledger": 60100058,
+      "segments": [
+       "E4",
+       "P147"
+      ]
+     },
+     {
+      "tx": "db642b7909bb7ef4dbe2b43ecc87a290fe6548a13dddb9bd3da02a6b1ce30e7b",
+      "ledger": 60100066,
+      "segments": [
+       "E151",
+       "P80"
+      ]
+     }
+    ]
+   },
+   "ManageSellOfferResult.line_full": {
+    "class": "long_tail",
+    "txs": 28,
+    "caps": [],
+    "examples": [
+     {
+      "tx": "b03e41465b2ee9f627aa014698726403319730e0d10166f4ae866ff6f383b001",
+      "ledger": 60100393,
+      "segments": [
+       "E76",
+       "P137"
+      ]
+     },
+     {
+      "tx": "384705fb195a8db95820a2ce605ff455076b4f78241471b61784bef5dff566f0",
+      "ledger": 60300024,
+      "segments": [
+       "E175",
+       "P97"
+      ]
+     },
+     {
+      "tx": "db380ce13f258ceb3613aeef2f5be95e1f9ab8d260b60e208161a22efec49958",
+      "ledger": 60300027,
+      "segments": [
+       "E193",
+       "P285"
+      ]
+     }
+    ]
+   },
+   "LedgerKey.liquidity_pool": {
+    "class": "long_tail",
+    "txs": 23,
+    "caps": [
+     "CAP-0038"
+    ],
+    "examples": [
+     {
+      "tx": "adc8f8781c13e732eb7327e522f55f63282fae5c3b756d12b28f26ca8829142d",
+      "ledger": 60100434,
+      "segments": [
+       "E265",
+       "P216"
+      ]
+     },
+     {
+      "tx": "04ce6b3e40d6d1ec5bee1192305d4361686d122f3f4a8252dabdd8330644d1c9",
+      "ledger": 60100479,
+      "segments": [
+       "E3",
+       "P6"
+      ]
+     },
+     {
+      "tx": "9164ef3bc119b1f39c6b2a81c55157372dcbda7b07bb2abea53fc67e9bd11fb7",
+      "ledger": 61800104,
+      "segments": [
+       "E52",
+       "P49"
+      ]
+     }
+    ]
+   },
+   "LiquidityPoolDepositResult.bad_price": {
+    "class": "long_tail",
+    "txs": 90,
+    "caps": [
+     "CAP-0038"
+    ],
+    "examples": [
+     {
+      "tx": "31bf04e59b23884614ab0ded634e020b72bc32d0c633490c5a7d305dbbec5ed4",
+      "ledger": 60100443,
+      "segments": [
+       "E6",
+       "P251"
+      ]
+     },
+     {
+      "tx": "478f83c926339dd81f550d44239f6def5b80b69f437c1ad8e0fa99f2e42de2ef",
+      "ledger": 61200468,
+      "segments": [
+       "E40",
+       "P57"
+      ]
+     },
+     {
+      "tx": "66356e0a172adc27b297a9bf83493f1d238098294436dbc62fc9fabf26b88d08",
+      "ledger": 61800164,
+      "segments": [
+       "E35",
+       "P8"
+      ]
+     }
+    ]
+   },
+   "AccountMergeResult.no_account": {
+    "class": "long_tail",
+    "txs": 2,
+    "caps": [],
+    "examples": [
+     {
+      "tx": "ed4ce3df6cdb53d134647f95a92698d7ba07d1fdae718dd6899b7de68084fcef",
+      "ledger": 60100477,
+      "segments": [
+       "E103",
+       "P21"
+      ]
+     },
+     {
+      "tx": "07af1ba510e101fcd83ead4d83de8058dadbb251662cc684a37ce62fbd4dc4f8",
+      "ledger": 64700457,
+      "segments": [
+       "E78",
+       "P15"
+      ]
+     }
+    ]
+   },
+   "PaymentResult.src_no_trust": {
+    "class": "long_tail",
+    "txs": 1802,
+    "caps": [],
+    "examples": [
+     {
+      "tx": "c76a9caaa590f9527dac878cedae215cd8da822e911ce7d168a6a4a83c5007e9",
+      "ledger": 60200284,
+      "segments": [
+       "E260",
+       "P282"
+      ]
+     },
+     {
+      "tx": "2b1f04959e26faa0b21a23d29a85d7bec6acfa65863a418a81e5a9fc051f16e3",
+      "ledger": 60300165,
+      "segments": [
+       "E186",
+       "P178"
+      ]
+     },
+     {
+      "tx": "8faf10d69676ce59bee78c3feda18d56bb2f9643cf533ad2ef48191cc82cbe21",
+      "ledger": 60300459,
+      "segments": [
+       "E52",
+       "P69"
+      ]
+     }
+    ]
+   },
+   "CreateClaimableBalanceResult.not_authorized": {
+    "class": "long_tail",
+    "txs": 3,
+    "caps": [
+     "CAP-0023"
+    ],
+    "examples": [
+     {
+      "tx": "6a633e295c4784545c82e66f530640494cf89c673e023e62305cc00e6a6417cd",
+      "ledger": 60300001,
+      "segments": [
+       "E116",
+       "P16"
+      ]
+     },
+     {
+      "tx": "1b1bbd1616aadcfbcef7bf8caec45ab3c5be8d0f7fb953af2bde2339758532de",
+      "ledger": 63400401,
+      "segments": [
+       "E14",
+       "P122"
+      ]
+     },
+     {
+      "tx": "a7056cf89dd77e137f219f27bada8a3eeb5679d998699e13e6e39eede422ce0f",
+      "ledger": 64800235,
+      "segments": [
+       "E395",
+       "P17"
+      ]
+     }
+    ]
+   },
+   "ScError.value": {
+    "class": "long_tail",
+    "txs": 7,
+    "caps": [],
+    "examples": [
+     {
+      "tx": "b4b00d73b6755748e9f35b8130e7c19bbc5f6a699c3096fc36e6574e8765a529",
+      "ledger": 60400430,
+      "segments": [
+       "E175",
+       "P173"
+      ]
+     },
+     {
+      "tx": "c0fb1ffee88198ed7375afd9409d5cb33e765d708eae47cf47d0703109911f7e",
+      "ledger": 60400436,
+      "segments": [
+       "E357",
+       "P346"
+      ]
+     },
+     {
+      "tx": "3c8234ff6a83f004974193cbe8a6942a4ff305435290b8e63e2c9b618f0439f6",
+      "ledger": 60400457,
+      "segments": [
+       "E293",
+       "P264"
+      ]
+     }
+    ]
+   },
+   "ScErrorCode.unexpected_type": {
+    "class": "long_tail",
+    "txs": 3,
+    "caps": [],
+    "examples": [
+     {
+      "tx": "b4b00d73b6755748e9f35b8130e7c19bbc5f6a699c3096fc36e6574e8765a529",
+      "ledger": 60400430,
+      "segments": [
+       "E175",
+       "P173"
+      ]
+     },
+     {
+      "tx": "c0fb1ffee88198ed7375afd9409d5cb33e765d708eae47cf47d0703109911f7e",
+      "ledger": 60400436,
+      "segments": [
+       "E357",
+       "P346"
+      ]
+     },
+     {
+      "tx": "3c8234ff6a83f004974193cbe8a6942a4ff305435290b8e63e2c9b618f0439f6",
+      "ledger": 60400457,
+      "segments": [
+       "E293",
+       "P264"
+      ]
+     }
+    ]
+   },
+   "ManageSellOfferResult.buy_not_authorized": {
+    "class": "long_tail",
+    "txs": 9,
+    "caps": [],
+    "examples": [
+     {
+      "tx": "a058d7d352a95c5b2af70007afaf274342a065dbf83be141ed1c736058d2d91c",
+      "ledger": 60700103,
+      "segments": [
+       "E26",
+       "P70"
+      ]
+     },
+     {
+      "tx": "fbdfac3507b82f5024984226895f7547ca619714dea7766e976ffb69473476ff",
+      "ledger": 60700158,
+      "segments": [
+       "E52",
+       "P93"
+      ]
+     },
+     {
+      "tx": "460fb7c6e24e48c3543af5ffedc22f1b217298756dcb3941039d4a89192b1c7c",
+      "ledger": 60700163,
+      "segments": [
+       "E81",
+       "P86"
+      ]
+     }
+    ]
+   },
+   "HostFunction.create_contract": {
+    "class": "long_tail",
+    "txs": 18,
+    "caps": [
+     "CAP-0046"
+    ],
+    "examples": [
+     {
+      "tx": "d919b7caf191a129fa5ecdb75909bb1a5887cd76112ee5a5155ebe985964e418",
+      "ledger": 60800267,
+      "segments": [
+       "E281",
+       "P281"
+      ]
+     },
+     {
+      "tx": "a930fb976f917294a0f3d7d22d9daa83c33d5a6a8446fbf085cb6b6e55293f6f",
+      "ledger": 61100117,
+      "segments": [
+       "E434",
+       "P336"
+      ]
+     },
+     {
+      "tx": "0229358201442ce7ef4306d02550d8746cd0d9e48b0d6db06a6c30096ad82d78",
+      "ledger": 61300420,
+      "segments": [
+       "E99",
+       "P103"
+      ]
+     }
+    ]
+   },
+   "ContractIdPreimage.asset": {
+    "class": "long_tail",
+    "txs": 4,
+    "caps": [
+     "CAP-0046"
+    ],
+    "examples": [
+     {
+      "tx": "d919b7caf191a129fa5ecdb75909bb1a5887cd76112ee5a5155ebe985964e418",
+      "ledger": 60800267,
+      "segments": [
+       "E281",
+       "P281"
+      ]
+     },
+     {
+      "tx": "a930fb976f917294a0f3d7d22d9daa83c33d5a6a8446fbf085cb6b6e55293f6f",
+      "ledger": 61100117,
+      "segments": [
+       "E434",
+       "P336"
+      ]
+     },
+     {
+      "tx": "28a6bce61a20165d322142e278aea630afdc708125472f5e58c9b1e8ec87dfd2",
+      "ledger": 61700418,
+      "segments": [
+       "E436",
+       "P423"
+      ]
+     }
+    ]
+   },
+   "ContractExecutable.stellar_asset": {
+    "class": "long_tail",
+    "txs": 20,
+    "caps": [
+     "CAP-0046"
+    ],
+    "examples": [
+     {
+      "tx": "d919b7caf191a129fa5ecdb75909bb1a5887cd76112ee5a5155ebe985964e418",
+      "ledger": 60800267,
+      "segments": [
+       "E281",
+       "P281"
+      ]
+     },
+     {
+      "tx": "a930fb976f917294a0f3d7d22d9daa83c33d5a6a8446fbf085cb6b6e55293f6f",
+      "ledger": 61100117,
+      "segments": [
+       "E434",
+       "P336"
+      ]
+     },
+     {
+      "tx": "a533d75e7dcd7a2ebc644c000f11815a495349ad1e3061b827330b09e9d1757a",
+      "ledger": 61500233,
+      "segments": [
+       "E267",
+       "P337"
+      ]
+     }
+    ]
+   },
+   "OperationResult.op_exceeded_work_limit": {
+    "class": "long_tail",
+    "txs": 235,
+    "caps": [],
+    "examples": [
+     {
+      "tx": "b9412d94c58b588ef36b8ae02c508f31056cdd233d9d3560e0597d497b086fb6",
+      "ledger": 61000002,
+      "segments": [
+       "E322",
+       "P323"
+      ]
+     },
+     {
+      "tx": "3cc17c88a13f7e3cb6ad96978b786c8bdf54605133a50d7f1d4d6cdee32101d0",
+      "ledger": 61000002,
+      "segments": [
+       "E323",
+       "P324"
+      ]
+     },
+     {
+      "tx": "0684638956114c6214dd085ab04f179a8d905a294df42f027b908d65de9eb31a",
+      "ledger": 61000002,
+      "segments": [
+       "E325",
+       "P327"
+      ]
+     }
+    ]
+   },
+   "InvokeHostFunctionResult.insufficient_refundable_fee": {
+    "class": "long_tail",
+    "txs": 14,
+    "caps": [
+     "CAP-0046"
+    ],
+    "examples": [
+     {
+      "tx": "b63f308cf33364d413e2d179098a5e29e25ffe40f2ebdfd409e8624b77a8cca7",
+      "ledger": 61000066,
+      "segments": [
+       "E222",
+       "P219"
+      ]
+     },
+     {
+      "tx": "4be1f5b9260a91e3deba175a4caae7ac0e1c5286ce19eefad2cd453fd324e397",
+      "ledger": 61400497,
+      "segments": [
+       "E285",
+       "P413"
+      ]
+     },
+     {
+      "tx": "d6abb6fda606221759e5c2fc4776478a61ca96978d12be7e109c1b52899f1927",
+      "ledger": 61600036,
+      "segments": [
+       "E111",
+       "P111"
+      ]
+     }
+    ]
+   },
+   "OperationBody.extend_footprint_ttl": {
+    "class": "long_tail",
+    "txs": 5,
+    "caps": [],
+    "examples": [
+     {
+      "tx": "741dc2c7addd590799bd0e2e69c5e8aba6a675fce99488ff2fac9430bc943a85",
+      "ledger": 61100304,
+      "segments": [
+       "E371",
+       "P520"
+      ]
+     },
+     {
+      "tx": "99ed613093c75b06b782fc8223b39dc663ce78fd0ee0b29b1663001057209bd1",
+      "ledger": 61100463,
+      "segments": [
+       "E437",
+       "P390"
+      ]
+     },
+     {
+      "tx": "640e143221e10732c5c9e2f9df460f66691dba423e07c6eaa7ba688edd246d7f",
+      "ledger": 61100477,
+      "segments": [
+       "E699",
+       "P723"
+      ]
+     }
+    ]
+   },
+   "OperationResultTr.extend_footprint_ttl": {
+    "class": "long_tail",
+    "txs": 5,
+    "caps": [],
+    "examples": [
+     {
+      "tx": "741dc2c7addd590799bd0e2e69c5e8aba6a675fce99488ff2fac9430bc943a85",
+      "ledger": 61100304,
+      "segments": [
+       "E371",
+       "P520"
+      ]
+     },
+     {
+      "tx": "99ed613093c75b06b782fc8223b39dc663ce78fd0ee0b29b1663001057209bd1",
+      "ledger": 61100463,
+      "segments": [
+       "E437",
+       "P390"
+      ]
+     },
+     {
+      "tx": "640e143221e10732c5c9e2f9df460f66691dba423e07c6eaa7ba688edd246d7f",
+      "ledger": 61100477,
+      "segments": [
+       "E699",
+       "P723"
+      ]
+     }
+    ]
+   },
+   "ExtendFootprintTtlResult.success": {
+    "class": "long_tail",
+    "txs": 5,
+    "caps": [
+     "CAP-0046"
+    ],
+    "examples": [
+     {
+      "tx": "741dc2c7addd590799bd0e2e69c5e8aba6a675fce99488ff2fac9430bc943a85",
+      "ledger": 61100304,
+      "segments": [
+       "E371",
+       "P520"
+      ]
+     },
+     {
+      "tx": "99ed613093c75b06b782fc8223b39dc663ce78fd0ee0b29b1663001057209bd1",
+      "ledger": 61100463,
+      "segments": [
+       "E437",
+       "P390"
+      ]
+     },
+     {
+      "tx": "640e143221e10732c5c9e2f9df460f66691dba423e07c6eaa7ba688edd246d7f",
+      "ledger": 61100477,
+      "segments": [
+       "E699",
+       "P723"
+      ]
+     }
+    ]
+   },
+   "PathPaymentStrictReceiveResult.not_authorized": {
+    "class": "long_tail",
+    "txs": 4,
+    "caps": [],
+    "examples": [
+     {
+      "tx": "fb1ae3c3a30a8111a4e1c1d7dd68bfb261184a6d06372497c35c26520ab8873d",
+      "ledger": 62300358,
+      "segments": [
+       "E88",
+       "P89"
+      ]
+     },
+     {
+      "tx": "4101b5f335255fa8f735163baf5ad2712d98cd9917a04b517397c9332e4797e2",
+      "ledger": 62300363,
+      "segments": [
+       "E113",
+       "P77"
+      ]
+     },
+     {
+      "tx": "a0cafa1d0ba08fe20940ff6a2401618c3b6fe9a8a206ad532ed4568f5b93775d",
+      "ledger": 62300474,
+      "segments": [
+       "E29",
+       "P69"
+      ]
+     }
+    ]
+   },
+   "ManageBuyOfferResult.line_full": {
+    "class": "long_tail",
+    "txs": 1,
+    "caps": [],
+    "examples": [
+     {
+      "tx": "7033d6570fdc79fdbfbba1ced66451ef24a95aaa0238816b3fefef81ca0b9d71",
+      "ledger": 62600149,
+      "segments": [
+       "E73",
+       "P69"
+      ]
+     }
+    ]
+   },
+   "ContractEventType.system": {
+    "class": "long_tail",
+    "txs": 4,
+    "caps": [
+     "CAP-0067"
+    ],
+    "examples": [
+     {
+      "tx": "2d753cb8d0772ff0367927222d3f12c1fe9fe0a2ec7dcee83244fca92eb4690c",
+      "ledger": 63200310,
+      "segments": [
+       "E162",
+       "P153"
+      ]
+     },
+     {
+      "tx": "63181d77b4221be2d5216e31f5eb22f6a769490c2b9ab80ecb35361e9e56df5d",
+      "ledger": 63200393,
+      "segments": [
+       "E345",
+       "P192"
+      ]
+     },
+     {
+      "tx": "a14cf7e0a542dc337ec8c4c96bb50141f3f64078cf250f9aba996873e07954aa",
+      "ledger": 64200169,
+      "segments": [
+       "E239",
+       "P238"
+      ]
+     }
+    ]
+   },
+   "LiquidityPoolWithdrawResult.line_full": {
+    "class": "long_tail",
+    "txs": 9,
+    "caps": [
+     "CAP-0038"
+    ],
+    "examples": [
+     {
+      "tx": "6592607a2394eb28679c4b5d07b1a2eeac1c3273a0bad295ef64a6082c86f376",
+      "ledger": 63500187,
+      "segments": [
+       "E56",
+       "P117"
+      ]
+     },
+     {
+      "tx": "97368c73cd8a679e5a81ad18d7d394f3a938dfebe5d9e64ac6fd2f1bc547af54",
+      "ledger": 63500226,
+      "segments": [
+       "E57",
+       "P99"
+      ]
+     },
+     {
+      "tx": "8a9d094a7f0bf8d6efa8d58efd2eb215940bd99629fa0c3692ccae620b49711d",
+      "ledger": 63500231,
+      "segments": [
+       "E148",
+       "P94"
+      ]
+     }
+    ]
+   },
+   "RevokeSponsorshipOp.signer": {
+    "class": "long_tail",
+    "txs": 1,
+    "caps": [
+     "CAP-0033"
+    ],
+    "examples": [
+     {
+      "tx": "db04ef73240cb427764411b674b90c595a8fe3f5852d373f50aa86f5626bcf3b",
+      "ledger": 63800203,
+      "segments": [
+       "E63",
+       "P93"
+      ]
+     }
+    ]
+   },
+   "RevokeSponsorshipResult.only_transferable": {
+    "class": "long_tail",
+    "txs": 3,
+    "caps": [
+     "CAP-0033"
+    ],
+    "examples": [
+     {
+      "tx": "6c8d47c518772059e641a386929a0ac1d2d48164b060af44fb670ca21d23cd49",
+      "ledger": 63900130,
+      "segments": [
+       "E36",
+       "P146"
+      ]
+     },
+     {
+      "tx": "f00986209d9f2e53293ebb50ab507727f92203c1c87dac3d4d3617723502c312",
+      "ledger": 63900131,
+      "segments": [
+       "E255",
+       "P70"
+      ]
+     },
+     {
+      "tx": "f1f8ea5658660fb0c22779cf8d3bd8391e54915a69ecf65df2dce98d4e9d1dc5",
+      "ledger": 63900132,
+      "segments": [
+       "E667",
+       "P310"
+      ]
+     }
+    ]
+   },
+   "ScVal.i256": {
+    "class": "long_tail",
+    "txs": 44,
+    "caps": [
+     "CAP-0046"
+    ],
+    "examples": [
+     {
+      "tx": "b956710fc9e22f7d8816562a9230ba1622cec72bf2d04179e8da67b4795a247d",
+      "ledger": 64600305,
+      "segments": [
+       "E189",
+       "P177"
+      ]
+     },
+     {
+      "tx": "cecc43fd634dec18f196b8b08a81e795d13b3560252194198ea76ad8f57419a7",
+      "ledger": 64600317,
+      "segments": [
+       "E168",
+       "P169"
+      ]
+     },
+     {
+      "tx": "2d802b0d56175624e45f299f7b28e5cd33016c2676eb8f6e52c6c03c362efff4",
+      "ledger": 64600317,
+      "segments": [
+       "E174",
+       "P174"
+      ]
+     }
+    ]
+   },
+   "InvokeHostFunctionResult.entry_archived": {
+    "class": "long_tail",
+    "txs": 4,
+    "caps": [
+     "CAP-0046"
+    ],
+    "examples": [
+     {
+      "tx": "6f686cdfc628e56218a5963559817ad9a1f6d45d3e6112a6f3bf4cf16b3f4b11",
+      "ledger": 64700486,
+      "segments": [
+       "E884",
+       "P873"
+      ]
+     },
+     {
+      "tx": "3e4eaafe9f058776cbc1f6eb2e7005966a9948628bf30bf0635192bc4b3de30c",
+      "ledger": 64700495,
+      "segments": [
+       "E779",
+       "P795"
+      ]
+     },
+     {
+      "tx": "de271f6e5c2c4d9b2e22cb12e202855baf7945c582c37d2c0e93f6bb4e9d9b41",
+      "ledger": 64700495,
+      "segments": [
+       "E796",
+       "P778"
+      ]
+     }
+    ]
+   },
+   "PathPaymentStrictSendResult.no_destination": {
+    "class": "long_tail",
+    "txs": 31,
+    "caps": [],
+    "examples": [
+     {
+      "tx": "cfdc703017209bce1f5a9cda61bdbfd5bee86bdf852c277eebbceebc0c4976b5",
+      "ledger": 65100060,
+      "segments": [
+       "E97",
+       "P115"
+      ]
+     },
+     {
+      "tx": "ad6af088f255d9d8926b7a0400b08561d3cd4718c01baba908f08ce4c9d5e8e7",
+      "ledger": 65100125,
+      "segments": [
+       "E170",
+       "P44"
+      ]
+     },
+     {
+      "tx": "e631582dc9129eb3e7c5f1e1ea8ab2dfd89f72d43e703af06f14b55031fdc80b",
+      "ledger": 65100192,
+      "segments": [
+       "E62",
+       "P203"
+      ]
+     }
+    ]
+   },
+   "soroban.creates_trustline (#731 shape)": {
+    "class": "bug_shape",
+    "txs": 1,
+    "caps": [
+     "CAP-0046",
+     "CAP-0067"
+    ],
+    "examples": [
+     {
+      "tx": "c28fd856089cd9ffaa468c1f121f804ee2ddb33bbf45a95d82a497a4966f1559",
+      "ledger": 65300453,
+      "segments": [
+       "E181",
+       "P246"
+      ]
+     }
+    ]
+   }
+  }
+ }
+}

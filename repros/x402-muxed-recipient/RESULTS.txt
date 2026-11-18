@@ -1,0 +1,16 @@
+# repros/x402-muxed-recipient/run.sh output (2026-11-13 19:01 CST, rustc 1.100.0, soroban-sdk 28 / soroban-env-host 28.0.2)
+# Error(Contract, #3404) = NotAllowed (merchant-allowlist-policy src/logic.rs)
+to (M, from corpus): AAAAEgAAAAIAAAAAAAAAAJU5eeGnVem0iRyAJQA96JHkJh3BKv4jVXOoyhe64g0y
+to (W, from corpus): AAAAEgAAAAX//////////wAEgoGH4DgD7qBRHFd3eWSgGltjjsiALm3Ky13I5ROM
+allowlisted merchant (base G of the M): GCKTS6PBU5K6TNEJDSACKAB55CI6IJQ5YEVP4I2VOOUMUF524IGTF4H6
+== buggy @ fd9c478 2026-10-30 docs: add demo video link to README
+  M: test test::zz_corpus_cap67_muxed_to_of_allowlisted_merchant ... FAILED
+  M: HostError: Error(Contract, #3404)
+  M: test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 13 filtered out; finished in 0.01s
+  W: W decode in this soroban-sdk: error: Invalid
+== fixed @ a1c5a03 2026-11-04 fix(allowlist): accept muxed recipient addresses (p30)
+  M: test test::zz_corpus_cap67_muxed_to_of_allowlisted_merchant ... ok
+  M: test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 15 filtered out; finished in 0.00s
+  W: W decode in this soroban-sdk: error: Invalid
+
+x402 repro behaved as expected

@@ -1,0 +1,906 @@
+{
+  "schema_version": "0.2.0",
+  "id": "mainnet-cap73-nested-sac-trust-creates-trustline",
+  "title": "Mainnet batch contract call whose sub-invocation SAC trust(G) creates a trustline",
+  "caps": [
+    "CAP-0073",
+    "CAP-0046-11"
+  ],
+  "protocol": {
+    "introduced_in": 26,
+    "captured_on": 29,
+    "xdr_ref": "stellar-xdr 30.0.0 (3c2aa43d2ab54d429ae44aa5143d805bf5dba7e2) xdr: 4f524bbac80c781c06e4fb5fc93a2d0d331d6705 features: <none>"
+  },
+  "network": {
+    "passphrase": "Public Global Stellar Network ; September 2015",
+    "expected_tx_hash": "c28fd856089cd9ffaa468c1f121f804ee2ddb33bbf45a95d82a497a4966f1559"
+  },
+  "xdr": {
+    "type": "TransactionEnvelope",
+    "base64": "AAAAAgAAAAAF5oazacNWYHD5MiB4naqTbOajzCwRIeMeRWciiNsJpwAChzoAuxPgAAARtgAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAGAAAAAAAAAABc36D3D2ri5jXlKxsZzOmCtNVSwEkrd3ZGm+FLdj7JiIAAAAFYmF0Y2gAAAAAAAADAAAAEAAAAAEAAAABAAAAEgAAAAAAAAAABeaGs2nDVmBw+TIgeJ2qk2zmo8wsESHjHkVnIojbCacAAAAQAAAAAQAAAAgAAAAQAAAAAQAAAAMAAAASAAAAARRfxoKgdUYSW21QnqHiuEKMbSQar55ZDsxeGR0O8BQyAAAADwAAAA1hc3NlcnRfcmVzdWx0AAAAAAAAEAAAAAEAAAAFAAAAEAAAAAEAAAAAAAAAEgAAAAGBi5+c0/ncB1IieY7o9Jtcdtm7TIyDfjDiu5DydJ7UYwAAAA8AAAATZ2V0X2V4ZWN1dG9yX3Jld2FyZAAAAAAQAAAAAQAAAAAAAAAJAAAAAAAAAAAAAAAAAExLQAAAABAAAAABAAAAAwAAABIAAAABFF/GgqB1RhJbbVCeoeK4QoxtJBqvnlkOzF4ZHQ7wFDIAAAAPAAAADWFzc2VydF9yZXN1bHQAAAAAAAAQAAAAAQAAAAUAAAAQAAAAAQAAAAAAAAASAAAAAYGLn5zT+dwHUiJ5juj0m1x22btMjIN+MOK7kPJ0ntRjAAAADwAAAA9nZXRfb3JkZXJfc3RhdGUAAAAAEAAAAAEAAAACAAAAEgAAAAAAAAAABeaGs2nDVmBw+TIgeJ2qk2zmo8wsESHjHkVnIojbCacAAAANAAAAIB0tTgHH2ualCGJCbngtrLaJ8uaaCtrJK3JI8wWA6vsjAAAAAQAAABAAAAABAAAAAwAAABIAAAABFF/GgqB1RhJbbVCeoeK4QoxtJBqvnlkOzF4ZHQ7wFDIAAAAPAAAADWFzc2VydF9yZXN1bHQAAAAAAAAQAAAAAQAAAAUAAAAQAAAAAQAAAAAAAAASAAAAASiFL2jBmEiONG+xIS7VApBTdhzCT0UzkuNTmCAbCCXnAAAADwAAAAlhbGxvd2FuY2UAAAAAAAAQAAAAAQAAAAIAAAASAAAAAAAAAAAF5oazacNWYHD5MiB4naqTbOajzCwRIeMeRWciiNsJpwAAABIAAAABgYufnNP53AdSInmO6PSbXHbZu0yMg34w4ruQ8nSe1GMAAAAKAAAAAAAAAAAAAAACWgHFAAAAABAAAAABAAAAAwAAABIAAAABFF/GgqB1RhJbbVCeoeK4QoxtJBqvnlkOzF4ZHQ7wFDIAAAAPAAAADWFzc2VydF9yZXN1bHQAAAAAAAAQAAAAAQAAAAUAAAAQAAAAAQAAAAAAAAASAAAAASW0/NhZrsL6Y0hDjEibPDwQyYttIb5P08swy2iVPvl3AAAADwAAAAlhbGxvd2FuY2UAAAAAAAAQAAAAAQAAAAIAAAASAAAAAAAAAAAF5oazacNWYHD5MiB4naqTbOajzCwRIeMeRWciiNsJpwAAABIAAAABgYufnNP53AdSInmO6PSbXHbZu0yMg34w4ruQ8nSe1GMAAAAKAAAAAAAAAAAAAAAAAcnDgAAAABAAAAABAAAAAwAAABIAAAABlCUJ58VvAfGkEEqZlkKmgMkkwmm47yuJrEmgrfH9mjAAAAAPAAAABXRydXN0AAAAAAAAEAAAAAEAAAABAAAAEgAAAAAAAAAABeaGs2nDVmBw+TIgeJ2qk2zmo8wsESHjHkVnIojbCacAAAAQAAAAAQAAAAMAAAASAAAAASiFL2jBmEiONG+xIS7VApBTdhzCT0UzkuNTmCAbCCXnAAAADwAAAAdhcHByb3ZlAAAAABAAAAABAAAABAAAABIAAAAAAAAAAAXmhrNpw1ZgcPkyIHidqpNs5qPMLBEh4x5FZyKI2wmnAAAAEgAAAAGBi5+c0/ncB1IieY7o9Jtcdtm7TIyDfjDiu5DydJ7UYwAAAAoAAAAAAAAAAAAAAAKVnI8AAAAAAwQP8kEAAAAQAAAAAQAAAAMAAAASAAAAASW0/NhZrsL6Y0hDjEibPDwQyYttIb5P08swy2iVPvl3AAAADwAAAAdhcHByb3ZlAAAAABAAAAABAAAABAAAABIAAAAAAAAAAAXmhrNpw1ZgcPkyIHidqpNs5qPMLBEh4x5FZyKI2wmnAAAAEgAAAAGBi5+c0/ncB1IieY7o9Jtcdtm7TIyDfjDiu5DydJ7UYwAAAAoAAAAAAAAAAAAAAAACFg7AAAAAAwQP8kEAAAAQAAAAAQAAAAMAAAASAAAAAYGLn5zT+dwHUiJ5juj0m1x22btMjIN+MOK7kPJ0ntRjAAAADwAAABRwbGFjZV9jb250cmFjdF9vcmRlcgAAABAAAAABAAAAAwAAABIAAAAAAAAAAAXmhrNpw1ZgcPkyIHidqpNs5qPMLBEh4x5FZyKI2wmnAAAADQAAACAdLU4Bx9rmpQhiQm54Lay2ifLmmgrayStySPMFgOr7IwAAAAMD5kBdAAAAAAAAAAEAAAABAAAAAAAAAAAAAAABc36D3D2ri5jXlKxsZzOmCtNVSwEkrd3ZGm+FLdj7JiIAAAAFYmF0Y2gAAAAAAAADAAAAEAAAAAEAAAABAAAAEgAAAAAAAAAABeaGs2nDVmBw+TIgeJ2qk2zmo8wsESHjHkVnIojbCacAAAAQAAAAAQAAAAgAAAAQAAAAAQAAAAMAAAASAAAAARRfxoKgdUYSW21QnqHiuEKMbSQar55ZDsxeGR0O8BQyAAAADwAAAA1hc3NlcnRfcmVzdWx0AAAAAAAAEAAAAAEAAAAFAAAAEAAAAAEAAAAAAAAAEgAAAAGBi5+c0/ncB1IieY7o9Jtcdtm7TIyDfjDiu5DydJ7UYwAAAA8AAAATZ2V0X2V4ZWN1dG9yX3Jld2FyZAAAAAAQAAAAAQAAAAAAAAAJAAAAAAAAAAAAAAAAAExLQAAAABAAAAABAAAAAwAAABIAAAABFF/GgqB1RhJbbVCeoeK4QoxtJBqvnlkOzF4ZHQ7wFDIAAAAPAAAADWFzc2VydF9yZXN1bHQAAAAAAAAQAAAAAQAAAAUAAAAQAAAAAQAAAAAAAAASAAAAAYGLn5zT+dwHUiJ5juj0m1x22btMjIN+MOK7kPJ0ntRjAAAADwAAAA9nZXRfb3JkZXJfc3RhdGUAAAAAEAAAAAEAAAACAAAAEgAAAAAAAAAABeaGs2nDVmBw+TIgeJ2qk2zmo8wsESHjHkVnIojbCacAAAANAAAAIB0tTgHH2ualCGJCbngtrLaJ8uaaCtrJK3JI8wWA6vsjAAAAAQAAABAAAAABAAAAAwAAABIAAAABFF/GgqB1RhJbbVCeoeK4QoxtJBqvnlkOzF4ZHQ7wFDIAAAAPAAAADWFzc2VydF9yZXN1bHQAAAAAAAAQAAAAAQAAAAUAAAAQAAAAAQAAAAAAAAASAAAAASiFL2jBmEiONG+xIS7VApBTdhzCT0UzkuNTmCAbCCXnAAAADwAAAAlhbGxvd2FuY2UAAAAAAAAQAAAAAQAAAAIAAAASAAAAAAAAAAAF5oazacNWYHD5MiB4naqTbOajzCwRIeMeRWciiNsJpwAAABIAAAABgYufnNP53AdSInmO6PSbXHbZu0yMg34w4ruQ8nSe1GMAAAAKAAAAAAAAAAAAAAACWgHFAAAAABAAAAABAAAAAwAAABIAAAABFF/GgqB1RhJbbVCeoeK4QoxtJBqvnlkOzF4ZHQ7wFDIAAAAPAAAADWFzc2VydF9yZXN1bHQAAAAAAAAQAAAAAQAAAAUAAAAQAAAAAQAAAAAAAAASAAAAASW0/NhZrsL6Y0hDjEibPDwQyYttIb5P08swy2iVPvl3AAAADwAAAAlhbGxvd2FuY2UAAAAAAAAQAAAAAQAAAAIAAAASAAAAAAAAAAAF5oazacNWYHD5MiB4naqTbOajzCwRIeMeRWciiNsJpwAAABIAAAABgYufnNP53AdSInmO6PSbXHbZu0yMg34w4ruQ8nSe1GMAAAAKAAAAAAAAAAAAAAAAAcnDgAAAABAAAAABAAAAAwAAABIAAAABlCUJ58VvAfGkEEqZlkKmgMkkwmm47yuJrEmgrfH9mjAAAAAPAAAABXRydXN0AAAAAAAAEAAAAAEAAAABAAAAEgAAAAAAAAAABeaGs2nDVmBw+TIgeJ2qk2zmo8wsESHjHkVnIojbCacAAAAQAAAAAQAAAAMAAAASAAAAASiFL2jBmEiONG+xIS7VApBTdhzCT0UzkuNTmCAbCCXnAAAADwAAAAdhcHByb3ZlAAAAABAAAAABAAAABAAAABIAAAAAAAAAAAXmhrNpw1ZgcPkyIHidqpNs5qPMLBEh4x5FZyKI2wmnAAAAEgAAAAGBi5+c0/ncB1IieY7o9Jtcdtm7TIyDfjDiu5DydJ7UYwAAAAoAAAAAAAAAAAAAAAKVnI8AAAAAAwQP8kEAAAAQAAAAAQAAAAMAAAASAAAAASW0/NhZrsL6Y0hDjEibPDwQyYttIb5P08swy2iVPvl3AAAADwAAAAdhcHByb3ZlAAAAABAAAAABAAAABAAAABIAAAAAAAAAAAXmhrNpw1ZgcPkyIHidqpNs5qPMLBEh4x5FZyKI2wmnAAAAEgAAAAGBi5+c0/ncB1IieY7o9Jtcdtm7TIyDfjDiu5DydJ7UYwAAAAoAAAAAAAAAAAAAAAACFg7AAAAAAwQP8kEAAAAQAAAAAQAAAAMAAAASAAAAAYGLn5zT+dwHUiJ5juj0m1x22btMjIN+MOK7kPJ0ntRjAAAADwAAABRwbGFjZV9jb250cmFjdF9vcmRlcgAAABAAAAABAAAAAwAAABIAAAAAAAAAAAXmhrNpw1ZgcPkyIHidqpNs5qPMLBEh4x5FZyKI2wmnAAAADQAAACAdLU4Bx9rmpQhiQm54Lay2ifLmmgrayStySPMFgOr7IwAAAAMD5kBdAAAAAAAAAAEAAAAEAAAAAAAAAAGUJQnnxW8B8aQQSpmWQqaAySTCabjvK4msSaCt8f2aMAAAAAV0cnVzdAAAAAAAAAEAAAASAAAAAAAAAAAF5oazacNWYHD5MiB4naqTbOajzCwRIeMeRWciiNsJpwAAAAAAAAAAAAAAASiFL2jBmEiONG+xIS7VApBTdhzCT0UzkuNTmCAbCCXnAAAAB2FwcHJvdmUAAAAABAAAABIAAAAAAAAAAAXmhrNpw1ZgcPkyIHidqpNs5qPMLBEh4x5FZyKI2wmnAAAAEgAAAAGBi5+c0/ncB1IieY7o9Jtcdtm7TIyDfjDiu5DydJ7UYwAAAAoAAAAAAAAAAAAAAAKVnI8AAAAAAwQP8kEAAAAAAAAAAAAAAAEltPzYWa7C+mNIQ4xImzw8EMmLbSG+T9PLMMtolT75dwAAAAdhcHByb3ZlAAAAAAQAAAASAAAAAAAAAAAF5oazacNWYHD5MiB4naqTbOajzCwRIeMeRWciiNsJpwAAABIAAAABgYufnNP53AdSInmO6PSbXHbZu0yMg34w4ruQ8nSe1GMAAAAKAAAAAAAAAAAAAAAAAhYOwAAAAAMED/JBAAAAAAAAAAAAAAABgYufnNP53AdSInmO6PSbXHbZu0yMg34w4ruQ8nSe1GMAAAAUcGxhY2VfY29udHJhY3Rfb3JkZXIAAAACAAAADQAAACAdLU4Bx9rmpQhiQm54Lay2ifLmmgrayStySPMFgOr7IwAAAAMD5kBdAAAAAAAAAAEAAAAAAAAACgAAAAAAAAAA5TjI9zmT/KKxDcmCdh/l6VFSRFEDH9BHJShFf036PqQAAAAGAAAAARRfxoKgdUYSW21QnqHiuEKMbSQar55ZDsxeGR0O8BQyAAAAFAAAAAEAAAAGAAAAASW0/NhZrsL6Y0hDjEibPDwQyYttIb5P08swy2iVPvl3AAAAFAAAAAEAAAAGAAAAASiFL2jBmEiONG+xIS7VApBTdhzCT0UzkuNTmCAbCCXnAAAAFAAAAAEAAAAGAAAAAXN+g9w9q4uY15SsbGczpgrTVUsBJK3d2RpvhS3Y+yYiAAAAFAAAAAEAAAAGAAAAAYGLn5zT+dwHUiJ5juj0m1x22btMjIN+MOK7kPJ0ntRjAAAAFAAAAAEAAAAGAAAAAZQlCefFbwHxpBBKmZZCpoDJJMJpuO8riaxJoK3x/ZowAAAAFAAAAAEAAAAHUMWljYu3rfX0FqzfpsHOtO/fHLbiXmRHLec/77HBbQgAAAAHhmvxAzEB4OrTllSgoWkAyiyW55DV/EPmWXevT8BYOX8AAAAHtNjJVy9H9LsTLhFhvYy11fZdf9Gh+VPzHPuD2kjX8YYAAAAFAAAAAAAAAAAF5oazacNWYHD5MiB4naqTbOajzCwRIeMeRWciiNsJpwAAAAEAAAAABeaGs2nDVmBw+TIgeJ2qk2zmo8wsESHjHkVnIojbCacAAAABU0hYAAAAAADlOMj3OZP8orENyYJ2H+XpUVJEUQMf0EclKEV/Tfo+pAAAAAYAAAABJbT82FmuwvpjSEOMSJs8PBDJi20hvk/TyzDLaJU++XcAAAAQAAAAAQAAAAIAAAAPAAAACUFsbG93YW5jZQAAAAAAABEAAAABAAAAAgAAAA8AAAAEZnJvbQAAABIAAAAAAAAAAAXmhrNpw1ZgcPkyIHidqpNs5qPMLBEh4x5FZyKI2wmnAAAADwAAAAdzcGVuZGVyAAAAABIAAAABgYufnNP53AdSInmO6PSbXHbZu0yMg34w4ruQ8nSe1GMAAAAAAAAABgAAAAEohS9owZhIjjRvsSEu1QKQU3Ycwk9FM5LjU5ggGwgl5wAAABAAAAABAAAAAgAAAA8AAAAJQWxsb3dhbmNlAAAAAAAAEQAAAAEAAAACAAAADwAAAARmcm9tAAAAEgAAAAAAAAAABeaGs2nDVmBw+TIgeJ2qk2zmo8wsESHjHkVnIojbCacAAAAPAAAAB3NwZW5kZXIAAAAAEgAAAAGBi5+c0/ncB1IieY7o9Jtcdtm7TIyDfjDiu5DydJ7UYwAAAAAAAAAGAAAAAYGLn5zT+dwHUiJ5juj0m1x22btMjIN+MOK7kPJ0ntRjAAAAEAAAAAEAAAADAAAADwAAAAVPcmRlcgAAAAAAABIAAAAAAAAAAAXmhrNpw1ZgcPkyIHidqpNs5qPMLBEh4x5FZyKI2wmnAAAADQAAACAdLU4Bx9rmpQhiQm54Lay2ifLmmgrayStySPMFgOr7IwAAAAAAWIAJAAAB7AAABLQAAAAAAAEAmgAAAAKI2wmnAAAAQDkxhb7yLwTKcgwBnfXbxouO6Kwsn9LWwUAY+e8orh3Oua0ma46QI//VLKLNvKJxN7lJXZAwSFsS/0lXiYf7ewNtXAoQAAAAQHvzKHjYqz/Y3sShIenJMcocNqgRkPrLsskqhl++BdRTJPPiqZ6xhF/BjXBAYkaGW6wDDK8DH9ZWCAcrFoaLVgc=",
+    "sha256": "180e64fb712d6abea0a1f9b8bf3248ed3ce026af01ad275a4b8c7a882321004c"
+  },
+  "provenance": {
+    "kind": "mainnet",
+    "origin": "mined_from_mainnet_history",
+    "origin_note": "Found by the real-network frequency study (tools/frequency/, reports/frequency.md): Soroban transactions that create a trustline occur in 7 mainnet transactions in the sample (0.28 per million); in this one SAC trust() is a sub-invocation of a batch contract, not the top-level call. Not submitted by this kit.",
+    "ledger": 65300453,
+    "tx_hash": "c28fd856089cd9ffaa468c1f121f804ee2ddb33bbf45a95d82a497a4966f1559",
+    "source_url": "https://stellar.expert/explorer/public/tx/c28fd856089cd9ffaa468c1f121f804ee2ddb33bbf45a95d82a497a4966f1559",
+    "tx_created_at": "2026-11-04T10:31:44.000Z",
+    "retrieved_at": "2026-11-16T19:00:41.140Z",
+    "tool": "tools/make-entry.mjs (mainnet-cap73-nested-sac-trust-creates-trustline.mjs)"
+  },
+  "expected": {
+    "json": {
+      "tx": {
+        "tx": {
+          "source_account": "GAC6NBVTNHBVMYDQ7EZCA6E5VKJWZZVDZQWBCIPDDZCWOIUI3ME2PIHA",
+          "fee": 165690,
+          "seq_num": "52657673438499254",
+          "cond": {
+            "time": {
+              "min_time": "0",
+              "max_time": "0"
+            }
+          },
+          "memo": "none",
+          "operations": [
+            {
+              "source_account": null,
+              "body": {
+                "invoke_host_function": {
+                  "host_function": {
+                    "invoke_contract": {
+                      "contract_address": "CBZX5A64HWVYXGGXSSWGYZZTUYFNGVKLAESK3XOZDJXYKLOY7MTCFAEV",
+                      "function_name": "batch",
+                      "args": [
+                        {
+                          "vec": [
+                            {
+                              "address": "GAC6NBVTNHBVMYDQ7EZCA6E5VKJWZZVDZQWBCIPDDZCWOIUI3ME2PIHA"
+                            }
+                          ]
+                        },
+                        {
+                          "vec": [
+                            {
+                              "vec": [
+                                {
+                                  "address": "CAKF7RUCUB2UMES3NVIJ5IPCXBBIY3JEDKXZ4WIOZRPBSHIO6AKDETO6"
+                                },
+                                {
+                                  "symbol": "assert_result"
+                                },
+                                {
+                                  "vec": [
+                                    {
+                                      "vec": []
+                                    },
+                                    {
+                                      "address": "CCAYXH442P45YB2SEJ4Y52HUTNOHNWN3JSGIG7RQ4K5ZB4TUT3KGGUPT"
+                                    },
+                                    {
+                                      "symbol": "get_executor_reward"
+                                    },
+                                    {
+                                      "vec": []
+                                    },
+                                    {
+                                      "u128": "5000000"
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "vec": [
+                                {
+                                  "address": "CAKF7RUCUB2UMES3NVIJ5IPCXBBIY3JEDKXZ4WIOZRPBSHIO6AKDETO6"
+                                },
+                                {
+                                  "symbol": "assert_result"
+                                },
+                                {
+                                  "vec": [
+                                    {
+                                      "vec": []
+                                    },
+                                    {
+                                      "address": "CCAYXH442P45YB2SEJ4Y52HUTNOHNWN3JSGIG7RQ4K5ZB4TUT3KGGUPT"
+                                    },
+                                    {
+                                      "symbol": "get_order_state"
+                                    },
+                                    {
+                                      "vec": [
+                                        {
+                                          "address": "GAC6NBVTNHBVMYDQ7EZCA6E5VKJWZZVDZQWBCIPDDZCWOIUI3ME2PIHA"
+                                        },
+                                        {
+                                          "bytes": "1d2d4e01c7dae6a50862426e782dacb689f2e69a0adac92b7248f30580eafb23"
+                                        }
+                                      ]
+                                    },
+                                    "void"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "vec": [
+                                {
+                                  "address": "CAKF7RUCUB2UMES3NVIJ5IPCXBBIY3JEDKXZ4WIOZRPBSHIO6AKDETO6"
+                                },
+                                {
+                                  "symbol": "assert_result"
+                                },
+                                {
+                                  "vec": [
+                                    {
+                                      "vec": []
+                                    },
+                                    {
+                                      "address": "CAUIKL3IYGMERDRUN6YSCLWVAKIFG5Q4YJHUKM4S4NJZQIA3BAS6OJPK"
+                                    },
+                                    {
+                                      "symbol": "allowance"
+                                    },
+                                    {
+                                      "vec": [
+                                        {
+                                          "address": "GAC6NBVTNHBVMYDQ7EZCA6E5VKJWZZVDZQWBCIPDDZCWOIUI3ME2PIHA"
+                                        },
+                                        {
+                                          "address": "CCAYXH442P45YB2SEJ4Y52HUTNOHNWN3JSGIG7RQ4K5ZB4TUT3KGGUPT"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "i128": "10100000000"
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "vec": [
+                                {
+                                  "address": "CAKF7RUCUB2UMES3NVIJ5IPCXBBIY3JEDKXZ4WIOZRPBSHIO6AKDETO6"
+                                },
+                                {
+                                  "symbol": "assert_result"
+                                },
+                                {
+                                  "vec": [
+                                    {
+                                      "vec": []
+                                    },
+                                    {
+                                      "address": "CAS3J7GYLGXMF6TDJBBYYSE3HQ6BBSMLNUQ34T6TZMYMW2EVH34XOWMA"
+                                    },
+                                    {
+                                      "symbol": "allowance"
+                                    },
+                                    {
+                                      "vec": [
+                                        {
+                                          "address": "GAC6NBVTNHBVMYDQ7EZCA6E5VKJWZZVDZQWBCIPDDZCWOIUI3ME2PIHA"
+                                        },
+                                        {
+                                          "address": "CCAYXH442P45YB2SEJ4Y52HUTNOHNWN3JSGIG7RQ4K5ZB4TUT3KGGUPT"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "i128": "30000000"
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "vec": [
+                                {
+                                  "address": "CCKCKCPHYVXQD4NECBFJTFSCU2AMSJGCNG4O6K4JVRE2BLPR7WNDBQIQ"
+                                },
+                                {
+                                  "symbol": "trust"
+                                },
+                                {
+                                  "vec": [
+                                    {
+                                      "address": "GAC6NBVTNHBVMYDQ7EZCA6E5VKJWZZVDZQWBCIPDDZCWOIUI3ME2PIHA"
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "vec": [
+                                {
+                                  "address": "CAUIKL3IYGMERDRUN6YSCLWVAKIFG5Q4YJHUKM4S4NJZQIA3BAS6OJPK"
+                                },
+                                {
+                                  "symbol": "approve"
+                                },
+                                {
+                                  "vec": [
+                                    {
+                                      "address": "GAC6NBVTNHBVMYDQ7EZCA6E5VKJWZZVDZQWBCIPDDZCWOIUI3ME2PIHA"
+                                    },
+                                    {
+                                      "address": "CCAYXH442P45YB2SEJ4Y52HUTNOHNWN3JSGIG7RQ4K5ZB4TUT3KGGUPT"
+                                    },
+                                    {
+                                      "i128": "11100000000"
+                                    },
+                                    {
+                                      "u32": 68153921
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "vec": [
+                                {
+                                  "address": "CAS3J7GYLGXMF6TDJBBYYSE3HQ6BBSMLNUQ34T6TZMYMW2EVH34XOWMA"
+                                },
+                                {
+                                  "symbol": "approve"
+                                },
+                                {
+                                  "vec": [
+                                    {
+                                      "address": "GAC6NBVTNHBVMYDQ7EZCA6E5VKJWZZVDZQWBCIPDDZCWOIUI3ME2PIHA"
+                                    },
+                                    {
+                                      "address": "CCAYXH442P45YB2SEJ4Y52HUTNOHNWN3JSGIG7RQ4K5ZB4TUT3KGGUPT"
+                                    },
+                                    {
+                                      "i128": "35000000"
+                                    },
+                                    {
+                                      "u32": 68153921
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "vec": [
+                                {
+                                  "address": "CCAYXH442P45YB2SEJ4Y52HUTNOHNWN3JSGIG7RQ4K5ZB4TUT3KGGUPT"
+                                },
+                                {
+                                  "symbol": "place_contract_order"
+                                },
+                                {
+                                  "vec": [
+                                    {
+                                      "address": "GAC6NBVTNHBVMYDQ7EZCA6E5VKJWZZVDZQWBCIPDDZCWOIUI3ME2PIHA"
+                                    },
+                                    {
+                                      "bytes": "1d2d4e01c7dae6a50862426e782dacb689f2e69a0adac92b7248f30580eafb23"
+                                    },
+                                    {
+                                      "u32": 65421405
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "bool": true
+                        }
+                      ]
+                    }
+                  },
+                  "auth": [
+                    {
+                      "credentials": "source_account",
+                      "root_invocation": {
+                        "function": {
+                          "contract_fn": {
+                            "contract_address": "CBZX5A64HWVYXGGXSSWGYZZTUYFNGVKLAESK3XOZDJXYKLOY7MTCFAEV",
+                            "function_name": "batch",
+                            "args": [
+                              {
+                                "vec": [
+                                  {
+                                    "address": "GAC6NBVTNHBVMYDQ7EZCA6E5VKJWZZVDZQWBCIPDDZCWOIUI3ME2PIHA"
+                                  }
+                                ]
+                              },
+                              {
+                                "vec": [
+                                  {
+                                    "vec": [
+                                      {
+                                        "address": "CAKF7RUCUB2UMES3NVIJ5IPCXBBIY3JEDKXZ4WIOZRPBSHIO6AKDETO6"
+                                      },
+                                      {
+                                        "symbol": "assert_result"
+                                      },
+                                      {
+                                        "vec": [
+                                          {
+                                            "vec": []
+                                          },
+                                          {
+                                            "address": "CCAYXH442P45YB2SEJ4Y52HUTNOHNWN3JSGIG7RQ4K5ZB4TUT3KGGUPT"
+                                          },
+                                          {
+                                            "symbol": "get_executor_reward"
+                                          },
+                                          {
+                                            "vec": []
+                                          },
+                                          {
+                                            "u128": "5000000"
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "vec": [
+                                      {
+                                        "address": "CAKF7RUCUB2UMES3NVIJ5IPCXBBIY3JEDKXZ4WIOZRPBSHIO6AKDETO6"
+                                      },
+                                      {
+                                        "symbol": "assert_result"
+                                      },
+                                      {
+                                        "vec": [
+                                          {
+                                            "vec": []
+                                          },
+                                          {
+                                            "address": "CCAYXH442P45YB2SEJ4Y52HUTNOHNWN3JSGIG7RQ4K5ZB4TUT3KGGUPT"
+                                          },
+                                          {
+                                            "symbol": "get_order_state"
+                                          },
+                                          {
+                                            "vec": [
+                                              {
+                                                "address": "GAC6NBVTNHBVMYDQ7EZCA6E5VKJWZZVDZQWBCIPDDZCWOIUI3ME2PIHA"
+                                              },
+                                              {
+                                                "bytes": "1d2d4e01c7dae6a50862426e782dacb689f2e69a0adac92b7248f30580eafb23"
+                                              }
+                                            ]
+                                          },
+                                          "void"
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "vec": [
+                                      {
+                                        "address": "CAKF7RUCUB2UMES3NVIJ5IPCXBBIY3JEDKXZ4WIOZRPBSHIO6AKDETO6"
+                                      },
+                                      {
+                                        "symbol": "assert_result"
+                                      },
+                                      {
+                                        "vec": [
+                                          {
+                                            "vec": []
+                                          },
+                                          {
+                                            "address": "CAUIKL3IYGMERDRUN6YSCLWVAKIFG5Q4YJHUKM4S4NJZQIA3BAS6OJPK"
+                                          },
+                                          {
+                                            "symbol": "allowance"
+                                          },
+                                          {
+                                            "vec": [
+                                              {
+                                                "address": "GAC6NBVTNHBVMYDQ7EZCA6E5VKJWZZVDZQWBCIPDDZCWOIUI3ME2PIHA"
+                                              },
+                                              {
+                                                "address": "CCAYXH442P45YB2SEJ4Y52HUTNOHNWN3JSGIG7RQ4K5ZB4TUT3KGGUPT"
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "i128": "10100000000"
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "vec": [
+                                      {
+                                        "address": "CAKF7RUCUB2UMES3NVIJ5IPCXBBIY3JEDKXZ4WIOZRPBSHIO6AKDETO6"
+                                      },
+                                      {
+                                        "symbol": "assert_result"
+                                      },
+                                      {
+                                        "vec": [
+                                          {
+                                            "vec": []
+                                          },
+                                          {
+                                            "address": "CAS3J7GYLGXMF6TDJBBYYSE3HQ6BBSMLNUQ34T6TZMYMW2EVH34XOWMA"
+                                          },
+                                          {
+                                            "symbol": "allowance"
+                                          },
+                                          {
+                                            "vec": [
+                                              {
+                                                "address": "GAC6NBVTNHBVMYDQ7EZCA6E5VKJWZZVDZQWBCIPDDZCWOIUI3ME2PIHA"
+                                              },
+                                              {
+                                                "address": "CCAYXH442P45YB2SEJ4Y52HUTNOHNWN3JSGIG7RQ4K5ZB4TUT3KGGUPT"
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "i128": "30000000"
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "vec": [
+                                      {
+                                        "address": "CCKCKCPHYVXQD4NECBFJTFSCU2AMSJGCNG4O6K4JVRE2BLPR7WNDBQIQ"
+                                      },
+                                      {
+                                        "symbol": "trust"
+                                      },
+                                      {
+                                        "vec": [
+                                          {
+                                            "address": "GAC6NBVTNHBVMYDQ7EZCA6E5VKJWZZVDZQWBCIPDDZCWOIUI3ME2PIHA"
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "vec": [
+                                      {
+                                        "address": "CAUIKL3IYGMERDRUN6YSCLWVAKIFG5Q4YJHUKM4S4NJZQIA3BAS6OJPK"
+                                      },
+                                      {
+                                        "symbol": "approve"
+                                      },
+                                      {
+                                        "vec": [
+                                          {
+                                            "address": "GAC6NBVTNHBVMYDQ7EZCA6E5VKJWZZVDZQWBCIPDDZCWOIUI3ME2PIHA"
+                                          },
+                                          {
+                                            "address": "CCAYXH442P45YB2SEJ4Y52HUTNOHNWN3JSGIG7RQ4K5ZB4TUT3KGGUPT"
+                                          },
+                                          {
+                                            "i128": "11100000000"
+                                          },
+                                          {
+                                            "u32": 68153921
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "vec": [
+                                      {
+                                        "address": "CAS3J7GYLGXMF6TDJBBYYSE3HQ6BBSMLNUQ34T6TZMYMW2EVH34XOWMA"
+                                      },
+                                      {
+                                        "symbol": "approve"
+                                      },
+                                      {
+                                        "vec": [
+                                          {
+                                            "address": "GAC6NBVTNHBVMYDQ7EZCA6E5VKJWZZVDZQWBCIPDDZCWOIUI3ME2PIHA"
+                                          },
+                                          {
+                                            "address": "CCAYXH442P45YB2SEJ4Y52HUTNOHNWN3JSGIG7RQ4K5ZB4TUT3KGGUPT"
+                                          },
+                                          {
+                                            "i128": "35000000"
+                                          },
+                                          {
+                                            "u32": 68153921
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "vec": [
+                                      {
+                                        "address": "CCAYXH442P45YB2SEJ4Y52HUTNOHNWN3JSGIG7RQ4K5ZB4TUT3KGGUPT"
+                                      },
+                                      {
+                                        "symbol": "place_contract_order"
+                                      },
+                                      {
+                                        "vec": [
+                                          {
+                                            "address": "GAC6NBVTNHBVMYDQ7EZCA6E5VKJWZZVDZQWBCIPDDZCWOIUI3ME2PIHA"
+                                          },
+                                          {
+                                            "bytes": "1d2d4e01c7dae6a50862426e782dacb689f2e69a0adac92b7248f30580eafb23"
+                                          },
+                                          {
+                                            "u32": 65421405
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                "bool": true
+                              }
+                            ]
+                          }
+                        },
+                        "sub_invocations": [
+                          {
+                            "function": {
+                              "contract_fn": {
+                                "contract_address": "CCKCKCPHYVXQD4NECBFJTFSCU2AMSJGCNG4O6K4JVRE2BLPR7WNDBQIQ",
+                                "function_name": "trust",
+                                "args": [
+                                  {
+                                    "address": "GAC6NBVTNHBVMYDQ7EZCA6E5VKJWZZVDZQWBCIPDDZCWOIUI3ME2PIHA"
+                                  }
+                                ]
+                              }
+                            },
+                            "sub_invocations": []
+                          },
+                          {
+                            "function": {
+                              "contract_fn": {
+                                "contract_address": "CAUIKL3IYGMERDRUN6YSCLWVAKIFG5Q4YJHUKM4S4NJZQIA3BAS6OJPK",
+                                "function_name": "approve",
+                                "args": [
+                                  {
+                                    "address": "GAC6NBVTNHBVMYDQ7EZCA6E5VKJWZZVDZQWBCIPDDZCWOIUI3ME2PIHA"
+                                  },
+                                  {
+                                    "address": "CCAYXH442P45YB2SEJ4Y52HUTNOHNWN3JSGIG7RQ4K5ZB4TUT3KGGUPT"
+                                  },
+                                  {
+                                    "i128": "11100000000"
+                                  },
+                                  {
+                                    "u32": 68153921
+                                  }
+                                ]
+                              }
+                            },
+                            "sub_invocations": []
+                          },
+                          {
+                            "function": {
+                              "contract_fn": {
+                                "contract_address": "CAS3J7GYLGXMF6TDJBBYYSE3HQ6BBSMLNUQ34T6TZMYMW2EVH34XOWMA",
+                                "function_name": "approve",
+                                "args": [
+                                  {
+                                    "address": "GAC6NBVTNHBVMYDQ7EZCA6E5VKJWZZVDZQWBCIPDDZCWOIUI3ME2PIHA"
+                                  },
+                                  {
+                                    "address": "CCAYXH442P45YB2SEJ4Y52HUTNOHNWN3JSGIG7RQ4K5ZB4TUT3KGGUPT"
+                                  },
+                                  {
+                                    "i128": "35000000"
+                                  },
+                                  {
+                                    "u32": 68153921
+                                  }
+                                ]
+                              }
+                            },
+                            "sub_invocations": []
+                          },
+                          {
+                            "function": {
+                              "contract_fn": {
+                                "contract_address": "CCAYXH442P45YB2SEJ4Y52HUTNOHNWN3JSGIG7RQ4K5ZB4TUT3KGGUPT",
+                                "function_name": "place_contract_order",
+                                "args": [
+                                  {
+                                    "bytes": "1d2d4e01c7dae6a50862426e782dacb689f2e69a0adac92b7248f30580eafb23"
+                                  },
+                                  {
+                                    "u32": 65421405
+                                  }
+                                ]
+                              }
+                            },
+                            "sub_invocations": []
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          ],
+          "ext": {
+            "v1": {
+              "ext": "v0",
+              "resources": {
+                "footprint": {
+                  "read_only": [
+                    {
+                      "account": {
+                        "account_id": "GDSTRSHXHGJ7ZIVRBXEYE5Q74XUVCUSEKEBR7UCHEUUEK72N7I7KJ6JH"
+                      }
+                    },
+                    {
+                      "contract_data": {
+                        "contract": "CAKF7RUCUB2UMES3NVIJ5IPCXBBIY3JEDKXZ4WIOZRPBSHIO6AKDETO6",
+                        "key": "ledger_key_contract_instance",
+                        "durability": "persistent"
+                      }
+                    },
+                    {
+                      "contract_data": {
+                        "contract": "CAS3J7GYLGXMF6TDJBBYYSE3HQ6BBSMLNUQ34T6TZMYMW2EVH34XOWMA",
+                        "key": "ledger_key_contract_instance",
+                        "durability": "persistent"
+                      }
+                    },
+                    {
+                      "contract_data": {
+                        "contract": "CAUIKL3IYGMERDRUN6YSCLWVAKIFG5Q4YJHUKM4S4NJZQIA3BAS6OJPK",
+                        "key": "ledger_key_contract_instance",
+                        "durability": "persistent"
+                      }
+                    },
+                    {
+                      "contract_data": {
+                        "contract": "CBZX5A64HWVYXGGXSSWGYZZTUYFNGVKLAESK3XOZDJXYKLOY7MTCFAEV",
+                        "key": "ledger_key_contract_instance",
+                        "durability": "persistent"
+                      }
+                    },
+                    {
+                      "contract_data": {
+                        "contract": "CCAYXH442P45YB2SEJ4Y52HUTNOHNWN3JSGIG7RQ4K5ZB4TUT3KGGUPT",
+                        "key": "ledger_key_contract_instance",
+                        "durability": "persistent"
+                      }
+                    },
+                    {
+                      "contract_data": {
+                        "contract": "CCKCKCPHYVXQD4NECBFJTFSCU2AMSJGCNG4O6K4JVRE2BLPR7WNDBQIQ",
+                        "key": "ledger_key_contract_instance",
+                        "durability": "persistent"
+                      }
+                    },
+                    {
+                      "contract_code": {
+                        "hash": "50c5a58d8bb7adf5f416acdfa6c1ceb4efdf1cb6e25e64472de73fefb1c16d08"
+                      }
+                    },
+                    {
+                      "contract_code": {
+                        "hash": "866bf1033101e0ead39654a0a16900ca2c96e790d5fc43e65977af4fc058397f"
+                      }
+                    },
+                    {
+                      "contract_code": {
+                        "hash": "b4d8c9572f47f4bb132e1161bd8cb5d5f65d7fd1a1f953f31cfb83da48d7f186"
+                      }
+                    }
+                  ],
+                  "read_write": [
+                    {
+                      "account": {
+                        "account_id": "GAC6NBVTNHBVMYDQ7EZCA6E5VKJWZZVDZQWBCIPDDZCWOIUI3ME2PIHA"
+                      }
+                    },
+                    {
+                      "trustline": {
+                        "account_id": "GAC6NBVTNHBVMYDQ7EZCA6E5VKJWZZVDZQWBCIPDDZCWOIUI3ME2PIHA",
+                        "asset": {
+                          "credit_alphanum4": {
+                            "asset_code": "SHX",
+                            "issuer": "GDSTRSHXHGJ7ZIVRBXEYE5Q74XUVCUSEKEBR7UCHEUUEK72N7I7KJ6JH"
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "contract_data": {
+                        "contract": "CAS3J7GYLGXMF6TDJBBYYSE3HQ6BBSMLNUQ34T6TZMYMW2EVH34XOWMA",
+                        "key": {
+                          "vec": [
+                            {
+                              "symbol": "Allowance"
+                            },
+                            {
+                              "map": [
+                                {
+                                  "key": {
+                                    "symbol": "from"
+                                  },
+                                  "val": {
+                                    "address": "GAC6NBVTNHBVMYDQ7EZCA6E5VKJWZZVDZQWBCIPDDZCWOIUI3ME2PIHA"
+                                  }
+                                },
+                                {
+                                  "key": {
+                                    "symbol": "spender"
+                                  },
+                                  "val": {
+                                    "address": "CCAYXH442P45YB2SEJ4Y52HUTNOHNWN3JSGIG7RQ4K5ZB4TUT3KGGUPT"
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        "durability": "temporary"
+                      }
+                    },
+                    {
+                      "contract_data": {
+                        "contract": "CAUIKL3IYGMERDRUN6YSCLWVAKIFG5Q4YJHUKM4S4NJZQIA3BAS6OJPK",
+                        "key": {
+                          "vec": [
+                            {
+                              "symbol": "Allowance"
+                            },
+                            {
+                              "map": [
+                                {
+                                  "key": {
+                                    "symbol": "from"
+                                  },
+                                  "val": {
+                                    "address": "GAC6NBVTNHBVMYDQ7EZCA6E5VKJWZZVDZQWBCIPDDZCWOIUI3ME2PIHA"
+                                  }
+                                },
+                                {
+                                  "key": {
+                                    "symbol": "spender"
+                                  },
+                                  "val": {
+                                    "address": "CCAYXH442P45YB2SEJ4Y52HUTNOHNWN3JSGIG7RQ4K5ZB4TUT3KGGUPT"
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        "durability": "temporary"
+                      }
+                    },
+                    {
+                      "contract_data": {
+                        "contract": "CCAYXH442P45YB2SEJ4Y52HUTNOHNWN3JSGIG7RQ4K5ZB4TUT3KGGUPT",
+                        "key": {
+                          "vec": [
+                            {
+                              "symbol": "Order"
+                            },
+                            {
+                              "address": "GAC6NBVTNHBVMYDQ7EZCA6E5VKJWZZVDZQWBCIPDDZCWOIUI3ME2PIHA"
+                            },
+                            {
+                              "bytes": "1d2d4e01c7dae6a50862426e782dacb689f2e69a0adac92b7248f30580eafb23"
+                            }
+                          ]
+                        },
+                        "durability": "temporary"
+                      }
+                    }
+                  ]
+                },
+                "instructions": 5799945,
+                "disk_read_bytes": 492,
+                "write_bytes": 1204
+              },
+              "resource_fee": "65690"
+            }
+          }
+        },
+        "signatures": [
+          {
+            "hint": "88db09a7",
+            "signature": "393185bef22f04ca720c019df5dbc68b8ee8ac2c9fd2d6c14018f9ef28ae1dceb9ad266b8e9023ffd52ca2cdbca27137b9495d9030485b12ff49578987fb7b03"
+          },
+          {
+            "hint": "6d5c0a10",
+            "signature": "7bf32878d8ab3fd8dec4a121e9c931ca1c36a81190facbb2c92a865fbe05d45324f3e2a99eb1845fc18d70406246865bac030caf031fd65608072b16868b5607"
+          }
+        ]
+      }
+    },
+    "checks": [
+      {
+        "id": "top-fn-batch",
+        "path": "/tx/tx/operations/0/body/invoke_host_function/host_function/invoke_contract/function_name",
+        "op": "equals",
+        "value": "batch",
+        "note": "Top-level call is not trust()."
+      },
+      {
+        "id": "sub-fn-trust",
+        "path": "/tx/tx/operations/0/body/invoke_host_function/auth/0/root_invocation/sub_invocations/0/function/contract_fn/function_name",
+        "op": "equals",
+        "value": "trust",
+        "note": "SAC trust() one level down."
+      },
+      {
+        "id": "sub-contract-is-sac",
+        "path": "/tx/tx/operations/0/body/invoke_host_function/auth/0/root_invocation/sub_invocations/0/function/contract_fn/contract_address",
+        "op": "strkey",
+        "value": "CCKCKCPHYVXQD4NECBFJTFSCU2AMSJGCNG4O6K4JVRE2BLPR7WNDBQIQ",
+        "note": "The SAC of SHX:GDSTRSHX... on mainnet (Asset.contractId)."
+      },
+      {
+        "id": "sub-trust-arg",
+        "path": "/tx/tx/operations/0/body/invoke_host_function/auth/0/root_invocation/sub_invocations/0/function/contract_fn/args/0/address",
+        "op": "strkey",
+        "value": "GAC6NBVTNHBVMYDQ7EZCA6E5VKJWZZVDZQWBCIPDDZCWOIUI3ME2PIHA",
+        "note": "Trustline holder."
+      }
+    ],
+    "ledger_checks": [
+      {
+        "id": "lcm-trustline-created",
+        "path": "/v2/tx_processing/246/tx_apply_processing/v4/operations/0/changes/5/created/data/trustline/account_id",
+        "op": "strkey",
+        "value": "GAC6NBVTNHBVMYDQ7EZCA6E5VKJWZZVDZQWBCIPDDZCWOIUI3ME2PIHA",
+        "note": "Trustline created in the meta (wallet-backend #731 shape, nested)."
+      },
+      {
+        "id": "lcm-success",
+        "path": "/v2/tx_processing/246/result/result/result/tx_success/0/op_inner/invoke_host_function/success",
+        "op": "preserved",
+        "note": "Applied."
+      }
+    ]
+  },
+  "tags": [
+    "sac",
+    "trustline",
+    "nested-auth",
+    "mainnet"
+  ],
+  "linked_issues": [
+    {
+      "url": "https://github.com/stellar/wallet-backend/issues/731",
+      "role": "related",
+      "component": "SAC trust() state change"
+    }
+  ],
+  "ledger": {
+    "type": "LedgerCloseMeta",
+    "lcm_version": "v2",
+    "sequence": 65300453,
+    "protocol_version": 29,
+    "file": "corpus/datalake/pubnet/FC1BE7FF--65280000-65343999/FC1B981A--65300453.xdr.zst",
+    "format": "galexie: zstd(LedgerCloseMetaBatch), 1 ledger per object, 64000 per partition",
+    "sha256_zst": "dc00c93721f333143f9eec185c6d187d1a01202deced56afdac1ee45c4abc2f6",
+    "sha256_lcm": "7b87be53e291308bbb22e5eb821db4f43feac151fd8e7851ee3b7dc02cf76b62",
+    "tx_index": 246,
+    "source": "galexie-public-archive",
+    "source_url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/v1.1/stellar/ledgers/pubnet/FC1BE7FF--65280000-65343999/FC1B981A--65300453.xdr.zst"
+  }
+}

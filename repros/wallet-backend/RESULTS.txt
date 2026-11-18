@@ -1,9 +1,12 @@
+# Recorded 2026-11-13 19:13 CST on go1.27.3, PostgreSQL 17.12 + TimescaleDB 2.28.2
+
+## 1. Column-type repros: bash repros/wallet-backend/run.sh
 == 716-buggy @ 79ea2acd 2026-08-27 build(deps): upgrade to protocol 28 (go-stellar-sdk v0.7.3, core/rpc 28) (#715)
 === RUN   TestRepro716MuxedAddressRoundTrip
     zz_repro_test.go:44: FAIL #716: wrote MCGVDJFRRJA6UBTB5OCLJ5BJ2HXYT77QSQGPBQA7C5WQHEGZPEA2X77777777777777F4, read back MCGVDJFRRJA6UBTB5OCLJ5BJ2HXYT77QSQGPBQA7C5WQHEGZPEA2WCWA, which does not decode: invalid payload length 32, expected 40
 --- FAIL: TestRepro716MuxedAddressRoundTrip (0.00s)
 FAIL
-FAIL	github.com/stellar/wallet-backend/internal/indexer/types	0.004s
+FAIL	github.com/stellar/wallet-backend/internal/indexer/types	0.003s
 FAIL
 == 716-fixed @ 6e5a5910 2026-08-27 fix(indexer): reduce muxed addresses to their base account (#693)
 === RUN   TestRepro716MuxedAddressRoundTrip
@@ -15,13 +18,13 @@ ok  	github.com/stellar/wallet-backend/internal/indexer/types	0.003s
     zz_repro_test.go:63: FAIL #729: column type types.NullAddressBytea rejects the P signer: stellar address PBCK2RYYLIYOSHBEL2FQLAVRSHRH3GP3ID476SGKBV7BEZHMQ6NSAAAAAAB55LN6AANMS has a 40-byte key payload; the account_id column stores only 32-byte account/contract keys (in ingestion this fails the COPY and the ledger is retried forever)
 --- FAIL: TestRepro729SignedPayloadSignerColumn (0.00s)
 FAIL
-FAIL	github.com/stellar/wallet-backend/internal/indexer/types	0.004s
+FAIL	github.com/stellar/wallet-backend/internal/indexer/types	0.003s
 FAIL
 == 729-fixed @ 2c873353 2026-09-08 fix: handle CAP-40 signed-payload signers in ingestion (#729)
 === RUN   TestRepro729SignedPayloadSignerColumn
     zz_repro_test.go:73: PASS #729: column type types.NullSignerKeyBytea stores and returns PBCK2RYYLIYOSHBEL2FQLAVRSHRH3GP3ID476SGKBV7BEZHMQ6NSAAAAAAB55LN6AANMS (41 bytes)
 --- PASS: TestRepro729SignedPayloadSignerColumn (0.00s)
-ok  	github.com/stellar/wallet-backend/internal/indexer/types	0.004s
+ok  	github.com/stellar/wallet-backend/internal/indexer/types	0.003s
 == head @ 3e22515a 2026-11-12 fix(services): cap Blend decimals at 70 on ingest and when serving pools (#802)
 === RUN   TestRepro716MuxedAddressRoundTrip
     zz_repro_test.go:46: PASS #716: wrote MCGVDJFRRJA6UBTB5OCLJ5BJ2HXYT77QSQGPBQA7C5WQHEGZPEA2X77777777777777F4, read back GCGVDJFRRJA6UBTB5OCLJ5BJ2HXYT77QSQGPBQA7C5WQHEGZPEA2XQ77 (decodes; base account GCGVDJFRRJA6UBTB5OCLJ5BJ2HXYT77QSQGPBQA7C5WQHEGZPEA2XQ77)
@@ -29,6 +32,78 @@ ok  	github.com/stellar/wallet-backend/internal/indexer/types	0.004s
 === RUN   TestRepro729SignedPayloadSignerColumn
     zz_repro_test.go:73: PASS #729: column type types.NullSignerKeyBytea stores and returns PBCK2RYYLIYOSHBEL2FQLAVRSHRH3GP3ID476SGKBV7BEZHMQ6NSAAAAAAB55LN6AANMS (41 bytes)
 --- PASS: TestRepro729SignedPayloadSignerColumn (0.00s)
-ok  	github.com/stellar/wallet-backend/internal/indexer/types	0.004s
+ok  	github.com/stellar/wallet-backend/internal/indexer/types	0.003s
 
 all repros behaved as expected
+
+## 2. Full ingest replay into real PostgreSQL + TimescaleDB: bash harness/run.sh
+##    (corpus LedgerCloseMeta -> wallet-backend processLedger + insertIntoDB -> verdict from stored rows)
+== pre-fix 79ea2acd (shim="", source=galexie)
+   wallet-backend#716   ledger 4437357: mishandled (expected mishandled) OK
+     - transactions stored for ledger 4437357: 12
+     - state_changes SIGNER/ADD signer_account_id: [PBCK2RYYLIYOSHBEL2FQLAVRSHRH3GP3ID476SGKBV7BEZHMQ6NSBYVM (32-byte payload, too short for a signed payload)]
+   (4s)
+== fix 6e5a5910 (shim="", source=galexie)
+   wallet-backend#716   ledger 4437357: halt       (expected halt) OK
+     - transactions stored for ledger 4437357: 0
+     - ingest stopped at stage "persist": batch inserting state changes: pgx CopyFrom state_changes: ERROR: COPY from stdin failed: converting signer_account_id: converting address to bytes: stellar address PBCK2RYYLIYOSHBEL2FQLAVRSHRH3GP3ID476SGKBV7BEZHMQ6NSAAAAAAB55LN6AANMS has a 40-byte key payload; the account_id column stores only 32-b...
+   (4s)
+== pre-fix 79ea2acd (shim="go get github.com/stellar/go-stellar-sdk@v0.8.0", source=galexie)
+   wallet-backend#716 (classic control) ledger 5699707: pass       (expected pass) OK
+     - transactions stored for ledger 5699707: 15
+     - transactions_accounts.account_id: [GB4KMJUEQ3QT5CKLJNA5NRDEEJV4WNGVUH6LJ5A27OTA2VDXOY4Z2OQW GCGVDJFRRJA6UBTB5OCLJ5BJ2HXYT77QSQGPBQA7C5WQHEGZPEA2XQ77]
+   (4s)
+== pre-fix 2a0a84ea (shim="", source=galexie)
+   wallet-backend#729   ledger 4437357: halt       (expected halt) OK
+     - transactions stored for ledger 4437357: 0
+     - ingest stopped at stage "persist": batch inserting state changes: pgx CopyFrom state_changes: ERROR: COPY from stdin failed: converting signer_account_id: converting address to bytes: stellar address PBCK2RYYLIYOSHBEL2FQLAVRSHRH3GP3ID476SGKBV7BEZHMQ6NSAAAAAAB55LN6AANMS has a 40-byte key payload; the account_id column stores only 32-b...
+   (4s)
+== fix 2c873353 (shim="", source=galexie)
+   wallet-backend#729   ledger 4437357: pass       (expected pass) OK
+     - transactions stored for ledger 4437357: 12
+     - state_changes SIGNER/ADD signer_account_id: [PBCK2RYYLIYOSHBEL2FQLAVRSHRH3GP3ID476SGKBV7BEZHMQ6NSAAAAAAB55LN6AANMS]
+   (4s)
+== pre-fix 764a4f5b (shim="go get github.com/stellar/go-stellar-sdk@v0.8.0", source=galexie)
+   wallet-backend#731   ledger 5718668: dropped    (expected dropped) OK
+     - transactions stored for ledger 5718668: 14
+     - state_changes for tx: [BALANCE/DEBIT GCKTS6PBU5K6TNEJDSACKAB55CI6IJQ5YEVP4I2VOOUMUF524IGTF4H6]
+   (4s)
+== fix c152783c (shim="go get github.com/stellar/go-stellar-sdk@v0.8.0", source=galexie)
+   wallet-backend#731   ledger 5718668: pass       (expected pass) OK
+     - transactions stored for ledger 5718668: 14
+     - state_changes for tx: [BALANCE/DEBIT GCKTS6PBU5K6TNEJDSACKAB55CI6IJQ5YEVP4I2VOOUMUF524IGTF4H6 TRUSTLINE/ADD GCKTS6PBU5K6TNEJDSACKAB55CI6IJQ5YEVP4I2VOOUMUF524IGTF4H6 BALANCE_AUTHORIZATION/SET GCKTS6PBU5K6TNEJDSACKAB55CI6IJQ5YEVP4I2VOOUMUF524IGTF4H6]
+   (4s)
+== pre-fix-unshimmed 764a4f5b (shim="", source=galexie)
+   wallet-backend#731   ledger 5718668: halt       (expected halt) OK
+     - transactions stored for ledger 5718668: 0
+     - ingest stopped at stage "fetch": materializing batch ledgers: xdr view: unknown union discriminant at offset 0: discriminant 3
+   (4s)
+== head 3e22515a (shim="", source=galexie)
+   wallet-backend#716   ledger 4437357: pass       (expected pass) OK
+     - transactions stored for ledger 4437357: 12
+     - state_changes SIGNER/ADD signer_account_id: [PBCK2RYYLIYOSHBEL2FQLAVRSHRH3GP3ID476SGKBV7BEZHMQ6NSAAAAAAB55LN6AANMS]
+   wallet-backend#716 (classic control) ledger 5699707: pass       (expected pass) OK
+     - transactions stored for ledger 5699707: 15
+     - transactions_accounts.account_id: [GB4KMJUEQ3QT5CKLJNA5NRDEEJV4WNGVUH6LJ5A27OTA2VDXOY4Z2OQW GCGVDJFRRJA6UBTB5OCLJ5BJ2HXYT77QSQGPBQA7C5WQHEGZPEA2XQ77]
+   wallet-backend#729   ledger 4437357: pass       (expected pass) OK
+     - transactions stored for ledger 4437357: 12
+     - state_changes SIGNER/ADD signer_account_id: [PBCK2RYYLIYOSHBEL2FQLAVRSHRH3GP3ID476SGKBV7BEZHMQ6NSAAAAAAB55LN6AANMS]
+   wallet-backend#731   ledger 5718668: pass       (expected pass) OK
+     - transactions stored for ledger 5718668: 14
+     - state_changes for tx: [BALANCE/DEBIT GCKTS6PBU5K6TNEJDSACKAB55CI6IJQ5YEVP4I2VOOUMUF524IGTF4H6 TRUSTLINE/ADD GCKTS6PBU5K6TNEJDSACKAB55CI6IJQ5YEVP4I2VOOUMUF524IGTF4H6 BALANCE_AUTHORIZATION/SET GCKTS6PBU5K6TNEJDSACKAB55CI6IJQ5YEVP4I2VOOUMUF524IGTF4H6]
+   (4s)
+== head-via-mock-rpc 3e22515a (shim="", source=rpc)
+   wallet-backend#716   ledger 4437357: pass       (expected pass) OK
+     - transactions stored for ledger 4437357: 12
+     - state_changes SIGNER/ADD signer_account_id: [PBCK2RYYLIYOSHBEL2FQLAVRSHRH3GP3ID476SGKBV7BEZHMQ6NSAAAAAAB55LN6AANMS]
+   wallet-backend#716 (classic control) ledger 5699707: pass       (expected pass) OK
+     - transactions stored for ledger 5699707: 15
+     - transactions_accounts.account_id: [GB4KMJUEQ3QT5CKLJNA5NRDEEJV4WNGVUH6LJ5A27OTA2VDXOY4Z2OQW GCGVDJFRRJA6UBTB5OCLJ5BJ2HXYT77QSQGPBQA7C5WQHEGZPEA2XQ77]
+   wallet-backend#729   ledger 4437357: pass       (expected pass) OK
+     - transactions stored for ledger 4437357: 12
+     - state_changes SIGNER/ADD signer_account_id: [PBCK2RYYLIYOSHBEL2FQLAVRSHRH3GP3ID476SGKBV7BEZHMQ6NSAAAAAAB55LN6AANMS]
+   wallet-backend#731   ledger 5718668: pass       (expected pass) OK
+     - transactions stored for ledger 5718668: 14
+     - state_changes for tx: [BALANCE/DEBIT GCKTS6PBU5K6TNEJDSACKAB55CI6IJQ5YEVP4I2VOOUMUF524IGTF4H6 TRUSTLINE/ADD GCKTS6PBU5K6TNEJDSACKAB55CI6IJQ5YEVP4I2VOOUMUF524IGTF4H6 BALANCE_AUTHORIZATION/SET GCKTS6PBU5K6TNEJDSACKAB55CI6IJQ5YEVP4I2VOOUMUF524IGTF4H6]
+   (4s)
+all verdicts as expected

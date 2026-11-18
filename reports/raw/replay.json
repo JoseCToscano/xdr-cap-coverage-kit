@@ -1,0 +1,278 @@
+{
+  "adapter": "stellar/wallet-backend",
+  "database": "PostgreSQL + TimescaleDB (real)",
+  "rows": [
+    {
+      "Issue": "wallet-backend#716",
+      "Entry": "cap40-setoptions-signed-payload-signer",
+      "Ledger": "4437357",
+      "Build": "pre-fix",
+      "Commit": "79ea2acd",
+      "Shim": "",
+      "Source": "galexie",
+      "Expected": "mishandled",
+      "Got": "mishandled",
+      "Evidence": [
+        "transactions stored for ledger 4437357: 12",
+        "state_changes SIGNER/ADD signer_account_id: [PBCK2RYYLIYOSHBEL2FQLAVRSHRH3GP3ID476SGKBV7BEZHMQ6NSBYVM (32-byte payload, too short for a signed payload)]"
+      ],
+      "IngestStage": "commit",
+      "IngestError": ""
+    },
+    {
+      "Issue": "wallet-backend#716",
+      "Entry": "cap40-setoptions-signed-payload-signer",
+      "Ledger": "4437357",
+      "Build": "fix",
+      "Commit": "6e5a5910",
+      "Shim": "",
+      "Source": "galexie",
+      "Expected": "halt",
+      "Got": "halt",
+      "Evidence": [
+        "transactions stored for ledger 4437357: 0",
+        "ingest stopped at stage \"persist\": batch inserting state changes: pgx CopyFrom state_changes: ERROR: COPY from stdin failed: converting signer_account_id: converting address to bytes: stellar address PBCK2RYYLIYOSHBEL2FQLAVRSHRH3GP3ID476SGKBV7BEZHMQ6NSAAAAAAB55LN6AANMS has a 40-byte key payload; the account_id column stores only 32-b..."
+      ],
+      "IngestStage": "persist",
+      "IngestError": "batch inserting state changes: pgx CopyFrom state_changes: ERROR: COPY from stdin failed: converting signer_account_id: converting address to bytes: stellar address PBCK2RYYLIYOSHBEL2FQLAVRSHRH3GP3ID476SGKBV7BEZHMQ6NSAAAAAAB55LN6AANMS has a 40-byte key payload; the account_id column stores only 32-byte account/contract keys (SQLSTATE 57014)"
+    },
+    {
+      "Issue": "wallet-backend#716 (classic control)",
+      "Entry": "cap27-payment-muxed-max-id-to-muxed-zero-id",
+      "Ledger": "5699707",
+      "Build": "pre-fix",
+      "Commit": "79ea2acd",
+      "Shim": "go get github.com/stellar/go-stellar-sdk@v0.8.0",
+      "Source": "galexie",
+      "Expected": "pass",
+      "Got": "pass",
+      "Evidence": [
+        "transactions stored for ledger 5699707: 15",
+        "transactions_accounts.account_id: [GB4KMJUEQ3QT5CKLJNA5NRDEEJV4WNGVUH6LJ5A27OTA2VDXOY4Z2OQW GCGVDJFRRJA6UBTB5OCLJ5BJ2HXYT77QSQGPBQA7C5WQHEGZPEA2XQ77]"
+      ],
+      "IngestStage": "commit",
+      "IngestError": ""
+    },
+    {
+      "Issue": "wallet-backend#729",
+      "Entry": "cap40-setoptions-signed-payload-signer",
+      "Ledger": "4437357",
+      "Build": "pre-fix",
+      "Commit": "2a0a84ea",
+      "Shim": "",
+      "Source": "galexie",
+      "Expected": "halt",
+      "Got": "halt",
+      "Evidence": [
+        "transactions stored for ledger 4437357: 0",
+        "ingest stopped at stage \"persist\": batch inserting state changes: pgx CopyFrom state_changes: ERROR: COPY from stdin failed: converting signer_account_id: converting address to bytes: stellar address PBCK2RYYLIYOSHBEL2FQLAVRSHRH3GP3ID476SGKBV7BEZHMQ6NSAAAAAAB55LN6AANMS has a 40-byte key payload; the account_id column stores only 32-b..."
+      ],
+      "IngestStage": "persist",
+      "IngestError": "batch inserting state changes: pgx CopyFrom state_changes: ERROR: COPY from stdin failed: converting signer_account_id: converting address to bytes: stellar address PBCK2RYYLIYOSHBEL2FQLAVRSHRH3GP3ID476SGKBV7BEZHMQ6NSAAAAAAB55LN6AANMS has a 40-byte key payload; the account_id column stores only 32-byte account/contract keys (SQLSTATE 57014)"
+    },
+    {
+      "Issue": "wallet-backend#729",
+      "Entry": "cap40-setoptions-signed-payload-signer",
+      "Ledger": "4437357",
+      "Build": "fix",
+      "Commit": "2c873353",
+      "Shim": "",
+      "Source": "galexie",
+      "Expected": "pass",
+      "Got": "pass",
+      "Evidence": [
+        "transactions stored for ledger 4437357: 12",
+        "state_changes SIGNER/ADD signer_account_id: [PBCK2RYYLIYOSHBEL2FQLAVRSHRH3GP3ID476SGKBV7BEZHMQ6NSAAAAAAB55LN6AANMS]"
+      ],
+      "IngestStage": "commit",
+      "IngestError": ""
+    },
+    {
+      "Issue": "wallet-backend#731",
+      "Entry": "cap73-sac-trust-creates-trustline",
+      "Ledger": "5718668",
+      "Build": "pre-fix",
+      "Commit": "764a4f5b",
+      "Shim": "go get github.com/stellar/go-stellar-sdk@v0.8.0",
+      "Source": "galexie",
+      "Expected": "dropped",
+      "Got": "dropped",
+      "Evidence": [
+        "transactions stored for ledger 5718668: 14",
+        "state_changes for tx: [BALANCE/DEBIT GCKTS6PBU5K6TNEJDSACKAB55CI6IJQ5YEVP4I2VOOUMUF524IGTF4H6]"
+      ],
+      "IngestStage": "commit",
+      "IngestError": ""
+    },
+    {
+      "Issue": "wallet-backend#731",
+      "Entry": "cap73-sac-trust-creates-trustline",
+      "Ledger": "5718668",
+      "Build": "fix",
+      "Commit": "c152783c",
+      "Shim": "go get github.com/stellar/go-stellar-sdk@v0.8.0",
+      "Source": "galexie",
+      "Expected": "pass",
+      "Got": "pass",
+      "Evidence": [
+        "transactions stored for ledger 5718668: 14",
+        "state_changes for tx: [BALANCE/DEBIT GCKTS6PBU5K6TNEJDSACKAB55CI6IJQ5YEVP4I2VOOUMUF524IGTF4H6 TRUSTLINE/ADD GCKTS6PBU5K6TNEJDSACKAB55CI6IJQ5YEVP4I2VOOUMUF524IGTF4H6 BALANCE_AUTHORIZATION/SET GCKTS6PBU5K6TNEJDSACKAB55CI6IJQ5YEVP4I2VOOUMUF524IGTF4H6]"
+      ],
+      "IngestStage": "commit",
+      "IngestError": ""
+    },
+    {
+      "Issue": "wallet-backend#731",
+      "Entry": "cap73-sac-trust-creates-trustline",
+      "Ledger": "5718668",
+      "Build": "pre-fix-unshimmed",
+      "Commit": "764a4f5b",
+      "Shim": "",
+      "Source": "galexie",
+      "Expected": "halt",
+      "Got": "halt",
+      "Evidence": [
+        "transactions stored for ledger 5718668: 0",
+        "ingest stopped at stage \"fetch\": materializing batch ledgers: xdr view: unknown union discriminant at offset 0: discriminant 3"
+      ],
+      "IngestStage": "fetch",
+      "IngestError": "materializing batch ledgers: xdr view: unknown union discriminant at offset 0: discriminant 3"
+    },
+    {
+      "Issue": "wallet-backend#716",
+      "Entry": "cap40-setoptions-signed-payload-signer",
+      "Ledger": "4437357",
+      "Build": "head",
+      "Commit": "3e22515a",
+      "Shim": "",
+      "Source": "galexie",
+      "Expected": "pass",
+      "Got": "pass",
+      "Evidence": [
+        "transactions stored for ledger 4437357: 12",
+        "state_changes SIGNER/ADD signer_account_id: [PBCK2RYYLIYOSHBEL2FQLAVRSHRH3GP3ID476SGKBV7BEZHMQ6NSAAAAAAB55LN6AANMS]"
+      ],
+      "IngestStage": "commit",
+      "IngestError": ""
+    },
+    {
+      "Issue": "wallet-backend#716 (classic control)",
+      "Entry": "cap27-payment-muxed-max-id-to-muxed-zero-id",
+      "Ledger": "5699707",
+      "Build": "head",
+      "Commit": "3e22515a",
+      "Shim": "",
+      "Source": "galexie",
+      "Expected": "pass",
+      "Got": "pass",
+      "Evidence": [
+        "transactions stored for ledger 5699707: 15",
+        "transactions_accounts.account_id: [GB4KMJUEQ3QT5CKLJNA5NRDEEJV4WNGVUH6LJ5A27OTA2VDXOY4Z2OQW GCGVDJFRRJA6UBTB5OCLJ5BJ2HXYT77QSQGPBQA7C5WQHEGZPEA2XQ77]"
+      ],
+      "IngestStage": "commit",
+      "IngestError": ""
+    },
+    {
+      "Issue": "wallet-backend#729",
+      "Entry": "cap40-setoptions-signed-payload-signer",
+      "Ledger": "4437357",
+      "Build": "head",
+      "Commit": "3e22515a",
+      "Shim": "",
+      "Source": "galexie",
+      "Expected": "pass",
+      "Got": "pass",
+      "Evidence": [
+        "transactions stored for ledger 4437357: 12",
+        "state_changes SIGNER/ADD signer_account_id: [PBCK2RYYLIYOSHBEL2FQLAVRSHRH3GP3ID476SGKBV7BEZHMQ6NSAAAAAAB55LN6AANMS]"
+      ],
+      "IngestStage": "commit",
+      "IngestError": ""
+    },
+    {
+      "Issue": "wallet-backend#731",
+      "Entry": "cap73-sac-trust-creates-trustline",
+      "Ledger": "5718668",
+      "Build": "head",
+      "Commit": "3e22515a",
+      "Shim": "",
+      "Source": "galexie",
+      "Expected": "pass",
+      "Got": "pass",
+      "Evidence": [
+        "transactions stored for ledger 5718668: 14",
+        "state_changes for tx: [BALANCE/DEBIT GCKTS6PBU5K6TNEJDSACKAB55CI6IJQ5YEVP4I2VOOUMUF524IGTF4H6 TRUSTLINE/ADD GCKTS6PBU5K6TNEJDSACKAB55CI6IJQ5YEVP4I2VOOUMUF524IGTF4H6 BALANCE_AUTHORIZATION/SET GCKTS6PBU5K6TNEJDSACKAB55CI6IJQ5YEVP4I2VOOUMUF524IGTF4H6]"
+      ],
+      "IngestStage": "commit",
+      "IngestError": ""
+    },
+    {
+      "Issue": "wallet-backend#716",
+      "Entry": "cap40-setoptions-signed-payload-signer",
+      "Ledger": "4437357",
+      "Build": "head-via-mock-rpc",
+      "Commit": "3e22515a",
+      "Shim": "",
+      "Source": "rpc",
+      "Expected": "pass",
+      "Got": "pass",
+      "Evidence": [
+        "transactions stored for ledger 4437357: 12",
+        "state_changes SIGNER/ADD signer_account_id: [PBCK2RYYLIYOSHBEL2FQLAVRSHRH3GP3ID476SGKBV7BEZHMQ6NSAAAAAAB55LN6AANMS]"
+      ],
+      "IngestStage": "commit",
+      "IngestError": ""
+    },
+    {
+      "Issue": "wallet-backend#716 (classic control)",
+      "Entry": "cap27-payment-muxed-max-id-to-muxed-zero-id",
+      "Ledger": "5699707",
+      "Build": "head-via-mock-rpc",
+      "Commit": "3e22515a",
+      "Shim": "",
+      "Source": "rpc",
+      "Expected": "pass",
+      "Got": "pass",
+      "Evidence": [
+        "transactions stored for ledger 5699707: 15",
+        "transactions_accounts.account_id: [GB4KMJUEQ3QT5CKLJNA5NRDEEJV4WNGVUH6LJ5A27OTA2VDXOY4Z2OQW GCGVDJFRRJA6UBTB5OCLJ5BJ2HXYT77QSQGPBQA7C5WQHEGZPEA2XQ77]"
+      ],
+      "IngestStage": "commit",
+      "IngestError": ""
+    },
+    {
+      "Issue": "wallet-backend#729",
+      "Entry": "cap40-setoptions-signed-payload-signer",
+      "Ledger": "4437357",
+      "Build": "head-via-mock-rpc",
+      "Commit": "3e22515a",
+      "Shim": "",
+      "Source": "rpc",
+      "Expected": "pass",
+      "Got": "pass",
+      "Evidence": [
+        "transactions stored for ledger 4437357: 12",
+        "state_changes SIGNER/ADD signer_account_id: [PBCK2RYYLIYOSHBEL2FQLAVRSHRH3GP3ID476SGKBV7BEZHMQ6NSAAAAAAB55LN6AANMS]"
+      ],
+      "IngestStage": "commit",
+      "IngestError": ""
+    },
+    {
+      "Issue": "wallet-backend#731",
+      "Entry": "cap73-sac-trust-creates-trustline",
+      "Ledger": "5718668",
+      "Build": "head-via-mock-rpc",
+      "Commit": "3e22515a",
+      "Shim": "",
+      "Source": "rpc",
+      "Expected": "pass",
+      "Got": "pass",
+      "Evidence": [
+        "transactions stored for ledger 5718668: 14",
+        "state_changes for tx: [BALANCE/DEBIT GCKTS6PBU5K6TNEJDSACKAB55CI6IJQ5YEVP4I2VOOUMUF524IGTF4H6 TRUSTLINE/ADD GCKTS6PBU5K6TNEJDSACKAB55CI6IJQ5YEVP4I2VOOUMUF524IGTF4H6 BALANCE_AUTHORIZATION/SET GCKTS6PBU5K6TNEJDSACKAB55CI6IJQ5YEVP4I2VOOUMUF524IGTF4H6]"
+      ],
+      "IngestStage": "commit",
+      "IngestError": ""
+    }
+  ]
+}

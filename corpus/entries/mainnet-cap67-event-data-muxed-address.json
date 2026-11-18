@@ -1,0 +1,407 @@
+{
+  "schema_version": "0.2.0",
+  "id": "mainnet-cap67-event-data-muxed-address",
+  "title": "Mainnet contract event (CCTP mint_and_forward) whose data map holds an M address (forward_recipient, muxed ID 10019)",
+  "caps": [
+    "CAP-0067",
+    "CAP-0027"
+  ],
+  "protocol": {
+    "introduced_in": 23,
+    "captured_on": 29,
+    "xdr_ref": "stellar-xdr 30.0.0 (3c2aa43d2ab54d429ae44aa5143d805bf5dba7e2) xdr: 4f524bbac80c781c06e4fb5fc93a2d0d331d6705 features: <none>"
+  },
+  "network": {
+    "passphrase": "Public Global Stellar Network ; September 2015",
+    "expected_tx_hash": "3d9ee633a13c1c4b1c01b0108b171e541aa3e9dc278861ecd6ae2c4b688813d0"
+  },
+  "xdr": {
+    "type": "TransactionEnvelope",
+    "base64": "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",
+    "sha256": "dc2dcf6be00122814c1b9ee11e1efae970db41ae90384de4442437e8b1ed75c5"
+  },
+  "provenance": {
+    "kind": "mainnet",
+    "origin": "mined_from_mainnet_history",
+    "origin_note": "Found by the real-network frequency study (tools/frequency/, reports/frequency.md): ScAddress muxed_account (an M address inside a Soroban value) occurs in 4 mainnet transactions in the sample (0.16 per million); here a CCTP mint_and_forward event carries it. Not submitted by this kit.",
+    "ledger": 65459106,
+    "tx_hash": "3d9ee633a13c1c4b1c01b0108b171e541aa3e9dc278861ecd6ae2c4b688813d0",
+    "source_url": "https://stellar.expert/explorer/public/tx/3d9ee633a13c1c4b1c01b0108b171e541aa3e9dc278861ecd6ae2c4b688813d0",
+    "tx_created_at": "2026-11-13T14:52:52.000Z",
+    "retrieved_at": "2026-11-16T19:00:30.828Z",
+    "tool": "tools/make-entry.mjs (mainnet-cap67-event-data-muxed-address.mjs)"
+  },
+  "expected": {
+    "json": {
+      "tx": {
+        "tx": {
+          "source_account": "GCMYQWLJSF3LFQ3IK67WV353TTWOULMI6LPZE4JDOMQRJ6722KAZM5BL",
+          "fee": 1294005,
+          "seq_num": "239770921575953033",
+          "cond": {
+            "time": {
+              "min_time": "0",
+              "max_time": "1794581870"
+            }
+          },
+          "memo": "none",
+          "operations": [
+            {
+              "source_account": null,
+              "body": {
+                "invoke_host_function": {
+                  "host_function": {
+                    "invoke_contract": {
+                      "contract_address": "CBZL2IH7F6BIDAA3WBNXYKIXSATJGMSW7K5P5MJ6STX5RXN47TZJDF5T",
+                      "function_name": "mint_and_forward",
+                      "args": [
+                        {
+                          "bytes": "00000001000000030000001be33de4c5cbb65b85577f3b15d414a5d8fda6101caacc19e0738c12d7be43cf0c00000000000000000000000028b5a0e9c621a5badaa536219b3a228c8168cf5d09a3773ffd1ff361f8315d629adf17d3e4730fd00a6900715431ed4b142aded272bd20ff2f8281801bb05b7c29179026933256fabafeb13e94efd8ddbcfcf291000003e8000003e800000001000000000000000000000000af88d065e77c8cc2239327c5edb3a432268e583172bd20ff2f8281801bb05b7c29179026933256fabafeb13e94efd8ddbcfcf291000000000000000000000000000000000000000000000000000000000007a193000000000000000000000000db5ec32a3fec0466f68acd5c81363535b9d0987b000000000000000000000000000000000000000000000000000000000000005600000000000000000000000000000000000000000000000000000000000000460000000000000000000000000000000000000000000000000000000003e7172000000000000000000000000000000000000000000000000000000000000000454d42334b4a5458505a52355048324f59574a324559354148324f3557494a49364f4655585334504d484937583533454b524e5353454141414141414141414248454f534457"
+                        },
+                        {
+                          "bytes": "9cfd03d02e4b17966704558d0703db4922cefcfc16efa00392646b6a1106a40f3290f939a8dee094e551b8430887f581bfe62a5c2b8ccc7d0aa0c2f56f56b3581ce3225733cd1adb9388fa27999068b49201f6be339bd823cb6e4b311521fce3407f81141bb596123501518293c95804a489baae42ccc2d96cb620fe8789622ad91c"
+                        }
+                      ]
+                    }
+                  },
+                  "auth": []
+                }
+              }
+            }
+          ],
+          "ext": {
+            "v1": {
+              "ext": "v0",
+              "resources": {
+                "footprint": {
+                  "read_only": [
+                    {
+                      "contract_data": {
+                        "contract": "CACMENFFJPJMSDAJQLX4R7K3SFZIW2LJSE3R2UMLGSWHFHS353FVXAZV",
+                        "key": "ledger_key_contract_instance",
+                        "durability": "persistent"
+                      }
+                    },
+                    {
+                      "contract_data": {
+                        "contract": "CAE2G5Z77UP7GYPYGFOWFGW7C7J6I4YP2AFGSADRKQY62SYUFLPNFTXL",
+                        "key": {
+                          "vec": [
+                            {
+                              "symbol": "RemoteTokenMessenger"
+                            },
+                            {
+                              "u32": 3
+                            }
+                          ]
+                        },
+                        "durability": "persistent"
+                      }
+                    },
+                    {
+                      "contract_data": {
+                        "contract": "CAE2G5Z77UP7GYPYGFOWFGW7C7J6I4YP2AFGSADRKQY62SYUFLPNFTXL",
+                        "key": {
+                          "vec": [
+                            {
+                              "symbol": "RemoteTokenToLocal"
+                            },
+                            {
+                              "vec": [
+                                {
+                                  "u32": 3
+                                },
+                                {
+                                  "bytes": "000000000000000000000000af88d065e77c8cc2239327c5edb3a432268e5831"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        "durability": "persistent"
+                      }
+                    },
+                    {
+                      "contract_data": {
+                        "contract": "CAE2G5Z77UP7GYPYGFOWFGW7C7J6I4YP2AFGSADRKQY62SYUFLPNFTXL",
+                        "key": {
+                          "vec": [
+                            {
+                              "symbol": "SwapMinterConfig"
+                            },
+                            {
+                              "address": "CCW67TSZV3SSS2HXMBQ5JFGCKJNXKZM7UQUWUZPUTHXSTZLEO7SJMI75"
+                            }
+                          ]
+                        },
+                        "durability": "persistent"
+                      }
+                    },
+                    {
+                      "contract_data": {
+                        "contract": "CAE2G5Z77UP7GYPYGFOWFGW7C7J6I4YP2AFGSADRKQY62SYUFLPNFTXL",
+                        "key": {
+                          "vec": [
+                            {
+                              "symbol": "TokenDecimalConfig"
+                            },
+                            {
+                              "address": "CCW67TSZV3SSS2HXMBQ5JFGCKJNXKZM7UQUWUZPUTHXSTZLEO7SJMI75"
+                            }
+                          ]
+                        },
+                        "durability": "persistent"
+                      }
+                    },
+                    {
+                      "contract_data": {
+                        "contract": "CAE2G5Z77UP7GYPYGFOWFGW7C7J6I4YP2AFGSADRKQY62SYUFLPNFTXL",
+                        "key": "ledger_key_contract_instance",
+                        "durability": "persistent"
+                      }
+                    },
+                    {
+                      "contract_data": {
+                        "contract": "CBZL2IH7F6BIDAA3WBNXYKIXSATJGMSW7K5P5MJ6STX5RXN47TZJDF5T",
+                        "key": "ledger_key_contract_instance",
+                        "durability": "persistent"
+                      }
+                    },
+                    {
+                      "contract_data": {
+                        "contract": "CCO3242SDS3TV6T27VXBX65FYEI2A4JJTFVOXPZ6LJQANFFNV3NSD575",
+                        "key": "ledger_key_contract_instance",
+                        "durability": "persistent"
+                      }
+                    },
+                    {
+                      "contract_data": {
+                        "contract": "CCPLJV7AKKFIE4LXFVUWZXDI2HNLEC7U3CQHAMVDLYHQFGMGVTCR4D5W",
+                        "key": "ledger_key_contract_instance",
+                        "durability": "persistent"
+                      }
+                    },
+                    {
+                      "contract_data": {
+                        "contract": "CCW67TSZV3SSS2HXMBQ5JFGCKJNXKZM7UQUWUZPUTHXSTZLEO7SJMI75",
+                        "key": {
+                          "vec": [
+                            {
+                              "symbol": "Balance"
+                            },
+                            {
+                              "address": "CAE2G5Z77UP7GYPYGFOWFGW7C7J6I4YP2AFGSADRKQY62SYUFLPNFTXL"
+                            }
+                          ]
+                        },
+                        "durability": "persistent"
+                      }
+                    },
+                    {
+                      "contract_data": {
+                        "contract": "CCW67TSZV3SSS2HXMBQ5JFGCKJNXKZM7UQUWUZPUTHXSTZLEO7SJMI75",
+                        "key": "ledger_key_contract_instance",
+                        "durability": "persistent"
+                      }
+                    },
+                    {
+                      "contract_code": {
+                        "hash": "00b1b70550f887bd87835270ddee76307ced7a00aa6ad354ed744bc0544a03ac"
+                      }
+                    },
+                    {
+                      "contract_code": {
+                        "hash": "99bd0ddc506ee13fc4f433f0627092034dc38f4773ec16930a1823a1174431d4"
+                      }
+                    },
+                    {
+                      "contract_code": {
+                        "hash": "a6c1acc6e367e46535733ce8a7320c718616ed42f762cf2f1a0aa77ac6e056f6"
+                      }
+                    },
+                    {
+                      "contract_code": {
+                        "hash": "aba81900bc82d24a6f5b66a6fee775bc51543f91dc89e824bd96ffcf3879dba1"
+                      }
+                    }
+                  ],
+                  "read_write": [
+                    {
+                      "trustline": {
+                        "account_id": "GBICEF24L2X36FCOAQ4WNYPUK5M3R4XJKWRIX4MECTG3RKMLUM7GOHOR",
+                        "asset": {
+                          "credit_alphanum4": {
+                            "asset_code": "USDC",
+                            "issuer": "GA5ZSEJYB37JRC5AVCIA5MOP4RHTM335X2KGX3IHOJAPP5RE34K4KZVN"
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "trustline": {
+                        "account_id": "GB3KJTXPZR5PH2OYWJ2EY5AH2O5WIJI6OFUXS4PMHI7X53EKRNSSE3DI",
+                        "asset": {
+                          "credit_alphanum4": {
+                            "asset_code": "USDC",
+                            "issuer": "GA5ZSEJYB37JRC5AVCIA5MOP4RHTM335X2KGX3IHOJAPP5RE34K4KZVN"
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "contract_data": {
+                        "contract": "CACMENFFJPJMSDAJQLX4R7K3SFZIW2LJSE3R2UMLGSWHFHS353FVXAZV",
+                        "key": {
+                          "vec": [
+                            {
+                              "symbol": "UsedNonce"
+                            },
+                            {
+                              "bytes": "e33de4c5cbb65b85577f3b15d414a5d8fda6101caacc19e0738c12d7be43cf0c"
+                            }
+                          ]
+                        },
+                        "durability": "persistent"
+                      }
+                    },
+                    {
+                      "contract_data": {
+                        "contract": "CCO3242SDS3TV6T27VXBX65FYEI2A4JJTFVOXPZ6LJQANFFNV3NSD575",
+                        "key": {
+                          "vec": [
+                            {
+                              "symbol": "Allowance"
+                            },
+                            {
+                              "map": [
+                                {
+                                  "key": {
+                                    "symbol": "from"
+                                  },
+                                  "val": {
+                                    "address": "CAE2G5Z77UP7GYPYGFOWFGW7C7J6I4YP2AFGSADRKQY62SYUFLPNFTXL"
+                                  }
+                                },
+                                {
+                                  "key": {
+                                    "symbol": "spender"
+                                  },
+                                  "val": {
+                                    "address": "CCPLJV7AKKFIE4LXFVUWZXDI2HNLEC7U3CQHAMVDLYHQFGMGVTCR4D5W"
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        "durability": "temporary"
+                      }
+                    },
+                    {
+                      "contract_data": {
+                        "contract": "CCO3242SDS3TV6T27VXBX65FYEI2A4JJTFVOXPZ6LJQANFFNV3NSD575",
+                        "key": {
+                          "vec": [
+                            {
+                              "symbol": "Balance"
+                            },
+                            {
+                              "address": "CAE2G5Z77UP7GYPYGFOWFGW7C7J6I4YP2AFGSADRKQY62SYUFLPNFTXL"
+                            }
+                          ]
+                        },
+                        "durability": "persistent"
+                      }
+                    },
+                    {
+                      "contract_data": {
+                        "contract": "CCW67TSZV3SSS2HXMBQ5JFGCKJNXKZM7UQUWUZPUTHXSTZLEO7SJMI75",
+                        "key": {
+                          "vec": [
+                            {
+                              "symbol": "Balance"
+                            },
+                            {
+                              "address": "CBZL2IH7F6BIDAA3WBNXYKIXSATJGMSW7K5P5MJ6STX5RXN47TZJDF5T"
+                            }
+                          ]
+                        },
+                        "durability": "persistent"
+                      }
+                    }
+                  ]
+                },
+                "instructions": 13743057,
+                "disk_read_bytes": 276,
+                "write_bytes": 1152
+              },
+              "resource_fee": "294005"
+            }
+          }
+        },
+        "signatures": [
+          {
+            "hint": "fad28196",
+            "signature": "f18933a500f9fec9611dc276a37289d819e3c868744463563bbb6a3361c40950dc9507de1e5892aa53729cf6d9a977f1159bb9be345da1f4e35727fc8910de06"
+          }
+        ]
+      }
+    },
+    "checks": [
+      {
+        "id": "fn",
+        "path": "/tx/tx/operations/0/body/invoke_host_function/host_function/invoke_contract/function_name",
+        "op": "equals",
+        "value": "mint_and_forward",
+        "note": "CCTP forwarder."
+      }
+    ],
+    "ledger_checks": [
+      {
+        "id": "lcm-event-key",
+        "path": "/v2/tx_processing/255/tx_apply_processing/v4/operations/0/events/8/body/v0/data/map/1/key/symbol",
+        "op": "equals",
+        "value": "forward_recipient",
+        "note": "Event data key."
+      },
+      {
+        "id": "lcm-event-muxed",
+        "path": "/v2/tx_processing/255/tx_apply_processing/v4/operations/0/events/8/body/v0/data/map/1/val/address",
+        "op": "strkey",
+        "value": "MB3KJTXPZR5PH2OYWJ2EY5AH2O5WIJI6OFUXS4PMHI7X53EKRNSSEAAAAAAAAABHEOSDW",
+        "note": "ScAddress::MuxedAccount in contract event data. Indexers that assume event addresses are G or C (wallet-backend #716 producer 2 is the topic variant) meet this on mainnet."
+      },
+      {
+        "id": "lcm-success",
+        "path": "/v2/tx_processing/255/result/result/result/tx_success/0/op_inner/invoke_host_function/success",
+        "op": "preserved",
+        "note": "Applied."
+      }
+    ]
+  },
+  "tags": [
+    "muxed",
+    "events",
+    "mainnet"
+  ],
+  "linked_issues": [
+    {
+      "url": "https://github.com/stellar/wallet-backend/issues/716",
+      "role": "related",
+      "component": "muxed address in contract events"
+    }
+  ],
+  "ledger": {
+    "type": "LedgerCloseMeta",
+    "lcm_version": "v2",
+    "sequence": 65459106,
+    "protocol_version": 29,
+    "file": "corpus/datalake/pubnet/FC19F3FF--65408000-65471999/FC192C5D--65459106.xdr.zst",
+    "format": "galexie: zstd(LedgerCloseMetaBatch), 1 ledger per object, 64000 per partition",
+    "sha256_zst": "de7f4cb5522581bc3120b9ea87bb940abb00e92c218018e9fa772d8881b8ab52",
+    "sha256_lcm": "121f88a8fdfe742b947c8237da22fed775b8e75eaf0f502072e2592721a36a10",
+    "tx_index": 255,
+    "source": "galexie-public-archive",
+    "source_url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/v1.1/stellar/ledgers/pubnet/FC19F3FF--65408000-65471999/FC192C5D--65459106.xdr.zst"
+  }
+}

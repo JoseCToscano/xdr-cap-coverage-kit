@@ -1,0 +1,10 @@
+{$STATUS_HOST} {
+	encode gzip zstd
+	@allowed path /status.json /findings.jsonl /latest.md /healthz
+	handle @allowed {
+		reverse_proxy checker:8080
+	}
+	handle {
+		respond "not found" 404
+	}
+}

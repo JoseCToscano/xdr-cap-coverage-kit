@@ -1,5 +1,5 @@
 {
-  "schema_version": "0.1.0",
+  "schema_version": "0.2.0",
   "id": "cap40-setoptions-signed-payload-signer",
   "title": "SetOptions adds a signed-payload (P...) signer over the source account's own key",
   "caps": [
@@ -21,10 +21,13 @@
   },
   "provenance": {
     "kind": "testnet",
+    "origin": "mined_from_testnet_history",
+    "origin_note": "Read from existing testnet ledger history. Not submitted by this kit.",
     "ledger": 4437357,
     "tx_hash": "d9f78749cd01297cd5f22c7f2c798c9eec93d56f399e1c4cc2f8977ca52b9fed",
     "source_url": "https://horizon-testnet.stellar.org/transactions/d9f78749cd01297cd5f22c7f2c798c9eec93d56f399e1c4cc2f8977ca52b9fed",
-    "captured_at": "2026-08-31T21:06:12Z",
+    "tx_created_at": "2026-08-31T21:06:12Z",
+    "raw_committed_at": "2026-11-12T23:44:12Z",
     "tool": "tools/make-entry.mjs (cap40-setoptions-signed-payload-signer.mjs)"
   },
   "expected": {
@@ -94,6 +97,22 @@
         "value": "GBCK2RYYLIYOSHBEL2FQLAVRSHRH3GP3ID476SGKBV7BEZHMQ6NSBB7B",
         "note": "The P signer wraps the same ed25519 key as the source. Reducing P to its base G makes two different signers look identical."
       }
+    ],
+    "ledger_checks": [
+      {
+        "id": "lcm-signer-p-key-in-meta",
+        "path": "/v2/tx_processing/0/tx_apply_processing/v4/operations/0/changes/1/updated/data/account/signers/0/key",
+        "op": "strkey",
+        "value": "PBCK2RYYLIYOSHBEL2FQLAVRSHRH3GP3ID476SGKBV7BEZHMQ6NSAAAAAAB55LN6AANMS",
+        "note": "The account entry after apply holds the full signed-payload signer. This is the row wallet-backend #729 could not persist."
+      },
+      {
+        "id": "lcm-protocol-28",
+        "path": "/v2/ledger_header/header/ledger_version",
+        "op": "equals",
+        "value": 28,
+        "note": "Pre-Protocol-30 ledger: readable by go-stellar-sdk v0.7.3, so the #729 replay runs on unmodified pre-fix commits."
+      }
     ]
   },
   "tags": [
@@ -110,5 +129,18 @@
       "role": "related",
       "component": "wallet-backend AddressBytea"
     }
-  ]
+  ],
+  "ledger": {
+    "type": "LedgerCloseMeta",
+    "lcm_version": "v2",
+    "sequence": 4437357,
+    "protocol_version": 28,
+    "file": "corpus/datalake/testnet/FFBC9DFF--4416000-4479999/FFBC4A92--4437357.xdr.zst",
+    "format": "galexie: zstd(LedgerCloseMetaBatch), 1 ledger per object, 64000 per partition",
+    "sha256_zst": "24fc6077579e6058512e35401c728288898e6c4fd550b8f26e0a5079aae4001b",
+    "sha256_lcm": "582e694b96bf69f894763909a1b058c1a2523d5634f2e0947393cee9765f4e0e",
+    "tx_index": 0,
+    "source": "galexie-public-archive",
+    "source_url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/v1.1/stellar/ledgers/testnet/2025-12-18/FFBC9DFF--4416000-4479999/FFBC4A92--4437357.xdr.zst"
+  }
 }

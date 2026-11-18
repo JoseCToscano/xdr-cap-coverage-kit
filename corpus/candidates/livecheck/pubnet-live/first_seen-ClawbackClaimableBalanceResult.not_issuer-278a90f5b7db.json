@@ -1,0 +1,54 @@
+{
+ "candidate_version": "0.1",
+ "id": "first_seen-ClawbackClaimableBalanceResult.not_issuer-278a90f5b7db",
+ "status": "candidate (not reviewed, not in corpus/entries)",
+ "caps": [
+  "CAP-0023",
+  "CAP-0035"
+ ],
+ "caps_inferred": true,
+ "flags": [
+  {
+   "type": "first_seen",
+   "arm": "ClawbackClaimableBalanceResult.not_issuer",
+   "tx": "278a90f5b7db1853889b0fd7f6a7b6fd86cf3649020d7fe01679585e6df3bf7e",
+   "ledger": 65520888,
+   "segments": [
+    "E58",
+    "P99"
+   ],
+   "caps": [
+    "CAP-0023",
+    "CAP-0035"
+   ]
+  }
+ ],
+ "network": {
+  "name": "pubnet",
+  "passphrase": "Public Global Stellar Network ; September 2015"
+ },
+ "tx_hash": "278a90f5b7db1853889b0fd7f6a7b6fd86cf3649020d7fe01679585e6df3bf7e",
+ "ledger": 65520888,
+ "ledger_close_time": "2026-11-17T04:41:22.000Z",
+ "xdr": [
+  {
+   "type": "TransactionEnvelope",
+   "segment": "E58",
+   "base64": "AAAAAgAAAABNY4p+MIbikWKZWrWRugIDC+HI7Cqi6CYCursv3OZXOQAAAGQCo+r7AAAeBgAAAAAAAAAAAAAAAQAAAAAAAAAUAAAAAEeB6P13tQnZrJbNV9VLiMXm2elliLRDNZGErkWqJH8xAAAAAAAAAAHc5lc5AAAAQJqP7zTPLEWPaCpDonvHjEk9AxACCfAopJyRW7fCUmzRsuk3LYnn1Ey4qKAQkqZo5Elq6vD3kcWV4ITYZgT6Xwg=",
+   "sha256": "3fcfb18aa554492e4d7cad1d0ea5bf9e0d1151139edd4ada8fbcab1cd1650a5f"
+  },
+  {
+   "type": "TransactionResultMetaV1",
+   "segment": "P99",
+   "base64": "AAAAACeKkPW32xhTiJsP1/antv2GzzZJAg1/4BZ5WF5t879+AAAAAAAAAGT/////AAAAAQAAAAAAAAAU/////gAAAAAAAAACAAAAAwPnxM0AAAAAAAAAAE1jin4whuKRYplatZG6AgML4cjsKqLoJgK6uy/c5lc5AAAAAjy7cZsCo+r7AAAeBQAAAAYAAAABAAAAAMRxxkNwYslQaok0LlOKGtpATS9Bzx06JV9DIffG4OF1AAAAAAAAAAlsb2JzdHIuY28AAAABAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAd2AAAAAAAAAAMAAAAAA+fEzQAAAABq+9obAAAAAAAAAAED58T4AAAAAAAAAABNY4p+MIbikWKZWrWRugIDC+HI7Cqi6CYCursv3OZXOQAAAAI8u3E3AqPq+wAAHgUAAAAGAAAAAQAAAADEccZDcGLJUGqJNC5TihraQE0vQc8dOiVfQyH3xuDhdQAAAAAAAAAJbG9ic3RyLmNvAAAAAQAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAHdgAAAAAAAAADAAAAAAPnxM0AAAAAavvaGwAAAAAAAAAEAAAAAAAAAAIAAAADA+fE+AAAAAAAAAAATWOKfjCG4pFimVq1kboCAwvhyOwqougmArq7L9zmVzkAAAACPLtxNwKj6vsAAB4FAAAABgAAAAEAAAAAxHHGQ3BiyVBqiTQuU4oa2kBNL0HPHTolX0Mh98bg4XUAAAAAAAAACWxvYnN0ci5jbwAAAAEAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAB3YAAAAAAAAAAwAAAAAD58TNAAAAAGr72hsAAAAAAAAAAQPnxPgAAAAAAAAAAE1jin4whuKRYplatZG6AgML4cjsKqLoJgK6uy/c5lc5AAAAAjy7cTcCo+r7AAAeBgAAAAYAAAABAAAAAMRxxkNwYslQaok0LlOKGtpATS9Bzx06JV9DIffG4OF1AAAAAAAAAAlsb2JzdHIuY28AAAABAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAd2AAAAAAAAAAMAAAAAA+fE+AAAAABq+9ryAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAEltPzYWa7C+mNIQ4xImzw8EMmLbSG+T9PLMMtolT75dwAAAAEAAAAAAAAAAgAAAA8AAAADZmVlAAAAABIAAAAAAAAAAE1jin4whuKRYplatZG6AgML4cjsKqLoJgK6uy/c5lc5AAAACgAAAAAAAAAAAAAAAAAAAGQAAAAAAAAAAA==",
+   "sha256": "6492c8c7d17ce6c26e82ad8c6ab07581832c7b4877c0d3daf3533e56e2e77252"
+  }
+ ],
+ "provenance": {
+  "kind": "pubnet",
+  "origin": "observed_on_network",
+  "source_url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/v1.1/stellar/ledgers/pubnet/FC18F9FF--65472000-65535999/FC183B07--65520888.xdr.zst",
+  "detected_by": "livecheck/0.1",
+  "detected_at": "2026-11-17T18:32:53.514Z"
+ }
+}

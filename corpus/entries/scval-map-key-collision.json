@@ -1,5 +1,5 @@
 {
-  "schema_version": "0.1.0",
+  "schema_version": "0.2.0",
   "id": "scval-map-key-collision",
   "title": "ScVal map whose keys u32 1 and symbol \"1\" collide after native conversion",
   "caps": [
@@ -20,6 +20,7 @@
   },
   "provenance": {
     "kind": "synthetic",
+    "origin": "synthetic",
     "synthetic_reason": "Built with @stellar/stellar-sdk 17.4.0. Plan to replace it with a capture: deploy a test contract on a local quickstart that emits this map in an event, take the LedgerCloseMeta from getLedgers, and slice the event body.",
     "tool": "tools/make-entry.mjs (scval-map-key-collision.mjs)"
   },

@@ -1,0 +1,352 @@
+{
+  "generated_by": "tools/mainnet-cases.mjs",
+  "network": "pubnet",
+  "cases": [
+    {
+      "id": "p-earliest",
+      "group": "p-extra-signers",
+      "ledger": 65300015,
+      "tx": "fab818c3d8c1c5bba4ffb8468c9e97913bd1c571da9d2c34897f4916c7a606e0",
+      "tx_index": 114,
+      "ledger_txs": 407,
+      "object_key": "FC1BE7FF--65280000-65343999/FC1B99D0--65300015.xdr.zst",
+      "sha256_zst": "618aa138bb954925f9124cad4df1476673ed46854bb9be25660587a6061b3e38",
+      "note": "2 P keys in preconditions extra_signers; tx failed. Expect: tx row with this hash, participants include GC2R5L3JMP5C2IXY55JE4DSC7IAMADIUUHQ5VT346SLSW4HHMKPOF2KM, no malformed address in any row for the tx.",
+      "expect": {
+        "kind": "tx",
+        "hash": "fab818c3d8c1c5bba4ffb8468c9e97913bd1c571da9d2c34897f4916c7a606e0",
+        "accounts": "GC2R5L3JMP5C2IXY55JE4DSC7IAMADIUUHQ5VT346SLSW4HHMKPOF2KM"
+      }
+    },
+    {
+      "id": "p-report-example",
+      "group": "p-extra-signers",
+      "ledger": 65300015,
+      "tx": "1ae409b86999b4a1edce03aace212a4e307d96a79588ea529a1f5b21abf81f1e",
+      "tx_index": 151,
+      "ledger_txs": 407,
+      "object_key": "FC1BE7FF--65280000-65343999/FC1B99D0--65300015.xdr.zst",
+      "sha256_zst": "618aa138bb954925f9124cad4df1476673ed46854bb9be25660587a6061b3e38",
+      "note": "2 P keys in preconditions extra_signers; tx failed. Expect: tx row with this hash, participants include GA27Y2GJYZRTRK6VIMZTK2QH2BD422CNWYD56M6GIGO4MOWGKATBYPPW, no malformed address in any row for the tx.",
+      "expect": {
+        "kind": "tx",
+        "hash": "1ae409b86999b4a1edce03aace212a4e307d96a79588ea529a1f5b21abf81f1e",
+        "accounts": "GA27Y2GJYZRTRK6VIMZTK2QH2BD422CNWYD56M6GIGO4MOWGKATBYPPW"
+      }
+    },
+    {
+      "id": "p-success",
+      "group": "p-extra-signers",
+      "ledger": 65452827,
+      "tx": "475a6b89b665ab6d09d0ddfca6f657a81858212414fd8967a397808a90a06c21",
+      "tx_index": 646,
+      "ledger_txs": 1032,
+      "object_key": "FC19F3FF--65408000-65471999/FC1944E4--65452827.xdr.zst",
+      "sha256_zst": "b129e33d8419fa490c10ececcaf33c5779af302fcf479d64b844d67fa713d5a5",
+      "note": "2 P keys in preconditions extra_signers; tx succeeded. Expect: tx row with this hash, participants include GC3GTCODRUNWMNGA4RX7UCLEH67JNEIUIZ7A36W6IAI5CERF4KGXWYRL, no malformed address in any row for the tx.",
+      "expect": {
+        "kind": "tx",
+        "hash": "475a6b89b665ab6d09d0ddfca6f657a81858212414fd8967a397808a90a06c21",
+        "accounts": "GC3GTCODRUNWMNGA4RX7UCLEH67JNEIUIZ7A36W6IAI5CERF4KGXWYRL"
+      }
+    },
+    {
+      "id": "p-latest",
+      "group": "p-extra-signers",
+      "ledger": 65499884,
+      "tx": "40bb6fd22b7a8e7b80e2f7427f403f4fca549d42b0ad744f52fdda575a0df860",
+      "tx_index": 262,
+      "ledger_txs": 360,
+      "object_key": "FC18F9FF--65472000-65535999/FC188D13--65499884.xdr.zst",
+      "sha256_zst": "1af770742f4c9a37ff53256a1dc0f1b4ae8367431be501062085ae1d3dbfcaab",
+      "note": "2 P keys in preconditions extra_signers; tx failed. Expect: tx row with this hash, participants include GAKH7HDHMGLBP6HSYMMK4RWADJDPL4NK4SSGQMPPU7WUPZR7HEZQNB7I, no malformed address in any row for the tx.",
+      "expect": {
+        "kind": "tx",
+        "hash": "40bb6fd22b7a8e7b80e2f7427f403f4fca549d42b0ad744f52fdda575a0df860",
+        "accounts": "GAKH7HDHMGLBP6HSYMMK4RWADJDPL4NK4SSGQMPPU7WUPZR7HEZQNB7I"
+      }
+    },
+    {
+      "id": "tl-c28fd856-trustline",
+      "group": "soroban-trustline",
+      "ledger": 65300453,
+      "tx": "c28fd856089cd9ffaa468c1f121f804ee2ddb33bbf45a95d82a497a4966f1559",
+      "tx_index": 246,
+      "ledger_txs": 257,
+      "object_key": "FC1BE7FF--65280000-65343999/FC1B981A--65300453.xdr.zst",
+      "sha256_zst": "dc00c93721f333143f9eec185c6d187d1a01202deced56afdac1ee45c4abc2f6",
+      "note": "Soroban call batch creates trustline(s): GAC6NBVTNHBVMYDQ7EZCA6E5VKJWZZVDZQWBCIPDDZCWOIUI3ME2PIHA SHX; path: nested trust() in the auth tree; tx succeeded. Expect: TRUSTLINE/ADD state change for GAC6NBVTNHBVMYDQ7EZCA6E5VKJWZZVDZQWBCIPDDZCWOIUI3ME2PIHA.",
+      "path": "nested trust() in the auth tree",
+      "auth_fns": [
+        "batch@CBZX5A64",
+        "  trust@CCKCKCPH",
+        "  approve@CAUIKL3I",
+        "  approve@CAS3J7GY",
+        "  place_contract_order@CCAYXH44"
+      ],
+      "expect": {
+        "kind": "trustline",
+        "account": "GAC6NBVTNHBVMYDQ7EZCA6E5VKJWZZVDZQWBCIPDDZCWOIUI3ME2PIHA"
+      }
+    },
+    {
+      "id": "tl-c28fd856-tx",
+      "group": "soroban-trustline",
+      "ledger": 65300453,
+      "tx": "c28fd856089cd9ffaa468c1f121f804ee2ddb33bbf45a95d82a497a4966f1559",
+      "tx_index": 246,
+      "ledger_txs": 257,
+      "object_key": "FC1BE7FF--65280000-65343999/FC1B981A--65300453.xdr.zst",
+      "sha256_zst": "dc00c93721f333143f9eec185c6d187d1a01202deced56afdac1ee45c4abc2f6",
+      "note": "Same tx. Expect: participants include GAC6NBVTNHBVMYDQ7EZCA6E5VKJWZZVDZQWBCIPDDZCWOIUI3ME2PIHA, no malformed address.",
+      "expect": {
+        "kind": "tx",
+        "hash": "c28fd856089cd9ffaa468c1f121f804ee2ddb33bbf45a95d82a497a4966f1559",
+        "accounts": "GAC6NBVTNHBVMYDQ7EZCA6E5VKJWZZVDZQWBCIPDDZCWOIUI3ME2PIHA"
+      }
+    },
+    {
+      "id": "tl-9a1640c6-trustline",
+      "group": "soroban-trustline",
+      "ledger": 65456865,
+      "tx": "9a1640c6036cc056cde925163e00899a838b50eae82e4b9d687fcc145af8ef6d",
+      "tx_index": 159,
+      "ledger_txs": 203,
+      "object_key": "FC19F3FF--65408000-65471999/FC19351E--65456865.xdr.zst",
+      "sha256_zst": "5ef8f488a02cc0a3034343a9834c45fa98254305e36ffb08326c5ebd455463dd",
+      "note": "Soroban call swap_split creates trustline(s): GC2LLVGFPLVSR5JC6JR3LTP35YII7VKFXKJUMIPLQJFVDOLYHNKGARRY EURC; path: nested trust() in the auth tree; tx succeeded. Expect: TRUSTLINE/ADD state change for GC2LLVGFPLVSR5JC6JR3LTP35YII7VKFXKJUMIPLQJFVDOLYHNKGARRY.",
+      "path": "nested trust() in the auth tree",
+      "auth_fns": [
+        "swap_split@CA7RQDMM",
+        "  trust@CDTKPWPL",
+        "  transfer@CDPZK5GU"
+      ],
+      "expect": {
+        "kind": "trustline",
+        "account": "GC2LLVGFPLVSR5JC6JR3LTP35YII7VKFXKJUMIPLQJFVDOLYHNKGARRY"
+      }
+    },
+    {
+      "id": "tl-9a1640c6-tx",
+      "group": "soroban-trustline",
+      "ledger": 65456865,
+      "tx": "9a1640c6036cc056cde925163e00899a838b50eae82e4b9d687fcc145af8ef6d",
+      "tx_index": 159,
+      "ledger_txs": 203,
+      "object_key": "FC19F3FF--65408000-65471999/FC19351E--65456865.xdr.zst",
+      "sha256_zst": "5ef8f488a02cc0a3034343a9834c45fa98254305e36ffb08326c5ebd455463dd",
+      "note": "Same tx. Expect: participants include GC2LLVGFPLVSR5JC6JR3LTP35YII7VKFXKJUMIPLQJFVDOLYHNKGARRY, no malformed address.",
+      "expect": {
+        "kind": "tx",
+        "hash": "9a1640c6036cc056cde925163e00899a838b50eae82e4b9d687fcc145af8ef6d",
+        "accounts": "GC2LLVGFPLVSR5JC6JR3LTP35YII7VKFXKJUMIPLQJFVDOLYHNKGARRY"
+      }
+    },
+    {
+      "id": "tl-dada01c4-trustline",
+      "group": "soroban-trustline",
+      "ledger": 65458938,
+      "tx": "dada01c4c8bb458c433593fe9b8b9f0d80f629ef6517bd89fc60d794d848bd55",
+      "tx_index": 188,
+      "ledger_txs": 249,
+      "object_key": "FC19F3FF--65408000-65471999/FC192D05--65458938.xdr.zst",
+      "sha256_zst": "37b2e5df47b9ee3d8d7a30775e6d8ba86c564925218d81cf23812e1a8172c137",
+      "note": "Soroban call swap_bridge creates trustline(s): GD6TKVC3OUP6UCN6PHTGIHWI4KJGCEIB5UDVDA6DIG36Q3UU3PRHUJQJ USDC; path: nested trust() in the auth tree; tx succeeded. Expect: TRUSTLINE/ADD state change for GD6TKVC3OUP6UCN6PHTGIHWI4KJGCEIB5UDVDA6DIG36Q3UU3PRHUJQJ.",
+      "path": "nested trust() in the auth tree",
+      "auth_fns": [
+        "swap_bridge@CDCNXZHY",
+        "  transfer@CAS3J7GY",
+        "  transfer@CAS3J7GY",
+        "  trust@CCW67TSZ",
+        "  swap_exact_in@CARVQXFP",
+        "    transfer@CAS3J7GY",
+        "  deposit@CBWY75BG",
+        "    transfer@CCW67TSZ"
+      ],
+      "expect": {
+        "kind": "trustline",
+        "account": "GD6TKVC3OUP6UCN6PHTGIHWI4KJGCEIB5UDVDA6DIG36Q3UU3PRHUJQJ"
+      }
+    },
+    {
+      "id": "tl-dada01c4-tx",
+      "group": "soroban-trustline",
+      "ledger": 65458938,
+      "tx": "dada01c4c8bb458c433593fe9b8b9f0d80f629ef6517bd89fc60d794d848bd55",
+      "tx_index": 188,
+      "ledger_txs": 249,
+      "object_key": "FC19F3FF--65408000-65471999/FC192D05--65458938.xdr.zst",
+      "sha256_zst": "37b2e5df47b9ee3d8d7a30775e6d8ba86c564925218d81cf23812e1a8172c137",
+      "note": "Same tx. Expect: participants include GD6TKVC3OUP6UCN6PHTGIHWI4KJGCEIB5UDVDA6DIG36Q3UU3PRHUJQJ, no malformed address.",
+      "expect": {
+        "kind": "tx",
+        "hash": "dada01c4c8bb458c433593fe9b8b9f0d80f629ef6517bd89fc60d794d848bd55",
+        "accounts": "GD6TKVC3OUP6UCN6PHTGIHWI4KJGCEIB5UDVDA6DIG36Q3UU3PRHUJQJ"
+      }
+    },
+    {
+      "id": "tl-43188102-trustline",
+      "group": "soroban-trustline",
+      "ledger": 65460586,
+      "tx": "43188102abd318a3619e5690208c93d74418db21245e0758f956cd930cf27190",
+      "tx_index": 376,
+      "ledger_txs": 465,
+      "object_key": "FC19F3FF--65408000-65471999/FC192695--65460586.xdr.zst",
+      "sha256_zst": "bd80478090afe4ddd2f1436a6c45da912f1b5ad803265b0893f8b8cc15361ea1",
+      "note": "Soroban call batch creates trustline(s): GCDMBROAJULESNGO6TG5ZOAYBHQYTN5RPGJ2RH3VU6UV4YZQ2DGPWAAP EURC; path: nested trust() in the auth tree; tx succeeded. Expect: TRUSTLINE/ADD state change for GCDMBROAJULESNGO6TG5ZOAYBHQYTN5RPGJ2RH3VU6UV4YZQ2DGPWAAP.",
+      "path": "nested trust() in the auth tree",
+      "auth_fns": [
+        "batch@CBZX5A64",
+        "  trust@CDTKPWPL",
+        "  swap_chained_strict_receive@CBQDHNBF",
+        "    transfer@CAS3J7GY"
+      ],
+      "expect": {
+        "kind": "trustline",
+        "account": "GCDMBROAJULESNGO6TG5ZOAYBHQYTN5RPGJ2RH3VU6UV4YZQ2DGPWAAP"
+      }
+    },
+    {
+      "id": "tl-43188102-tx",
+      "group": "soroban-trustline",
+      "ledger": 65460586,
+      "tx": "43188102abd318a3619e5690208c93d74418db21245e0758f956cd930cf27190",
+      "tx_index": 376,
+      "ledger_txs": 465,
+      "object_key": "FC19F3FF--65408000-65471999/FC192695--65460586.xdr.zst",
+      "sha256_zst": "bd80478090afe4ddd2f1436a6c45da912f1b5ad803265b0893f8b8cc15361ea1",
+      "note": "Same tx. Expect: participants include GCDMBROAJULESNGO6TG5ZOAYBHQYTN5RPGJ2RH3VU6UV4YZQ2DGPWAAP, no malformed address.",
+      "expect": {
+        "kind": "tx",
+        "hash": "43188102abd318a3619e5690208c93d74418db21245e0758f956cd930cf27190",
+        "accounts": "GCDMBROAJULESNGO6TG5ZOAYBHQYTN5RPGJ2RH3VU6UV4YZQ2DGPWAAP"
+      }
+    },
+    {
+      "id": "tl-dfddecd1-trustline",
+      "group": "soroban-trustline",
+      "ledger": 65492238,
+      "tx": "dfddecd1969744438bcbfacb4d2e5ec84207cf58526886238ba0f42e759c9d38",
+      "tx_index": 120,
+      "ledger_txs": 217,
+      "object_key": "FC18F9FF--65472000-65535999/FC18AAF1--65492238.xdr.zst",
+      "sha256_zst": "240654aa9a3e6e20ebdb907244820200379a6928e4e326d0ccd33ffc8c693758",
+      "note": "Soroban call swap_bridge creates trustline(s): GCTLX3TBLHQEKNWKAF5P5VHTKHUQ436S56FXIZB67FUYT647HWKKDFV4 USDC; path: nested trust() in the auth tree; tx succeeded. Expect: TRUSTLINE/ADD state change for GCTLX3TBLHQEKNWKAF5P5VHTKHUQ436S56FXIZB67FUYT647HWKKDFV4.",
+      "path": "nested trust() in the auth tree",
+      "auth_fns": [
+        "swap_bridge@CDCNXZHY",
+        "  transfer@CAS3J7GY",
+        "  transfer@CAS3J7GY",
+        "  trust@CCW67TSZ",
+        "  swap_exact_in@CARVQXFP",
+        "    transfer@CAS3J7GY",
+        "  deposit@CBWY75BG",
+        "    transfer@CCW67TSZ"
+      ],
+      "expect": {
+        "kind": "trustline",
+        "account": "GCTLX3TBLHQEKNWKAF5P5VHTKHUQ436S56FXIZB67FUYT647HWKKDFV4"
+      }
+    },
+    {
+      "id": "tl-dfddecd1-tx",
+      "group": "soroban-trustline",
+      "ledger": 65492238,
+      "tx": "dfddecd1969744438bcbfacb4d2e5ec84207cf58526886238ba0f42e759c9d38",
+      "tx_index": 120,
+      "ledger_txs": 217,
+      "object_key": "FC18F9FF--65472000-65535999/FC18AAF1--65492238.xdr.zst",
+      "sha256_zst": "240654aa9a3e6e20ebdb907244820200379a6928e4e326d0ccd33ffc8c693758",
+      "note": "Same tx. Expect: participants include GCTLX3TBLHQEKNWKAF5P5VHTKHUQ436S56FXIZB67FUYT647HWKKDFV4, no malformed address.",
+      "expect": {
+        "kind": "tx",
+        "hash": "dfddecd1969744438bcbfacb4d2e5ec84207cf58526886238ba0f42e759c9d38",
+        "accounts": "GCTLX3TBLHQEKNWKAF5P5VHTKHUQ436S56FXIZB67FUYT647HWKKDFV4"
+      }
+    },
+    {
+      "id": "tl-9fd6df38-trustline",
+      "group": "soroban-trustline",
+      "ledger": 65497277,
+      "tx": "9fd6df387f4b07a72677b4b526cc8ed81e33f0e3328ddefe85e3dcf1c8ae3be4",
+      "tx_index": 168,
+      "ledger_txs": 174,
+      "object_key": "FC18F9FF--65472000-65535999/FC189742--65497277.xdr.zst",
+      "sha256_zst": "3536fe426d267e7f46abe303a6945c3776f76b89da75bafdd0aacf661c0a666b",
+      "note": "Soroban call swap_bridge creates trustline(s): GA6NG4TWMFNZ67ZZ2Q54FNMM4IYOE2KZO3HHGZ3Y7AYZDNQWE6BTCV6N USDC; path: nested trust() in the auth tree; tx succeeded. Expect: TRUSTLINE/ADD state change for GA6NG4TWMFNZ67ZZ2Q54FNMM4IYOE2KZO3HHGZ3Y7AYZDNQWE6BTCV6N.",
+      "path": "nested trust() in the auth tree",
+      "auth_fns": [
+        "swap_bridge@CDCNXZHY",
+        "  transfer@CAS3J7GY",
+        "  transfer@CAS3J7GY",
+        "  trust@CCW67TSZ",
+        "  swap_exact_in@CARVQXFP",
+        "    transfer@CAS3J7GY",
+        "  deposit@CBWY75BG",
+        "    transfer@CCW67TSZ"
+      ],
+      "expect": {
+        "kind": "trustline",
+        "account": "GA6NG4TWMFNZ67ZZ2Q54FNMM4IYOE2KZO3HHGZ3Y7AYZDNQWE6BTCV6N"
+      }
+    },
+    {
+      "id": "tl-9fd6df38-tx",
+      "group": "soroban-trustline",
+      "ledger": 65497277,
+      "tx": "9fd6df387f4b07a72677b4b526cc8ed81e33f0e3328ddefe85e3dcf1c8ae3be4",
+      "tx_index": 168,
+      "ledger_txs": 174,
+      "object_key": "FC18F9FF--65472000-65535999/FC189742--65497277.xdr.zst",
+      "sha256_zst": "3536fe426d267e7f46abe303a6945c3776f76b89da75bafdd0aacf661c0a666b",
+      "note": "Same tx. Expect: participants include GA6NG4TWMFNZ67ZZ2Q54FNMM4IYOE2KZO3HHGZ3Y7AYZDNQWE6BTCV6N, no malformed address.",
+      "expect": {
+        "kind": "tx",
+        "hash": "9fd6df387f4b07a72677b4b526cc8ed81e33f0e3328ddefe85e3dcf1c8ae3be4",
+        "accounts": "GA6NG4TWMFNZ67ZZ2Q54FNMM4IYOE2KZO3HHGZ3Y7AYZDNQWE6BTCV6N"
+      }
+    },
+    {
+      "id": "tl-e03befef-trustline",
+      "group": "soroban-trustline",
+      "ledger": 65499397,
+      "tx": "e03befef38378374f9d7593dcba262492ffebdcfbf9dd87447a51faadf7b431b",
+      "tx_index": 223,
+      "ledger_txs": 305,
+      "object_key": "FC18F9FF--65472000-65535999/FC188EFA--65499397.xdr.zst",
+      "sha256_zst": "c4bab5a18688e93da5e3b15da82f91cd0da9fadfbcead91de660bc5b9d99ea5f",
+      "note": "Soroban call swap_bridge creates trustline(s): GCJKI4ZQC32GVJGBSNN2W5RXI74ZQCLP7EYGS65SXDGDLLOHZJ2CEH57 USDC; path: nested trust() in the auth tree; tx succeeded. Expect: TRUSTLINE/ADD state change for GCJKI4ZQC32GVJGBSNN2W5RXI74ZQCLP7EYGS65SXDGDLLOHZJ2CEH57.",
+      "path": "nested trust() in the auth tree",
+      "auth_fns": [
+        "swap_bridge@CDCNXZHY",
+        "  transfer@CAS3J7GY",
+        "  transfer@CAS3J7GY",
+        "  trust@CCW67TSZ",
+        "  swap_exact_in@CARVQXFP",
+        "    transfer@CAS3J7GY",
+        "  deposit@CBWY75BG",
+        "    transfer@CCW67TSZ"
+      ],
+      "expect": {
+        "kind": "trustline",
+        "account": "GCJKI4ZQC32GVJGBSNN2W5RXI74ZQCLP7EYGS65SXDGDLLOHZJ2CEH57"
+      }
+    },
+    {
+      "id": "tl-e03befef-tx",
+      "group": "soroban-trustline",
+      "ledger": 65499397,
+      "tx": "e03befef38378374f9d7593dcba262492ffebdcfbf9dd87447a51faadf7b431b",
+      "tx_index": 223,
+      "ledger_txs": 305,
+      "object_key": "FC18F9FF--65472000-65535999/FC188EFA--65499397.xdr.zst",
+      "sha256_zst": "c4bab5a18688e93da5e3b15da82f91cd0da9fadfbcead91de660bc5b9d99ea5f",
+      "note": "Same tx. Expect: participants include GCJKI4ZQC32GVJGBSNN2W5RXI74ZQCLP7EYGS65SXDGDLLOHZJ2CEH57, no malformed address.",
+      "expect": {
+        "kind": "tx",
+        "hash": "e03befef38378374f9d7593dcba262492ffebdcfbf9dd87447a51faadf7b431b",
+        "accounts": "GCJKI4ZQC32GVJGBSNN2W5RXI74ZQCLP7EYGS65SXDGDLLOHZJ2CEH57"
+      }
+    }
+  ]
+}

@@ -1,0 +1,236 @@
+{
+  "schema_version": "0.2.0",
+  "id": "cap84-sac-transfer-to-muxed-contract",
+  "title": "SAC transfer to a muxed contract address (W..., CAP-84) with muxed ID 2^64-1",
+  "caps": [
+    "CAP-0084",
+    "CAP-0067"
+  ],
+  "protocol": {
+    "introduced_in": 30,
+    "captured_on": 30,
+    "xdr_ref": "stellar-xdr 30.0.0 (3c2aa43d2ab54d429ae44aa5143d805bf5dba7e2) xdr: 4f524bbac80c781c06e4fb5fc93a2d0d331d6705 features: <none>"
+  },
+  "network": {
+    "passphrase": "Test SDF Network ; September 2015",
+    "expected_tx_hash": "b4dd69fd32abaf8a2f2e2b20d59512ea44db449bdac62f1284ab76a5f23f9097"
+  },
+  "xdr": {
+    "type": "TransactionEnvelope",
+    "base64": "AAAAAgAAAADIp/FpQllY52/TKmH7LMlf7x9lY+zZ03LwXT30FnklCwARQ1gAV0KEAAAABQAAAAEAAAAAAAAAAAAAAABq968RAAAAAAAAAAEAAAAAAAAAGAAAAAAAAAAB15KLcsJwPM/q9+uf9O9NUEpVqLl5/JtFDqLIQrTRzmEAAAAIdHJhbnNmZXIAAAADAAAAEgAAAAAAAAAAyKfxaUJZWOdv0yph+yzJX+8fZWPs2dNy8F099BZ5JQsAAAASAAAABf//////////AASCgYfgOAPuoFEcV3d5ZKAaW2OOyIAubcrLXcjlE4wAAAAKAAAAAAAAAAAAAAAAAJiWgAAAAAEAAAAAAAAAAAAAAAHXkotywnA8z+r365/0701QSlWouXn8m0UOoshCtNHOYQAAAAh0cmFuc2ZlcgAAAAMAAAASAAAAAAAAAADIp/FpQllY52/TKmH7LMlf7x9lY+zZ03LwXT30FnklCwAAABIAAAAF//////////8ABIKBh+A4A+6gURxXd3lkoBpbY47IgC5tystdyOUTjAAAAAoAAAAAAAAAAAAAAAAAmJaAAAAAAAAAAAEAAAAAAAAAAQAAAAYAAAAB15KLcsJwPM/q9+uf9O9NUEpVqLl5/JtFDqLIQrTRzmEAAAAUAAAAAQAAAAIAAAAAAAAAAMin8WlCWVjnb9MqYfssyV/vH2Vj7NnTcvBdPfQWeSULAAAABgAAAAHXkotywnA8z+r365/0701QSlWouXn8m0UOoshCtNHOYQAAABAAAAABAAAAAgAAAA8AAAAHQmFsYW5jZQAAAAASAAAAAQAEgoGH4DgD7qBRHFd3eWSgGltjjsiALm3Ky13I5ROMAAAAAQAD3ycAAACQAAABcAAAAAAAAgEYAAAAARZ5JQsAAABA9h55fXX6TNEGdtPPSZjXcMk5n63A4FfQZQ+1pFCRmG8lLUoHth1sh7OfOTvzgjfd8fktyqsFRA0OSGNrlbSQCA==",
+    "sha256": "169e143be127bd5cdee98e34a5a125c51d4d66e12e39cc37929cef61a6d8ed35"
+  },
+  "provenance": {
+    "kind": "testnet",
+    "origin": "submitted_by_kit",
+    "origin_note": "Submitted to testnet by tools/capture-testnet.mjs from a Friendbot-funded throwaway key that was never written to disk.",
+    "ledger": 5718669,
+    "tx_hash": "b4dd69fd32abaf8a2f2e2b20d59512ea44db449bdac62f1284ab76a5f23f9097",
+    "source_url": "https://horizon-testnet.stellar.org/transactions/b4dd69fd32abaf8a2f2e2b20d59512ea44db449bdac62f1284ab76a5f23f9097",
+    "tx_created_at": "2026-11-14T00:43:09.000Z",
+    "to": "WAAAJAUBQ7QDQA7OUBIRYV3XPFSKAGS3MOHMRABONXFMWXOI4UJYZ7777777777776IHC",
+    "to_contract": "CAAAJAUBQ7QDQA7OUBIRYV3XPFSKAGS3MOHMRABONXFMWXOI4UJYZFYH",
+    "to_muxed_id": "18446744073709551615",
+    "tool": "tools/make-entry.mjs (cap84-sac-transfer-to-muxed-contract.mjs)"
+  },
+  "expected": {
+    "json": {
+      "tx": {
+        "tx": {
+          "source_account": "GDEKP4LJIJMVRZ3P2MVGD6ZMZFP66H3FMPWNTU3S6BOT35AWPESQWVP6",
+          "fee": 1131352,
+          "seq_num": "24561457676943365",
+          "cond": {
+            "time": {
+              "min_time": "0",
+              "max_time": "1794617105"
+            }
+          },
+          "memo": "none",
+          "operations": [
+            {
+              "source_account": null,
+              "body": {
+                "invoke_host_function": {
+                  "host_function": {
+                    "invoke_contract": {
+                      "contract_address": "CDLZFC3SYJYDZT7K67VZ75HPJVIEUVNIXF47ZG2FB2RMQQVU2HHGCYSC",
+                      "function_name": "transfer",
+                      "args": [
+                        {
+                          "address": "GDEKP4LJIJMVRZ3P2MVGD6ZMZFP66H3FMPWNTU3S6BOT35AWPESQWVP6"
+                        },
+                        {
+                          "address": "WAAAJAUBQ7QDQA7OUBIRYV3XPFSKAGS3MOHMRABONXFMWXOI4UJYZ7777777777776IHC"
+                        },
+                        {
+                          "i128": "10000000"
+                        }
+                      ]
+                    }
+                  },
+                  "auth": [
+                    {
+                      "credentials": "source_account",
+                      "root_invocation": {
+                        "function": {
+                          "contract_fn": {
+                            "contract_address": "CDLZFC3SYJYDZT7K67VZ75HPJVIEUVNIXF47ZG2FB2RMQQVU2HHGCYSC",
+                            "function_name": "transfer",
+                            "args": [
+                              {
+                                "address": "GDEKP4LJIJMVRZ3P2MVGD6ZMZFP66H3FMPWNTU3S6BOT35AWPESQWVP6"
+                              },
+                              {
+                                "address": "WAAAJAUBQ7QDQA7OUBIRYV3XPFSKAGS3MOHMRABONXFMWXOI4UJYZ7777777777776IHC"
+                              },
+                              {
+                                "i128": "10000000"
+                              }
+                            ]
+                          }
+                        },
+                        "sub_invocations": []
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          ],
+          "ext": {
+            "v1": {
+              "ext": "v0",
+              "resources": {
+                "footprint": {
+                  "read_only": [
+                    {
+                      "contract_data": {
+                        "contract": "CDLZFC3SYJYDZT7K67VZ75HPJVIEUVNIXF47ZG2FB2RMQQVU2HHGCYSC",
+                        "key": "ledger_key_contract_instance",
+                        "durability": "persistent"
+                      }
+                    }
+                  ],
+                  "read_write": [
+                    {
+                      "account": {
+                        "account_id": "GDEKP4LJIJMVRZ3P2MVGD6ZMZFP66H3FMPWNTU3S6BOT35AWPESQWVP6"
+                      }
+                    },
+                    {
+                      "contract_data": {
+                        "contract": "CDLZFC3SYJYDZT7K67VZ75HPJVIEUVNIXF47ZG2FB2RMQQVU2HHGCYSC",
+                        "key": {
+                          "vec": [
+                            {
+                              "symbol": "Balance"
+                            },
+                            {
+                              "address": "CAAAJAUBQ7QDQA7OUBIRYV3XPFSKAGS3MOHMRABONXFMWXOI4UJYZFYH"
+                            }
+                          ]
+                        },
+                        "durability": "persistent"
+                      }
+                    }
+                  ]
+                },
+                "instructions": 253735,
+                "disk_read_bytes": 144,
+                "write_bytes": 368
+              },
+              "resource_fee": "131352"
+            }
+          }
+        },
+        "signatures": [
+          {
+            "hint": "1679250b",
+            "signature": "f61e797d75fa4cd10676d3cf4998d770c9399fadc0e057d0650fb5a45091986f252d4a07b61d6c87b39f393bf38237ddf1f92dcaab05440d0e48636b95b49008"
+          }
+        ]
+      }
+    },
+    "checks": [
+      {
+        "id": "to-is-w",
+        "path": "/tx/tx/operations/0/body/invoke_host_function/host_function/invoke_contract/args/1/address",
+        "op": "strkey",
+        "value": "WAAAJAUBQ7QDQA7OUBIRYV3XPFSKAGS3MOHMRABONXFMWXOI4UJYZ7777777777776IHC",
+        "note": "SCAddress arm 5 (muxed contract). Readers built before Protocol 30 fail to decode this or print it as a C address and lose the ID."
+      },
+      {
+        "id": "from-g",
+        "path": "/tx/tx/operations/0/body/invoke_host_function/host_function/invoke_contract/args/0/address",
+        "op": "strkey",
+        "value": "GDEKP4LJIJMVRZ3P2MVGD6ZMZFP66H3FMPWNTU3S6BOT35AWPESQWVP6",
+        "note": "Sender."
+      },
+      {
+        "id": "amount",
+        "path": "/tx/tx/operations/0/body/invoke_host_function/host_function/invoke_contract/args/2/i128",
+        "op": "equals",
+        "value": "10000000",
+        "note": "1 XLM."
+      }
+    ],
+    "ledger_checks": [
+      {
+        "id": "lcm-event-to-plain-c",
+        "path": "/v2/tx_processing/7/tx_apply_processing/v4/operations/0/events/0/body/v0/topics/2/address",
+        "op": "strkey",
+        "value": "CAAAJAUBQ7QDQA7OUBIRYV3XPFSKAGS3MOHMRABONXFMWXOI4UJYZFYH",
+        "note": "Event topic carries the non-muxed contract address, per CAP-84/CAP-67."
+      },
+      {
+        "id": "lcm-event-to-muxed-id",
+        "path": "/v2/tx_processing/7/tx_apply_processing/v4/operations/0/events/0/body/v0/data/map/1/val/u64",
+        "op": "equals",
+        "value": "18446744073709551615",
+        "note": "data.to_muxed_id is the full uint64. A JS number or int64 column gets it wrong."
+      },
+      {
+        "id": "lcm-event-amount",
+        "path": "/v2/tx_processing/7/tx_apply_processing/v4/operations/0/events/0/body/v0/data/map/0/val/i128",
+        "op": "equals",
+        "value": "10000000",
+        "note": "Amount in the map form of transfer data."
+      },
+      {
+        "id": "lcm-protocol-30",
+        "path": "/v2/ledger_header/header/ledger_version",
+        "op": "equals",
+        "value": 30,
+        "note": "Protocol 30."
+      }
+    ]
+  },
+  "tags": [
+    "muxed",
+    "muxed-contract",
+    "muxed-max-id",
+    "sac",
+    "protocol-30"
+  ],
+  "linked_issues": [],
+  "ledger": {
+    "type": "LedgerCloseMeta",
+    "lcm_version": "v2",
+    "sequence": 5718669,
+    "protocol_version": 30,
+    "file": "corpus/datalake/testnet/FFA915FF--5696000-5759999/FFA8BD72--5718669.xdr.zst",
+    "format": "galexie: zstd(LedgerCloseMetaBatch), 1 ledger per object, 64000 per partition",
+    "sha256_zst": "6a3f25199389534957a80964e88e304f76a20085dd988b5322a07f5f3d8aee9a",
+    "sha256_lcm": "5bdec9738d4c25c465961a801695eee5af4bf5027e3032e7bd491d303540536e",
+    "tx_index": 7,
+    "source": "galexie-public-archive",
+    "source_url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/v1.1/stellar/ledgers/testnet/2025-12-18/FFA915FF--5696000-5759999/FFA8BD72--5718669.xdr.zst",
+    "alt_source": {
+      "source": "stellar-rpc-getLedgers",
+      "sha256_lcm": "0cd7365233ca6a7c14399cade686634a26f598f51ab5ae2b4d5cd638b4bf7982",
+      "lcm_bytes": 122904,
+      "byte_identical": false
+    }
+  }
+}

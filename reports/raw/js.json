@@ -1,0 +1,972 @@
+[
+ {
+  "entry": "cap21-preconditions-max-length-vectors",
+  "step": "re-encode byte-exact",
+  "ok": true
+ },
+ {
+  "entry": "cap21-preconditions-max-length-vectors",
+  "step": "decode == expected.json",
+  "ok": true
+ },
+ {
+  "entry": "cap21-preconditions-max-length-vectors",
+  "step": "tx hash",
+  "ok": true
+ },
+ {
+  "entry": "cap21-preconditions-max-length-vectors",
+  "step": "check ops-at-max",
+  "ok": true
+ },
+ {
+  "entry": "cap21-preconditions-max-length-vectors",
+  "step": "check extra-signers-at-max",
+  "ok": true
+ },
+ {
+  "entry": "cap21-preconditions-max-length-vectors",
+  "step": "check extra-signer-signed-payload",
+  "ok": true
+ },
+ {
+  "entry": "cap21-preconditions-max-length-vectors",
+  "step": "check extra-signer-ed25519",
+  "ok": true
+ },
+ {
+  "entry": "cap21-preconditions-max-length-vectors",
+  "step": "check memo-text-at-max",
+  "ok": true
+ },
+ {
+  "entry": "cap21-preconditions-max-length-vectors",
+  "step": "check ledger-bounds",
+  "ok": true
+ },
+ {
+  "entry": "cap21-preconditions-max-length-vectors",
+  "step": "check min-seq-num",
+  "ok": true
+ },
+ {
+  "entry": "cap21-preconditions-max-length-vectors",
+  "step": "check muxed-source-id-1",
+  "ok": true
+ },
+ {
+  "entry": "cap21-preconditions-max-length-vectors",
+  "step": "check muxed-dest-max-id",
+  "ok": true
+ },
+ {
+  "entry": "cap21-preconditions-max-length-vectors",
+  "step": "check muxed-dest-zero-id",
+  "ok": true
+ },
+ {
+  "entry": "cap21-preconditions-max-length-vectors",
+  "step": "check three-signatures",
+  "ok": true
+ },
+ {
+  "entry": "cap21-preconditions-max-length-vectors",
+  "step": "lcm re-encode byte-exact",
+  "ok": true
+ },
+ {
+  "entry": "cap21-preconditions-max-length-vectors",
+  "step": "lcm decode == rust lcm json",
+  "ok": true
+ },
+ {
+  "entry": "cap21-preconditions-max-length-vectors",
+  "step": "ledger_check lcm-100-op-results",
+  "ok": true
+ },
+ {
+  "entry": "cap21-preconditions-max-length-vectors",
+  "step": "ledger_check lcm-last-op-success",
+  "ok": true
+ },
+ {
+  "entry": "cap27-payment-muxed-max-id-to-muxed-zero-id",
+  "step": "re-encode byte-exact",
+  "ok": true
+ },
+ {
+  "entry": "cap27-payment-muxed-max-id-to-muxed-zero-id",
+  "step": "decode == expected.json",
+  "ok": true
+ },
+ {
+  "entry": "cap27-payment-muxed-max-id-to-muxed-zero-id",
+  "step": "tx hash",
+  "ok": true
+ },
+ {
+  "entry": "cap27-payment-muxed-max-id-to-muxed-zero-id",
+  "step": "check source-muxed-max-id",
+  "ok": true
+ },
+ {
+  "entry": "cap27-payment-muxed-max-id-to-muxed-zero-id",
+  "step": "check destination-muxed-zero-id",
+  "ok": true
+ },
+ {
+  "entry": "cap27-payment-muxed-max-id-to-muxed-zero-id",
+  "step": "check amount",
+  "ok": true
+ },
+ {
+  "entry": "cap27-payment-muxed-max-id-to-muxed-zero-id",
+  "step": "lcm re-encode byte-exact",
+  "ok": true
+ },
+ {
+  "entry": "cap27-payment-muxed-max-id-to-muxed-zero-id",
+  "step": "lcm decode == rust lcm json",
+  "ok": true
+ },
+ {
+  "entry": "cap27-payment-muxed-max-id-to-muxed-zero-id",
+  "step": "ledger_check lcm-tx-success",
+  "ok": true
+ },
+ {
+  "entry": "cap27-payment-muxed-max-id-to-muxed-zero-id",
+  "step": "ledger_check lcm-close-time-ms",
+  "ok": true
+ },
+ {
+  "entry": "cap38-pool-issuers-strkey-vs-bytes-order",
+  "step": "re-encode byte-exact",
+  "ok": true
+ },
+ {
+  "entry": "cap38-pool-issuers-strkey-vs-bytes-order",
+  "step": "decode == expected.json",
+  "ok": true
+ },
+ {
+  "entry": "cap38-pool-issuers-strkey-vs-bytes-order",
+  "step": "tx hash",
+  "ok": true
+ },
+ {
+  "entry": "cap38-pool-issuers-strkey-vs-bytes-order",
+  "step": "check asset-a-issuer-byte-first",
+  "ok": true
+ },
+ {
+  "entry": "cap38-pool-issuers-strkey-vs-bytes-order",
+  "step": "check asset-b-issuer-text-first",
+  "ok": true
+ },
+ {
+  "entry": "cap38-pool-issuers-strkey-vs-bytes-order",
+  "step": "check pool-fee",
+  "ok": true
+ },
+ {
+  "entry": "cap38-pool-issuers-strkey-vs-bytes-order",
+  "step": "lcm re-encode byte-exact",
+  "ok": true
+ },
+ {
+  "entry": "cap38-pool-issuers-strkey-vs-bytes-order",
+  "step": "lcm decode == rust lcm json",
+  "ok": true
+ },
+ {
+  "entry": "cap38-pool-issuers-strkey-vs-bytes-order",
+  "step": "ledger_check lcm-pool-created",
+  "ok": true
+ },
+ {
+  "entry": "cap38-pool-issuers-strkey-vs-bytes-order",
+  "step": "ledger_check lcm-deposit-success",
+  "ok": true
+ },
+ {
+  "entry": "cap40-setoptions-signed-payload-signer",
+  "step": "re-encode byte-exact",
+  "ok": true
+ },
+ {
+  "entry": "cap40-setoptions-signed-payload-signer",
+  "step": "decode == expected.json",
+  "ok": true
+ },
+ {
+  "entry": "cap40-setoptions-signed-payload-signer",
+  "step": "tx hash",
+  "ok": true
+ },
+ {
+  "entry": "cap40-setoptions-signed-payload-signer",
+  "step": "check signer-is-p-strkey",
+  "ok": true
+ },
+ {
+  "entry": "cap40-setoptions-signed-payload-signer",
+  "step": "check signer-weight",
+  "ok": true
+ },
+ {
+  "entry": "cap40-setoptions-signed-payload-signer",
+  "step": "check same-key-as-source",
+  "ok": true
+ },
+ {
+  "entry": "cap40-setoptions-signed-payload-signer",
+  "step": "lcm re-encode byte-exact",
+  "ok": true
+ },
+ {
+  "entry": "cap40-setoptions-signed-payload-signer",
+  "step": "lcm decode == rust lcm json",
+  "ok": true
+ },
+ {
+  "entry": "cap40-setoptions-signed-payload-signer",
+  "step": "ledger_check lcm-signer-p-key-in-meta",
+  "ok": true
+ },
+ {
+  "entry": "cap40-setoptions-signed-payload-signer",
+  "step": "ledger_check lcm-protocol-28",
+  "ok": true
+ },
+ {
+  "entry": "cap46-11-nested-auth-depth-3",
+  "step": "re-encode byte-exact",
+  "ok": true
+ },
+ {
+  "entry": "cap46-11-nested-auth-depth-3",
+  "step": "decode == expected.json",
+  "ok": true
+ },
+ {
+  "entry": "cap46-11-nested-auth-depth-3",
+  "step": "tx hash",
+  "ok": true
+ },
+ {
+  "entry": "cap46-11-nested-auth-depth-3",
+  "step": "check root-has-3-subs",
+  "ok": true
+ },
+ {
+  "entry": "cap46-11-nested-auth-depth-3",
+  "step": "check depth-3",
+  "ok": true
+ },
+ {
+  "entry": "cap46-11-nested-auth-depth-3",
+  "step": "check leaf-fn",
+  "ok": true
+ },
+ {
+  "entry": "cap46-11-nested-auth-depth-3",
+  "step": "lcm re-encode byte-exact",
+  "ok": true
+ },
+ {
+  "entry": "cap46-11-nested-auth-depth-3",
+  "step": "lcm decode == rust lcm json",
+  "ok": true
+ },
+ {
+  "entry": "cap46-11-nested-auth-depth-3",
+  "step": "ledger_check lcm-success",
+  "ok": true
+ },
+ {
+  "entry": "cap67-sac-transfer-to-muxed-account",
+  "step": "re-encode byte-exact",
+  "ok": true
+ },
+ {
+  "entry": "cap67-sac-transfer-to-muxed-account",
+  "step": "decode == expected.json",
+  "ok": true
+ },
+ {
+  "entry": "cap67-sac-transfer-to-muxed-account",
+  "step": "tx hash",
+  "ok": true
+ },
+ {
+  "entry": "cap67-sac-transfer-to-muxed-account",
+  "step": "check to-is-m",
+  "ok": true
+ },
+ {
+  "entry": "cap67-sac-transfer-to-muxed-account",
+  "step": "lcm re-encode byte-exact",
+  "ok": true
+ },
+ {
+  "entry": "cap67-sac-transfer-to-muxed-account",
+  "step": "lcm decode == rust lcm json",
+  "ok": true
+ },
+ {
+  "entry": "cap67-sac-transfer-to-muxed-account",
+  "step": "ledger_check lcm-event-to-plain-g",
+  "ok": true
+ },
+ {
+  "entry": "cap67-sac-transfer-to-muxed-account",
+  "step": "ledger_check lcm-event-to-muxed-id-zero",
+  "ok": true
+ },
+ {
+  "entry": "cap73-sac-trust-creates-trustline",
+  "step": "re-encode byte-exact",
+  "ok": true
+ },
+ {
+  "entry": "cap73-sac-trust-creates-trustline",
+  "step": "decode == expected.json",
+  "ok": true
+ },
+ {
+  "entry": "cap73-sac-trust-creates-trustline",
+  "step": "tx hash",
+  "ok": true
+ },
+ {
+  "entry": "cap73-sac-trust-creates-trustline",
+  "step": "check fn-trust",
+  "ok": true
+ },
+ {
+  "entry": "cap73-sac-trust-creates-trustline",
+  "step": "check trust-arg-g",
+  "ok": true
+ },
+ {
+  "entry": "cap73-sac-trust-creates-trustline",
+  "step": "lcm re-encode byte-exact",
+  "ok": true
+ },
+ {
+  "entry": "cap73-sac-trust-creates-trustline",
+  "step": "lcm decode == rust lcm json",
+  "ok": true
+ },
+ {
+  "entry": "cap73-sac-trust-creates-trustline",
+  "step": "ledger_check lcm-trustline-created",
+  "ok": true
+ },
+ {
+  "entry": "cap73-sac-trust-creates-trustline",
+  "step": "ledger_check lcm-trustline-asset",
+  "ok": true
+ },
+ {
+  "entry": "cap73-sac-trust-creates-trustline",
+  "step": "ledger_check lcm-trustline-unlimited",
+  "ok": true
+ },
+ {
+  "entry": "cap73-sac-trust-creates-trustline",
+  "step": "ledger_check lcm-trustline-authorized",
+  "ok": true
+ },
+ {
+  "entry": "cap73-sac-trust-creates-trustline",
+  "step": "ledger_check lcm-no-contract-event",
+  "ok": true
+ },
+ {
+  "entry": "cap84-sac-transfer-to-muxed-contract",
+  "step": "re-encode byte-exact",
+  "ok": true
+ },
+ {
+  "entry": "cap84-sac-transfer-to-muxed-contract",
+  "step": "decode == expected.json",
+  "ok": true
+ },
+ {
+  "entry": "cap84-sac-transfer-to-muxed-contract",
+  "step": "tx hash",
+  "ok": true
+ },
+ {
+  "entry": "cap84-sac-transfer-to-muxed-contract",
+  "step": "check to-is-w",
+  "ok": true
+ },
+ {
+  "entry": "cap84-sac-transfer-to-muxed-contract",
+  "step": "check from-g",
+  "ok": true
+ },
+ {
+  "entry": "cap84-sac-transfer-to-muxed-contract",
+  "step": "check amount",
+  "ok": true
+ },
+ {
+  "entry": "cap84-sac-transfer-to-muxed-contract",
+  "step": "lcm re-encode byte-exact",
+  "ok": true
+ },
+ {
+  "entry": "cap84-sac-transfer-to-muxed-contract",
+  "step": "lcm decode == rust lcm json",
+  "ok": true
+ },
+ {
+  "entry": "cap84-sac-transfer-to-muxed-contract",
+  "step": "ledger_check lcm-event-to-plain-c",
+  "ok": true
+ },
+ {
+  "entry": "cap84-sac-transfer-to-muxed-contract",
+  "step": "ledger_check lcm-event-to-muxed-id",
+  "ok": true
+ },
+ {
+  "entry": "cap84-sac-transfer-to-muxed-contract",
+  "step": "ledger_check lcm-event-amount",
+  "ok": true
+ },
+ {
+  "entry": "cap84-sac-transfer-to-muxed-contract",
+  "step": "ledger_check lcm-protocol-30",
+  "ok": true
+ },
+ {
+  "entry": "cap88-ledger-close-time-ms",
+  "step": "re-encode byte-exact",
+  "ok": true
+ },
+ {
+  "entry": "cap88-ledger-close-time-ms",
+  "step": "decode == expected.json",
+  "ok": true
+ },
+ {
+  "entry": "cap88-ledger-close-time-ms",
+  "step": "check signed-ms-arm",
+  "ok": true
+ },
+ {
+  "entry": "cap88-ledger-close-time-ms",
+  "step": "check close-time-seconds",
+  "ok": true
+ },
+ {
+  "entry": "cap88-ledger-close-time-ms",
+  "step": "check protocol-30",
+  "ok": true
+ },
+ {
+  "entry": "cap88-ledger-close-time-ms",
+  "step": "lcm re-encode byte-exact",
+  "ok": true
+ },
+ {
+  "entry": "cap88-ledger-close-time-ms",
+  "step": "lcm decode == rust lcm json",
+  "ok": true
+ },
+ {
+  "entry": "cap88-ledger-close-time-ms",
+  "step": "ledger_check lcm-header-ms",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap15-fee-bump-inner-bad-auth",
+  "step": "re-encode byte-exact",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap15-fee-bump-inner-bad-auth",
+  "step": "decode == expected.json",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap15-fee-bump-inner-bad-auth",
+  "step": "tx hash",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap15-fee-bump-inner-bad-auth",
+  "step": "check fee-source",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap15-fee-bump-inner-bad-auth",
+  "step": "check inner-source",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap15-fee-bump-inner-bad-auth",
+  "step": "lcm re-encode byte-exact",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap15-fee-bump-inner-bad-auth",
+  "step": "lcm decode == rust lcm json",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap15-fee-bump-inner-bad-auth",
+  "step": "ledger_check lcm-inner-bad-auth",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap15-fee-bump-inner-bad-auth",
+  "step": "ledger_check lcm-inner-hash",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap21-40-extra-signers-signed-payload",
+  "step": "re-encode byte-exact",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap21-40-extra-signers-signed-payload",
+  "step": "decode == expected.json",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap21-40-extra-signers-signed-payload",
+  "step": "tx hash",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap21-40-extra-signers-signed-payload",
+  "step": "check two-extra-signers",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap21-40-extra-signers-signed-payload",
+  "step": "check extra-signer-0-P",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap21-40-extra-signers-signed-payload",
+  "step": "check extra-signer-1-P",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap21-40-extra-signers-signed-payload",
+  "step": "check ledger-bounds",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap21-40-extra-signers-signed-payload",
+  "step": "lcm re-encode byte-exact",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap21-40-extra-signers-signed-payload",
+  "step": "lcm decode == rust lcm json",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap21-40-extra-signers-signed-payload",
+  "step": "ledger_check lcm-failed",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap23-claimable-predicate-or",
+  "step": "re-encode byte-exact",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap23-claimable-predicate-or",
+  "step": "decode == expected.json",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap23-claimable-predicate-or",
+  "step": "tx hash",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap23-claimable-predicate-or",
+  "step": "check claim-op",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap23-claimable-predicate-or",
+  "step": "lcm re-encode byte-exact",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap23-claimable-predicate-or",
+  "step": "lcm decode == rust lcm json",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap23-claimable-predicate-or",
+  "step": "ledger_check lcm-or-arms",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap23-claimable-predicate-or",
+  "step": "ledger_check lcm-or-unconditional",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap23-claimable-predicate-or",
+  "step": "ledger_check lcm-or-not-time",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap27-muxed-id-above-2-53",
+  "step": "re-encode byte-exact",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap27-muxed-id-above-2-53",
+  "step": "decode == expected.json",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap27-muxed-id-above-2-53",
+  "step": "tx hash",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap27-muxed-id-above-2-53",
+  "step": "check dest-muxed",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap27-muxed-id-above-2-53",
+  "step": "check base-is-source",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap27-muxed-id-above-2-53",
+  "step": "lcm re-encode byte-exact",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap27-muxed-id-above-2-53",
+  "step": "lcm decode == rust lcm json",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap27-muxed-id-above-2-53",
+  "step": "ledger_check lcm-success",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap33-revoke-sponsorship-signer",
+  "step": "re-encode byte-exact",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap33-revoke-sponsorship-signer",
+  "step": "decode == expected.json",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap33-revoke-sponsorship-signer",
+  "step": "tx hash",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap33-revoke-sponsorship-signer",
+  "step": "check revoke-signer-account",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap33-revoke-sponsorship-signer",
+  "step": "check revoke-signer-key",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap33-revoke-sponsorship-signer",
+  "step": "check seven-ops",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap33-revoke-sponsorship-signer",
+  "step": "lcm re-encode byte-exact",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap33-revoke-sponsorship-signer",
+  "step": "lcm decode == rust lcm json",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap33-revoke-sponsorship-signer",
+  "step": "ledger_check lcm-result",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap46-06-sac-deploy-from-asset",
+  "step": "re-encode byte-exact",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap46-06-sac-deploy-from-asset",
+  "step": "decode == expected.json",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap46-06-sac-deploy-from-asset",
+  "step": "tx hash",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap46-06-sac-deploy-from-asset",
+  "step": "check preimage-asset",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap46-06-sac-deploy-from-asset",
+  "step": "check preimage-issuer",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap46-06-sac-deploy-from-asset",
+  "step": "check executable",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap46-06-sac-deploy-from-asset",
+  "step": "lcm re-encode byte-exact",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap46-06-sac-deploy-from-asset",
+  "step": "lcm decode == rust lcm json",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap46-06-sac-deploy-from-asset",
+  "step": "ledger_check lcm-success",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap46-11-auth-tree-depth-4",
+  "step": "re-encode byte-exact",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap46-11-auth-tree-depth-4",
+  "step": "decode == expected.json",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap46-11-auth-tree-depth-4",
+  "step": "tx hash",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap46-11-auth-tree-depth-4",
+  "step": "check root-has-4-subs",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap46-11-auth-tree-depth-4",
+  "step": "check depth-4-leaf",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap46-11-auth-tree-depth-4",
+  "step": "check depth-4-leaf-is-leaf",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap46-11-auth-tree-depth-4",
+  "step": "lcm re-encode byte-exact",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap46-11-auth-tree-depth-4",
+  "step": "lcm decode == rust lcm json",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap46-11-auth-tree-depth-4",
+  "step": "ledger_check lcm-success",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap46-auth-root-deploys-contract",
+  "step": "re-encode byte-exact",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap46-auth-root-deploys-contract",
+  "step": "decode == expected.json",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap46-auth-root-deploys-contract",
+  "step": "tx hash",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap46-auth-root-deploys-contract",
+  "step": "check host-fn-v2",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap46-auth-root-deploys-contract",
+  "step": "check auth-root-is-deploy",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap46-auth-root-deploys-contract",
+  "step": "check address-credentials",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap46-auth-root-deploys-contract",
+  "step": "lcm re-encode byte-exact",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap46-auth-root-deploys-contract",
+  "step": "lcm decode == rust lcm json",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap46-auth-root-deploys-contract",
+  "step": "ledger_check lcm-success",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap67-event-data-muxed-address",
+  "step": "re-encode byte-exact",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap67-event-data-muxed-address",
+  "step": "decode == expected.json",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap67-event-data-muxed-address",
+  "step": "tx hash",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap67-event-data-muxed-address",
+  "step": "check fn",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap67-event-data-muxed-address",
+  "step": "lcm re-encode byte-exact",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap67-event-data-muxed-address",
+  "step": "lcm decode == rust lcm json",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap67-event-data-muxed-address",
+  "step": "ledger_check lcm-event-key",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap67-event-data-muxed-address",
+  "step": "ledger_check lcm-event-muxed",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap67-event-data-muxed-address",
+  "step": "ledger_check lcm-success",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap73-nested-sac-trust-creates-trustline",
+  "step": "re-encode byte-exact",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap73-nested-sac-trust-creates-trustline",
+  "step": "decode == expected.json",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap73-nested-sac-trust-creates-trustline",
+  "step": "tx hash",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap73-nested-sac-trust-creates-trustline",
+  "step": "check top-fn-batch",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap73-nested-sac-trust-creates-trustline",
+  "step": "check sub-fn-trust",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap73-nested-sac-trust-creates-trustline",
+  "step": "check sub-contract-is-sac",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap73-nested-sac-trust-creates-trustline",
+  "step": "check sub-trust-arg",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap73-nested-sac-trust-creates-trustline",
+  "step": "lcm re-encode byte-exact",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap73-nested-sac-trust-creates-trustline",
+  "step": "lcm decode == rust lcm json",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap73-nested-sac-trust-creates-trustline",
+  "step": "ledger_check lcm-trustline-created",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap73-nested-sac-trust-creates-trustline",
+  "step": "ledger_check lcm-success",
+  "ok": true
+ },
+ {
+  "entry": "scval-map-key-collision",
+  "step": "re-encode byte-exact",
+  "ok": true
+ },
+ {
+  "entry": "scval-map-key-collision",
+  "step": "decode == expected.json",
+  "ok": true
+ },
+ {
+  "entry": "scval-map-key-collision",
+  "step": "check two-entries",
+  "ok": true
+ },
+ {
+  "entry": "scval-map-key-collision",
+  "step": "check first-key-u32",
+  "ok": true
+ },
+ {
+  "entry": "scval-map-key-collision",
+  "step": "check second-key-symbol",
+  "ok": true
+ }
+]

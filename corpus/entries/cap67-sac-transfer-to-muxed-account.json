@@ -1,0 +1,194 @@
+{
+  "schema_version": "0.2.0",
+  "id": "cap67-sac-transfer-to-muxed-account",
+  "title": "SAC transfer to a muxed account (M..., CAP-67) with muxed ID 0",
+  "caps": [
+    "CAP-0067",
+    "CAP-0027"
+  ],
+  "protocol": {
+    "introduced_in": 23,
+    "captured_on": 30,
+    "xdr_ref": "stellar-xdr 30.0.0 (3c2aa43d2ab54d429ae44aa5143d805bf5dba7e2) xdr: 4f524bbac80c781c06e4fb5fc93a2d0d331d6705 features: <none>"
+  },
+  "network": {
+    "passphrase": "Test SDF Network ; September 2015",
+    "expected_tx_hash": "5073b3a952562578ccdb6216ef9ffef64e5a59c38fb207fcee9143e67e05a9fa"
+  },
+  "xdr": {
+    "type": "TransactionEnvelope",
+    "base64": "AAAAAgAAAADIp/FpQllY52/TKmH7LMlf7x9lY+zZ03LwXT30FnklCwAPcMAAV0KEAAAABgAAAAEAAAAAAAAAAAAAAABq968WAAAAAAAAAAEAAAAAAAAAGAAAAAAAAAAB15KLcsJwPM/q9+uf9O9NUEpVqLl5/JtFDqLIQrTRzmEAAAAIdHJhbnNmZXIAAAADAAAAEgAAAAAAAAAAyKfxaUJZWOdv0yph+yzJX+8fZWPs2dNy8F099BZ5JQsAAAASAAAAAgAAAAAAAAAAlTl54adV6bSJHIAlAD3okeQmHcEq/iNVc6jKF7riDTIAAAAKAAAAAAAAAAAAAAAAAJiWgAAAAAEAAAAAAAAAAAAAAAHXkotywnA8z+r365/0701QSlWouXn8m0UOoshCtNHOYQAAAAh0cmFuc2ZlcgAAAAMAAAASAAAAAAAAAADIp/FpQllY52/TKmH7LMlf7x9lY+zZ03LwXT30FnklCwAAABIAAAACAAAAAAAAAACVOXnhp1XptIkcgCUAPeiR5CYdwSr+I1VzqMoXuuINMgAAAAoAAAAAAAAAAAAAAAAAmJaAAAAAAAAAAAEAAAAAAAAAAQAAAAYAAAAB15KLcsJwPM/q9+uf9O9NUEpVqLl5/JtFDqLIQrTRzmEAAAAUAAAAAQAAAAIAAAAAAAAAAJU5eeGnVem0iRyAJQA96JHkJh3BKv4jVXOoyhe64g0yAAAAAAAAAADIp/FpQllY52/TKmH7LMlf7x9lY+zZ03LwXT30FnklCwADWA8AAAEgAAABIAAAAAAAAC6AAAAAARZ5JQsAAABAoxJzTYhld1I+yS5YvUkDNp8eJogUOIkbenmDmEy5MAEdkr3BSRZxnw/vZjb451JKLDx++ac0HClYGXLJA1CCAw==",
+    "sha256": "66b8969fe13b56e356f735e33431a013f44072236e9b0070259a955e828969f5"
+  },
+  "provenance": {
+    "kind": "testnet",
+    "origin": "submitted_by_kit",
+    "origin_note": "Submitted to testnet by tools/capture-testnet.mjs from a Friendbot-funded throwaway key that was never written to disk.",
+    "ledger": 5718670,
+    "tx_hash": "5073b3a952562578ccdb6216ef9ffef64e5a59c38fb207fcee9143e67e05a9fa",
+    "source_url": "https://horizon-testnet.stellar.org/transactions/5073b3a952562578ccdb6216ef9ffef64e5a59c38fb207fcee9143e67e05a9fa",
+    "tx_created_at": "2026-11-14T00:43:14.000Z",
+    "to": "MCKTS6PBU5K6TNEJDSACKAB55CI6IJQ5YEVP4I2VOOUMUF524IGTEAAAAAAAAAAAADBT4",
+    "to_muxed_id": "0",
+    "tool": "tools/make-entry.mjs (cap67-sac-transfer-to-muxed-account.mjs)"
+  },
+  "expected": {
+    "json": {
+      "tx": {
+        "tx": {
+          "source_account": "GDEKP4LJIJMVRZ3P2MVGD6ZMZFP66H3FMPWNTU3S6BOT35AWPESQWVP6",
+          "fee": 1011904,
+          "seq_num": "24561457676943366",
+          "cond": {
+            "time": {
+              "min_time": "0",
+              "max_time": "1794617110"
+            }
+          },
+          "memo": "none",
+          "operations": [
+            {
+              "source_account": null,
+              "body": {
+                "invoke_host_function": {
+                  "host_function": {
+                    "invoke_contract": {
+                      "contract_address": "CDLZFC3SYJYDZT7K67VZ75HPJVIEUVNIXF47ZG2FB2RMQQVU2HHGCYSC",
+                      "function_name": "transfer",
+                      "args": [
+                        {
+                          "address": "GDEKP4LJIJMVRZ3P2MVGD6ZMZFP66H3FMPWNTU3S6BOT35AWPESQWVP6"
+                        },
+                        {
+                          "address": "MCKTS6PBU5K6TNEJDSACKAB55CI6IJQ5YEVP4I2VOOUMUF524IGTEAAAAAAAAAAAADBT4"
+                        },
+                        {
+                          "i128": "10000000"
+                        }
+                      ]
+                    }
+                  },
+                  "auth": [
+                    {
+                      "credentials": "source_account",
+                      "root_invocation": {
+                        "function": {
+                          "contract_fn": {
+                            "contract_address": "CDLZFC3SYJYDZT7K67VZ75HPJVIEUVNIXF47ZG2FB2RMQQVU2HHGCYSC",
+                            "function_name": "transfer",
+                            "args": [
+                              {
+                                "address": "GDEKP4LJIJMVRZ3P2MVGD6ZMZFP66H3FMPWNTU3S6BOT35AWPESQWVP6"
+                              },
+                              {
+                                "address": "MCKTS6PBU5K6TNEJDSACKAB55CI6IJQ5YEVP4I2VOOUMUF524IGTEAAAAAAAAAAAADBT4"
+                              },
+                              {
+                                "i128": "10000000"
+                              }
+                            ]
+                          }
+                        },
+                        "sub_invocations": []
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          ],
+          "ext": {
+            "v1": {
+              "ext": "v0",
+              "resources": {
+                "footprint": {
+                  "read_only": [
+                    {
+                      "contract_data": {
+                        "contract": "CDLZFC3SYJYDZT7K67VZ75HPJVIEUVNIXF47ZG2FB2RMQQVU2HHGCYSC",
+                        "key": "ledger_key_contract_instance",
+                        "durability": "persistent"
+                      }
+                    }
+                  ],
+                  "read_write": [
+                    {
+                      "account": {
+                        "account_id": "GCKTS6PBU5K6TNEJDSACKAB55CI6IJQ5YEVP4I2VOOUMUF524IGTF4H6"
+                      }
+                    },
+                    {
+                      "account": {
+                        "account_id": "GDEKP4LJIJMVRZ3P2MVGD6ZMZFP66H3FMPWNTU3S6BOT35AWPESQWVP6"
+                      }
+                    }
+                  ]
+                },
+                "instructions": 219151,
+                "disk_read_bytes": 288,
+                "write_bytes": 288
+              },
+              "resource_fee": "11904"
+            }
+          }
+        },
+        "signatures": [
+          {
+            "hint": "1679250b",
+            "signature": "a312734d886577523ec92e58bd4903369f1e26881438891b7a7983984cb930011d92bdc14916719f0fef6636f8e7524a2c3c7ef9a7341c29581972c903508203"
+          }
+        ]
+      }
+    },
+    "checks": [
+      {
+        "id": "to-is-m",
+        "path": "/tx/tx/operations/0/body/invoke_host_function/host_function/invoke_contract/args/1/address",
+        "op": "strkey",
+        "value": "MCKTS6PBU5K6TNEJDSACKAB55CI6IJQ5YEVP4I2VOOUMUF524IGTEAAAAAAAAAAAADBT4",
+        "note": "SCAddress arm 2 (muxed account), ID 0."
+      }
+    ],
+    "ledger_checks": [
+      {
+        "id": "lcm-event-to-plain-g",
+        "path": "/v2/tx_processing/15/tx_apply_processing/v4/operations/0/events/0/body/v0/topics/2/address",
+        "op": "strkey",
+        "value": "GCKTS6PBU5K6TNEJDSACKAB55CI6IJQ5YEVP4I2VOOUMUF524IGTF4H6",
+        "note": "Event topic carries the base G address."
+      },
+      {
+        "id": "lcm-event-to-muxed-id-zero",
+        "path": "/v2/tx_processing/15/tx_apply_processing/v4/operations/0/events/0/body/v0/data/map/1/val/u64",
+        "op": "equals",
+        "value": "0",
+        "note": "to_muxed_id 0 is present. 'ID 0' is not 'no ID'."
+      }
+    ]
+  },
+  "tags": [
+    "muxed",
+    "sac",
+    "x402"
+  ],
+  "linked_issues": [],
+  "ledger": {
+    "type": "LedgerCloseMeta",
+    "lcm_version": "v2",
+    "sequence": 5718670,
+    "protocol_version": 30,
+    "file": "corpus/datalake/testnet/FFA915FF--5696000-5759999/FFA8BD71--5718670.xdr.zst",
+    "format": "galexie: zstd(LedgerCloseMetaBatch), 1 ledger per object, 64000 per partition",
+    "sha256_zst": "a04d10ffe030f3bf7192a098ea1a377d4dce416569c15fd5b5741524c6c33420",
+    "sha256_lcm": "ae4e06c4bb9ff7f32a9bb109348befa58d3f01a3561078c85d337b4e739e5f01",
+    "tx_index": 15,
+    "source": "galexie-public-archive",
+    "source_url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/v1.1/stellar/ledgers/testnet/2025-12-18/FFA915FF--5696000-5759999/FFA8BD71--5718670.xdr.zst",
+    "alt_source": {
+      "source": "stellar-rpc-getLedgers",
+      "sha256_lcm": "cdc7b455fc431eeed2817bb4c2f8afb086b5ce86d86394eeac2155092c4f00a5",
+      "lcm_bytes": 341936,
+      "byte_identical": false
+    }
+  }
+}

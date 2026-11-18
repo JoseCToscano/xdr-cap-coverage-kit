@@ -1,0 +1,149 @@
+{
+  "schema_version": "0.2.0",
+  "id": "mainnet-cap46-06-sac-deploy-from-asset",
+  "title": "Mainnet deployment of a Stellar Asset Contract from an asset (create_contract, preimage asset, executable stellar_asset)",
+  "caps": [
+    "CAP-0046-06",
+    "CAP-0046-02"
+  ],
+  "protocol": {
+    "introduced_in": 20,
+    "captured_on": 29,
+    "xdr_ref": "stellar-xdr 30.0.0 (3c2aa43d2ab54d429ae44aa5143d805bf5dba7e2) xdr: 4f524bbac80c781c06e4fb5fc93a2d0d331d6705 features: <none>"
+  },
+  "network": {
+    "passphrase": "Public Global Stellar Network ; September 2015",
+    "expected_tx_hash": "25a864377a5005c720e3366c34bc06812a06f483e668a317d6bea8dffe5ff91e"
+  },
+  "xdr": {
+    "type": "TransactionEnvelope",
+    "base64": "AAAAAgAAAADF++lA1hwvMGrkRycsvbrYs6ry084J1dSwtUtA/xbKEQAOD/ED4m6rAAAAMQAAAAAAAAAAAAAAAQAAAAAAAAAYAAAAAQAAAAEAAAABVVNEQwAAAADF++lA1hwvMGrkRycsvbrYs6ry084J1dSwtUtA/xbKEQAAAAEAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAYAAAABrYiQJZJlyTLQmdWswGXyXnBifpHXNkJ9CbbBRGuKZxAAAAAUAAAAAQACqJ4AAAAAAAAB3AAAAAAADg+NAAAAAf8WyhEAAABATSZZq5AJtBHKbgDkKoOYV4nrS3hC9TdlAg/xweex45PkDE2dkzR6WnpZk7Vtb9hP4/d1atuVPoVbZtIWuiubDw==",
+    "sha256": "2cfc3406f6743fab7c03dfb9aef44339e1e65473f02e816923e5005219b86670"
+  },
+  "provenance": {
+    "kind": "mainnet",
+    "origin": "mined_from_mainnet_history",
+    "origin_note": "Found by the real-network frequency study (tools/frequency/, reports/frequency.md): ContractIdPreimage.asset (deploying a Stellar Asset Contract) occurs in 6 mainnet transactions in the sample (0.24 per million). Not submitted by this kit.",
+    "ledger": 65465121,
+    "tx_hash": "25a864377a5005c720e3366c34bc06812a06f483e668a317d6bea8dffe5ff91e",
+    "source_url": "https://stellar.expert/explorer/public/tx/25a864377a5005c720e3366c34bc06812a06f483e668a317d6bea8dffe5ff91e",
+    "tx_created_at": "2026-11-13T23:14:07.000Z",
+    "retrieved_at": "2026-11-16T19:00:38.444Z",
+    "tool": "tools/make-entry.mjs (mainnet-cap46-06-sac-deploy-from-asset.mjs)"
+  },
+  "expected": {
+    "json": {
+      "tx": {
+        "tx": {
+          "source_account": "GDC7X2KA2YOC6MDK4RDSOLF5XLMLHKXS2PHATVOUWC2UWQH7C3FBDRZN",
+          "fee": 921585,
+          "seq_num": "279907807568855089",
+          "cond": "none",
+          "memo": "none",
+          "operations": [
+            {
+              "source_account": null,
+              "body": {
+                "invoke_host_function": {
+                  "host_function": {
+                    "create_contract": {
+                      "contract_id_preimage": {
+                        "asset": {
+                          "credit_alphanum4": {
+                            "asset_code": "USDC",
+                            "issuer": "GDC7X2KA2YOC6MDK4RDSOLF5XLMLHKXS2PHATVOUWC2UWQH7C3FBDRZN"
+                          }
+                        }
+                      },
+                      "executable": "stellar_asset"
+                    }
+                  },
+                  "auth": []
+                }
+              }
+            }
+          ],
+          "ext": {
+            "v1": {
+              "ext": "v0",
+              "resources": {
+                "footprint": {
+                  "read_only": [],
+                  "read_write": [
+                    {
+                      "contract_data": {
+                        "contract": "CCWYREBFSJS4SMWQTHK2ZQDF6JPHAYT6SHLTMQT5BG3MCRDLRJTRAM2O",
+                        "key": "ledger_key_contract_instance",
+                        "durability": "persistent"
+                      }
+                    }
+                  ]
+                },
+                "instructions": 174238,
+                "disk_read_bytes": 0,
+                "write_bytes": 476
+              },
+              "resource_fee": "921485"
+            }
+          }
+        },
+        "signatures": [
+          {
+            "hint": "ff16ca11",
+            "signature": "4d2659ab9009b411ca6e00e42a83985789eb4b7842f53765020ff1c1e7b1e393e40c4d9d93347a5a7a5993b56d6fd84fe3f7756adb953e855b66d216ba2b9b0f"
+          }
+        ]
+      }
+    },
+    "checks": [
+      {
+        "id": "preimage-asset",
+        "path": "/tx/tx/operations/0/body/invoke_host_function/host_function/create_contract/contract_id_preimage/asset/credit_alphanum4/asset_code",
+        "op": "equals",
+        "value": "USDC",
+        "note": "Asset code (not the Circle issuer)."
+      },
+      {
+        "id": "preimage-issuer",
+        "path": "/tx/tx/operations/0/body/invoke_host_function/host_function/create_contract/contract_id_preimage/asset/credit_alphanum4/issuer",
+        "op": "strkey",
+        "value": "GDC7X2KA2YOC6MDK4RDSOLF5XLMLHKXS2PHATVOUWC2UWQH7C3FBDRZN",
+        "note": "Issuer."
+      },
+      {
+        "id": "executable",
+        "path": "/tx/tx/operations/0/body/invoke_host_function/host_function/create_contract/executable",
+        "op": "equals",
+        "value": "stellar_asset",
+        "note": "ContractExecutable stellar_asset."
+      }
+    ],
+    "ledger_checks": [
+      {
+        "id": "lcm-success",
+        "path": "/v2/tx_processing/148/result/result/result/tx_success/0/op_inner/invoke_host_function/success",
+        "op": "preserved",
+        "note": "Applied."
+      }
+    ]
+  },
+  "tags": [
+    "sac",
+    "contract-deploy",
+    "mainnet"
+  ],
+  "linked_issues": [],
+  "ledger": {
+    "type": "LedgerCloseMeta",
+    "lcm_version": "v2",
+    "sequence": 65465121,
+    "protocol_version": 29,
+    "file": "corpus/datalake/pubnet/FC19F3FF--65408000-65471999/FC1914DE--65465121.xdr.zst",
+    "format": "galexie: zstd(LedgerCloseMetaBatch), 1 ledger per object, 64000 per partition",
+    "sha256_zst": "69c762f8461dfefa8b75e8a4a250ac265b2dd0536d8b9074a206f7ae38283c5b",
+    "sha256_lcm": "c03869609d4d72ca12f14b95ea9e49c03c2f7685d7ad3e81363626b9ba841c0e",
+    "tx_index": 148,
+    "source": "galexie-public-archive",
+    "source_url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/v1.1/stellar/ledgers/pubnet/FC19F3FF--65408000-65471999/FC1914DE--65465121.xdr.zst"
+  }
+}

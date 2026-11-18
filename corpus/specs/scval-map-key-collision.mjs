@@ -18,6 +18,7 @@ export default {
     ]).toXdr("base64"),
   provenance: {
     kind: "synthetic",
+    origin: "synthetic",
     synthetic_reason: "Built with @stellar/stellar-sdk 17.4.0. Plan to replace it with a capture: deploy a test contract on a local quickstart that emits this map in an event, take the LedgerCloseMeta from getLedgers, and slice the event body.",
   },
   checks: [

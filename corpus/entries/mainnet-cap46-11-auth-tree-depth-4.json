@@ -1,0 +1,1671 @@
+{
+  "schema_version": "0.2.0",
+  "id": "mainnet-cap46-11-auth-tree-depth-4",
+  "title": "Mainnet Soroban authorization tree of depth 4 (the deepest seen on mainnet), 4 sub-invocations under the root",
+  "caps": [
+    "CAP-0046-11"
+  ],
+  "protocol": {
+    "introduced_in": 20,
+    "captured_on": 29,
+    "xdr_ref": "stellar-xdr 30.0.0 (3c2aa43d2ab54d429ae44aa5143d805bf5dba7e2) xdr: 4f524bbac80c781c06e4fb5fc93a2d0d331d6705 features: <none>"
+  },
+  "network": {
+    "passphrase": "Public Global Stellar Network ; September 2015",
+    "expected_tx_hash": "7782f341e1bdd722f97bc5d9323815d35310e2f46f23f5fcab94f6fe4803796d"
+  },
+  "xdr": {
+    "type": "TransactionEnvelope",
+    "base64": "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",
+    "sha256": "a8fb407e0006e3e39e4a8d2fd70de26f63d8dd557c83f08e975149ef3ead0acc"
+  },
+  "provenance": {
+    "kind": "mainnet",
+    "origin": "mined_from_mainnet_history",
+    "origin_note": "Found by the real-network frequency study (tools/frequency/, reports/frequency.md): auth trees of depth 4 occur in 871 mainnet transactions in the sample (34.5 per million); 4 is the deepest seen. Not submitted by this kit.",
+    "ledger": 65300125,
+    "tx_hash": "7782f341e1bdd722f97bc5d9323815d35310e2f46f23f5fcab94f6fe4803796d",
+    "source_url": "https://stellar.expert/explorer/public/tx/7782f341e1bdd722f97bc5d9323815d35310e2f46f23f5fcab94f6fe4803796d",
+    "tx_created_at": "2026-11-04T10:04:24.000Z",
+    "retrieved_at": "2026-11-16T19:00:22.785Z",
+    "tool": "tools/make-entry.mjs (mainnet-cap46-11-auth-tree-depth-4.mjs)"
+  },
+  "expected": {
+    "json": {
+      "tx": {
+        "tx": {
+          "source_account": "GCK43OVWWHKJMSWHMOOBOV2YLJ3PY4ME44Q7QHTH6T24MV6XRWEYBAHS",
+          "fee": 3046061,
+          "seq_num": "280006342708559893",
+          "cond": {
+            "time": {
+              "min_time": "0",
+              "max_time": "1793786690"
+            }
+          },
+          "memo": "none",
+          "operations": [
+            {
+              "source_account": null,
+              "body": {
+                "invoke_host_function": {
+                  "host_function": {
+                    "invoke_contract": {
+                      "contract_address": "CBZV3HBP672BV7FF3ZILVT4CNPW3N5V2WTJ2LAGOAYW5R7L2D5SLUDFZ",
+                      "function_name": "exec",
+                      "args": [
+                        {
+                          "address": "GCK43OVWWHKJMSWHMOOBOV2YLJ3PY4ME44Q7QHTH6T24MV6XRWEYBAHS"
+                        },
+                        {
+                          "vec": [
+                            {
+                              "vec": [
+                                {
+                                  "address": "CARTUL5AWDZYBSN7HUUJZSKCAKCIAKM7M54Z76G6KRYCK4XPR3OHUQZ4"
+                                },
+                                {
+                                  "symbol": "decrease_liquidity_with_hints"
+                                },
+                                {
+                                  "vec": [
+                                    {
+                                      "map": [
+                                        {
+                                          "key": {
+                                            "symbol": "amount0_min"
+                                          },
+                                          "val": {
+                                            "u128": "0"
+                                          }
+                                        },
+                                        {
+                                          "key": {
+                                            "symbol": "amount1_min"
+                                          },
+                                          "val": {
+                                            "u128": "0"
+                                          }
+                                        },
+                                        {
+                                          "key": {
+                                            "symbol": "deadline"
+                                          },
+                                          "val": {
+                                            "u64": "1793787260"
+                                          }
+                                        },
+                                        {
+                                          "key": {
+                                            "symbol": "liquidity"
+                                          },
+                                          "val": {
+                                            "u128": "149335204558"
+                                          }
+                                        },
+                                        {
+                                          "key": {
+                                            "symbol": "operator"
+                                          },
+                                          "val": {
+                                            "address": "GCK43OVWWHKJMSWHMOOBOV2YLJ3PY4ME44Q7QHTH6T24MV6XRWEYBAHS"
+                                          }
+                                        },
+                                        {
+                                          "key": {
+                                            "symbol": "token_id"
+                                          },
+                                          "val": {
+                                            "u32": 1315
+                                          }
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "map": [
+                                        {
+                                          "key": {
+                                            "symbol": "checkpoint"
+                                          },
+                                          "val": {
+                                            "u32": 18
+                                          }
+                                        },
+                                        {
+                                          "key": {
+                                            "symbol": "checkpoint_min"
+                                          },
+                                          "val": {
+                                            "u32": 0
+                                          }
+                                        },
+                                        {
+                                          "key": {
+                                            "symbol": "slot"
+                                          },
+                                          "val": {
+                                            "u128": "29896444"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "vec": [
+                                {
+                                  "address": "CARTUL5AWDZYBSN7HUUJZSKCAKCIAKM7M54Z76G6KRYCK4XPR3OHUQZ4"
+                                },
+                                {
+                                  "symbol": "collect_with_hints"
+                                },
+                                {
+                                  "vec": [
+                                    {
+                                      "map": [
+                                        {
+                                          "key": {
+                                            "symbol": "amount0_max"
+                                          },
+                                          "val": {
+                                            "u128": "340282366920938463463374607431768211455"
+                                          }
+                                        },
+                                        {
+                                          "key": {
+                                            "symbol": "amount1_max"
+                                          },
+                                          "val": {
+                                            "u128": "340282366920938463463374607431768211455"
+                                          }
+                                        },
+                                        {
+                                          "key": {
+                                            "symbol": "operator"
+                                          },
+                                          "val": {
+                                            "address": "GCK43OVWWHKJMSWHMOOBOV2YLJ3PY4ME44Q7QHTH6T24MV6XRWEYBAHS"
+                                          }
+                                        },
+                                        {
+                                          "key": {
+                                            "symbol": "recipient"
+                                          },
+                                          "val": {
+                                            "address": "GCK43OVWWHKJMSWHMOOBOV2YLJ3PY4ME44Q7QHTH6T24MV6XRWEYBAHS"
+                                          }
+                                        },
+                                        {
+                                          "key": {
+                                            "symbol": "token_id"
+                                          },
+                                          "val": {
+                                            "u32": 1315
+                                          }
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "map": [
+                                        {
+                                          "key": {
+                                            "symbol": "checkpoint"
+                                          },
+                                          "val": {
+                                            "u32": 18
+                                          }
+                                        },
+                                        {
+                                          "key": {
+                                            "symbol": "checkpoint_min"
+                                          },
+                                          "val": {
+                                            "u32": 0
+                                          }
+                                        },
+                                        {
+                                          "key": {
+                                            "symbol": "slot"
+                                          },
+                                          "val": {
+                                            "u128": "29896444"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "vec": [
+                                {
+                                  "address": "CARTUL5AWDZYBSN7HUUJZSKCAKCIAKM7M54Z76G6KRYCK4XPR3OHUQZ4"
+                                },
+                                {
+                                  "symbol": "burn"
+                                },
+                                {
+                                  "vec": [
+                                    {
+                                      "u32": 1315
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "vec": [
+                                {
+                                  "address": "CARTUL5AWDZYBSN7HUUJZSKCAKCIAKM7M54Z76G6KRYCK4XPR3OHUQZ4"
+                                },
+                                {
+                                  "symbol": "mint_with_hints"
+                                },
+                                {
+                                  "vec": [
+                                    {
+                                      "map": [
+                                        {
+                                          "key": {
+                                            "symbol": "amount0_desired"
+                                          },
+                                          "val": {
+                                            "u128": "1340760880"
+                                          }
+                                        },
+                                        {
+                                          "key": {
+                                            "symbol": "amount0_min"
+                                          },
+                                          "val": {
+                                            "u128": "1327353272"
+                                          }
+                                        },
+                                        {
+                                          "key": {
+                                            "symbol": "amount1_desired"
+                                          },
+                                          "val": {
+                                            "u128": "316967238"
+                                          }
+                                        },
+                                        {
+                                          "key": {
+                                            "symbol": "amount1_min"
+                                          },
+                                          "val": {
+                                            "u128": "313797566"
+                                          }
+                                        },
+                                        {
+                                          "key": {
+                                            "symbol": "deadline"
+                                          },
+                                          "val": {
+                                            "u64": "1793787260"
+                                          }
+                                        },
+                                        {
+                                          "key": {
+                                            "symbol": "fee"
+                                          },
+                                          "val": {
+                                            "u32": 3000
+                                          }
+                                        },
+                                        {
+                                          "key": {
+                                            "symbol": "recipient"
+                                          },
+                                          "val": {
+                                            "address": "GCK43OVWWHKJMSWHMOOBOV2YLJ3PY4ME44Q7QHTH6T24MV6XRWEYBAHS"
+                                          }
+                                        },
+                                        {
+                                          "key": {
+                                            "symbol": "sender"
+                                          },
+                                          "val": {
+                                            "address": "GCK43OVWWHKJMSWHMOOBOV2YLJ3PY4ME44Q7QHTH6T24MV6XRWEYBAHS"
+                                          }
+                                        },
+                                        {
+                                          "key": {
+                                            "symbol": "tick_lower"
+                                          },
+                                          "val": {
+                                            "i32": 2220
+                                          }
+                                        },
+                                        {
+                                          "key": {
+                                            "symbol": "tick_upper"
+                                          },
+                                          "val": {
+                                            "i32": 2460
+                                          }
+                                        },
+                                        {
+                                          "key": {
+                                            "symbol": "token0"
+                                          },
+                                          "val": {
+                                            "address": "CACSKWC753QVGC4J6YPDBIR2BEHFVWIAE7CBSS3HOVYMN623OAIQYE2M"
+                                          }
+                                        },
+                                        {
+                                          "key": {
+                                            "symbol": "token1"
+                                          },
+                                          "val": {
+                                            "address": "CCNOV6XVI2O5BSTA3232GIRUQULDEBV7IWGKM6QKI6II5OIIQTU24JJN"
+                                          }
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "map": [
+                                        {
+                                          "key": {
+                                            "symbol": "checkpoint"
+                                          },
+                                          "val": {
+                                            "u32": 18
+                                          }
+                                        },
+                                        {
+                                          "key": {
+                                            "symbol": "checkpoint_min"
+                                          },
+                                          "val": {
+                                            "u32": 0
+                                          }
+                                        },
+                                        {
+                                          "key": {
+                                            "symbol": "slot"
+                                          },
+                                          "val": {
+                                            "u128": "29896444"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  },
+                  "auth": [
+                    {
+                      "credentials": "source_account",
+                      "root_invocation": {
+                        "function": {
+                          "contract_fn": {
+                            "contract_address": "CBZV3HBP672BV7FF3ZILVT4CNPW3N5V2WTJ2LAGOAYW5R7L2D5SLUDFZ",
+                            "function_name": "exec",
+                            "args": [
+                              {
+                                "address": "GCK43OVWWHKJMSWHMOOBOV2YLJ3PY4ME44Q7QHTH6T24MV6XRWEYBAHS"
+                              },
+                              {
+                                "vec": [
+                                  {
+                                    "vec": [
+                                      {
+                                        "address": "CARTUL5AWDZYBSN7HUUJZSKCAKCIAKM7M54Z76G6KRYCK4XPR3OHUQZ4"
+                                      },
+                                      {
+                                        "symbol": "decrease_liquidity_with_hints"
+                                      },
+                                      {
+                                        "vec": [
+                                          {
+                                            "map": [
+                                              {
+                                                "key": {
+                                                  "symbol": "amount0_min"
+                                                },
+                                                "val": {
+                                                  "u128": "0"
+                                                }
+                                              },
+                                              {
+                                                "key": {
+                                                  "symbol": "amount1_min"
+                                                },
+                                                "val": {
+                                                  "u128": "0"
+                                                }
+                                              },
+                                              {
+                                                "key": {
+                                                  "symbol": "deadline"
+                                                },
+                                                "val": {
+                                                  "u64": "1793787260"
+                                                }
+                                              },
+                                              {
+                                                "key": {
+                                                  "symbol": "liquidity"
+                                                },
+                                                "val": {
+                                                  "u128": "149335204558"
+                                                }
+                                              },
+                                              {
+                                                "key": {
+                                                  "symbol": "operator"
+                                                },
+                                                "val": {
+                                                  "address": "GCK43OVWWHKJMSWHMOOBOV2YLJ3PY4ME44Q7QHTH6T24MV6XRWEYBAHS"
+                                                }
+                                              },
+                                              {
+                                                "key": {
+                                                  "symbol": "token_id"
+                                                },
+                                                "val": {
+                                                  "u32": 1315
+                                                }
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "map": [
+                                              {
+                                                "key": {
+                                                  "symbol": "checkpoint"
+                                                },
+                                                "val": {
+                                                  "u32": 18
+                                                }
+                                              },
+                                              {
+                                                "key": {
+                                                  "symbol": "checkpoint_min"
+                                                },
+                                                "val": {
+                                                  "u32": 0
+                                                }
+                                              },
+                                              {
+                                                "key": {
+                                                  "symbol": "slot"
+                                                },
+                                                "val": {
+                                                  "u128": "29896444"
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "vec": [
+                                      {
+                                        "address": "CARTUL5AWDZYBSN7HUUJZSKCAKCIAKM7M54Z76G6KRYCK4XPR3OHUQZ4"
+                                      },
+                                      {
+                                        "symbol": "collect_with_hints"
+                                      },
+                                      {
+                                        "vec": [
+                                          {
+                                            "map": [
+                                              {
+                                                "key": {
+                                                  "symbol": "amount0_max"
+                                                },
+                                                "val": {
+                                                  "u128": "340282366920938463463374607431768211455"
+                                                }
+                                              },
+                                              {
+                                                "key": {
+                                                  "symbol": "amount1_max"
+                                                },
+                                                "val": {
+                                                  "u128": "340282366920938463463374607431768211455"
+                                                }
+                                              },
+                                              {
+                                                "key": {
+                                                  "symbol": "operator"
+                                                },
+                                                "val": {
+                                                  "address": "GCK43OVWWHKJMSWHMOOBOV2YLJ3PY4ME44Q7QHTH6T24MV6XRWEYBAHS"
+                                                }
+                                              },
+                                              {
+                                                "key": {
+                                                  "symbol": "recipient"
+                                                },
+                                                "val": {
+                                                  "address": "GCK43OVWWHKJMSWHMOOBOV2YLJ3PY4ME44Q7QHTH6T24MV6XRWEYBAHS"
+                                                }
+                                              },
+                                              {
+                                                "key": {
+                                                  "symbol": "token_id"
+                                                },
+                                                "val": {
+                                                  "u32": 1315
+                                                }
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "map": [
+                                              {
+                                                "key": {
+                                                  "symbol": "checkpoint"
+                                                },
+                                                "val": {
+                                                  "u32": 18
+                                                }
+                                              },
+                                              {
+                                                "key": {
+                                                  "symbol": "checkpoint_min"
+                                                },
+                                                "val": {
+                                                  "u32": 0
+                                                }
+                                              },
+                                              {
+                                                "key": {
+                                                  "symbol": "slot"
+                                                },
+                                                "val": {
+                                                  "u128": "29896444"
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "vec": [
+                                      {
+                                        "address": "CARTUL5AWDZYBSN7HUUJZSKCAKCIAKM7M54Z76G6KRYCK4XPR3OHUQZ4"
+                                      },
+                                      {
+                                        "symbol": "burn"
+                                      },
+                                      {
+                                        "vec": [
+                                          {
+                                            "u32": 1315
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "vec": [
+                                      {
+                                        "address": "CARTUL5AWDZYBSN7HUUJZSKCAKCIAKM7M54Z76G6KRYCK4XPR3OHUQZ4"
+                                      },
+                                      {
+                                        "symbol": "mint_with_hints"
+                                      },
+                                      {
+                                        "vec": [
+                                          {
+                                            "map": [
+                                              {
+                                                "key": {
+                                                  "symbol": "amount0_desired"
+                                                },
+                                                "val": {
+                                                  "u128": "1340760880"
+                                                }
+                                              },
+                                              {
+                                                "key": {
+                                                  "symbol": "amount0_min"
+                                                },
+                                                "val": {
+                                                  "u128": "1327353272"
+                                                }
+                                              },
+                                              {
+                                                "key": {
+                                                  "symbol": "amount1_desired"
+                                                },
+                                                "val": {
+                                                  "u128": "316967238"
+                                                }
+                                              },
+                                              {
+                                                "key": {
+                                                  "symbol": "amount1_min"
+                                                },
+                                                "val": {
+                                                  "u128": "313797566"
+                                                }
+                                              },
+                                              {
+                                                "key": {
+                                                  "symbol": "deadline"
+                                                },
+                                                "val": {
+                                                  "u64": "1793787260"
+                                                }
+                                              },
+                                              {
+                                                "key": {
+                                                  "symbol": "fee"
+                                                },
+                                                "val": {
+                                                  "u32": 3000
+                                                }
+                                              },
+                                              {
+                                                "key": {
+                                                  "symbol": "recipient"
+                                                },
+                                                "val": {
+                                                  "address": "GCK43OVWWHKJMSWHMOOBOV2YLJ3PY4ME44Q7QHTH6T24MV6XRWEYBAHS"
+                                                }
+                                              },
+                                              {
+                                                "key": {
+                                                  "symbol": "sender"
+                                                },
+                                                "val": {
+                                                  "address": "GCK43OVWWHKJMSWHMOOBOV2YLJ3PY4ME44Q7QHTH6T24MV6XRWEYBAHS"
+                                                }
+                                              },
+                                              {
+                                                "key": {
+                                                  "symbol": "tick_lower"
+                                                },
+                                                "val": {
+                                                  "i32": 2220
+                                                }
+                                              },
+                                              {
+                                                "key": {
+                                                  "symbol": "tick_upper"
+                                                },
+                                                "val": {
+                                                  "i32": 2460
+                                                }
+                                              },
+                                              {
+                                                "key": {
+                                                  "symbol": "token0"
+                                                },
+                                                "val": {
+                                                  "address": "CACSKWC753QVGC4J6YPDBIR2BEHFVWIAE7CBSS3HOVYMN623OAIQYE2M"
+                                                }
+                                              },
+                                              {
+                                                "key": {
+                                                  "symbol": "token1"
+                                                },
+                                                "val": {
+                                                  "address": "CCNOV6XVI2O5BSTA3232GIRUQULDEBV7IWGKM6QKI6II5OIIQTU24JJN"
+                                                }
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "map": [
+                                              {
+                                                "key": {
+                                                  "symbol": "checkpoint"
+                                                },
+                                                "val": {
+                                                  "u32": 18
+                                                }
+                                              },
+                                              {
+                                                "key": {
+                                                  "symbol": "checkpoint_min"
+                                                },
+                                                "val": {
+                                                  "u32": 0
+                                                }
+                                              },
+                                              {
+                                                "key": {
+                                                  "symbol": "slot"
+                                                },
+                                                "val": {
+                                                  "u128": "29896444"
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        },
+                        "sub_invocations": [
+                          {
+                            "function": {
+                              "contract_fn": {
+                                "contract_address": "CARTUL5AWDZYBSN7HUUJZSKCAKCIAKM7M54Z76G6KRYCK4XPR3OHUQZ4",
+                                "function_name": "decrease_liquidity_with_hints",
+                                "args": [
+                                  {
+                                    "map": [
+                                      {
+                                        "key": {
+                                          "symbol": "amount0_min"
+                                        },
+                                        "val": {
+                                          "u128": "0"
+                                        }
+                                      },
+                                      {
+                                        "key": {
+                                          "symbol": "amount1_min"
+                                        },
+                                        "val": {
+                                          "u128": "0"
+                                        }
+                                      },
+                                      {
+                                        "key": {
+                                          "symbol": "deadline"
+                                        },
+                                        "val": {
+                                          "u64": "1793787260"
+                                        }
+                                      },
+                                      {
+                                        "key": {
+                                          "symbol": "liquidity"
+                                        },
+                                        "val": {
+                                          "u128": "149335204558"
+                                        }
+                                      },
+                                      {
+                                        "key": {
+                                          "symbol": "operator"
+                                        },
+                                        "val": {
+                                          "address": "GCK43OVWWHKJMSWHMOOBOV2YLJ3PY4ME44Q7QHTH6T24MV6XRWEYBAHS"
+                                        }
+                                      },
+                                      {
+                                        "key": {
+                                          "symbol": "token_id"
+                                        },
+                                        "val": {
+                                          "u32": 1315
+                                        }
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "map": [
+                                      {
+                                        "key": {
+                                          "symbol": "checkpoint"
+                                        },
+                                        "val": {
+                                          "u32": 18
+                                        }
+                                      },
+                                      {
+                                        "key": {
+                                          "symbol": "checkpoint_min"
+                                        },
+                                        "val": {
+                                          "u32": 0
+                                        }
+                                      },
+                                      {
+                                        "key": {
+                                          "symbol": "slot"
+                                        },
+                                        "val": {
+                                          "u128": "29896444"
+                                        }
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            },
+                            "sub_invocations": []
+                          },
+                          {
+                            "function": {
+                              "contract_fn": {
+                                "contract_address": "CARTUL5AWDZYBSN7HUUJZSKCAKCIAKM7M54Z76G6KRYCK4XPR3OHUQZ4",
+                                "function_name": "collect_with_hints",
+                                "args": [
+                                  {
+                                    "map": [
+                                      {
+                                        "key": {
+                                          "symbol": "amount0_max"
+                                        },
+                                        "val": {
+                                          "u128": "340282366920938463463374607431768211455"
+                                        }
+                                      },
+                                      {
+                                        "key": {
+                                          "symbol": "amount1_max"
+                                        },
+                                        "val": {
+                                          "u128": "340282366920938463463374607431768211455"
+                                        }
+                                      },
+                                      {
+                                        "key": {
+                                          "symbol": "operator"
+                                        },
+                                        "val": {
+                                          "address": "GCK43OVWWHKJMSWHMOOBOV2YLJ3PY4ME44Q7QHTH6T24MV6XRWEYBAHS"
+                                        }
+                                      },
+                                      {
+                                        "key": {
+                                          "symbol": "recipient"
+                                        },
+                                        "val": {
+                                          "address": "GCK43OVWWHKJMSWHMOOBOV2YLJ3PY4ME44Q7QHTH6T24MV6XRWEYBAHS"
+                                        }
+                                      },
+                                      {
+                                        "key": {
+                                          "symbol": "token_id"
+                                        },
+                                        "val": {
+                                          "u32": 1315
+                                        }
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "map": [
+                                      {
+                                        "key": {
+                                          "symbol": "checkpoint"
+                                        },
+                                        "val": {
+                                          "u32": 18
+                                        }
+                                      },
+                                      {
+                                        "key": {
+                                          "symbol": "checkpoint_min"
+                                        },
+                                        "val": {
+                                          "u32": 0
+                                        }
+                                      },
+                                      {
+                                        "key": {
+                                          "symbol": "slot"
+                                        },
+                                        "val": {
+                                          "u128": "29896444"
+                                        }
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            },
+                            "sub_invocations": []
+                          },
+                          {
+                            "function": {
+                              "contract_fn": {
+                                "contract_address": "CARTUL5AWDZYBSN7HUUJZSKCAKCIAKM7M54Z76G6KRYCK4XPR3OHUQZ4",
+                                "function_name": "burn",
+                                "args": [
+                                  {
+                                    "u32": 1315
+                                  }
+                                ]
+                              }
+                            },
+                            "sub_invocations": []
+                          },
+                          {
+                            "function": {
+                              "contract_fn": {
+                                "contract_address": "CARTUL5AWDZYBSN7HUUJZSKCAKCIAKM7M54Z76G6KRYCK4XPR3OHUQZ4",
+                                "function_name": "mint_with_hints",
+                                "args": [
+                                  {
+                                    "map": [
+                                      {
+                                        "key": {
+                                          "symbol": "amount0_desired"
+                                        },
+                                        "val": {
+                                          "u128": "1340760880"
+                                        }
+                                      },
+                                      {
+                                        "key": {
+                                          "symbol": "amount0_min"
+                                        },
+                                        "val": {
+                                          "u128": "1327353272"
+                                        }
+                                      },
+                                      {
+                                        "key": {
+                                          "symbol": "amount1_desired"
+                                        },
+                                        "val": {
+                                          "u128": "316967238"
+                                        }
+                                      },
+                                      {
+                                        "key": {
+                                          "symbol": "amount1_min"
+                                        },
+                                        "val": {
+                                          "u128": "313797566"
+                                        }
+                                      },
+                                      {
+                                        "key": {
+                                          "symbol": "deadline"
+                                        },
+                                        "val": {
+                                          "u64": "1793787260"
+                                        }
+                                      },
+                                      {
+                                        "key": {
+                                          "symbol": "fee"
+                                        },
+                                        "val": {
+                                          "u32": 3000
+                                        }
+                                      },
+                                      {
+                                        "key": {
+                                          "symbol": "recipient"
+                                        },
+                                        "val": {
+                                          "address": "GCK43OVWWHKJMSWHMOOBOV2YLJ3PY4ME44Q7QHTH6T24MV6XRWEYBAHS"
+                                        }
+                                      },
+                                      {
+                                        "key": {
+                                          "symbol": "sender"
+                                        },
+                                        "val": {
+                                          "address": "GCK43OVWWHKJMSWHMOOBOV2YLJ3PY4ME44Q7QHTH6T24MV6XRWEYBAHS"
+                                        }
+                                      },
+                                      {
+                                        "key": {
+                                          "symbol": "tick_lower"
+                                        },
+                                        "val": {
+                                          "i32": 2220
+                                        }
+                                      },
+                                      {
+                                        "key": {
+                                          "symbol": "tick_upper"
+                                        },
+                                        "val": {
+                                          "i32": 2460
+                                        }
+                                      },
+                                      {
+                                        "key": {
+                                          "symbol": "token0"
+                                        },
+                                        "val": {
+                                          "address": "CACSKWC753QVGC4J6YPDBIR2BEHFVWIAE7CBSS3HOVYMN623OAIQYE2M"
+                                        }
+                                      },
+                                      {
+                                        "key": {
+                                          "symbol": "token1"
+                                        },
+                                        "val": {
+                                          "address": "CCNOV6XVI2O5BSTA3232GIRUQULDEBV7IWGKM6QKI6II5OIIQTU24JJN"
+                                        }
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "map": [
+                                      {
+                                        "key": {
+                                          "symbol": "checkpoint"
+                                        },
+                                        "val": {
+                                          "u32": 18
+                                        }
+                                      },
+                                      {
+                                        "key": {
+                                          "symbol": "checkpoint_min"
+                                        },
+                                        "val": {
+                                          "u32": 0
+                                        }
+                                      },
+                                      {
+                                        "key": {
+                                          "symbol": "slot"
+                                        },
+                                        "val": {
+                                          "u128": "29896444"
+                                        }
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            },
+                            "sub_invocations": [
+                              {
+                                "function": {
+                                  "contract_fn": {
+                                    "contract_address": "CAOAVZOUDGYDI3QJTCDEQ3GJPWFN7QHM632EQZLWAIUWKILEFTKZUPE6",
+                                    "function_name": "mint",
+                                    "args": [
+                                      {
+                                        "address": "GCK43OVWWHKJMSWHMOOBOV2YLJ3PY4ME44Q7QHTH6T24MV6XRWEYBAHS"
+                                      },
+                                      {
+                                        "address": "CARTUL5AWDZYBSN7HUUJZSKCAKCIAKM7M54Z76G6KRYCK4XPR3OHUQZ4"
+                                      },
+                                      {
+                                        "i32": 2220
+                                      },
+                                      {
+                                        "i32": 2460
+                                      },
+                                      {
+                                        "u128": "149339935502"
+                                      },
+                                      {
+                                        "map": [
+                                          {
+                                            "key": {
+                                              "symbol": "checkpoint"
+                                            },
+                                            "val": {
+                                              "u32": 18
+                                            }
+                                          },
+                                          {
+                                            "key": {
+                                              "symbol": "checkpoint_min"
+                                            },
+                                            "val": {
+                                              "u32": 0
+                                            }
+                                          },
+                                          {
+                                            "key": {
+                                              "symbol": "slot"
+                                            },
+                                            "val": {
+                                              "u128": "29896444"
+                                            }
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                },
+                                "sub_invocations": [
+                                  {
+                                    "function": {
+                                      "contract_fn": {
+                                        "contract_address": "CACSKWC753QVGC4J6YPDBIR2BEHFVWIAE7CBSS3HOVYMN623OAIQYE2M",
+                                        "function_name": "transfer",
+                                        "args": [
+                                          {
+                                            "address": "GCK43OVWWHKJMSWHMOOBOV2YLJ3PY4ME44Q7QHTH6T24MV6XRWEYBAHS"
+                                          },
+                                          {
+                                            "address": "CAOAVZOUDGYDI3QJTCDEQ3GJPWFN7QHM632EQZLWAIUWKILEFTKZUPE6"
+                                          },
+                                          {
+                                            "i128": "1340760880"
+                                          }
+                                        ]
+                                      }
+                                    },
+                                    "sub_invocations": []
+                                  },
+                                  {
+                                    "function": {
+                                      "contract_fn": {
+                                        "contract_address": "CCNOV6XVI2O5BSTA3232GIRUQULDEBV7IWGKM6QKI6II5OIIQTU24JJN",
+                                        "function_name": "transfer",
+                                        "args": [
+                                          {
+                                            "address": "GCK43OVWWHKJMSWHMOOBOV2YLJ3PY4ME44Q7QHTH6T24MV6XRWEYBAHS"
+                                          },
+                                          {
+                                            "address": "CAOAVZOUDGYDI3QJTCDEQ3GJPWFN7QHM632EQZLWAIUWKILEFTKZUPE6"
+                                          },
+                                          {
+                                            "i128": "316967238"
+                                          }
+                                        ]
+                                      }
+                                    },
+                                    "sub_invocations": []
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          ],
+          "ext": {
+            "v1": {
+              "ext": "v0",
+              "resources": {
+                "footprint": {
+                  "read_only": [
+                    {
+                      "contract_data": {
+                        "contract": "CACSKWC753QVGC4J6YPDBIR2BEHFVWIAE7CBSS3HOVYMN623OAIQYE2M",
+                        "key": "ledger_key_contract_instance",
+                        "durability": "persistent"
+                      }
+                    },
+                    {
+                      "contract_data": {
+                        "contract": "CARTUL5AWDZYBSN7HUUJZSKCAKCIAKM7M54Z76G6KRYCK4XPR3OHUQZ4",
+                        "key": {
+                          "vec": [
+                            {
+                              "symbol": "PoolIdToPoolKey"
+                            },
+                            {
+                              "u32": 61
+                            }
+                          ]
+                        },
+                        "durability": "persistent"
+                      }
+                    },
+                    {
+                      "contract_data": {
+                        "contract": "CARTUL5AWDZYBSN7HUUJZSKCAKCIAKM7M54Z76G6KRYCK4XPR3OHUQZ4",
+                        "key": {
+                          "vec": [
+                            {
+                              "symbol": "PoolIdsByAddress"
+                            },
+                            {
+                              "address": "CAOAVZOUDGYDI3QJTCDEQ3GJPWFN7QHM632EQZLWAIUWKILEFTKZUPE6"
+                            }
+                          ]
+                        },
+                        "durability": "persistent"
+                      }
+                    },
+                    {
+                      "contract_data": {
+                        "contract": "CBZV3HBP672BV7FF3ZILVT4CNPW3N5V2WTJ2LAGOAYW5R7L2D5SLUDFZ",
+                        "key": "ledger_key_contract_instance",
+                        "durability": "persistent"
+                      }
+                    },
+                    {
+                      "contract_data": {
+                        "contract": "CCNOV6XVI2O5BSTA3232GIRUQULDEBV7IWGKM6QKI6II5OIIQTU24JJN",
+                        "key": "ledger_key_contract_instance",
+                        "durability": "persistent"
+                      }
+                    },
+                    {
+                      "contract_code": {
+                        "hash": "003710b383f9da7d650a7f719a7be479110266427817ebbed61d924505fcd7c7"
+                      }
+                    },
+                    {
+                      "contract_code": {
+                        "hash": "be969de545da89a04508e4952e94a53a77e76ecfa67d74b23fd56e0be42290d4"
+                      }
+                    },
+                    {
+                      "contract_code": {
+                        "hash": "eef465aae42270559f8b6f6f8f80d8ae2566011ec28def520ece01890d6970a1"
+                      }
+                    }
+                  ],
+                  "read_write": [
+                    {
+                      "trustline": {
+                        "account_id": "GCK43OVWWHKJMSWHMOOBOV2YLJ3PY4ME44Q7QHTH6T24MV6XRWEYBAHS",
+                        "asset": {
+                          "credit_alphanum4": {
+                            "asset_code": "USDE",
+                            "issuer": "GDJ5BNU5NN6NQ54D7OX6NQTUYNBZ42CAT33QGM5BIQ2QIYADAC5ICH47"
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "trustline": {
+                        "account_id": "GCK43OVWWHKJMSWHMOOBOV2YLJ3PY4ME44Q7QHTH6T24MV6XRWEYBAHS",
+                        "asset": {
+                          "credit_alphanum12": {
+                            "asset_code": "SUSDE",
+                            "issuer": "GDJ5BNU5NN6NQ54D7OX6NQTUYNBZ42CAT33QGM5BIQ2QIYADAC5ICH47"
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "contract_data": {
+                        "contract": "CACSKWC753QVGC4J6YPDBIR2BEHFVWIAE7CBSS3HOVYMN623OAIQYE2M",
+                        "key": {
+                          "vec": [
+                            {
+                              "symbol": "Balance"
+                            },
+                            {
+                              "address": "CAOAVZOUDGYDI3QJTCDEQ3GJPWFN7QHM632EQZLWAIUWKILEFTKZUPE6"
+                            }
+                          ]
+                        },
+                        "durability": "persistent"
+                      }
+                    },
+                    {
+                      "contract_data": {
+                        "contract": "CAOAVZOUDGYDI3QJTCDEQ3GJPWFN7QHM632EQZLWAIUWKILEFTKZUPE6",
+                        "key": {
+                          "vec": [
+                            {
+                              "symbol": "HistoricalCheckpoint"
+                            },
+                            {
+                              "u32": 19
+                            }
+                          ]
+                        },
+                        "durability": "persistent"
+                      }
+                    },
+                    {
+                      "contract_data": {
+                        "contract": "CAOAVZOUDGYDI3QJTCDEQ3GJPWFN7QHM632EQZLWAIUWKILEFTKZUPE6",
+                        "key": {
+                          "vec": [
+                            {
+                              "symbol": "Position"
+                            },
+                            {
+                              "bytes": "f00fc35a7a123203a5182a06f8abc7b8dfffef83bf6e4d1cfec74ad44a9e72b8"
+                            }
+                          ]
+                        },
+                        "durability": "persistent"
+                      }
+                    },
+                    {
+                      "contract_data": {
+                        "contract": "CAOAVZOUDGYDI3QJTCDEQ3GJPWFN7QHM632EQZLWAIUWKILEFTKZUPE6",
+                        "key": {
+                          "vec": [
+                            {
+                              "symbol": "RecentOracleBucket"
+                            },
+                            {
+                              "u128": "29896443"
+                            }
+                          ]
+                        },
+                        "durability": "temporary"
+                      }
+                    },
+                    {
+                      "contract_data": {
+                        "contract": "CAOAVZOUDGYDI3QJTCDEQ3GJPWFN7QHM632EQZLWAIUWKILEFTKZUPE6",
+                        "key": {
+                          "vec": [
+                            {
+                              "symbol": "RecentOracleBucket"
+                            },
+                            {
+                              "u128": "29896444"
+                            }
+                          ]
+                        },
+                        "durability": "temporary"
+                      }
+                    },
+                    {
+                      "contract_data": {
+                        "contract": "CAOAVZOUDGYDI3QJTCDEQ3GJPWFN7QHM632EQZLWAIUWKILEFTKZUPE6",
+                        "key": {
+                          "vec": [
+                            {
+                              "symbol": "RecentOracleBucket"
+                            },
+                            {
+                              "u128": "29896445"
+                            }
+                          ]
+                        },
+                        "durability": "temporary"
+                      }
+                    },
+                    {
+                      "contract_data": {
+                        "contract": "CAOAVZOUDGYDI3QJTCDEQ3GJPWFN7QHM632EQZLWAIUWKILEFTKZUPE6",
+                        "key": {
+                          "vec": [
+                            {
+                              "symbol": "RecentOracleBucket"
+                            },
+                            {
+                              "u128": "29896446"
+                            }
+                          ]
+                        },
+                        "durability": "temporary"
+                      }
+                    },
+                    {
+                      "contract_data": {
+                        "contract": "CAOAVZOUDGYDI3QJTCDEQ3GJPWFN7QHM632EQZLWAIUWKILEFTKZUPE6",
+                        "key": {
+                          "vec": [
+                            {
+                              "symbol": "Tick"
+                            },
+                            {
+                              "i32": 2220
+                            }
+                          ]
+                        },
+                        "durability": "persistent"
+                      }
+                    },
+                    {
+                      "contract_data": {
+                        "contract": "CAOAVZOUDGYDI3QJTCDEQ3GJPWFN7QHM632EQZLWAIUWKILEFTKZUPE6",
+                        "key": {
+                          "vec": [
+                            {
+                              "symbol": "Tick"
+                            },
+                            {
+                              "i32": 2460
+                            }
+                          ]
+                        },
+                        "durability": "persistent"
+                      }
+                    },
+                    {
+                      "contract_data": {
+                        "contract": "CAOAVZOUDGYDI3QJTCDEQ3GJPWFN7QHM632EQZLWAIUWKILEFTKZUPE6",
+                        "key": {
+                          "vec": [
+                            {
+                              "symbol": "TickBitmap"
+                            },
+                            {
+                              "i32": 0
+                            }
+                          ]
+                        },
+                        "durability": "persistent"
+                      }
+                    },
+                    {
+                      "contract_data": {
+                        "contract": "CAOAVZOUDGYDI3QJTCDEQ3GJPWFN7QHM632EQZLWAIUWKILEFTKZUPE6",
+                        "key": "ledger_key_contract_instance",
+                        "durability": "persistent"
+                      }
+                    },
+                    {
+                      "contract_data": {
+                        "contract": "CARTUL5AWDZYBSN7HUUJZSKCAKCIAKM7M54Z76G6KRYCK4XPR3OHUQZ4",
+                        "key": {
+                          "vec": [
+                            {
+                              "symbol": "Approval"
+                            },
+                            {
+                              "u32": 1315
+                            }
+                          ]
+                        },
+                        "durability": "temporary"
+                      }
+                    },
+                    {
+                      "contract_data": {
+                        "contract": "CARTUL5AWDZYBSN7HUUJZSKCAKCIAKM7M54Z76G6KRYCK4XPR3OHUQZ4",
+                        "key": {
+                          "vec": [
+                            {
+                              "symbol": "Balance"
+                            },
+                            {
+                              "address": "GCK43OVWWHKJMSWHMOOBOV2YLJ3PY4ME44Q7QHTH6T24MV6XRWEYBAHS"
+                            }
+                          ]
+                        },
+                        "durability": "persistent"
+                      }
+                    },
+                    {
+                      "contract_data": {
+                        "contract": "CARTUL5AWDZYBSN7HUUJZSKCAKCIAKM7M54Z76G6KRYCK4XPR3OHUQZ4",
+                        "key": {
+                          "vec": [
+                            {
+                              "symbol": "Owner"
+                            },
+                            {
+                              "u32": 1315
+                            }
+                          ]
+                        },
+                        "durability": "persistent"
+                      }
+                    },
+                    {
+                      "contract_data": {
+                        "contract": "CARTUL5AWDZYBSN7HUUJZSKCAKCIAKM7M54Z76G6KRYCK4XPR3OHUQZ4",
+                        "key": {
+                          "vec": [
+                            {
+                              "symbol": "Owner"
+                            },
+                            {
+                              "u32": 1316
+                            }
+                          ]
+                        },
+                        "durability": "persistent"
+                      }
+                    },
+                    {
+                      "contract_data": {
+                        "contract": "CARTUL5AWDZYBSN7HUUJZSKCAKCIAKM7M54Z76G6KRYCK4XPR3OHUQZ4",
+                        "key": {
+                          "vec": [
+                            {
+                              "symbol": "Position"
+                            },
+                            {
+                              "u32": 1315
+                            }
+                          ]
+                        },
+                        "durability": "persistent"
+                      }
+                    },
+                    {
+                      "contract_data": {
+                        "contract": "CARTUL5AWDZYBSN7HUUJZSKCAKCIAKM7M54Z76G6KRYCK4XPR3OHUQZ4",
+                        "key": {
+                          "vec": [
+                            {
+                              "symbol": "Position"
+                            },
+                            {
+                              "u32": 1316
+                            }
+                          ]
+                        },
+                        "durability": "persistent"
+                      }
+                    },
+                    {
+                      "contract_data": {
+                        "contract": "CARTUL5AWDZYBSN7HUUJZSKCAKCIAKM7M54Z76G6KRYCK4XPR3OHUQZ4",
+                        "key": {
+                          "vec": [
+                            {
+                              "symbol": "UserTokenIds"
+                            },
+                            {
+                              "address": "GCK43OVWWHKJMSWHMOOBOV2YLJ3PY4ME44Q7QHTH6T24MV6XRWEYBAHS"
+                            }
+                          ]
+                        },
+                        "durability": "persistent"
+                      }
+                    },
+                    {
+                      "contract_data": {
+                        "contract": "CARTUL5AWDZYBSN7HUUJZSKCAKCIAKM7M54Z76G6KRYCK4XPR3OHUQZ4",
+                        "key": "ledger_key_contract_instance",
+                        "durability": "persistent"
+                      }
+                    },
+                    {
+                      "contract_data": {
+                        "contract": "CCNOV6XVI2O5BSTA3232GIRUQULDEBV7IWGKM6QKI6II5OIIQTU24JJN",
+                        "key": {
+                          "vec": [
+                            {
+                              "symbol": "Balance"
+                            },
+                            {
+                              "address": "CAOAVZOUDGYDI3QJTCDEQ3GJPWFN7QHM632EQZLWAIUWKILEFTKZUPE6"
+                            }
+                          ]
+                        },
+                        "durability": "persistent"
+                      }
+                    }
+                  ]
+                },
+                "instructions": 34004258,
+                "disk_read_bytes": 288,
+                "write_bytes": 8212
+              },
+              "resource_fee": "2946061"
+            }
+          }
+        },
+        "signatures": [
+          {
+            "hint": "d78d8980",
+            "signature": "de2ab3c3b39cbaa1eeb78a7f2d6f020be63efe334043d0c83625cb1a103fcb0bdb6351f328b6446b02ad84cd92971dcd0236d061abcb0230035022e990e1710c"
+          }
+        ]
+      }
+    },
+    "checks": [
+      {
+        "id": "root-has-4-subs",
+        "path": "/tx/tx/operations/0/body/invoke_host_function/auth/0/root_invocation/sub_invocations",
+        "op": "not-dropped",
+        "value": 4,
+        "note": "Four sub-invocations under exec()."
+      },
+      {
+        "id": "depth-4-leaf",
+        "path": "/tx/tx/operations/0/body/invoke_host_function/auth/0/root_invocation/sub_invocations/3/sub_invocations/0/sub_invocations/0/function/contract_fn/function_name",
+        "op": "equals",
+        "value": "transfer",
+        "note": "Leaf at depth 4: exec -> mint_with... -> mint -> transfer."
+      },
+      {
+        "id": "depth-4-leaf-is-leaf",
+        "path": "/tx/tx/operations/0/body/invoke_host_function/auth/0/root_invocation/sub_invocations/3/sub_invocations/0/sub_invocations/0/sub_invocations",
+        "op": "length",
+        "value": 0,
+        "note": "Depth 4 is the bottom."
+      }
+    ],
+    "ledger_checks": [
+      {
+        "id": "lcm-success",
+        "path": "/v2/tx_processing/183/result/result/result/tx_success/0/op_inner/invoke_host_function/success",
+        "op": "preserved",
+        "note": "Applied."
+      }
+    ]
+  },
+  "tags": [
+    "nested-auth",
+    "recursion",
+    "mainnet"
+  ],
+  "linked_issues": [
+    {
+      "url": "https://github.com/stellar/wallet-backend/issues/820",
+      "role": "related",
+      "component": "walkInvocation recursion (XDRL002)"
+    }
+  ],
+  "ledger": {
+    "type": "LedgerCloseMeta",
+    "lcm_version": "v2",
+    "sequence": 65300125,
+    "protocol_version": 29,
+    "file": "corpus/datalake/pubnet/FC1BE7FF--65280000-65343999/FC1B9962--65300125.xdr.zst",
+    "format": "galexie: zstd(LedgerCloseMetaBatch), 1 ledger per object, 64000 per partition",
+    "sha256_zst": "46c127a7ab1848ee9d937139f1f9403d273e8420e08f5a22c7b0b6b5f47cd20c",
+    "sha256_lcm": "01c318913779ad538e93425a5be584a22e36f52a18983b53e26dc52f9476474d",
+    "tx_index": 183,
+    "source": "galexie-public-archive",
+    "source_url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/v1.1/stellar/ledgers/pubnet/FC1BE7FF--65280000-65343999/FC1B9962--65300125.xdr.zst"
+  }
+}

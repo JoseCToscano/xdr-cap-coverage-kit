@@ -1,0 +1,124 @@
+{
+  "schema_version": "0.2.0",
+  "id": "mainnet-cap27-muxed-id-above-2-53",
+  "title": "Mainnet payment to a muxed account whose ID (8753198265147683791) is above 2^53",
+  "caps": [
+    "CAP-0027"
+  ],
+  "protocol": {
+    "introduced_in": 13,
+    "captured_on": 29,
+    "xdr_ref": "stellar-xdr 30.0.0 (3c2aa43d2ab54d429ae44aa5143d805bf5dba7e2) xdr: 4f524bbac80c781c06e4fb5fc93a2d0d331d6705 features: <none>"
+  },
+  "network": {
+    "passphrase": "Public Global Stellar Network ; September 2015",
+    "expected_tx_hash": "c619a0a930a8c44b457b3952ee535355a006a15e74407999ecfacd28dec3f86a"
+  },
+  "xdr": {
+    "type": "TransactionEnvelope",
+    "base64": "AAAAAgAAAAAn3Utrk+xMTzUxNm+0eQLTfiiLVN3EyyuBWhpGy6EwYAAAB9ADxkZ/AAAFCAAAAAAAAAAAAAAAAgAAAAAAAAABAAABAHl5m3IasXPPJ91La5PsTE81MTZvtHkC034oi1TdxMsrgVoaRsuhMGAAAAAAAAAAAAAAAAEAAAAAAAAACgAAAAZidW5kbGUAAAAAAAEAAABAAiAXvw7adL1U3itUAq0RrmbFk9vkFVP2bbAcRXeqBVN4ZeYR29l/hIJKwXFlBLG2vaTIOGqnAfvbKRYcFLb8EwAAAAAAAAABy6EwYAAAAEAgiVStjbMaXbRY69hE0pj4fFIt0V0QNPRtuN/AY0rUzamPlefrkMBF9rXafUincrYy8COWLBG2YhA7htNaWc8I",
+    "sha256": "e03bbefd53a304bd9652e6cb23d8e30aadf186a34c4f7f09940149e280251bca"
+  },
+  "provenance": {
+    "kind": "mainnet",
+    "origin": "mined_from_mainnet_history",
+    "origin_note": "Found by the real-network frequency study (tools/frequency/, reports/frequency.md): 353 mainnet transactions in the sample carry a muxed ID >= 2^53 (14 per million). Not submitted by this kit.",
+    "ledger": 65300357,
+    "tx_hash": "c619a0a930a8c44b457b3952ee535355a006a15e74407999ecfacd28dec3f86a",
+    "source_url": "https://stellar.expert/explorer/public/tx/c619a0a930a8c44b457b3952ee535355a006a15e74407999ecfacd28dec3f86a",
+    "tx_created_at": "2026-11-04T10:23:44.000Z",
+    "retrieved_at": "2026-11-16T19:00:20.750Z",
+    "tool": "tools/make-entry.mjs (mainnet-cap27-muxed-id-above-2-53.mjs)"
+  },
+  "expected": {
+    "json": {
+      "tx": {
+        "tx": {
+          "source_account": "GAT52S3LSPWEYTZVGE3G7NDZALJX4KELKTO4JSZLQFNBURWLUEYGANS3",
+          "fee": 2000,
+          "seq_num": "271982338777285896",
+          "cond": "none",
+          "memo": "none",
+          "operations": [
+            {
+              "source_account": null,
+              "body": {
+                "payment": {
+                  "destination": "MAT52S3LSPWEYTZVGE3G7NDZALJX4KELKTO4JSZLQFNBURWLUEYGA6LZTNZBVMLTZ5S7U",
+                  "asset": "native",
+                  "amount": "1"
+                }
+              }
+            },
+            {
+              "source_account": null,
+              "body": {
+                "manage_data": {
+                  "data_name": "bundle",
+                  "data_value": "022017bf0eda74bd54de2b5402ad11ae66c593dbe41553f66db01c4577aa05537865e611dbd97f84824ac1716504b1b6bda4c8386aa701fbdb29161c14b6fc13"
+                }
+              }
+            }
+          ],
+          "ext": "v0"
+        },
+        "signatures": [
+          {
+            "hint": "cba13060",
+            "signature": "208954ad8db31a5db458ebd844d298f87c522dd15d1034f46db8dfc0634ad4cda98f95e7eb90c045f6b5da7d48a772b632f023962c11b662103b86d35a59cf08"
+          }
+        ]
+      }
+    },
+    "checks": [
+      {
+        "id": "dest-muxed",
+        "path": "/tx/tx/operations/0/body/payment/destination",
+        "op": "strkey",
+        "value": "MAT52S3LSPWEYTZVGE3G7NDZALJX4KELKTO4JSZLQFNBURWLUEYGA6LZTNZBVMLTZ5S7U",
+        "note": "M address with ID 8753198265147683791 (> 2^53 = 9007199254740992). A reader that turns the ID into a JS number gets a different ID (js-stellar-sdk #1785 shape)."
+      },
+      {
+        "id": "base-is-source",
+        "path": "/tx/tx/source_account",
+        "op": "strkey",
+        "value": "GAT52S3LSPWEYTZVGE3G7NDZALJX4KELKTO4JSZLQFNBURWLUEYGANS3",
+        "note": "The M address wraps the source's own G key."
+      }
+    ],
+    "ledger_checks": [
+      {
+        "id": "lcm-success",
+        "path": "/v2/tx_processing/137/result/result/result/tx_success/0/op_inner/payment",
+        "op": "equals",
+        "value": "success",
+        "note": "Applied."
+      }
+    ]
+  },
+  "tags": [
+    "muxed",
+    "muxed-max-id",
+    "mainnet"
+  ],
+  "linked_issues": [
+    {
+      "url": "https://github.com/stellar/js-stellar-sdk/issues/1785",
+      "role": "related",
+      "component": "muxed ID parsing"
+    }
+  ],
+  "ledger": {
+    "type": "LedgerCloseMeta",
+    "lcm_version": "v2",
+    "sequence": 65300357,
+    "protocol_version": 29,
+    "file": "corpus/datalake/pubnet/FC1BE7FF--65280000-65343999/FC1B987A--65300357.xdr.zst",
+    "format": "galexie: zstd(LedgerCloseMetaBatch), 1 ledger per object, 64000 per partition",
+    "sha256_zst": "ea848ad60a721b58a6b6dffd4c529a29dd6575cfec5e0bd578dad177729de95c",
+    "sha256_lcm": "794e4acc3eb4091c9000e4d1bb4cf1cfb9e6a1993480453a0c1942f3ad9f22a6",
+    "tx_index": 137,
+    "source": "galexie-public-archive",
+    "source_url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/v1.1/stellar/ledgers/pubnet/FC1BE7FF--65280000-65343999/FC1B987A--65300357.xdr.zst"
+  }
+}

@@ -1,0 +1,25 @@
+# Single-VM setup (Hetzner, DigitalOcean or any Docker host).
+#   cd deploy/checker && STATUS_HOST=status.example.org docker compose up -d --build
+# Caddy gets a TLS certificate for STATUS_HOST and proxies to the checker.
+services:
+  checker:
+    build: { context: ../.., dockerfile: deploy/checker/Dockerfile }
+    restart: unless-stopped
+    environment:
+      XCK_NET: pubnet
+      XCK_STATUS_EVERY_S: "60"
+      XCK_LIVE_WORKERS: "3"           # parallel ledger workers, ~0.4 GB each while catching up
+      # XCK_RPC_URL: https://<stellar-rpc>   # optional getLedgers fallback when the archive lags
+    volumes: ["xck-data:/data"]
+    mem_limit: 3g
+    expose: ["8080"]
+  caddy:
+    image: caddy:2
+    restart: unless-stopped
+    ports: ["80:80", "443:443"]
+    environment: { STATUS_HOST: "${STATUS_HOST:?set STATUS_HOST to the public hostname}" }
+    volumes: ["./Caddyfile:/etc/caddy/Caddyfile:ro", "caddy-data:/data"]
+    depends_on: [checker]
+volumes:
+  xck-data: {}
+  caddy-data: {}

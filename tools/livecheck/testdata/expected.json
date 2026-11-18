@@ -1,0 +1,292 @@
+{
+ "testnet/5718670": {
+  "txs": 17,
+  "segments": 35,
+  "protocol": 30,
+  "readers": {
+   "js": {
+    "ok": true,
+    "roundtrip": true
+   },
+   "go": {
+    "ok": true,
+    "roundtrip": true
+   },
+   "rust": {
+    "ok": true,
+    "roundtrip": true,
+    "json_roundtrip": true
+   }
+  },
+  "flags": {
+   "long_tail": 4
+  },
+  "arms": [
+   "long_tail:InvokeHostFunctionResult.insufficient_refundable_fee:c313dd23fd0d",
+   "long_tail:OperationResult.op_too_many_subentries:dae5ff2dd0d4",
+   "long_tail:ScAddress.muxed_account:5073b3a95256",
+   "long_tail:ScError.budget:c313dd23fd0d"
+  ]
+ },
+ "testnet/5718669": {
+  "txs": 12,
+  "segments": 25,
+  "protocol": 30,
+  "readers": {
+   "js": {
+    "ok": true,
+    "roundtrip": true
+   },
+   "go": {
+    "ok": true,
+    "roundtrip": true
+   },
+   "rust": {
+    "ok": true,
+    "roundtrip": true,
+    "json_roundtrip": true
+   }
+  },
+  "flags": {
+   "long_tail": 8,
+   "first_seen": 1
+  },
+  "arms": [
+   "first_seen:ScAddress.muxed_contract:b4dd69fd32ab",
+   "long_tail:ChangeTrustAsset.pool_share:b23e89ea037c",
+   "long_tail:ContractIdPreimage.address:6de0acbe3f62",
+   "long_tail:ContractIdPreimage.address:8262d7b6a5ef",
+   "long_tail:HostFunction.create_contract_v2:6de0acbe3f62",
+   "long_tail:HostFunction.create_contract_v2:8262d7b6a5ef",
+   "long_tail:LiquidityPoolParameters.liquidity_pool_constant_product:b23e89ea037c",
+   "long_tail:SorobanAuthorizedFunction.create_contract_v2_host_fn:6de0acbe3f62",
+   "long_tail:SorobanAuthorizedFunction.create_contract_v2_host_fn:8262d7b6a5ef"
+  ]
+ },
+ "testnet/5718668": {
+  "txs": 14,
+  "segments": 29,
+  "protocol": 30,
+  "readers": {
+   "js": {
+    "ok": true,
+    "roundtrip": true
+   },
+   "go": {
+    "ok": true,
+    "roundtrip": true
+   },
+   "rust": {
+    "ok": true,
+    "roundtrip": true,
+    "json_roundtrip": true
+   }
+  },
+  "flags": {
+   "long_tail": 2,
+   "shape_first_seen": 1,
+   "bug_shape": 2
+  },
+  "arms": [
+   "bug_shape:sac.trust_creates_trustline (#731 exact):933b5e6e4fd4",
+   "bug_shape:soroban.creates_trustline (#731 shape):933b5e6e4fd4",
+   "long_tail:OperationResult.op_too_many_subentries:2ec902ef6515",
+   "long_tail:ScErrorCode.missing_value:4cf2e32fac68",
+   "shape_first_seen:sac.invoke_trust_fn (CAP-73 candidate):933b5e6e4fd4"
+  ]
+ },
+ "testnet/5718667": {
+  "txs": 28,
+  "segments": 57,
+  "protocol": 30,
+  "readers": {
+   "js": {
+    "ok": true,
+    "roundtrip": true
+   },
+   "go": {
+    "ok": true,
+    "roundtrip": true
+   },
+   "rust": {
+    "ok": true,
+    "roundtrip": true,
+    "json_roundtrip": true
+   }
+  },
+  "flags": {
+   "long_tail": 4
+  },
+  "arms": [
+   "long_tail:ContractExecutable.stellar_asset:23c4f453f871",
+   "long_tail:ContractIdPreimage.asset:23c4f453f871",
+   "long_tail:HostFunction.create_contract:23c4f453f871",
+   "long_tail:OperationResult.op_too_many_subentries:8c9b673c56b6"
+  ]
+ },
+ "testnet/5718666": {
+  "txs": 13,
+  "segments": 27,
+  "protocol": 30,
+  "readers": {
+   "js": {
+    "ok": true,
+    "roundtrip": true
+   },
+   "go": {
+    "ok": true,
+    "roundtrip": true
+   },
+   "rust": {
+    "ok": true,
+    "roundtrip": true,
+    "json_roundtrip": true
+   }
+  },
+  "flags": {
+   "long_tail": 3,
+   "bug_shape": 1
+  },
+  "arms": [
+   "bug_shape:pool.issuer_text_order_differs_from_bytes (#1766 shape):d5b9828639de",
+   "long_tail:ChangeTrustAsset.pool_share:d5b9828639de",
+   "long_tail:LiquidityPoolParameters.liquidity_pool_constant_product:d5b9828639de",
+   "long_tail:OperationResult.op_too_many_subentries:fd61275720ce"
+  ]
+ },
+ "testnet/5718664": {
+  "txs": 17,
+  "segments": 35,
+  "protocol": 30,
+  "readers": {
+   "js": {
+    "ok": true,
+    "roundtrip": true
+   },
+   "go": {
+    "ok": true,
+    "roundtrip": true
+   },
+   "rust": {
+    "ok": true,
+    "roundtrip": true,
+    "json_roundtrip": true
+   }
+  },
+  "flags": {
+   "long_tail": 3,
+   "bug_shape": 1,
+   "shape_first_seen": 2
+  },
+  "arms": [
+   "bug_shape:muxed.id_ge_2^53 (JS-unsafe, #1785 shape):31f8fc4bdcf3",
+   "long_tail:ChangeTrustAsset.pool_share:c17952f06800",
+   "long_tail:LiquidityPoolParameters.liquidity_pool_constant_product:c17952f06800",
+   "long_tail:OperationResult.op_too_many_subentries:06ad2f605038",
+   "shape_first_seen:muxed.id_2^64-1:31f8fc4bdcf3",
+   "shape_first_seen:p_signer.payload_64_bytes (max):31f8fc4bdcf3"
+  ]
+ },
+ "testnet/5699707": {
+  "txs": 15,
+  "segments": 31,
+  "protocol": 30,
+  "readers": {
+   "js": {
+    "ok": true,
+    "roundtrip": true
+   },
+   "go": {
+    "ok": true,
+    "roundtrip": true
+   },
+   "rust": {
+    "ok": true,
+    "roundtrip": true,
+    "json_roundtrip": true
+   }
+  },
+  "flags": {
+   "long_tail": 1,
+   "bug_shape": 1,
+   "shape_first_seen": 1
+  },
+  "arms": [
+   "bug_shape:muxed.id_ge_2^53 (JS-unsafe, #1785 shape):fae7b0f26742",
+   "long_tail:OperationResult.op_too_many_subentries:0281d3ed76a1",
+   "shape_first_seen:muxed.id_2^64-1:fae7b0f26742"
+  ]
+ },
+ "testnet/5698682": {
+  "txs": 9,
+  "segments": 19,
+  "protocol": 30,
+  "readers": {
+   "js": {
+    "ok": true,
+    "roundtrip": true
+   },
+   "go": {
+    "ok": true,
+    "roundtrip": true
+   },
+   "rust": {
+    "ok": true,
+    "roundtrip": true,
+    "json_roundtrip": true
+   }
+  },
+  "flags": {},
+  "arms": []
+ },
+ "testnet/4437357": {
+  "txs": 12,
+  "segments": 25,
+  "protocol": 28,
+  "readers": {
+   "js": {
+    "ok": true,
+    "roundtrip": true
+   },
+   "go": {
+    "ok": true,
+    "roundtrip": true
+   },
+   "rust": {
+    "ok": true,
+    "roundtrip": true,
+    "json_roundtrip": true
+   }
+  },
+  "flags": {
+   "bug_shape": 1,
+   "shape_first_seen": 1
+  },
+  "arms": [
+   "bug_shape:p_signer.set_options_adds_P (#729 trigger):d9f78749cd01",
+   "shape_first_seen:p_signer.account_entry_with_P_in_meta:d9f78749cd01"
+  ]
+ },
+ "pubnet/65457218": {
+  "txs": 81,
+  "segments": 163,
+  "protocol": 29,
+  "readers": {
+   "js": {
+    "ok": true,
+    "roundtrip": true
+   },
+   "go": {
+    "ok": true,
+    "roundtrip": true
+   },
+   "rust": {
+    "ok": true,
+    "roundtrip": true,
+    "json_roundtrip": true
+   }
+  },
+  "flags": {},
+  "arms": []
+ }
+}

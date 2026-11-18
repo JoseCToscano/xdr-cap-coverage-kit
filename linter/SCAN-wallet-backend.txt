@@ -1,0 +1,4 @@
+# xdrlint on stellar/wallet-backend 3e22515a (2026-11-12) fix(services): cap Blend decimals at 70 on ingest and when serving pools (#802)
+# rules: XDRL002
+internal/indexer/processors/contract_deploy.go:116:19: XDRL002: walkInvocation recurses over xdr.SorobanAuthorizedInvocation with no depth or size cap; nested values come from the network and can be arbitrarily deep (pass a depth and stop at a limit)
+# findings: 1

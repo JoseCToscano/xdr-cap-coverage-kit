@@ -1,40 +1,74 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/JoseCToscano/xdr-cap-coverage-kit/schema/corpus-entry.schema.json",
-  "title": "XDR/CAP coverage corpus entry (draft v0)",
-  "description": "One entry = one rare but valid XDR shape. Language neutral: any SDK or indexer reads the base64 and checks the expected values.",
+  "title": "XDR/CAP coverage corpus entry (draft v0.2)",
+  "description": "One entry = one rare but valid XDR shape. Language neutral: any SDK or indexer reads the base64 (and, when present, the LedgerCloseMeta it was applied in) and checks the expected values.",
   "type": "object",
   "additionalProperties": false,
-  "required": ["schema_version", "id", "title", "caps", "protocol", "network", "xdr", "provenance", "expected"],
+  "required": [
+    "schema_version",
+    "id",
+    "title",
+    "caps",
+    "protocol",
+    "network",
+    "xdr",
+    "provenance",
+    "expected"
+  ],
   "properties": {
-    "schema_version": { "const": "0.1.0" },
+    "schema_version": {
+      "const": "0.2.0"
+    },
     "id": {
       "type": "string",
       "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
       "description": "Stable ID. Never reused, even if the entry is removed."
     },
-    "title": { "type": "string", "maxLength": 200 },
+    "title": {
+      "type": "string",
+      "maxLength": 200
+    },
     "caps": {
       "type": "array",
       "minItems": 1,
       "uniqueItems": true,
-      "items": { "type": "string", "pattern": "^CAP-[0-9]{4}(-[0-9]{2})?$" },
+      "items": {
+        "type": "string",
+        "pattern": "^CAP-[0-9]{4}(-[0-9]{2})?$"
+      },
       "description": "CAPs that introduced or changed this shape. Use CAP-0000 for shapes that predate the CAP process (base protocol)."
     },
     "protocol": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["introduced_in", "captured_on"],
+      "required": [
+        "introduced_in",
+        "captured_on"
+      ],
       "properties": {
-        "introduced_in": { "type": "integer", "minimum": 0, "description": "First protocol version where core can emit this shape." },
-        "captured_on": { "type": "integer", "minimum": 0, "description": "Protocol version of the ledger the entry came from (or the XDR version it was built against, for synthetic entries)." },
-        "xdr_ref": { "type": "string", "description": "stellar-xdr git commit or tag the expected values were produced with." }
+        "introduced_in": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "First protocol version where core can emit this shape."
+        },
+        "captured_on": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Protocol version of the ledger the entry came from (or the XDR version it was built against, for synthetic entries)."
+        },
+        "xdr_ref": {
+          "type": "string",
+          "description": "stellar-xdr git commit or tag the expected values were produced with."
+        }
       }
     },
     "network": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["passphrase"],
+      "required": [
+        "passphrase"
+      ],
       "properties": {
         "passphrase": {
           "enum": [
@@ -45,44 +79,180 @@
           ],
           "description": "Needed to recompute a transaction hash. 'none' for values that are not signed (ScVal, LedgerKey, ...)."
         },
-        "expected_tx_hash": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+        "expected_tx_hash": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
       }
     },
     "xdr": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["type", "base64", "sha256"],
+      "required": [
+        "type",
+        "base64",
+        "sha256"
+      ],
       "properties": {
-        "type": { "type": "string", "description": "XDR type name as in stellar-xdr, e.g. TransactionEnvelope, ScVal, LedgerCloseMeta." },
-        "base64": { "type": "string", "contentEncoding": "base64" },
-        "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$", "description": "sha256 of the raw XDR bytes. Re-encoding must reproduce it." },
-        "file": { "type": "string", "description": "Optional path to a .xdr file when the value is too large to inline (LedgerCloseMeta)." }
+        "type": {
+          "type": "string",
+          "description": "XDR type name as in stellar-xdr, e.g. TransactionEnvelope, ScVal, LedgerCloseMeta."
+        },
+        "base64": {
+          "type": "string",
+          "contentEncoding": "base64"
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$",
+          "description": "sha256 of the raw XDR bytes. Re-encoding must reproduce it."
+        },
+        "file": {
+          "type": "string",
+          "description": "Optional path to a .xdr file when the value is too large to inline (LedgerCloseMeta)."
+        }
       }
     },
     "provenance": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["kind"],
+      "required": [
+        "kind",
+        "origin"
+      ],
       "properties": {
-        "kind": { "enum": ["testnet", "mainnet", "local-core", "synthetic"] },
-        "ledger": { "type": "integer", "minimum": 1 },
-        "tx_hash": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
-        "source_url": { "type": "string", "format": "uri" },
-        "captured_at": { "type": "string", "format": "date-time" },
-        "tool": { "type": "string", "description": "Script and version that produced the entry." },
-        "synthetic_reason": { "type": "string", "description": "Required when kind is synthetic: why no core-emitted capture exists yet, and how one would be made." }
+        "kind": {
+          "enum": [
+            "testnet",
+            "mainnet",
+            "local-core",
+            "synthetic"
+          ]
+        },
+        "ledger": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "tx_hash": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "source_url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "tool": {
+          "type": "string",
+          "description": "Script and version that produced the entry."
+        },
+        "synthetic_reason": {
+          "type": "string",
+          "description": "Required when kind is synthetic: why no core-emitted capture exists yet, and how one would be made."
+        },
+        "origin": {
+          "enum": [
+            "submitted_by_kit",
+            "mined_from_testnet_history",
+            "mined_from_mainnet_history",
+            "local-core",
+            "synthetic"
+          ],
+          "description": "Who produced the transaction. submitted_by_kit: tools/capture-testnet.mjs submitted it. mined_from_*: an existing transaction read back from network history that this kit did not submit."
+        },
+        "origin_note": {
+          "type": "string"
+        },
+        "tx_created_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Close time of the ledger the transaction was applied in."
+        },
+        "retrieved_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "raw_committed_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "When the raw capture under corpus/raw was first committed (for captures made before retrieved_at was recorded)."
+        },
+        "pool_id_hex": {
+          "type": "string"
+        },
+        "sac_contract_id": {
+          "type": "string"
+        },
+        "to": {
+          "type": "string"
+        },
+        "to_contract": {
+          "type": "string"
+        },
+        "to_muxed_id": {
+          "type": "string"
+        }
       },
       "allOf": [
-        { "if": { "properties": { "kind": { "const": "synthetic" } } }, "then": { "required": ["synthetic_reason"] } },
-        { "if": { "properties": { "kind": { "enum": ["testnet", "mainnet"] } } }, "then": { "required": ["ledger", "source_url"] } }
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "const": "synthetic"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "synthetic_reason"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "enum": [
+                  "testnet",
+                  "mainnet"
+                ]
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "ledger"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "origin": {
+                "const": "synthetic"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "kind": {
+                "const": "synthetic"
+              }
+            }
+          }
+        }
       ]
     },
     "expected": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["json", "checks"],
+      "required": [
+        "json",
+        "checks"
+      ],
       "properties": {
-        "json": { "description": "SEP-51 XDR-JSON of the value, produced by rs-stellar-xdr. Every SDK's decode must agree with it." },
+        "json": {
+          "description": "SEP-51 XDR-JSON of the value, produced by rs-stellar-xdr. Every SDK's decode must agree with it."
+        },
         "checks": {
           "type": "array",
           "minItems": 1,
@@ -90,13 +260,69 @@
           "items": {
             "type": "object",
             "additionalProperties": false,
-            "required": ["id", "path", "op", "note"],
+            "required": [
+              "id",
+              "path",
+              "op",
+              "note"
+            ],
             "properties": {
-              "id": { "type": "string" },
-              "path": { "type": "string" },
-              "op": { "enum": ["equals", "length", "strkey", "preserved", "not-dropped"] },
+              "id": {
+                "type": "string"
+              },
+              "path": {
+                "type": "string",
+                "description": "RFC 6901 JSON Pointer."
+              },
+              "op": {
+                "enum": [
+                  "equals",
+                  "length",
+                  "strkey",
+                  "preserved",
+                  "not-dropped"
+                ]
+              },
               "value": {},
-              "note": { "type": "string" }
+              "note": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "ledger_checks": {
+          "type": "array",
+          "description": "expectedLedger: facts about the LedgerCloseMeta this entry was applied in. JSON Pointers into the SEP-51 XDR-JSON of the whole LedgerCloseMeta (rs-stellar-xdr). Present when `ledger` is.",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "id",
+              "path",
+              "op",
+              "note"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "path": {
+                "type": "string",
+                "description": "RFC 6901 JSON Pointer."
+              },
+              "op": {
+                "enum": [
+                  "equals",
+                  "length",
+                  "strkey",
+                  "preserved",
+                  "not-dropped"
+                ]
+              },
+              "value": {},
+              "note": {
+                "type": "string"
+              }
             }
           }
         }
@@ -107,8 +333,33 @@
       "uniqueItems": true,
       "items": {
         "enum": [
-          "muxed", "muxed-max-id", "signed-payload", "issuer-sort", "max-length",
-          "nested-auth", "key-collision", "non-utf8", "sac", "events", "state-archival", "lcm"
+          "muxed",
+          "muxed-max-id",
+          "signed-payload",
+          "issuer-sort",
+          "max-length",
+          "nested-auth",
+          "key-collision",
+          "non-utf8",
+          "sac",
+          "events",
+          "state-archival",
+          "lcm",
+          "preconditions",
+          "liquidity-pool",
+          "trustline",
+          "no-event",
+          "muxed-contract",
+          "protocol-30",
+          "close-time-ms",
+          "ledger-header",
+          "x402",
+          "recursion",
+          "mainnet",
+          "claimable-balance",
+          "sponsorship",
+          "fee-bump",
+          "contract-deploy"
         ]
       }
     },
@@ -117,13 +368,121 @@
       "items": {
         "type": "object",
         "additionalProperties": false,
-        "required": ["url", "role"],
+        "required": [
+          "url",
+          "role"
+        ],
         "properties": {
-          "url": { "type": "string", "format": "uri" },
-          "role": { "enum": ["reproduces", "regression", "related"] },
-          "component": { "type": "string" }
+          "url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "role": {
+            "enum": [
+              "reproduces",
+              "regression",
+              "related"
+            ]
+          },
+          "component": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "ledger": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "type",
+        "lcm_version",
+        "sequence",
+        "protocol_version",
+        "file",
+        "format",
+        "sha256_zst",
+        "sha256_lcm",
+        "tx_index",
+        "source"
+      ],
+      "description": "The full LedgerCloseMeta the entry's transaction was applied in, stored in Galexie data-lake layout under corpus/datalake/.",
+      "properties": {
+        "type": {
+          "const": "LedgerCloseMeta"
+        },
+        "lcm_version": {
+          "enum": [
+            "v0",
+            "v1",
+            "v2"
+          ]
+        },
+        "sequence": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "protocol_version": {
+          "type": "integer"
+        },
+        "file": {
+          "type": "string",
+          "pattern": "^corpus/datalake/"
+        },
+        "format": {
+          "type": "string"
+        },
+        "sha256_zst": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$",
+          "description": "sha256 of the zstd object as stored."
+        },
+        "sha256_lcm": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$",
+          "description": "sha256 of the LedgerCloseMeta XDR bytes."
+        },
+        "tx_index": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "description": "Index of the entry's transaction in tx_processing (apply order); null for header-only entries."
+        },
+        "source": {
+          "enum": [
+            "galexie-public-archive",
+            "stellar-rpc-getLedgers",
+            "local-core"
+          ]
+        },
+        "source_url": {
+          "type": "string"
+        },
+        "alt_source": {
+          "type": "object",
+          "description": "The same ledger from the other public source. byte_identical=false is common: see reports/source-diff.md."
         }
       }
     }
-  }
+  },
+  "allOf": [
+    {
+      "if": {
+        "required": [
+          "ledger"
+        ]
+      },
+      "then": {
+        "properties": {
+          "expected": {
+            "required": [
+              "json",
+              "checks",
+              "ledger_checks"
+            ]
+          }
+        }
+      }
+    }
+  ]
 }

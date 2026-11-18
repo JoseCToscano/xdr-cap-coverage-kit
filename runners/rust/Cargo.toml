@@ -1,0 +1,20 @@
+[package]
+name = "xck-rust-runner"
+version = "0.1.0"
+edition = "2021"
+license = "Apache-2.0"
+publish = false
+description = "Rust conformance runner for xdr-cap-coverage-kit (rs-stellar-xdr 30)"
+
+[dependencies]
+stellar-xdr = { version = "=30.0.0", default-features = false, features = ["std", "serde", "serde_json", "base64"] }
+serde_json = "1"
+serde = "1"
+sha2 = "0.10"
+hex = "0.4"
+base64 = "0.22"
+ruzstd = "0.8"
+
+[profile.dev]
+opt-level = 1
+debug = false

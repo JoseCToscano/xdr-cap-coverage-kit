@@ -1,0 +1,50 @@
+{
+  "ledger-close-meta-v2-protocol-28-soroban.json": {
+    "repo": "stellar/stellar-core",
+    "commit": "f2b91947fb20fc8174cca38bf320eda7baa3edbb",
+    "path": "src/testdata/ledger-close-meta-v2-protocol-28-soroban.json",
+    "url": "https://raw.githubusercontent.com/stellar/stellar-core/f2b91947fb20fc8174cca38bf320eda7baa3edbb/src/testdata/ledger-close-meta-v2-protocol-28-soroban.json",
+    "sha256": "b804e3865332b2dcd6acf8de1d11ff3ffcbcd9801a1a97ef2ead73cf94d922ac",
+    "fetched_at": "2026-11-14T01:06:33.613Z"
+  },
+  "ledger-close-meta-v2-protocol-28.json": {
+    "repo": "stellar/stellar-core",
+    "commit": "f2b91947fb20fc8174cca38bf320eda7baa3edbb",
+    "path": "src/testdata/ledger-close-meta-v2-protocol-28.json",
+    "url": "https://raw.githubusercontent.com/stellar/stellar-core/f2b91947fb20fc8174cca38bf320eda7baa3edbb/src/testdata/ledger-close-meta-v2-protocol-28.json",
+    "sha256": "fec814f6ee43f3e7ede7df5dd87b4239efa111d619edc6619cd2ffb28af6f37c",
+    "fetched_at": "2026-11-14T01:06:33.599Z"
+  },
+  "ledger-close-meta-v2-protocol-29-soroban.json": {
+    "repo": "stellar/stellar-core",
+    "commit": "f2b91947fb20fc8174cca38bf320eda7baa3edbb",
+    "path": "src/testdata/ledger-close-meta-v2-protocol-29-soroban.json",
+    "url": "https://raw.githubusercontent.com/stellar/stellar-core/f2b91947fb20fc8174cca38bf320eda7baa3edbb/src/testdata/ledger-close-meta-v2-protocol-29-soroban.json",
+    "sha256": "95075461dd41a423938c9870f7dbe56658a016024daf3ba261388a6b4dab0775",
+    "fetched_at": "2026-11-16T19:03:52.527Z"
+  },
+  "ledger-close-meta-v2-protocol-29.json": {
+    "repo": "stellar/stellar-core",
+    "commit": "f2b91947fb20fc8174cca38bf320eda7baa3edbb",
+    "path": "src/testdata/ledger-close-meta-v2-protocol-29.json",
+    "url": "https://raw.githubusercontent.com/stellar/stellar-core/f2b91947fb20fc8174cca38bf320eda7baa3edbb/src/testdata/ledger-close-meta-v2-protocol-29.json",
+    "sha256": "5d420d4cf421c04e0253186fc5c385ad4583a706be151484b7dc69f1549ae82d",
+    "fetched_at": "2026-11-16T19:03:52.444Z"
+  },
+  "ledger-close-meta-v2-protocol-30-soroban.json": {
+    "repo": "stellar/stellar-core",
+    "commit": "f2b91947fb20fc8174cca38bf320eda7baa3edbb",
+    "path": "src/testdata/ledger-close-meta-v2-protocol-30-soroban.json",
+    "url": "https://raw.githubusercontent.com/stellar/stellar-core/f2b91947fb20fc8174cca38bf320eda7baa3edbb/src/testdata/ledger-close-meta-v2-protocol-30-soroban.json",
+    "sha256": "9d69d94c4c93d498c442d035be27f75a605146c10f8c140769592c4eea0819f3",
+    "fetched_at": "2026-11-14T01:06:33.634Z"
+  },
+  "ledger-close-meta-v2-protocol-30.json": {
+    "repo": "stellar/stellar-core",
+    "commit": "f2b91947fb20fc8174cca38bf320eda7baa3edbb",
+    "path": "src/testdata/ledger-close-meta-v2-protocol-30.json",
+    "url": "https://raw.githubusercontent.com/stellar/stellar-core/f2b91947fb20fc8174cca38bf320eda7baa3edbb/src/testdata/ledger-close-meta-v2-protocol-30.json",
+    "sha256": "f2786b885386009d5bc668c11e1a83b74b9d166cbdf027df3f09223e6067b9fe",
+    "fetched_at": "2026-11-14T01:06:33.621Z"
+  }
+}

@@ -1,0 +1,169 @@
+package services
+
+// Injected by xdr-cap-coverage-kit/harness into internal/services of an
+// unmodified wallet-backend checkout. It drives wallet-backend's own ingest
+// path for each corpus ledger and nothing else:
+//
+//   ledger source (Galexie filesystem datastore or mock RPC getLedgers,
+//   via go-stellar-sdk's BufferedStorageBackend / RPCLedgerBackend)
+//     -> ingestService.processLedger   (wallet-backend indexer)
+//     -> ingestService.insertIntoDB    (wallet-backend COPY into Postgres)
+//     -> COMMIT
+//
+// It writes one JSON line per ledger with the ingest error (if any) to
+// $XCK_OUT. Verdicts are NOT decided here: the harness reads the stored rows
+// back out of Postgres afterwards. Signatures that changed across commits
+// (NewIndexer, processLedger, insertIntoDB) are called through reflection so
+// this one file compiles on every pinned commit.
+
+import (
+	"context"
+	"database/sql"
+	"encoding/json"
+	"fmt"
+	"os"
+	"reflect"
+	"strconv"
+	"strings"
+	"testing"
+	"time"
+
+	"github.com/alitto/pond/v2"
+	"github.com/jackc/pgx/v5"
+	_ "github.com/lib/pq"
+	"github.com/prometheus/client_golang/prometheus"
+	migrate "github.com/rubenv/sql-migrate"
+	"github.com/stellar/go-stellar-sdk/ingest/ledgerbackend"
+	"github.com/stellar/go-stellar-sdk/support/datastore"
+	"github.com/stellar/go-stellar-sdk/xdr"
+
+	"github.com/stellar/wallet-backend/internal/data"
+	"github.com/stellar/wallet-backend/internal/db"
+	"github.com/stellar/wallet-backend/internal/indexer"
+	"github.com/stellar/wallet-backend/internal/metrics"
+)
+
+func xckLastErr(out []reflect.Value) error {
+	if e, _ := out[len(out)-1].Interface().(error); e != nil {
+		return e
+	}
+	return nil
+}
+
+func xckGetLedger(ctx context.Context, src, passphrase string, seq uint32) (xdr.LedgerCloseMeta, error) {
+	var be ledgerbackend.LedgerBackend
+	switch {
+	case strings.HasPrefix(src, "rpc:"):
+		be = ledgerbackend.NewRPCLedgerBackend(ledgerbackend.RPCLedgerBackendOptions{RPCServerURL: strings.TrimPrefix(src, "rpc:"), BufferSize: 1})
+	case strings.HasPrefix(src, "galexie:"):
+		cfg := datastore.DataStoreConfig{Type: "Filesystem", Params: map[string]string{"destination_path": strings.TrimPrefix(src, "galexie:")}, NetworkPassphrase: passphrase}
+		ds, err := datastore.NewDataStore(ctx, cfg)
+		if err != nil {
+			return xdr.LedgerCloseMeta{}, err
+		}
+		schema, err := datastore.LoadSchema(ctx, ds, cfg)
+		if err != nil {
+			return xdr.LedgerCloseMeta{}, err
+		}
+		be, err = ledgerbackend.NewBufferedStorageBackend(ledgerbackend.BufferedStorageBackendConfig{BufferSize: 1, NumWorkers: 1, RetryLimit: 1, RetryWait: time.Second}, ds, schema)
+		if err != nil {
+			return xdr.LedgerCloseMeta{}, err
+		}
+	default:
+		return xdr.LedgerCloseMeta{}, fmt.Errorf("XCK_SOURCE must be rpc:<url> or galexie:<dir>")
+	}
+	defer be.Close()
+	if err := be.PrepareRange(ctx, ledgerbackend.BoundedRange(seq, seq)); err != nil {
+		return xdr.LedgerCloseMeta{}, err
+	}
+	return be.GetLedger(ctx, seq)
+}
+
+func TestXCKIngest(t *testing.T) {
+	dsn, src, out := os.Getenv("XCK_DSN"), os.Getenv("XCK_SOURCE"), os.Getenv("XCK_OUT")
+	if dsn == "" || src == "" || out == "" {
+		t.Skip("set XCK_DSN, XCK_SOURCE, XCK_LEDGERS, XCK_OUT")
+	}
+	passphrase := "Test SDF Network ; September 2015"
+	if p := os.Getenv("XCK_PASSPHRASE"); p != "" { // mainnet ledgers (harness/cmd/mainnet)
+		passphrase = p
+	}
+	ctx := context.Background()
+
+	conn, err := sql.Open("postgres", dsn)
+	if err != nil {
+		t.Fatal(err)
+	}
+	for _, q := range []string{
+		"CREATE EXTENSION IF NOT EXISTS timescaledb",
+		"DO $$ BEGIN EXECUTE format('ALTER DATABASE %I SET timescaledb.enable_chunk_skipping = on', current_database()); END $$",
+	} {
+		if _, err := conn.Exec(q); err != nil {
+			t.Fatalf("%s: %v", q, err)
+		}
+	}
+	conn.Close()
+	if _, err := db.Migrate(ctx, dsn, migrate.Up, 0); err != nil {
+		t.Fatalf("migrate: %v", err)
+	}
+	pool, err := db.OpenDBConnectionPool(ctx, dsn)
+	if err != nil {
+		t.Fatal(err)
+	}
+	defer pool.Close()
+	m := metrics.NewMetrics(prometheus.NewRegistry())
+	models, err := data.NewModels(pool, m.DB)
+	if err != nil {
+		t.Fatal(err)
+	}
+	// indexer.NewIndexer gained a 4th arg (collectContractData) after these fixes.
+	nf := reflect.ValueOf(indexer.NewIndexer)
+	args := []reflect.Value{reflect.ValueOf(passphrase), reflect.ValueOf(pond.NewPool(2)), reflect.ValueOf(m.Ingestion)}
+	if nf.Type().NumIn() == 4 {
+		args = append(args, reflect.ValueOf(false))
+	}
+	res := nf.Call(args)
+	if err := xckLastErr(res); err != nil {
+		t.Fatal(err)
+	}
+	svc := &ingestService{models: models, appMetrics: m, networkPassphrase: passphrase, ledgerIndexer: res[0].Interface().(*indexer.Indexer)}
+
+	f, err := os.Create(out)
+	if err != nil {
+		t.Fatal(err)
+	}
+	defer f.Close()
+	enc := json.NewEncoder(f)
+	for _, s := range strings.Split(os.Getenv("XCK_LEDGERS"), ",") {
+		n, _ := strconv.ParseUint(s, 10, 32)
+		seq := uint32(n)
+		rec := map[string]any{"ledger": seq}
+		stage, err := func() (string, error) {
+			lcm, err := xckGetLedger(ctx, src, passphrase, seq)
+			if err != nil {
+				return "fetch", err
+			}
+			buf := indexer.NewIndexerBuffer()
+			if err := xckLastErr(reflect.ValueOf(svc.processLedger).Call([]reflect.Value{reflect.ValueOf(ctx), reflect.ValueOf(lcm), reflect.ValueOf(buf)})); err != nil {
+				return "process", err
+			}
+			rec["buffer_txs"], rec["buffer_state_changes"] = len(buf.GetTransactions()), len(buf.GetStateChanges())
+			tx, err := pool.Begin(ctx)
+			if err != nil {
+				return "begin", err
+			}
+			if err := xckLastErr(reflect.ValueOf(svc.insertIntoDB).Call([]reflect.Value{reflect.ValueOf(ctx), reflect.ValueOf(tx), reflect.ValueOf(buf)})); err != nil {
+				_ = tx.Rollback(ctx)
+				return "persist", err
+			}
+			return "commit", tx.Commit(ctx)
+		}()
+		rec["stage"] = stage
+		if err != nil {
+			rec["error"] = err.Error()
+		}
+		_ = enc.Encode(rec)
+		t.Logf("ledger %d: stage=%s err=%v", seq, stage, err)
+	}
+	_ = pgx.ErrNoRows
+}

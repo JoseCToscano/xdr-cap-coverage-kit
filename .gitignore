@@ -3,3 +3,15 @@ repros/wallet-backend/.wallet-backend/
 repros/wallet-backend/.wt-*/
 .env
 .jev/
+runners/rust/target/
+repros/x402-muxed-recipient/.target/
+repros/x402-muxed-recipient/.wt-*/
+repros/x402-muxed-recipient/.stellar-x402-policies/
+repros/x402-muxed-recipient/.out
+repros/wallet-backend/.out
+harness/.work/
+linter/.work/
+tools/frequency/.work/
+tools/frequency/.bin/
+tools/livecheck/.work/
+tools/livecheck/.bin/

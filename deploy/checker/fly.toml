@@ -1,0 +1,38 @@
+# Fly.io: from the repository root
+#   fly launch --no-deploy --copy-config --config deploy/checker/fly.toml --name <app>
+#   fly volumes create xck_data --size 5 --region iad --config deploy/checker/fly.toml
+#   fly deploy --config deploy/checker/fly.toml
+# Use a performance CPU: shared CPUs are throttled to a 6.25% baseline per vCPU
+# once their burst balance is spent, which is not enough for continuous checking.
+app = "xck-checker"
+primary_region = "iad"
+
+[build]
+  dockerfile = "Dockerfile"
+
+[env]
+  XCK_NET = "pubnet"
+  XCK_STATUS_EVERY_S = "60"
+  XCK_LIVE_WORKERS = "3"
+
+[mounts]
+  source = "xck_data"
+  destination = "/data"
+
+[http_service]
+  internal_port = 8080
+  force_https = true
+  auto_stop_machines = "off"
+  auto_start_machines = false
+  min_machines_running = 1
+
+  [[http_service.checks]]
+    grace_period = "180s"
+    interval = "60s"
+    method = "GET"
+    path = "/healthz"
+    timeout = "5s"
+
+[[vm]]
+  size = "performance-2x"
+  memory = "4gb"

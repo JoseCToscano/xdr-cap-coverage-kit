@@ -1,0 +1,231 @@
+{
+  "schema_version": "0.2.0",
+  "id": "mainnet-cap33-revoke-sponsorship-signer",
+  "title": "Mainnet fee-bumped transaction revoking sponsorship of an account, a signer and four trustlines (7 ops)",
+  "caps": [
+    "CAP-0033",
+    "CAP-0015"
+  ],
+  "protocol": {
+    "introduced_in": 15,
+    "captured_on": 29,
+    "xdr_ref": "stellar-xdr 30.0.0 (3c2aa43d2ab54d429ae44aa5143d805bf5dba7e2) xdr: 4f524bbac80c781c06e4fb5fc93a2d0d331d6705 features: <none>"
+  },
+  "network": {
+    "passphrase": "Public Global Stellar Network ; September 2015",
+    "expected_tx_hash": "88fc68606825a421a6d5652c8022df69c8a0c618b47b6e13e3c29bd0e7777432"
+  },
+  "xdr": {
+    "type": "TransactionEnvelope",
+    "base64": "AAAABQAAAADDuMpWnS7vsDNrD0fscQopHcI10KpYgUxvDM0HkGmJSQAAAAADXwmAAAAAAgAAAACiy+9jyniePkzrnI/2TFW/WULpwfhABbgjVUi1bipcKwBqz8AD5ue5AAAAAQAAAAEAAAAAAAAAAAAAAABq94rLAAAAAAAAAAcAAAABAAAAAMO4yladLu+wM2sPR+xxCikdwjXQqliBTG8MzQeQaYlJAAAAEgAAAAAAAAAAAAAAAKLL72PKeJ4+TOucj/ZMVb9ZQunB+EAFuCNVSLVuKlwrAAAAAQAAAADDuMpWnS7vsDNrD0fscQopHcI10KpYgUxvDM0HkGmJSQAAABIAAAABAAAAAKLL72PKeJ4+TOucj/ZMVb9ZQunB+EAFuCNVSLVuKlwrAAAAADDJumTOcgB1dYP7tyBEP+uqJD4r4SEjO2FAp/ohVQMBAAAAAQAAAADDuMpWnS7vsDNrD0fscQopHcI10KpYgUxvDM0HkGmJSQAAABIAAAAAAAAAAQAAAACiy+9jyniePkzrnI/2TFW/WULpwfhABbgjVUi1bipcKwAAAAJDQVNTQVRPUgAAAAAAAAAAw/VnGAcgLQzXeHJyc0hGi+ZNaQ8lu3E5MzQKlQ/WUgAAAAABAAAAAMO4yladLu+wM2sPR+xxCikdwjXQqliBTG8MzQeQaYlJAAAAEgAAAAAAAAABAAAAAKLL72PKeJ4+TOucj/ZMVb9ZQunB+EAFuCNVSLVuKlwrAAAAAVNTTFgAAAAATlNjeWkTZbXcWGil4cIiuV+RpApM+Jz3+mnPmscMSH0AAAABAAAAAMO4yladLu+wM2sPR+xxCikdwjXQqliBTG8MzQeQaYlJAAAAEgAAAAAAAAABAAAAAKLL72PKeJ4+TOucj/ZMVb9ZQunB+EAFuCNVSLVuKlwrAAAAAlNUQVJEVVNUAAAAAAAAAACetoGrvOujea9ERvctnWgd259IfiAcinMCntrxEZ07fgAAAAEAAAAAw7jKVp0u77Azaw9H7HEKKR3CNdCqWIFMbwzNB5BpiUkAAAASAAAAAAAAAAEAAAAAosvvY8p4nj5M65yP9kxVv1lC6cH4QAW4I1VItW4qXCsAAAABVVNEQwAAAAA7mRE4Dv6Yi6CokA6xz+RPNm99vpRr7QdyQPf2JN8VxQAAAAEAAAAAosvvY8p4nj5M65yP9kxVv1lC6cH4QAW4I1VItW4qXCsAAAABAAAAAMO4yladLu+wM2sPR+xxCikdwjXQqliBTG8MzQeQaYlJAAAAAAAAAAAATEtAAAAAAAAAAAEhVQMBAAAAQBBNq9qQtLxam5nYPQI/4DkGT1drqbqKc9vNOWiXW0t38nFf0/2eKeBuC/o1B/7amEM0n9HpAqu9SZBHeiP4/Q0AAAAAAAAAASFVAwEAAABAFeLUoGlUth6zZFk40SwIrcE5Ov+AOGsNHhUt914ua43n0wR56NtNHFevc9sju6jD/Psw4tm/IlucieUIiYIsBA==",
+    "sha256": "6ff2459b150c7941fdb112e3c155575111ba43eb3958cb12ea25dfa576ae45e4"
+  },
+  "provenance": {
+    "kind": "mainnet",
+    "origin": "mined_from_mainnet_history",
+    "origin_note": "Found by the real-network frequency study (tools/frequency/, reports/frequency.md): RevokeSponsorshipOp.signer occurs in 5 mainnet transactions in the sample (0.20 per million). Not submitted by this kit.",
+    "ledger": 65464320,
+    "tx_hash": "88fc68606825a421a6d5652c8022df69c8a0c618b47b6e13e3c29bd0e7777432",
+    "source_url": "https://stellar.expert/explorer/public/tx/88fc68606825a421a6d5652c8022df69c8a0c618b47b6e13e3c29bd0e7777432",
+    "tx_created_at": "2026-11-13T22:07:22.000Z",
+    "retrieved_at": "2026-11-16T19:00:37.460Z",
+    "tool": "tools/make-entry.mjs (mainnet-cap33-revoke-sponsorship-signer.mjs)"
+  },
+  "expected": {
+    "json": {
+      "tx_fee_bump": {
+        "tx": {
+          "fee_source": "GDB3RSSWTUXO7MBTNMHUP3DRBIUR3QRV2CVFRAKMN4GM2B4QNGEUT6CU",
+          "fee": "56560000",
+          "inner_tx": {
+            "tx": {
+              "tx": {
+                "source_account": "GCRMX33DZJ4J4PSM5OOI75SMKW7VSQXJYH4EABNYENKURNLOFJOCWZPM",
+                "fee": 7000000,
+                "seq_num": "281166808512200705",
+                "cond": {
+                  "time": {
+                    "min_time": "0",
+                    "max_time": "1794607819"
+                  }
+                },
+                "memo": "none",
+                "operations": [
+                  {
+                    "source_account": "GDB3RSSWTUXO7MBTNMHUP3DRBIUR3QRV2CVFRAKMN4GM2B4QNGEUT6CU",
+                    "body": {
+                      "revoke_sponsorship": {
+                        "ledger_entry": {
+                          "account": {
+                            "account_id": "GCRMX33DZJ4J4PSM5OOI75SMKW7VSQXJYH4EABNYENKURNLOFJOCWZPM"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "source_account": "GDB3RSSWTUXO7MBTNMHUP3DRBIUR3QRV2CVFRAKMN4GM2B4QNGEUT6CU",
+                    "body": {
+                      "revoke_sponsorship": {
+                        "signer": {
+                          "account_id": "GCRMX33DZJ4J4PSM5OOI75SMKW7VSQXJYH4EABNYENKURNLOFJOCWZPM",
+                          "signer_key": "GAYMTOTEZZZAA5LVQP53OICEH7V2UJB6FPQSCIZ3MFAKP6RBKUBQCGEG"
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "source_account": "GDB3RSSWTUXO7MBTNMHUP3DRBIUR3QRV2CVFRAKMN4GM2B4QNGEUT6CU",
+                    "body": {
+                      "revoke_sponsorship": {
+                        "ledger_entry": {
+                          "trustline": {
+                            "account_id": "GCRMX33DZJ4J4PSM5OOI75SMKW7VSQXJYH4EABNYENKURNLOFJOCWZPM",
+                            "asset": {
+                              "credit_alphanum12": {
+                                "asset_code": "CASSATOR",
+                                "issuer": "GDB7KZYYA4QC2DGXPBZHE42II2F6MTLJB4S3W4JZGM2AVFIP2ZJAA5LO"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "source_account": "GDB3RSSWTUXO7MBTNMHUP3DRBIUR3QRV2CVFRAKMN4GM2B4QNGEUT6CU",
+                    "body": {
+                      "revoke_sponsorship": {
+                        "ledger_entry": {
+                          "trustline": {
+                            "account_id": "GCRMX33DZJ4J4PSM5OOI75SMKW7VSQXJYH4EABNYENKURNLOFJOCWZPM",
+                            "asset": {
+                              "credit_alphanum4": {
+                                "asset_code": "SSLX",
+                                "issuer": "GBHFGY3ZNEJWLNO4LBUKLYOCEK4V7ENEBJGPRHHX7JU47GWHBREH37UR"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "source_account": "GDB3RSSWTUXO7MBTNMHUP3DRBIUR3QRV2CVFRAKMN4GM2B4QNGEUT6CU",
+                    "body": {
+                      "revoke_sponsorship": {
+                        "ledger_entry": {
+                          "trustline": {
+                            "account_id": "GCRMX33DZJ4J4PSM5OOI75SMKW7VSQXJYH4EABNYENKURNLOFJOCWZPM",
+                            "asset": {
+                              "credit_alphanum12": {
+                                "asset_code": "STARDUST",
+                                "issuer": "GCPLNANLXTV2G6NPIRDPOLM5NAO5XH2IPYQBZCTTAKPNV4IRTU5X5B4S"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "source_account": "GDB3RSSWTUXO7MBTNMHUP3DRBIUR3QRV2CVFRAKMN4GM2B4QNGEUT6CU",
+                    "body": {
+                      "revoke_sponsorship": {
+                        "ledger_entry": {
+                          "trustline": {
+                            "account_id": "GCRMX33DZJ4J4PSM5OOI75SMKW7VSQXJYH4EABNYENKURNLOFJOCWZPM",
+                            "asset": {
+                              "credit_alphanum4": {
+                                "asset_code": "USDC",
+                                "issuer": "GA5ZSEJYB37JRC5AVCIA5MOP4RHTM335X2KGX3IHOJAPP5RE34K4KZVN"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "source_account": "GCRMX33DZJ4J4PSM5OOI75SMKW7VSQXJYH4EABNYENKURNLOFJOCWZPM",
+                    "body": {
+                      "payment": {
+                        "destination": "GDB3RSSWTUXO7MBTNMHUP3DRBIUR3QRV2CVFRAKMN4GM2B4QNGEUT6CU",
+                        "asset": "native",
+                        "amount": "5000000"
+                      }
+                    }
+                  }
+                ],
+                "ext": "v0"
+              },
+              "signatures": [
+                {
+                  "hint": "21550301",
+                  "signature": "104dabda90b4bc5a9b99d83d023fe039064f576ba9ba8a73dbcd3968975b4b77f2715fd3fd9e29e06e0bfa3507feda9843349fd1e902abbd4990477a23f8fd0d"
+                }
+              ]
+            }
+          },
+          "ext": "v0"
+        },
+        "signatures": [
+          {
+            "hint": "21550301",
+            "signature": "15e2d4a06954b61eb3645938d12c08adc1393aff80386b0d1e152df75e2e6b8de7d30479e8db4d1c57af73db23bba8c3fcfb30e2d9bf225b9c89e50889822c04"
+          }
+        ]
+      }
+    },
+    "checks": [
+      {
+        "id": "revoke-signer-account",
+        "path": "/tx_fee_bump/tx/inner_tx/tx/tx/operations/1/body/revoke_sponsorship/signer/account_id",
+        "op": "strkey",
+        "value": "GCRMX33DZJ4J4PSM5OOI75SMKW7VSQXJYH4EABNYENKURNLOFJOCWZPM",
+        "note": "RevokeSponsorshipOp arm signer."
+      },
+      {
+        "id": "revoke-signer-key",
+        "path": "/tx_fee_bump/tx/inner_tx/tx/tx/operations/1/body/revoke_sponsorship/signer/signer_key",
+        "op": "strkey",
+        "value": "GAYMTOTEZZZAA5LVQP53OICEH7V2UJB6FPQSCIZ3MFAKP6RBKUBQCGEG",
+        "note": "Signer whose sponsorship is revoked."
+      },
+      {
+        "id": "seven-ops",
+        "path": "/tx_fee_bump/tx/inner_tx/tx/tx/operations",
+        "op": "length",
+        "value": 7,
+        "note": "Account, signer, 4 trustlines, payment."
+      }
+    ],
+    "ledger_checks": [
+      {
+        "id": "lcm-result",
+        "path": "/v2/tx_processing/71/result/result/result",
+        "op": "preserved",
+        "note": "Result present."
+      }
+    ]
+  },
+  "tags": [
+    "sponsorship",
+    "fee-bump",
+    "mainnet"
+  ],
+  "linked_issues": [],
+  "ledger": {
+    "type": "LedgerCloseMeta",
+    "lcm_version": "v2",
+    "sequence": 65464320,
+    "protocol_version": 29,
+    "file": "corpus/datalake/pubnet/FC19F3FF--65408000-65471999/FC1917FF--65464320.xdr.zst",
+    "format": "galexie: zstd(LedgerCloseMetaBatch), 1 ledger per object, 64000 per partition",
+    "sha256_zst": "02b4f46934ac484dc8f7007bf6076be088db4521519ce08600a32ad23a120624",
+    "sha256_lcm": "1017395277fbc13f632d8bb51ccb6ddbad1d9760ea5007d7a4ea0abb7eb41c74",
+    "tx_index": 71,
+    "source": "galexie-public-archive",
+    "source_url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/v1.1/stellar/ledgers/pubnet/FC19F3FF--65408000-65471999/FC1917FF--65464320.xdr.zst"
+  }
+}

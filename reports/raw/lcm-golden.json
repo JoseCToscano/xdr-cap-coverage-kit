@@ -1,0 +1,1060 @@
+{
+  "core_commit": "f2b91947fb20fc8174cca38bf320eda7baa3edbb",
+  "rows": [
+    {
+      "entry": "cap21-preconditions-max-length-vectors",
+      "ledger": 5718664,
+      "protocol": 30,
+      "our_shape": {
+        "lcm_version": "v2",
+        "ledger_version": 30,
+        "stellar_value_ext": "signed_ms",
+        "close_time_ms_invariant": true,
+        "tx_meta_versions": [
+          "v4"
+        ],
+        "lcm_ext": "v1",
+        "v2_fields": [
+          "evicted_keys",
+          "ext",
+          "ledger_header",
+          "scp_info",
+          "total_byte_size_of_live_soroban_state",
+          "tx_processing",
+          "tx_set",
+          "upgrades_processing"
+        ]
+      },
+      "core": {
+        "golden": "corpus/goldens/stellar-core/ledger-close-meta-v2-protocol-30.json",
+        "fields": {
+          "lcm_version": "agrees",
+          "ledger_version": "agrees",
+          "stellar_value_ext": "agrees",
+          "close_time_ms_invariant": "agrees",
+          "tx_meta_versions": "agrees",
+          "lcm_ext": "diverges",
+          "v2_fields": "agrees"
+        },
+        "verdict": "agrees",
+        "differs": [
+          "lcm_ext: ours \"v1\", core \"v0\""
+        ]
+      },
+      "rpc": {
+        "file": "corpus/datalake/testnet-rpc/FFA915FF--5696000-5759999/FFA8BD77--5718664.xdr.zst",
+        "variance": {
+          "fetched_at": "2026-11-14T01:06:34.072Z",
+          "requests": 6,
+          "distinct": 3,
+          "archive_sha256_lcm": "2a727553a640bf3d353c4bb19f38569cedfc301ab7a7435b38a753025b1a459a",
+          "rpc_sha256_lcm": [
+            "9e01e95ca68c266d9471c29d15530cfcefb67b4c7105812be754f7a3ea03002b",
+            "3f8f6347750fc12ad9a1dfa1a78d8a928b80b53c76f4de1fd50d0181bd37a295",
+            "3f8f6347750fc12ad9a1dfa1a78d8a928b80b53c76f4de1fd50d0181bd37a295",
+            "bede22732db11bfa88c6782113c285162744574528d01155c95d61b1f0e97c89",
+            "3f8f6347750fc12ad9a1dfa1a78d8a928b80b53c76f4de1fd50d0181bd37a295",
+            "bede22732db11bfa88c6782113c285162744574528d01155c95d61b1f0e97c89"
+          ],
+          "any_equal_to_archive": false
+        },
+        "verdict": "diverges",
+        "parts": [
+          "LedgerCloseMetaExt arm",
+          "diagnostic events",
+          "op ledger-entry changes: order only, state/updated pairs intact"
+        ],
+        "entry_tx_hash_same": true,
+        "entry_ledger_checks_hold_on_rpc_copy": true
+      }
+    },
+    {
+      "entry": "cap27-payment-muxed-max-id-to-muxed-zero-id",
+      "ledger": 5699707,
+      "protocol": 30,
+      "our_shape": {
+        "lcm_version": "v2",
+        "ledger_version": 30,
+        "stellar_value_ext": "signed_ms",
+        "close_time_ms_invariant": true,
+        "tx_meta_versions": [
+          "v4"
+        ],
+        "lcm_ext": "v1",
+        "v2_fields": [
+          "evicted_keys",
+          "ext",
+          "ledger_header",
+          "scp_info",
+          "total_byte_size_of_live_soroban_state",
+          "tx_processing",
+          "tx_set",
+          "upgrades_processing"
+        ]
+      },
+      "core": {
+        "golden": "corpus/goldens/stellar-core/ledger-close-meta-v2-protocol-30.json",
+        "fields": {
+          "lcm_version": "agrees",
+          "ledger_version": "agrees",
+          "stellar_value_ext": "agrees",
+          "close_time_ms_invariant": "agrees",
+          "tx_meta_versions": "agrees",
+          "lcm_ext": "diverges",
+          "v2_fields": "agrees"
+        },
+        "verdict": "agrees",
+        "differs": [
+          "lcm_ext: ours \"v1\", core \"v0\""
+        ]
+      },
+      "rpc": {
+        "file": "corpus/datalake/testnet-rpc/FFA915FF--5696000-5759999/FFA90784--5699707.xdr.zst",
+        "variance": {
+          "fetched_at": "2026-11-14T01:06:33.928Z",
+          "requests": 6,
+          "distinct": 3,
+          "archive_sha256_lcm": "32c5e2ada7cc4932f35173c41cbe99d4f756ce3f7b89de408511b4a41774d922",
+          "rpc_sha256_lcm": [
+            "99d99f88b2dc897a0355dae0bcc6c94e9f0848a47ff54d9d7ed5cb29a752d905",
+            "b346152ed0f14953b8cb019e27d7a5a4ac5b05773c87257968e477eef339908a",
+            "e1f73ad4ce45205f4a7dbde4d26c89fff7cb8b456ead286aae75053ac6949588",
+            "b346152ed0f14953b8cb019e27d7a5a4ac5b05773c87257968e477eef339908a",
+            "b346152ed0f14953b8cb019e27d7a5a4ac5b05773c87257968e477eef339908a",
+            "e1f73ad4ce45205f4a7dbde4d26c89fff7cb8b456ead286aae75053ac6949588"
+          ],
+          "any_equal_to_archive": false
+        },
+        "verdict": "diverges",
+        "parts": [
+          "LedgerCloseMetaExt arm",
+          "diagnostic events",
+          "op ledger-entry changes: order only, state/updated pairs intact"
+        ],
+        "entry_tx_hash_same": true,
+        "entry_ledger_checks_hold_on_rpc_copy": true
+      }
+    },
+    {
+      "entry": "cap38-pool-issuers-strkey-vs-bytes-order",
+      "ledger": 5718666,
+      "protocol": 30,
+      "our_shape": {
+        "lcm_version": "v2",
+        "ledger_version": 30,
+        "stellar_value_ext": "signed_ms",
+        "close_time_ms_invariant": true,
+        "tx_meta_versions": [
+          "v4"
+        ],
+        "lcm_ext": "v1",
+        "v2_fields": [
+          "evicted_keys",
+          "ext",
+          "ledger_header",
+          "scp_info",
+          "total_byte_size_of_live_soroban_state",
+          "tx_processing",
+          "tx_set",
+          "upgrades_processing"
+        ]
+      },
+      "core": {
+        "golden": "corpus/goldens/stellar-core/ledger-close-meta-v2-protocol-30.json",
+        "fields": {
+          "lcm_version": "agrees",
+          "ledger_version": "agrees",
+          "stellar_value_ext": "agrees",
+          "close_time_ms_invariant": "agrees",
+          "tx_meta_versions": "agrees",
+          "lcm_ext": "diverges",
+          "v2_fields": "agrees"
+        },
+        "verdict": "agrees",
+        "differs": [
+          "lcm_ext: ours \"v1\", core \"v0\""
+        ]
+      },
+      "rpc": {
+        "file": "corpus/datalake/testnet-rpc/FFA915FF--5696000-5759999/FFA8BD75--5718666.xdr.zst",
+        "variance": {
+          "fetched_at": "2026-11-14T01:06:34.189Z",
+          "requests": 6,
+          "distinct": 3,
+          "archive_sha256_lcm": "9e2ef62455ceb1c260eb617aef050122c2bbe0ed46fa7be595c82374a2afecc0",
+          "rpc_sha256_lcm": [
+            "911f439e8cbe050ed1d4a21f7fb59b6a23e3627f8950d36a6d2094ca3482b4f4",
+            "4037fc6ac9f583b2321d13591c87348cb4845ab38b7f3b6e3e05eaaacda0be36",
+            "4037fc6ac9f583b2321d13591c87348cb4845ab38b7f3b6e3e05eaaacda0be36",
+            "911f439e8cbe050ed1d4a21f7fb59b6a23e3627f8950d36a6d2094ca3482b4f4",
+            "4037fc6ac9f583b2321d13591c87348cb4845ab38b7f3b6e3e05eaaacda0be36",
+            "0aef6642638843d016bc8e09940e92f6b86953940e66534a90ad5a0ce7488823"
+          ],
+          "any_equal_to_archive": false
+        },
+        "verdict": "diverges",
+        "parts": [
+          "LedgerCloseMetaExt arm",
+          "diagnostic events",
+          "op ledger-entry changes: order only, state/updated pairs intact"
+        ],
+        "entry_tx_hash_same": true,
+        "entry_ledger_checks_hold_on_rpc_copy": true
+      }
+    },
+    {
+      "entry": "cap40-setoptions-signed-payload-signer",
+      "ledger": 4437357,
+      "protocol": 28,
+      "our_shape": {
+        "lcm_version": "v2",
+        "ledger_version": 28,
+        "stellar_value_ext": "signed",
+        "close_time_ms_invariant": null,
+        "tx_meta_versions": [
+          "v4"
+        ],
+        "lcm_ext": "v1",
+        "v2_fields": [
+          "evicted_keys",
+          "ext",
+          "ledger_header",
+          "scp_info",
+          "total_byte_size_of_live_soroban_state",
+          "tx_processing",
+          "tx_set",
+          "upgrades_processing"
+        ]
+      },
+      "core": {
+        "golden": "corpus/goldens/stellar-core/ledger-close-meta-v2-protocol-28.json",
+        "fields": {
+          "lcm_version": "agrees",
+          "ledger_version": "agrees",
+          "stellar_value_ext": "agrees",
+          "close_time_ms_invariant": "agrees",
+          "tx_meta_versions": "agrees",
+          "lcm_ext": "diverges",
+          "v2_fields": "agrees"
+        },
+        "verdict": "agrees",
+        "differs": [
+          "lcm_ext: ours \"v1\", core \"v0\""
+        ]
+      },
+      "rpc": {
+        "file": null,
+        "variance": {
+          "fetched_at": "2026-11-14T01:06:33.678Z",
+          "rpc": "RPC error: getLedgers: {\"code\":-32603,\"message\":\"error fetching ledgers from datastore: failed to create buffered storage backend: buffer size must be > 0\"}"
+        },
+        "verdict": "no_golden",
+        "why": "RPC error: getLedgers: {\"code\":-32603,\"message\":\"error fetching ledgers from datastore: failed to create buffered storage backend: buffer size must be > 0\"}"
+      }
+    },
+    {
+      "entry": "cap46-11-nested-auth-depth-3",
+      "ledger": 5698682,
+      "protocol": 30,
+      "our_shape": {
+        "lcm_version": "v2",
+        "ledger_version": 30,
+        "stellar_value_ext": "signed_ms",
+        "close_time_ms_invariant": true,
+        "tx_meta_versions": [
+          "v4"
+        ],
+        "lcm_ext": "v1",
+        "v2_fields": [
+          "evicted_keys",
+          "ext",
+          "ledger_header",
+          "scp_info",
+          "total_byte_size_of_live_soroban_state",
+          "tx_processing",
+          "tx_set",
+          "upgrades_processing"
+        ]
+      },
+      "core": {
+        "golden": "corpus/goldens/stellar-core/ledger-close-meta-v2-protocol-30-soroban.json",
+        "fields": {
+          "lcm_version": "agrees",
+          "ledger_version": "agrees",
+          "stellar_value_ext": "agrees",
+          "close_time_ms_invariant": "agrees",
+          "tx_meta_versions": "agrees",
+          "lcm_ext": "diverges",
+          "v2_fields": "agrees"
+        },
+        "verdict": "agrees",
+        "differs": [
+          "lcm_ext: ours \"v1\", core \"v0\""
+        ]
+      },
+      "rpc": {
+        "file": "corpus/datalake/testnet-rpc/FFA915FF--5696000-5759999/FFA90B85--5698682.xdr.zst",
+        "variance": {
+          "fetched_at": "2026-11-14T01:06:33.790Z",
+          "requests": 6,
+          "distinct": 4,
+          "archive_sha256_lcm": "2ba70f555a99544d2c8775b95e5ac74aa2fb1c182f209dfd3e7346345f1031d2",
+          "rpc_sha256_lcm": [
+            "ab22100ce1c28212c5297512ed57c9eb2910df7079ebbb9d965dbb25355d5475",
+            "4bb9ccc919d6d27b576bb950b955b1b0bb2c577328ad1a5b321813912d78fc4f",
+            "dbca1e028a2d45c448a2ea2f53e67ac1eb243d4e42b6c5636691f3e23d32b8b1",
+            "aaf7be32568d9d23c5bc6f34d723c7cf0c190c090cfaf4b023a7b7b15b80add3",
+            "dbca1e028a2d45c448a2ea2f53e67ac1eb243d4e42b6c5636691f3e23d32b8b1",
+            "4bb9ccc919d6d27b576bb950b955b1b0bb2c577328ad1a5b321813912d78fc4f"
+          ],
+          "any_equal_to_archive": false
+        },
+        "verdict": "diverges",
+        "parts": [
+          "LedgerCloseMetaExt arm",
+          "diagnostic events",
+          "op ledger-entry changes: order only, state/updated pairs intact"
+        ],
+        "entry_tx_hash_same": true,
+        "entry_ledger_checks_hold_on_rpc_copy": true
+      }
+    },
+    {
+      "entry": "cap67-sac-transfer-to-muxed-account",
+      "ledger": 5718670,
+      "protocol": 30,
+      "our_shape": {
+        "lcm_version": "v2",
+        "ledger_version": 30,
+        "stellar_value_ext": "signed_ms",
+        "close_time_ms_invariant": true,
+        "tx_meta_versions": [
+          "v4"
+        ],
+        "lcm_ext": "v1",
+        "v2_fields": [
+          "evicted_keys",
+          "ext",
+          "ledger_header",
+          "scp_info",
+          "total_byte_size_of_live_soroban_state",
+          "tx_processing",
+          "tx_set",
+          "upgrades_processing"
+        ]
+      },
+      "core": {
+        "golden": "corpus/goldens/stellar-core/ledger-close-meta-v2-protocol-30-soroban.json",
+        "fields": {
+          "lcm_version": "agrees",
+          "ledger_version": "agrees",
+          "stellar_value_ext": "agrees",
+          "close_time_ms_invariant": "agrees",
+          "tx_meta_versions": "agrees",
+          "lcm_ext": "diverges",
+          "v2_fields": "agrees"
+        },
+        "verdict": "agrees",
+        "differs": [
+          "lcm_ext: ours \"v1\", core \"v0\""
+        ]
+      },
+      "rpc": {
+        "file": "corpus/datalake/testnet-rpc/FFA915FF--5696000-5759999/FFA8BD71--5718670.xdr.zst",
+        "variance": {
+          "fetched_at": "2026-11-14T01:06:34.738Z",
+          "requests": 6,
+          "distinct": 2,
+          "archive_sha256_lcm": "ae4e06c4bb9ff7f32a9bb109348befa58d3f01a3561078c85d337b4e739e5f01",
+          "rpc_sha256_lcm": [
+            "cdc7b455fc431eeed2817bb4c2f8afb086b5ce86d86394eeac2155092c4f00a5",
+            "cdc7b455fc431eeed2817bb4c2f8afb086b5ce86d86394eeac2155092c4f00a5",
+            "fdac3505f193917657a17727422c6fe3b8ac465b3b771ff88fc828268eec677d",
+            "cdc7b455fc431eeed2817bb4c2f8afb086b5ce86d86394eeac2155092c4f00a5",
+            "fdac3505f193917657a17727422c6fe3b8ac465b3b771ff88fc828268eec677d",
+            "cdc7b455fc431eeed2817bb4c2f8afb086b5ce86d86394eeac2155092c4f00a5"
+          ],
+          "any_equal_to_archive": false
+        },
+        "verdict": "diverges",
+        "parts": [
+          "LedgerCloseMetaExt arm",
+          "diagnostic events",
+          "op ledger-entry changes: order only, state/updated pairs intact"
+        ],
+        "entry_tx_hash_same": true,
+        "entry_ledger_checks_hold_on_rpc_copy": true
+      }
+    },
+    {
+      "entry": "cap73-sac-trust-creates-trustline",
+      "ledger": 5718668,
+      "protocol": 30,
+      "our_shape": {
+        "lcm_version": "v2",
+        "ledger_version": 30,
+        "stellar_value_ext": "signed_ms",
+        "close_time_ms_invariant": true,
+        "tx_meta_versions": [
+          "v4"
+        ],
+        "lcm_ext": "v1",
+        "v2_fields": [
+          "evicted_keys",
+          "ext",
+          "ledger_header",
+          "scp_info",
+          "total_byte_size_of_live_soroban_state",
+          "tx_processing",
+          "tx_set",
+          "upgrades_processing"
+        ]
+      },
+      "core": {
+        "golden": "corpus/goldens/stellar-core/ledger-close-meta-v2-protocol-30-soroban.json",
+        "fields": {
+          "lcm_version": "agrees",
+          "ledger_version": "agrees",
+          "stellar_value_ext": "agrees",
+          "close_time_ms_invariant": "agrees",
+          "tx_meta_versions": "agrees",
+          "lcm_ext": "diverges",
+          "v2_fields": "agrees"
+        },
+        "verdict": "agrees",
+        "differs": [
+          "lcm_ext: ours \"v1\", core \"v0\""
+        ]
+      },
+      "rpc": {
+        "file": "corpus/datalake/testnet-rpc/FFA915FF--5696000-5759999/FFA8BD73--5718668.xdr.zst",
+        "variance": {
+          "fetched_at": "2026-11-14T01:06:34.484Z",
+          "requests": 6,
+          "distinct": 3,
+          "archive_sha256_lcm": "9abb479255e48bd378ba97ed813cf4df56218222ef4cfd68d888e053439c8584",
+          "rpc_sha256_lcm": [
+            "cca13a84320698b4968035c0c2d77f7c03fdc44e1a57a8a90b0269324e4ddd20",
+            "2b794372a9cf831446d0e6d00896df4a9d7939f03bdccfd7c41eff7aed3cf931",
+            "60799092c8215b567821ec190a52d45229523396be0449496c1cb5d762b3665e",
+            "60799092c8215b567821ec190a52d45229523396be0449496c1cb5d762b3665e",
+            "2b794372a9cf831446d0e6d00896df4a9d7939f03bdccfd7c41eff7aed3cf931",
+            "2b794372a9cf831446d0e6d00896df4a9d7939f03bdccfd7c41eff7aed3cf931"
+          ],
+          "any_equal_to_archive": false
+        },
+        "verdict": "diverges",
+        "parts": [
+          "LedgerCloseMetaExt arm",
+          "diagnostic events",
+          "op ledger-entry changes: order only, state/updated pairs intact"
+        ],
+        "entry_tx_hash_same": true,
+        "entry_ledger_checks_hold_on_rpc_copy": true
+      }
+    },
+    {
+      "entry": "cap84-sac-transfer-to-muxed-contract",
+      "ledger": 5718669,
+      "protocol": 30,
+      "our_shape": {
+        "lcm_version": "v2",
+        "ledger_version": 30,
+        "stellar_value_ext": "signed_ms",
+        "close_time_ms_invariant": true,
+        "tx_meta_versions": [
+          "v4"
+        ],
+        "lcm_ext": "v1",
+        "v2_fields": [
+          "evicted_keys",
+          "ext",
+          "ledger_header",
+          "scp_info",
+          "total_byte_size_of_live_soroban_state",
+          "tx_processing",
+          "tx_set",
+          "upgrades_processing"
+        ]
+      },
+      "core": {
+        "golden": "corpus/goldens/stellar-core/ledger-close-meta-v2-protocol-30-soroban.json",
+        "fields": {
+          "lcm_version": "agrees",
+          "ledger_version": "agrees",
+          "stellar_value_ext": "agrees",
+          "close_time_ms_invariant": "agrees",
+          "tx_meta_versions": "agrees",
+          "lcm_ext": "diverges",
+          "v2_fields": "agrees"
+        },
+        "verdict": "agrees",
+        "differs": [
+          "lcm_ext: ours \"v1\", core \"v0\""
+        ]
+      },
+      "rpc": {
+        "file": "corpus/datalake/testnet-rpc/FFA915FF--5696000-5759999/FFA8BD72--5718669.xdr.zst",
+        "variance": {
+          "fetched_at": "2026-11-14T01:06:34.603Z",
+          "requests": 6,
+          "distinct": 3,
+          "archive_sha256_lcm": "5bdec9738d4c25c465961a801695eee5af4bf5027e3032e7bd491d303540536e",
+          "rpc_sha256_lcm": [
+            "0cd7365233ca6a7c14399cade686634a26f598f51ab5ae2b4d5cd638b4bf7982",
+            "a579da6351058c5334be0143566e4bfc79d12077f284be307978c15f41d2194e",
+            "a579da6351058c5334be0143566e4bfc79d12077f284be307978c15f41d2194e",
+            "0cd7365233ca6a7c14399cade686634a26f598f51ab5ae2b4d5cd638b4bf7982",
+            "0cd7365233ca6a7c14399cade686634a26f598f51ab5ae2b4d5cd638b4bf7982",
+            "01f64bfad4aa8cce694abea1da3d1231e7af8c4f9646e184df9282f942c6ca52"
+          ],
+          "any_equal_to_archive": false
+        },
+        "verdict": "diverges",
+        "parts": [
+          "LedgerCloseMetaExt arm",
+          "diagnostic events",
+          "op ledger-entry changes: order only, state/updated pairs intact"
+        ],
+        "entry_tx_hash_same": true,
+        "entry_ledger_checks_hold_on_rpc_copy": true
+      }
+    },
+    {
+      "entry": "cap88-ledger-close-time-ms",
+      "ledger": 5718669,
+      "protocol": 30,
+      "our_shape": {
+        "lcm_version": "v2",
+        "ledger_version": 30,
+        "stellar_value_ext": "signed_ms",
+        "close_time_ms_invariant": true,
+        "tx_meta_versions": [
+          "v4"
+        ],
+        "lcm_ext": "v1",
+        "v2_fields": [
+          "evicted_keys",
+          "ext",
+          "ledger_header",
+          "scp_info",
+          "total_byte_size_of_live_soroban_state",
+          "tx_processing",
+          "tx_set",
+          "upgrades_processing"
+        ]
+      },
+      "core": {
+        "golden": "corpus/goldens/stellar-core/ledger-close-meta-v2-protocol-30.json",
+        "fields": {
+          "lcm_version": "agrees",
+          "ledger_version": "agrees",
+          "stellar_value_ext": "agrees",
+          "close_time_ms_invariant": "agrees",
+          "tx_meta_versions": "agrees",
+          "lcm_ext": "diverges",
+          "v2_fields": "agrees"
+        },
+        "verdict": "agrees",
+        "differs": [
+          "lcm_ext: ours \"v1\", core \"v0\""
+        ]
+      },
+      "rpc": {
+        "file": "corpus/datalake/testnet-rpc/FFA915FF--5696000-5759999/FFA8BD72--5718669.xdr.zst",
+        "variance": {
+          "fetched_at": "2026-11-14T01:06:34.603Z",
+          "requests": 6,
+          "distinct": 3,
+          "archive_sha256_lcm": "5bdec9738d4c25c465961a801695eee5af4bf5027e3032e7bd491d303540536e",
+          "rpc_sha256_lcm": [
+            "0cd7365233ca6a7c14399cade686634a26f598f51ab5ae2b4d5cd638b4bf7982",
+            "a579da6351058c5334be0143566e4bfc79d12077f284be307978c15f41d2194e",
+            "a579da6351058c5334be0143566e4bfc79d12077f284be307978c15f41d2194e",
+            "0cd7365233ca6a7c14399cade686634a26f598f51ab5ae2b4d5cd638b4bf7982",
+            "0cd7365233ca6a7c14399cade686634a26f598f51ab5ae2b4d5cd638b4bf7982",
+            "01f64bfad4aa8cce694abea1da3d1231e7af8c4f9646e184df9282f942c6ca52"
+          ],
+          "any_equal_to_archive": false
+        },
+        "verdict": "diverges",
+        "parts": [
+          "LedgerCloseMetaExt arm",
+          "diagnostic events",
+          "op ledger-entry changes: order only, state/updated pairs intact"
+        ],
+        "entry_ledger_checks_hold_on_rpc_copy": true
+      }
+    },
+    {
+      "entry": "mainnet-cap15-fee-bump-inner-bad-auth",
+      "ledger": 65450265,
+      "protocol": 29,
+      "our_shape": {
+        "lcm_version": "v2",
+        "ledger_version": 29,
+        "stellar_value_ext": "signed",
+        "close_time_ms_invariant": null,
+        "tx_meta_versions": [
+          "v4"
+        ],
+        "lcm_ext": "v1",
+        "v2_fields": [
+          "evicted_keys",
+          "ext",
+          "ledger_header",
+          "scp_info",
+          "total_byte_size_of_live_soroban_state",
+          "tx_processing",
+          "tx_set",
+          "upgrades_processing"
+        ]
+      },
+      "core": {
+        "golden": "corpus/goldens/stellar-core/ledger-close-meta-v2-protocol-29-soroban.json",
+        "fields": {
+          "lcm_version": "agrees",
+          "ledger_version": "agrees",
+          "stellar_value_ext": "agrees",
+          "close_time_ms_invariant": "agrees",
+          "tx_meta_versions": "agrees",
+          "lcm_ext": "diverges",
+          "v2_fields": "agrees"
+        },
+        "verdict": "agrees",
+        "differs": [
+          "lcm_ext: ours \"v1\", core \"v0\""
+        ]
+      },
+      "rpc": {
+        "file": null,
+        "variance": null,
+        "verdict": "no_golden",
+        "why": "mainnet entry: archive copy only, no RPC copy stored"
+      }
+    },
+    {
+      "entry": "mainnet-cap21-40-extra-signers-signed-payload",
+      "ledger": 65300015,
+      "protocol": 29,
+      "our_shape": {
+        "lcm_version": "v2",
+        "ledger_version": 29,
+        "stellar_value_ext": "signed",
+        "close_time_ms_invariant": null,
+        "tx_meta_versions": [
+          "v4"
+        ],
+        "lcm_ext": "v1",
+        "v2_fields": [
+          "evicted_keys",
+          "ext",
+          "ledger_header",
+          "scp_info",
+          "total_byte_size_of_live_soroban_state",
+          "tx_processing",
+          "tx_set",
+          "upgrades_processing"
+        ]
+      },
+      "core": {
+        "golden": "corpus/goldens/stellar-core/ledger-close-meta-v2-protocol-29.json",
+        "fields": {
+          "lcm_version": "agrees",
+          "ledger_version": "agrees",
+          "stellar_value_ext": "agrees",
+          "close_time_ms_invariant": "agrees",
+          "tx_meta_versions": "agrees",
+          "lcm_ext": "diverges",
+          "v2_fields": "agrees"
+        },
+        "verdict": "agrees",
+        "differs": [
+          "lcm_ext: ours \"v1\", core \"v0\""
+        ]
+      },
+      "rpc": {
+        "file": null,
+        "variance": null,
+        "verdict": "no_golden",
+        "why": "mainnet entry: archive copy only, no RPC copy stored"
+      }
+    },
+    {
+      "entry": "mainnet-cap23-claimable-predicate-or",
+      "ledger": 65457408,
+      "protocol": 29,
+      "our_shape": {
+        "lcm_version": "v2",
+        "ledger_version": 29,
+        "stellar_value_ext": "signed",
+        "close_time_ms_invariant": null,
+        "tx_meta_versions": [
+          "v4"
+        ],
+        "lcm_ext": "v1",
+        "v2_fields": [
+          "evicted_keys",
+          "ext",
+          "ledger_header",
+          "scp_info",
+          "total_byte_size_of_live_soroban_state",
+          "tx_processing",
+          "tx_set",
+          "upgrades_processing"
+        ]
+      },
+      "core": {
+        "golden": "corpus/goldens/stellar-core/ledger-close-meta-v2-protocol-29.json",
+        "fields": {
+          "lcm_version": "agrees",
+          "ledger_version": "agrees",
+          "stellar_value_ext": "agrees",
+          "close_time_ms_invariant": "agrees",
+          "tx_meta_versions": "agrees",
+          "lcm_ext": "diverges",
+          "v2_fields": "agrees"
+        },
+        "verdict": "agrees",
+        "differs": [
+          "lcm_ext: ours \"v1\", core \"v0\""
+        ]
+      },
+      "rpc": {
+        "file": null,
+        "variance": null,
+        "verdict": "no_golden",
+        "why": "mainnet entry: archive copy only, no RPC copy stored"
+      }
+    },
+    {
+      "entry": "mainnet-cap27-muxed-id-above-2-53",
+      "ledger": 65300357,
+      "protocol": 29,
+      "our_shape": {
+        "lcm_version": "v2",
+        "ledger_version": 29,
+        "stellar_value_ext": "signed",
+        "close_time_ms_invariant": null,
+        "tx_meta_versions": [
+          "v4"
+        ],
+        "lcm_ext": "v1",
+        "v2_fields": [
+          "evicted_keys",
+          "ext",
+          "ledger_header",
+          "scp_info",
+          "total_byte_size_of_live_soroban_state",
+          "tx_processing",
+          "tx_set",
+          "upgrades_processing"
+        ]
+      },
+      "core": {
+        "golden": "corpus/goldens/stellar-core/ledger-close-meta-v2-protocol-29.json",
+        "fields": {
+          "lcm_version": "agrees",
+          "ledger_version": "agrees",
+          "stellar_value_ext": "agrees",
+          "close_time_ms_invariant": "agrees",
+          "tx_meta_versions": "agrees",
+          "lcm_ext": "diverges",
+          "v2_fields": "agrees"
+        },
+        "verdict": "agrees",
+        "differs": [
+          "lcm_ext: ours \"v1\", core \"v0\""
+        ]
+      },
+      "rpc": {
+        "file": null,
+        "variance": null,
+        "verdict": "no_golden",
+        "why": "mainnet entry: archive copy only, no RPC copy stored"
+      }
+    },
+    {
+      "entry": "mainnet-cap33-revoke-sponsorship-signer",
+      "ledger": 65464320,
+      "protocol": 29,
+      "our_shape": {
+        "lcm_version": "v2",
+        "ledger_version": 29,
+        "stellar_value_ext": "signed",
+        "close_time_ms_invariant": null,
+        "tx_meta_versions": [
+          "v4"
+        ],
+        "lcm_ext": "v1",
+        "v2_fields": [
+          "evicted_keys",
+          "ext",
+          "ledger_header",
+          "scp_info",
+          "total_byte_size_of_live_soroban_state",
+          "tx_processing",
+          "tx_set",
+          "upgrades_processing"
+        ]
+      },
+      "core": {
+        "golden": "corpus/goldens/stellar-core/ledger-close-meta-v2-protocol-29.json",
+        "fields": {
+          "lcm_version": "agrees",
+          "ledger_version": "agrees",
+          "stellar_value_ext": "agrees",
+          "close_time_ms_invariant": "agrees",
+          "tx_meta_versions": "agrees",
+          "lcm_ext": "diverges",
+          "v2_fields": "agrees"
+        },
+        "verdict": "agrees",
+        "differs": [
+          "lcm_ext: ours \"v1\", core \"v0\""
+        ]
+      },
+      "rpc": {
+        "file": null,
+        "variance": null,
+        "verdict": "no_golden",
+        "why": "mainnet entry: archive copy only, no RPC copy stored"
+      }
+    },
+    {
+      "entry": "mainnet-cap46-06-sac-deploy-from-asset",
+      "ledger": 65465121,
+      "protocol": 29,
+      "our_shape": {
+        "lcm_version": "v2",
+        "ledger_version": 29,
+        "stellar_value_ext": "signed",
+        "close_time_ms_invariant": null,
+        "tx_meta_versions": [
+          "v4"
+        ],
+        "lcm_ext": "v1",
+        "v2_fields": [
+          "evicted_keys",
+          "ext",
+          "ledger_header",
+          "scp_info",
+          "total_byte_size_of_live_soroban_state",
+          "tx_processing",
+          "tx_set",
+          "upgrades_processing"
+        ]
+      },
+      "core": {
+        "golden": "corpus/goldens/stellar-core/ledger-close-meta-v2-protocol-29-soroban.json",
+        "fields": {
+          "lcm_version": "agrees",
+          "ledger_version": "agrees",
+          "stellar_value_ext": "agrees",
+          "close_time_ms_invariant": "agrees",
+          "tx_meta_versions": "agrees",
+          "lcm_ext": "diverges",
+          "v2_fields": "agrees"
+        },
+        "verdict": "agrees",
+        "differs": [
+          "lcm_ext: ours \"v1\", core \"v0\""
+        ]
+      },
+      "rpc": {
+        "file": null,
+        "variance": null,
+        "verdict": "no_golden",
+        "why": "mainnet entry: archive copy only, no RPC copy stored"
+      }
+    },
+    {
+      "entry": "mainnet-cap46-11-auth-tree-depth-4",
+      "ledger": 65300125,
+      "protocol": 29,
+      "our_shape": {
+        "lcm_version": "v2",
+        "ledger_version": 29,
+        "stellar_value_ext": "signed",
+        "close_time_ms_invariant": null,
+        "tx_meta_versions": [
+          "v4"
+        ],
+        "lcm_ext": "v1",
+        "v2_fields": [
+          "evicted_keys",
+          "ext",
+          "ledger_header",
+          "scp_info",
+          "total_byte_size_of_live_soroban_state",
+          "tx_processing",
+          "tx_set",
+          "upgrades_processing"
+        ]
+      },
+      "core": {
+        "golden": "corpus/goldens/stellar-core/ledger-close-meta-v2-protocol-29-soroban.json",
+        "fields": {
+          "lcm_version": "agrees",
+          "ledger_version": "agrees",
+          "stellar_value_ext": "agrees",
+          "close_time_ms_invariant": "agrees",
+          "tx_meta_versions": "agrees",
+          "lcm_ext": "diverges",
+          "v2_fields": "agrees"
+        },
+        "verdict": "agrees",
+        "differs": [
+          "lcm_ext: ours \"v1\", core \"v0\""
+        ]
+      },
+      "rpc": {
+        "file": null,
+        "variance": null,
+        "verdict": "no_golden",
+        "why": "mainnet entry: archive copy only, no RPC copy stored"
+      }
+    },
+    {
+      "entry": "mainnet-cap46-auth-root-deploys-contract",
+      "ledger": 65450811,
+      "protocol": 29,
+      "our_shape": {
+        "lcm_version": "v2",
+        "ledger_version": 29,
+        "stellar_value_ext": "signed",
+        "close_time_ms_invariant": null,
+        "tx_meta_versions": [
+          "v4"
+        ],
+        "lcm_ext": "v1",
+        "v2_fields": [
+          "evicted_keys",
+          "ext",
+          "ledger_header",
+          "scp_info",
+          "total_byte_size_of_live_soroban_state",
+          "tx_processing",
+          "tx_set",
+          "upgrades_processing"
+        ]
+      },
+      "core": {
+        "golden": "corpus/goldens/stellar-core/ledger-close-meta-v2-protocol-29-soroban.json",
+        "fields": {
+          "lcm_version": "agrees",
+          "ledger_version": "agrees",
+          "stellar_value_ext": "agrees",
+          "close_time_ms_invariant": "agrees",
+          "tx_meta_versions": "agrees",
+          "lcm_ext": "diverges",
+          "v2_fields": "agrees"
+        },
+        "verdict": "agrees",
+        "differs": [
+          "lcm_ext: ours \"v1\", core \"v0\""
+        ]
+      },
+      "rpc": {
+        "file": null,
+        "variance": null,
+        "verdict": "no_golden",
+        "why": "mainnet entry: archive copy only, no RPC copy stored"
+      }
+    },
+    {
+      "entry": "mainnet-cap67-event-data-muxed-address",
+      "ledger": 65459106,
+      "protocol": 29,
+      "our_shape": {
+        "lcm_version": "v2",
+        "ledger_version": 29,
+        "stellar_value_ext": "signed",
+        "close_time_ms_invariant": null,
+        "tx_meta_versions": [
+          "v4"
+        ],
+        "lcm_ext": "v1",
+        "v2_fields": [
+          "evicted_keys",
+          "ext",
+          "ledger_header",
+          "scp_info",
+          "total_byte_size_of_live_soroban_state",
+          "tx_processing",
+          "tx_set",
+          "upgrades_processing"
+        ]
+      },
+      "core": {
+        "golden": "corpus/goldens/stellar-core/ledger-close-meta-v2-protocol-29-soroban.json",
+        "fields": {
+          "lcm_version": "agrees",
+          "ledger_version": "agrees",
+          "stellar_value_ext": "agrees",
+          "close_time_ms_invariant": "agrees",
+          "tx_meta_versions": "agrees",
+          "lcm_ext": "diverges",
+          "v2_fields": "agrees"
+        },
+        "verdict": "agrees",
+        "differs": [
+          "lcm_ext: ours \"v1\", core \"v0\""
+        ]
+      },
+      "rpc": {
+        "file": null,
+        "variance": null,
+        "verdict": "no_golden",
+        "why": "mainnet entry: archive copy only, no RPC copy stored"
+      }
+    },
+    {
+      "entry": "mainnet-cap73-nested-sac-trust-creates-trustline",
+      "ledger": 65300453,
+      "protocol": 29,
+      "our_shape": {
+        "lcm_version": "v2",
+        "ledger_version": 29,
+        "stellar_value_ext": "signed",
+        "close_time_ms_invariant": null,
+        "tx_meta_versions": [
+          "v4"
+        ],
+        "lcm_ext": "v1",
+        "v2_fields": [
+          "evicted_keys",
+          "ext",
+          "ledger_header",
+          "scp_info",
+          "total_byte_size_of_live_soroban_state",
+          "tx_processing",
+          "tx_set",
+          "upgrades_processing"
+        ]
+      },
+      "core": {
+        "golden": "corpus/goldens/stellar-core/ledger-close-meta-v2-protocol-29-soroban.json",
+        "fields": {
+          "lcm_version": "agrees",
+          "ledger_version": "agrees",
+          "stellar_value_ext": "agrees",
+          "close_time_ms_invariant": "agrees",
+          "tx_meta_versions": "agrees",
+          "lcm_ext": "diverges",
+          "v2_fields": "agrees"
+        },
+        "verdict": "agrees",
+        "differs": [
+          "lcm_ext: ours \"v1\", core \"v0\""
+        ]
+      },
+      "rpc": {
+        "file": null,
+        "variance": null,
+        "verdict": "no_golden",
+        "why": "mainnet entry: archive copy only, no RPC copy stored"
+      }
+    }
+  ]
+}

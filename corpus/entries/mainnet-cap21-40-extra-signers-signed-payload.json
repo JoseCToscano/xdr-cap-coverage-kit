@@ -1,0 +1,190 @@
+{
+  "schema_version": "0.2.0",
+  "id": "mainnet-cap21-40-extra-signers-signed-payload",
+  "title": "Mainnet PRECOND_V2 with 2 signed-payload (P) extra signers; from the first sampled ledger with this pattern (failed: over_sendmax)",
+  "caps": [
+    "CAP-0021",
+    "CAP-0040"
+  ],
+  "protocol": {
+    "introduced_in": 19,
+    "captured_on": 29,
+    "xdr_ref": "stellar-xdr 30.0.0 (3c2aa43d2ab54d429ae44aa5143d805bf5dba7e2) xdr: 4f524bbac80c781c06e4fb5fc93a2d0d331d6705 features: <none>"
+  },
+  "network": {
+    "passphrase": "Public Global Stellar Network ; September 2015",
+    "expected_tx_hash": "fab818c3d8c1c5bba4ffb8468c9e97913bd1c571da9d2c34897f4916c7a606e0"
+  },
+  "xdr": {
+    "type": "TransactionEnvelope",
+    "base64": "AAAAAgAAAAC1Hq9pY/otIvjvUk4OQvoAwA0UoeHaz3z0lytw52Ke4gAAFi4D386TAAAOwgAAAAIAAAAAAAAAAQAAAAAD5GYwAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAADAyhv7/FbMHKqSh3eBjwKr3ZFVPEK78awH7HACUE+shoAAAAcc3RlbGxhci1lbnZlbG9wZS1zZWFyY2gtdjEvAAAAAAMaoF59yg099fLT3IVe2+mwlrI4nhz7bySRl+jaPbJ0kwAAABxzdGVsbGFyLWVudmVsb3BlLXNlYXJjaC12MS8BAAAAAAAAAAEAAAABAAAAALSL3EWvVt/gv96Nnfdp1ouzaDm1GcpwIpF1bBp25BF9AAAAAgAAAAFVU0RDAAAAADuZETgO/piLoKiQDrHP5E82b32+lGvtB3JA9/Yk3xXFAAAAAAWvODIAAAAAtIvcRa9W3+C/3o2d92nWi7NoObUZynAikXVsGnbkEX0AAAABVVNEQwAAAAA7mRE4Dv6Yi6CokA6xz+RPNm99vpRr7QdyQPf2JN8VxQAAAAAFsBI+AAAAAwAAAAFVU0RaAAAAABU1vFzNd/lISJw6iXQQ5Z5eCLyuUwe8EXSNdmHAmXtPAAAAAUVVUloAAAAAGdCqSpnxLyCcdQ4kSMj2Kn/26GOEbkQ9nH/FZGmMmqIAAAAAAAAAAAAAAATnYp7iAAAAQCYqCJpsu8a6odCbajJgKWJ7Pgya8ljVTHEuxjAT+rSSCMFeW3QqfV+YEJD8BWvoGhqVEdLSRiDnJg6oUQ/B2Qh25BF9AAAAQJVQaevD62/wnACBHTBIJ8eHS4gyfUxTISfsBzsHhdAwbUFJT8nHK8iPEbfVqk3irGJcBzGUsj/zQSDNw/Y0Aws3D50aAAAAQC14/Z8fLbza/Zi+Qp3JRkDYqtYanKUEBYR6UYrPs+0/xuer4ihU965vpQL4mMamJrs80ZchLYIPoOLxaJweIglLg1uSAAAAQN8Divr3xhRTUtt8HcYMRDHeyQxmBCBsY4vcZICtXIHw8lNw1SDLVFq00PMG3VWqlZtlryeXQZjKuLlfWmaA9gI=",
+    "sha256": "17911748025ab9f1e7aa51bd9ab99cad86cd5afeb6705cea21500d15fd65038d"
+  },
+  "provenance": {
+    "kind": "mainnet",
+    "origin": "mined_from_mainnet_history",
+    "origin_note": "Found by the real-network frequency study (tools/frequency/, reports/frequency.md): P keys in preconditions extra_signers first appear at ledger 65,300,015 (this transaction is in that ledger) and reach 20,670 transactions in the sample. Not submitted by this kit.",
+    "ledger": 65300015,
+    "tx_hash": "fab818c3d8c1c5bba4ffb8468c9e97913bd1c571da9d2c34897f4916c7a606e0",
+    "source_url": "https://stellar.expert/explorer/public/tx/fab818c3d8c1c5bba4ffb8468c9e97913bd1c571da9d2c34897f4916c7a606e0",
+    "tx_created_at": "2026-11-04T09:55:14.000Z",
+    "retrieved_at": "2026-11-16T19:00:30.211Z",
+    "tool": "tools/make-entry.mjs (mainnet-cap21-40-extra-signers-signed-payload.mjs)"
+  },
+  "expected": {
+    "json": {
+      "tx": {
+        "tx": {
+          "source_account": "GC2R5L3JMP5C2IXY55JE4DSC7IAMADIUUHQ5VT346SLSW4HHMKPOF2KM",
+          "fee": 5678,
+          "seq_num": "279168832675778242",
+          "cond": {
+            "v2": {
+              "time_bounds": null,
+              "ledger_bounds": {
+                "min_ledger": 0,
+                "max_ledger": 65300016
+              },
+              "min_seq_num": null,
+              "min_seq_age": "0",
+              "min_seq_ledger_gap": 0,
+              "extra_signers": [
+                "PABSQ37P6FNTA4VKJIO54BR4BKXXMRKU6EFO7RVQD6Y4ACKBH2ZBUAAAAAOHG5DFNRWGC4RNMVXHMZLMN5YGKLLTMVQXEY3IFV3DCLYAALMA",
+                "PANKAXT5ZIGT35PS2POIKXW35GYJNMRYTYOPW3ZESGL6RWR5WJ2JGAAAAAOHG5DFNRWGC4RNMVXHMZLMN5YGKLLTMVQXEY3IFV3DCLYBX2CA"
+              ]
+            }
+          },
+          "memo": "none",
+          "operations": [
+            {
+              "source_account": "GC2IXXCFV5LN7YF732GZ353J22F3G2BZWUM4U4BCSF2WYGTW4QIX2X7M",
+              "body": {
+                "path_payment_strict_receive": {
+                  "send_asset": {
+                    "credit_alphanum4": {
+                      "asset_code": "USDC",
+                      "issuer": "GA5ZSEJYB37JRC5AVCIA5MOP4RHTM335X2KGX3IHOJAPP5RE34K4KZVN"
+                    }
+                  },
+                  "send_max": "95369266",
+                  "destination": "GC2IXXCFV5LN7YF732GZ353J22F3G2BZWUM4U4BCSF2WYGTW4QIX2X7M",
+                  "dest_asset": {
+                    "credit_alphanum4": {
+                      "asset_code": "USDC",
+                      "issuer": "GA5ZSEJYB37JRC5AVCIA5MOP4RHTM335X2KGX3IHOJAPP5RE34K4KZVN"
+                    }
+                  },
+                  "dest_amount": "95425086",
+                  "path": [
+                    {
+                      "credit_alphanum4": {
+                        "asset_code": "USDZ",
+                        "issuer": "GAKTLPC4ZV37SSCITQ5IS5AQ4WPF4CF4VZJQPPAROSGXMYOATF5U6XPR"
+                      }
+                    },
+                    {
+                      "credit_alphanum4": {
+                        "asset_code": "EURZ",
+                        "issuer": "GAM5BKSKTHYS6IE4OUHCISGI6YVH75XIMOCG4RB5TR74KZDJRSNKEURZ"
+                      }
+                    },
+                    "native"
+                  ]
+                }
+              }
+            }
+          ],
+          "ext": "v0"
+        },
+        "signatures": [
+          {
+            "hint": "e7629ee2",
+            "signature": "262a089a6cbbc6baa1d09b6a326029627b3e0c9af258d54c712ec63013fab49208c15e5b742a7d5f981090fc056be81a1a9511d2d24620e7260ea8510fc1d908"
+          },
+          {
+            "hint": "76e4117d",
+            "signature": "955069ebc3eb6ff09c00811d304827c7874b88327d4c532127ec073b0785d0306d41494fc9c72bc88f11b7d5aa4de2ac625c073194b23ff34120cdc3f634030b"
+          },
+          {
+            "hint": "370f9d1a",
+            "signature": "2d78fd9f1f2dbcdafd98be429dc94640d8aad61a9ca50405847a518acfb3ed3fc6e7abe22854f7ae6fa502f898c6a626bb3cd197212d820fa0e2f1689c1e2209"
+          },
+          {
+            "hint": "4b835b92",
+            "signature": "df038afaf7c6145352db7c1dc60c4431dec90c6604206c638bdc6480ad5c81f0f25370d520cb545ab4d0f306dd55aa959b65af27974198cab8b95f5a6680f602"
+          }
+        ]
+      }
+    },
+    "checks": [
+      {
+        "id": "two-extra-signers",
+        "path": "/tx/tx/cond/v2/extra_signers",
+        "op": "length",
+        "value": 2,
+        "note": "Maximum of 2 extra signers."
+      },
+      {
+        "id": "extra-signer-0-P",
+        "path": "/tx/tx/cond/v2/extra_signers/0",
+        "op": "strkey",
+        "value": "PABSQ37P6FNTA4VKJIO54BR4BKXXMRKU6EFO7RVQD6Y4ACKBH2ZBUAAAAAOHG5DFNRWGC4RNMVXHMZLMN5YGKLLTMVQXEY3IFV3DCLYAALMA",
+        "note": "Signed-payload signer key (P...). The key type behind wallet-backend #729 / #716 producer 3, here in preconditions rather than SetOptions."
+      },
+      {
+        "id": "extra-signer-1-P",
+        "path": "/tx/tx/cond/v2/extra_signers/1",
+        "op": "strkey",
+        "value": "PANKAXT5ZIGT35PS2POIKXW35GYJNMRYTYOPW3ZESGL6RWR5WJ2JGAAAAAOHG5DFNRWGC4RNMVXHMZLMN5YGKLLTMVQXEY3IFV3DCLYBX2CA",
+        "note": "Second P key."
+      },
+      {
+        "id": "ledger-bounds",
+        "path": "/tx/tx/cond/v2/ledger_bounds/max_ledger",
+        "op": "equals",
+        "value": 65300016,
+        "note": "Valid for two ledgers."
+      }
+    ],
+    "ledger_checks": [
+      {
+        "id": "lcm-failed",
+        "path": "/v2/tx_processing/114/result/result/result/tx_failed/0/op_inner/path_payment_strict_receive",
+        "op": "equals",
+        "value": "over_sendmax",
+        "note": "Failed transaction: still charged a fee and still ingested by indexers."
+      }
+    ]
+  },
+  "tags": [
+    "preconditions",
+    "signed-payload",
+    "max-length",
+    "mainnet"
+  ],
+  "linked_issues": [
+    {
+      "url": "https://github.com/stellar/wallet-backend/pull/729",
+      "role": "related",
+      "component": "signed-payload signer keys"
+    },
+    {
+      "url": "https://github.com/stellar/wallet-backend/issues/716",
+      "role": "related",
+      "component": "AddressBytea length"
+    }
+  ],
+  "ledger": {
+    "type": "LedgerCloseMeta",
+    "lcm_version": "v2",
+    "sequence": 65300015,
+    "protocol_version": 29,
+    "file": "corpus/datalake/pubnet/FC1BE7FF--65280000-65343999/FC1B99D0--65300015.xdr.zst",
+    "format": "galexie: zstd(LedgerCloseMetaBatch), 1 ledger per object, 64000 per partition",
+    "sha256_zst": "618aa138bb954925f9124cad4df1476673ed46854bb9be25660587a6061b3e38",
+    "sha256_lcm": "9caf21df4cb7d0b5e3af1d81d412e8a070c7326a69852d9099a07176938e7fcf",
+    "tx_index": 114,
+    "source": "galexie-public-archive",
+    "source_url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/v1.1/stellar/ledgers/pubnet/FC1BE7FF--65280000-65343999/FC1B99D0--65300015.xdr.zst"
+  }
+}

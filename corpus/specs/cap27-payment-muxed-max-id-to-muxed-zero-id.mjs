@@ -1,5 +1,8 @@
-// Captured from testnet: a native payment from a muxed source whose ID is
-// 2^64-1 to a muxed destination whose ID is 0. Both ends of the uint64 range.
+// Mined from existing testnet history: a native payment from a muxed source
+// whose ID is 2^64-1 to a muxed destination whose ID is 0. Both ends of the
+// uint64 range. This kit did NOT submit this transaction: an unrelated testnet
+// account submitted it on 2026-11-12, and we read it back from Horizon and the
+// public Galexie archive.
 import { readFileSync } from "node:fs";
 const raw = JSON.parse(readFileSync(new URL("../raw/cap27-tx.json", import.meta.url)));
 
@@ -13,11 +16,21 @@ export default {
   base64: () => raw.envelope_xdr,
   provenance: {
     kind: "testnet",
+    origin: "mined_from_testnet_history",
+    origin_note: "Read from existing testnet ledger history. Not submitted by this kit; the source account is not ours.",
     ledger: raw.ledger,
     tx_hash: raw.hash,
     source_url: `https://horizon-testnet.stellar.org/transactions/${raw.hash}`,
-    captured_at: raw.created_at,
+    tx_created_at: raw.created_at,
+    raw_committed_at: "2026-11-12T23:44:12Z",
   },
+  ledger: { sequence: raw.ledger },
+  ledgerChecks: [
+    { id: "lcm-tx-success", path: "$TX/result/result/result/tx_success/0/op_inner/payment", op: "equals", value: "success",
+      note: "The payment applied. Readers must take participants and balances from this meta, not from the envelope." },
+    { id: "lcm-close-time-ms", path: "$LCM/ledger_header/header/scp_value/ext/signed_ms/close_time_ms", op: "preserved",
+      note: "Protocol 30 ledger (CAP-88 header arm)." },
+  ],
   checks: [
     { id: "source-muxed-max-id", path: "/tx/tx/source_account", op: "strkey",
       value: "MCGVDJFRRJA6UBTB5OCLJ5BJ2HXYT77QSQGPBQA7C5WQHEGZPEA2X77777777777777F4",

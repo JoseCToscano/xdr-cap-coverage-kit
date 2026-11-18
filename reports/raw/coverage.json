@@ -1,0 +1,4233 @@
+{
+  "summary": {
+    "xdr": "stellar-xdr 30.0.0 (3c2aa43d2ab54d429ae44aa5143d805bf5dba7e2) xdr: 4f524bbac80c781c06e4fb5fc93a2d0d331d6705 features: <none>",
+    "universe": "stellar xdr types schema --type LedgerCloseMeta",
+    "entries": 20,
+    "entries_with_lcm": 19,
+    "ledgers": 18,
+    "unions": {
+      "types": 64,
+      "arms": 376,
+      "entry_scope_arms": 127,
+      "ledger_scope_arms": 198,
+      "entry_scope_types_touched": 45,
+      "ledger_scope_types_touched": 58
+    },
+    "enums": {
+      "types": 35,
+      "values": 158,
+      "entry_scope_values": 22,
+      "ledger_scope_values": 38
+    }
+  },
+  "unions": [
+    {
+      "type": "AccountEntryExt",
+      "arms": [
+        {
+          "arm": "v0",
+          "entry": [
+            "cap21-preconditions-max-length-vectors",
+            "cap27-payment-muxed-max-id-to-muxed-zero-id",
+            "cap40-setoptions-signed-payload-signer",
+            "cap73-sac-trust-creates-trustline"
+          ],
+          "ledger": 16
+        },
+        {
+          "arm": "v1",
+          "entry": [
+            "cap21-preconditions-max-length-vectors",
+            "cap27-payment-muxed-max-id-to-muxed-zero-id",
+            "cap38-pool-issuers-strkey-vs-bytes-order",
+            "cap40-setoptions-signed-payload-signer",
+            "cap46-11-nested-auth-depth-3",
+            "cap67-sac-transfer-to-muxed-account",
+            "cap73-sac-trust-creates-trustline",
+            "cap84-sac-transfer-to-muxed-contract",
+            "mainnet-cap15-fee-bump-inner-bad-auth",
+            "mainnet-cap21-40-extra-signers-signed-payload",
+            "mainnet-cap23-claimable-predicate-or",
+            "mainnet-cap27-muxed-id-above-2-53",
+            "mainnet-cap33-revoke-sponsorship-signer",
+            "mainnet-cap46-06-sac-deploy-from-asset",
+            "mainnet-cap46-11-auth-tree-depth-4",
+            "mainnet-cap46-auth-root-deploys-contract",
+            "mainnet-cap67-event-data-muxed-address",
+            "mainnet-cap73-nested-sac-trust-creates-trustline"
+          ],
+          "ledger": 18
+        }
+      ]
+    },
+    {
+      "type": "AccountEntryExtensionV1Ext",
+      "arms": [
+        {
+          "arm": "v0",
+          "entry": [],
+          "ledger": 1
+        },
+        {
+          "arm": "v2",
+          "entry": [
+            "cap21-preconditions-max-length-vectors",
+            "cap27-payment-muxed-max-id-to-muxed-zero-id",
+            "cap38-pool-issuers-strkey-vs-bytes-order",
+            "cap40-setoptions-signed-payload-signer",
+            "cap46-11-nested-auth-depth-3",
+            "cap67-sac-transfer-to-muxed-account",
+            "cap73-sac-trust-creates-trustline",
+            "cap84-sac-transfer-to-muxed-contract",
+            "mainnet-cap15-fee-bump-inner-bad-auth",
+            "mainnet-cap21-40-extra-signers-signed-payload",
+            "mainnet-cap23-claimable-predicate-or",
+            "mainnet-cap27-muxed-id-above-2-53",
+            "mainnet-cap33-revoke-sponsorship-signer",
+            "mainnet-cap46-06-sac-deploy-from-asset",
+            "mainnet-cap46-11-auth-tree-depth-4",
+            "mainnet-cap46-auth-root-deploys-contract",
+            "mainnet-cap67-event-data-muxed-address",
+            "mainnet-cap73-nested-sac-trust-creates-trustline"
+          ],
+          "ledger": 18
+        }
+      ]
+    },
+    {
+      "type": "AccountEntryExtensionV2Ext",
+      "arms": [
+        {
+          "arm": "v0",
+          "entry": [
+            "mainnet-cap33-revoke-sponsorship-signer"
+          ],
+          "ledger": 7
+        },
+        {
+          "arm": "v3",
+          "entry": [
+            "cap21-preconditions-max-length-vectors",
+            "cap27-payment-muxed-max-id-to-muxed-zero-id",
+            "cap38-pool-issuers-strkey-vs-bytes-order",
+            "cap40-setoptions-signed-payload-signer",
+            "cap46-11-nested-auth-depth-3",
+            "cap67-sac-transfer-to-muxed-account",
+            "cap73-sac-trust-creates-trustline",
+            "cap84-sac-transfer-to-muxed-contract",
+            "mainnet-cap15-fee-bump-inner-bad-auth",
+            "mainnet-cap21-40-extra-signers-signed-payload",
+            "mainnet-cap23-claimable-predicate-or",
+            "mainnet-cap27-muxed-id-above-2-53",
+            "mainnet-cap33-revoke-sponsorship-signer",
+            "mainnet-cap46-06-sac-deploy-from-asset",
+            "mainnet-cap46-11-auth-tree-depth-4",
+            "mainnet-cap46-auth-root-deploys-contract",
+            "mainnet-cap67-event-data-muxed-address",
+            "mainnet-cap73-nested-sac-trust-creates-trustline"
+          ],
+          "ledger": 18
+        }
+      ]
+    },
+    {
+      "type": "AccountMergeResult",
+      "arms": [
+        {
+          "arm": "malformed",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "no_account",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "immutable_set",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "has_sub_entries",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "seqnum_too_far",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "dest_full",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "is_sponsor",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "success",
+          "entry": [],
+          "ledger": 5
+        }
+      ]
+    },
+    {
+      "type": "Asset",
+      "arms": [
+        {
+          "arm": "native",
+          "entry": [
+            "cap21-preconditions-max-length-vectors",
+            "cap27-payment-muxed-max-id-to-muxed-zero-id",
+            "mainnet-cap21-40-extra-signers-signed-payload",
+            "mainnet-cap27-muxed-id-above-2-53",
+            "mainnet-cap33-revoke-sponsorship-signer"
+          ],
+          "ledger": 15
+        },
+        {
+          "arm": "credit_alphanum4",
+          "entry": [
+            "cap38-pool-issuers-strkey-vs-bytes-order",
+            "mainnet-cap21-40-extra-signers-signed-payload",
+            "mainnet-cap46-06-sac-deploy-from-asset"
+          ],
+          "ledger": 17
+        },
+        {
+          "arm": "credit_alphanum12",
+          "entry": [
+            "mainnet-cap23-claimable-predicate-or"
+          ],
+          "ledger": 12
+        }
+      ]
+    },
+    {
+      "type": "ChangeTrustAsset",
+      "arms": [
+        {
+          "arm": "native",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "credit_alphanum4",
+          "entry": [],
+          "ledger": 9
+        },
+        {
+          "arm": "credit_alphanum12",
+          "entry": [],
+          "ledger": 3
+        },
+        {
+          "arm": "pool_share",
+          "entry": [
+            "cap38-pool-issuers-strkey-vs-bytes-order"
+          ],
+          "ledger": 3
+        }
+      ]
+    },
+    {
+      "type": "ClaimAtom",
+      "arms": [
+        {
+          "arm": "v0",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "order_book",
+          "entry": [],
+          "ledger": 10
+        },
+        {
+          "arm": "liquidity_pool",
+          "entry": [],
+          "ledger": 10
+        }
+      ]
+    },
+    {
+      "type": "ClaimPredicate",
+      "arms": [
+        {
+          "arm": "unconditional",
+          "entry": [
+            "mainnet-cap23-claimable-predicate-or"
+          ],
+          "ledger": 10
+        },
+        {
+          "arm": "and",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "or",
+          "entry": [
+            "mainnet-cap23-claimable-predicate-or"
+          ],
+          "ledger": 1
+        },
+        {
+          "arm": "not",
+          "entry": [
+            "mainnet-cap23-claimable-predicate-or"
+          ],
+          "ledger": 5
+        },
+        {
+          "arm": "before_absolute_time",
+          "entry": [
+            "mainnet-cap23-claimable-predicate-or"
+          ],
+          "ledger": 5
+        },
+        {
+          "arm": "before_relative_time",
+          "entry": [],
+          "ledger": 10
+        }
+      ]
+    },
+    {
+      "type": "ClaimableBalanceEntryExt",
+      "arms": [
+        {
+          "arm": "v0",
+          "entry": [],
+          "ledger": 2
+        },
+        {
+          "arm": "v1",
+          "entry": [
+            "mainnet-cap23-claimable-predicate-or"
+          ],
+          "ledger": 4
+        }
+      ]
+    },
+    {
+      "type": "Claimant",
+      "arms": [
+        {
+          "arm": "claimant_type_v0",
+          "entry": [
+            "mainnet-cap23-claimable-predicate-or"
+          ],
+          "ledger": 11
+        }
+      ]
+    },
+    {
+      "type": "ConfigSettingEntry",
+      "arms": [
+        {
+          "arm": "contract_max_size_bytes",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "contract_compute_v0",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "contract_ledger_cost_v0",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "contract_historical_data_v0",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "contract_events_v0",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "contract_bandwidth_v0",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "contract_cost_params_cpu_instructions",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "contract_cost_params_memory_bytes",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "contract_data_key_size_bytes",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "contract_data_entry_size_bytes",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "state_archival",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "contract_execution_lanes",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "live_soroban_state_size_window",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "eviction_iterator",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "contract_parallel_compute_v0",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "contract_ledger_cost_ext_v0",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "scp_timing",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "frozen_ledger_keys",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "frozen_ledger_keys_delta",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "freeze_bypass_txs",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "freeze_bypass_txs_delta",
+          "entry": [],
+          "ledger": 0
+        }
+      ]
+    },
+    {
+      "type": "ContractCodeEntryExt",
+      "arms": [
+        {
+          "arm": "v0",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "v1",
+          "entry": [],
+          "ledger": 0
+        }
+      ]
+    },
+    {
+      "type": "ContractEventBody",
+      "arms": [
+        {
+          "arm": "v0",
+          "entry": [
+            "cap21-preconditions-max-length-vectors",
+            "cap27-payment-muxed-max-id-to-muxed-zero-id",
+            "cap38-pool-issuers-strkey-vs-bytes-order",
+            "cap40-setoptions-signed-payload-signer",
+            "cap46-11-nested-auth-depth-3",
+            "cap67-sac-transfer-to-muxed-account",
+            "cap73-sac-trust-creates-trustline",
+            "cap84-sac-transfer-to-muxed-contract",
+            "mainnet-cap15-fee-bump-inner-bad-auth",
+            "mainnet-cap21-40-extra-signers-signed-payload",
+            "mainnet-cap23-claimable-predicate-or",
+            "mainnet-cap27-muxed-id-above-2-53",
+            "mainnet-cap33-revoke-sponsorship-signer",
+            "mainnet-cap46-06-sac-deploy-from-asset",
+            "mainnet-cap46-11-auth-tree-depth-4",
+            "mainnet-cap46-auth-root-deploys-contract",
+            "mainnet-cap67-event-data-muxed-address",
+            "mainnet-cap73-nested-sac-trust-creates-trustline"
+          ],
+          "ledger": 18
+        }
+      ]
+    },
+    {
+      "type": "ContractExecutable",
+      "arms": [
+        {
+          "arm": "stellar_asset",
+          "entry": [
+            "mainnet-cap46-06-sac-deploy-from-asset"
+          ],
+          "ledger": 1
+        },
+        {
+          "arm": "wasm",
+          "entry": [
+            "cap46-11-nested-auth-depth-3",
+            "mainnet-cap46-11-auth-tree-depth-4",
+            "mainnet-cap46-auth-root-deploys-contract"
+          ],
+          "ledger": 17
+        },
+        {
+          "arm": "external_ref",
+          "entry": [],
+          "ledger": 0
+        }
+      ]
+    },
+    {
+      "type": "ContractIdPreimage",
+      "arms": [
+        {
+          "arm": "address",
+          "entry": [
+            "mainnet-cap46-auth-root-deploys-contract"
+          ],
+          "ledger": 2
+        },
+        {
+          "arm": "asset",
+          "entry": [
+            "mainnet-cap46-06-sac-deploy-from-asset"
+          ],
+          "ledger": 1
+        }
+      ]
+    },
+    {
+      "type": "CreateClaimableBalanceResult",
+      "arms": [
+        {
+          "arm": "malformed",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "low_reserve",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "no_trust",
+          "entry": [],
+          "ledger": 9
+        },
+        {
+          "arm": "not_authorized",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "underfunded",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "success",
+          "entry": [],
+          "ledger": 10
+        }
+      ]
+    },
+    {
+      "type": "FeeBumpTransactionInnerTx",
+      "arms": [
+        {
+          "arm": "tx",
+          "entry": [
+            "mainnet-cap15-fee-bump-inner-bad-auth",
+            "mainnet-cap33-revoke-sponsorship-signer",
+            "mainnet-cap46-auth-root-deploys-contract"
+          ],
+          "ledger": 15
+        }
+      ]
+    },
+    {
+      "type": "GeneralizedTransactionSet",
+      "arms": [
+        {
+          "arm": "v1",
+          "entry": [],
+          "ledger": 18
+        }
+      ]
+    },
+    {
+      "type": "HostFunction",
+      "arms": [
+        {
+          "arm": "invoke_contract",
+          "entry": [
+            "cap46-11-nested-auth-depth-3",
+            "cap67-sac-transfer-to-muxed-account",
+            "cap73-sac-trust-creates-trustline",
+            "cap84-sac-transfer-to-muxed-contract",
+            "mainnet-cap15-fee-bump-inner-bad-auth",
+            "mainnet-cap46-11-auth-tree-depth-4",
+            "mainnet-cap67-event-data-muxed-address",
+            "mainnet-cap73-nested-sac-trust-creates-trustline"
+          ],
+          "ledger": 18
+        },
+        {
+          "arm": "create_contract",
+          "entry": [
+            "mainnet-cap46-06-sac-deploy-from-asset"
+          ],
+          "ledger": 1
+        },
+        {
+          "arm": "upload_contract_wasm",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "create_contract_v2",
+          "entry": [
+            "mainnet-cap46-auth-root-deploys-contract"
+          ],
+          "ledger": 2
+        }
+      ]
+    },
+    {
+      "type": "InflationResult",
+      "arms": [
+        {
+          "arm": "not_time",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "success",
+          "entry": [],
+          "ledger": 0
+        }
+      ]
+    },
+    {
+      "type": "InnerTransactionResultResult",
+      "arms": [
+        {
+          "arm": "tx_too_early",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "tx_too_late",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "tx_missing_operation",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "tx_bad_seq",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "tx_bad_auth",
+          "entry": [
+            "mainnet-cap15-fee-bump-inner-bad-auth"
+          ],
+          "ledger": 1
+        },
+        {
+          "arm": "tx_insufficient_balance",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "tx_no_account",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "tx_insufficient_fee",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "tx_bad_auth_extra",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "tx_internal_error",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "tx_not_supported",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "tx_bad_sponsorship",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "tx_bad_min_seq_age_or_gap",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "tx_malformed",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "tx_soroban_invalid",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "tx_frozen_key_accessed",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "tx_success",
+          "entry": [
+            "mainnet-cap33-revoke-sponsorship-signer",
+            "mainnet-cap46-auth-root-deploys-contract"
+          ],
+          "ledger": 15
+        },
+        {
+          "arm": "tx_failed",
+          "entry": [],
+          "ledger": 6
+        }
+      ]
+    },
+    {
+      "type": "InvokeHostFunctionResult",
+      "arms": [
+        {
+          "arm": "malformed",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "trapped",
+          "entry": [],
+          "ledger": 7
+        },
+        {
+          "arm": "resource_limit_exceeded",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "entry_archived",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "insufficient_refundable_fee",
+          "entry": [],
+          "ledger": 1
+        },
+        {
+          "arm": "success",
+          "entry": [
+            "cap46-11-nested-auth-depth-3",
+            "cap67-sac-transfer-to-muxed-account",
+            "cap73-sac-trust-creates-trustline",
+            "cap84-sac-transfer-to-muxed-contract",
+            "mainnet-cap46-06-sac-deploy-from-asset",
+            "mainnet-cap46-11-auth-tree-depth-4",
+            "mainnet-cap46-auth-root-deploys-contract",
+            "mainnet-cap67-event-data-muxed-address",
+            "mainnet-cap73-nested-sac-trust-creates-trustline"
+          ],
+          "ledger": 18
+        }
+      ]
+    },
+    {
+      "type": "LedgerCloseMeta",
+      "arms": [
+        {
+          "arm": "v0",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "v1",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "v2",
+          "entry": [],
+          "ledger": 18
+        }
+      ]
+    },
+    {
+      "type": "LedgerCloseMetaExt",
+      "arms": [
+        {
+          "arm": "v0",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "v1",
+          "entry": [],
+          "ledger": 18
+        }
+      ]
+    },
+    {
+      "type": "LedgerEntryChange",
+      "arms": [
+        {
+          "arm": "created",
+          "entry": [
+            "cap38-pool-issuers-strkey-vs-bytes-order",
+            "cap73-sac-trust-creates-trustline",
+            "cap84-sac-transfer-to-muxed-contract",
+            "mainnet-cap46-06-sac-deploy-from-asset",
+            "mainnet-cap46-11-auth-tree-depth-4",
+            "mainnet-cap46-auth-root-deploys-contract",
+            "mainnet-cap67-event-data-muxed-address",
+            "mainnet-cap73-nested-sac-trust-creates-trustline"
+          ],
+          "ledger": 18
+        },
+        {
+          "arm": "updated",
+          "entry": [
+            "cap21-preconditions-max-length-vectors",
+            "cap27-payment-muxed-max-id-to-muxed-zero-id",
+            "cap38-pool-issuers-strkey-vs-bytes-order",
+            "cap40-setoptions-signed-payload-signer",
+            "cap46-11-nested-auth-depth-3",
+            "cap67-sac-transfer-to-muxed-account",
+            "cap73-sac-trust-creates-trustline",
+            "cap84-sac-transfer-to-muxed-contract",
+            "mainnet-cap15-fee-bump-inner-bad-auth",
+            "mainnet-cap21-40-extra-signers-signed-payload",
+            "mainnet-cap23-claimable-predicate-or",
+            "mainnet-cap27-muxed-id-above-2-53",
+            "mainnet-cap33-revoke-sponsorship-signer",
+            "mainnet-cap46-06-sac-deploy-from-asset",
+            "mainnet-cap46-11-auth-tree-depth-4",
+            "mainnet-cap46-auth-root-deploys-contract",
+            "mainnet-cap67-event-data-muxed-address",
+            "mainnet-cap73-nested-sac-trust-creates-trustline"
+          ],
+          "ledger": 18
+        },
+        {
+          "arm": "removed",
+          "entry": [
+            "mainnet-cap23-claimable-predicate-or",
+            "mainnet-cap46-11-auth-tree-depth-4"
+          ],
+          "ledger": 14
+        },
+        {
+          "arm": "state",
+          "entry": [
+            "cap21-preconditions-max-length-vectors",
+            "cap27-payment-muxed-max-id-to-muxed-zero-id",
+            "cap38-pool-issuers-strkey-vs-bytes-order",
+            "cap40-setoptions-signed-payload-signer",
+            "cap46-11-nested-auth-depth-3",
+            "cap67-sac-transfer-to-muxed-account",
+            "cap73-sac-trust-creates-trustline",
+            "cap84-sac-transfer-to-muxed-contract",
+            "mainnet-cap15-fee-bump-inner-bad-auth",
+            "mainnet-cap21-40-extra-signers-signed-payload",
+            "mainnet-cap23-claimable-predicate-or",
+            "mainnet-cap27-muxed-id-above-2-53",
+            "mainnet-cap33-revoke-sponsorship-signer",
+            "mainnet-cap46-06-sac-deploy-from-asset",
+            "mainnet-cap46-11-auth-tree-depth-4",
+            "mainnet-cap46-auth-root-deploys-contract",
+            "mainnet-cap67-event-data-muxed-address",
+            "mainnet-cap73-nested-sac-trust-creates-trustline"
+          ],
+          "ledger": 18
+        },
+        {
+          "arm": "restored",
+          "entry": [],
+          "ledger": 2
+        }
+      ]
+    },
+    {
+      "type": "LedgerEntryData",
+      "arms": [
+        {
+          "arm": "account",
+          "entry": [
+            "cap21-preconditions-max-length-vectors",
+            "cap27-payment-muxed-max-id-to-muxed-zero-id",
+            "cap38-pool-issuers-strkey-vs-bytes-order",
+            "cap40-setoptions-signed-payload-signer",
+            "cap46-11-nested-auth-depth-3",
+            "cap67-sac-transfer-to-muxed-account",
+            "cap73-sac-trust-creates-trustline",
+            "cap84-sac-transfer-to-muxed-contract",
+            "mainnet-cap15-fee-bump-inner-bad-auth",
+            "mainnet-cap21-40-extra-signers-signed-payload",
+            "mainnet-cap23-claimable-predicate-or",
+            "mainnet-cap27-muxed-id-above-2-53",
+            "mainnet-cap33-revoke-sponsorship-signer",
+            "mainnet-cap46-06-sac-deploy-from-asset",
+            "mainnet-cap46-11-auth-tree-depth-4",
+            "mainnet-cap46-auth-root-deploys-contract",
+            "mainnet-cap67-event-data-muxed-address",
+            "mainnet-cap73-nested-sac-trust-creates-trustline"
+          ],
+          "ledger": 18
+        },
+        {
+          "arm": "trustline",
+          "entry": [
+            "cap38-pool-issuers-strkey-vs-bytes-order",
+            "cap73-sac-trust-creates-trustline",
+            "mainnet-cap23-claimable-predicate-or",
+            "mainnet-cap33-revoke-sponsorship-signer",
+            "mainnet-cap46-11-auth-tree-depth-4",
+            "mainnet-cap67-event-data-muxed-address",
+            "mainnet-cap73-nested-sac-trust-creates-trustline"
+          ],
+          "ledger": 17
+        },
+        {
+          "arm": "offer",
+          "entry": [],
+          "ledger": 11
+        },
+        {
+          "arm": "data",
+          "entry": [
+            "mainnet-cap27-muxed-id-above-2-53"
+          ],
+          "ledger": 1
+        },
+        {
+          "arm": "claimable_balance",
+          "entry": [
+            "mainnet-cap23-claimable-predicate-or"
+          ],
+          "ledger": 5
+        },
+        {
+          "arm": "liquidity_pool",
+          "entry": [
+            "cap38-pool-issuers-strkey-vs-bytes-order"
+          ],
+          "ledger": 14
+        },
+        {
+          "arm": "contract_data",
+          "entry": [
+            "cap46-11-nested-auth-depth-3",
+            "cap84-sac-transfer-to-muxed-contract",
+            "mainnet-cap46-06-sac-deploy-from-asset",
+            "mainnet-cap46-11-auth-tree-depth-4",
+            "mainnet-cap46-auth-root-deploys-contract",
+            "mainnet-cap67-event-data-muxed-address",
+            "mainnet-cap73-nested-sac-trust-creates-trustline"
+          ],
+          "ledger": 18
+        },
+        {
+          "arm": "contract_code",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "config_setting",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "ttl",
+          "entry": [
+            "cap84-sac-transfer-to-muxed-contract",
+            "mainnet-cap46-06-sac-deploy-from-asset",
+            "mainnet-cap46-11-auth-tree-depth-4",
+            "mainnet-cap46-auth-root-deploys-contract",
+            "mainnet-cap67-event-data-muxed-address",
+            "mainnet-cap73-nested-sac-trust-creates-trustline"
+          ],
+          "ledger": 18
+        }
+      ]
+    },
+    {
+      "type": "LedgerEntryExt",
+      "arms": [
+        {
+          "arm": "v0",
+          "entry": [
+            "cap21-preconditions-max-length-vectors",
+            "cap27-payment-muxed-max-id-to-muxed-zero-id",
+            "cap38-pool-issuers-strkey-vs-bytes-order",
+            "cap40-setoptions-signed-payload-signer",
+            "cap46-11-nested-auth-depth-3",
+            "cap67-sac-transfer-to-muxed-account",
+            "cap73-sac-trust-creates-trustline",
+            "cap84-sac-transfer-to-muxed-contract",
+            "mainnet-cap15-fee-bump-inner-bad-auth",
+            "mainnet-cap21-40-extra-signers-signed-payload",
+            "mainnet-cap23-claimable-predicate-or",
+            "mainnet-cap27-muxed-id-above-2-53",
+            "mainnet-cap33-revoke-sponsorship-signer",
+            "mainnet-cap46-06-sac-deploy-from-asset",
+            "mainnet-cap46-11-auth-tree-depth-4",
+            "mainnet-cap46-auth-root-deploys-contract",
+            "mainnet-cap67-event-data-muxed-address",
+            "mainnet-cap73-nested-sac-trust-creates-trustline"
+          ],
+          "ledger": 18
+        },
+        {
+          "arm": "v1",
+          "entry": [
+            "mainnet-cap15-fee-bump-inner-bad-auth",
+            "mainnet-cap23-claimable-predicate-or",
+            "mainnet-cap33-revoke-sponsorship-signer",
+            "mainnet-cap67-event-data-muxed-address"
+          ],
+          "ledger": 11
+        }
+      ]
+    },
+    {
+      "type": "LedgerHeaderExt",
+      "arms": [
+        {
+          "arm": "v0",
+          "entry": [
+            "cap21-preconditions-max-length-vectors",
+            "cap27-payment-muxed-max-id-to-muxed-zero-id",
+            "cap38-pool-issuers-strkey-vs-bytes-order",
+            "cap40-setoptions-signed-payload-signer",
+            "cap46-11-nested-auth-depth-3",
+            "cap67-sac-transfer-to-muxed-account",
+            "cap73-sac-trust-creates-trustline",
+            "cap84-sac-transfer-to-muxed-contract",
+            "cap88-ledger-close-time-ms",
+            "mainnet-cap15-fee-bump-inner-bad-auth",
+            "mainnet-cap21-40-extra-signers-signed-payload",
+            "mainnet-cap23-claimable-predicate-or",
+            "mainnet-cap27-muxed-id-above-2-53",
+            "mainnet-cap33-revoke-sponsorship-signer",
+            "mainnet-cap46-06-sac-deploy-from-asset",
+            "mainnet-cap46-11-auth-tree-depth-4",
+            "mainnet-cap46-auth-root-deploys-contract",
+            "mainnet-cap67-event-data-muxed-address",
+            "mainnet-cap73-nested-sac-trust-creates-trustline"
+          ],
+          "ledger": 18
+        },
+        {
+          "arm": "v1",
+          "entry": [],
+          "ledger": 0
+        }
+      ]
+    },
+    {
+      "type": "LedgerKey",
+      "arms": [
+        {
+          "arm": "account",
+          "entry": [
+            "cap46-11-nested-auth-depth-3",
+            "cap67-sac-transfer-to-muxed-account",
+            "cap73-sac-trust-creates-trustline",
+            "cap84-sac-transfer-to-muxed-contract",
+            "mainnet-cap33-revoke-sponsorship-signer",
+            "mainnet-cap46-auth-root-deploys-contract",
+            "mainnet-cap73-nested-sac-trust-creates-trustline"
+          ],
+          "ledger": 16
+        },
+        {
+          "arm": "trustline",
+          "entry": [
+            "cap73-sac-trust-creates-trustline",
+            "mainnet-cap15-fee-bump-inner-bad-auth",
+            "mainnet-cap33-revoke-sponsorship-signer",
+            "mainnet-cap46-11-auth-tree-depth-4",
+            "mainnet-cap67-event-data-muxed-address",
+            "mainnet-cap73-nested-sac-trust-creates-trustline"
+          ],
+          "ledger": 17
+        },
+        {
+          "arm": "offer",
+          "entry": [],
+          "ledger": 10
+        },
+        {
+          "arm": "data",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "claimable_balance",
+          "entry": [
+            "mainnet-cap23-claimable-predicate-or"
+          ],
+          "ledger": 4
+        },
+        {
+          "arm": "liquidity_pool",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "contract_data",
+          "entry": [
+            "cap46-11-nested-auth-depth-3",
+            "cap67-sac-transfer-to-muxed-account",
+            "cap73-sac-trust-creates-trustline",
+            "cap84-sac-transfer-to-muxed-contract",
+            "mainnet-cap15-fee-bump-inner-bad-auth",
+            "mainnet-cap46-06-sac-deploy-from-asset",
+            "mainnet-cap46-11-auth-tree-depth-4",
+            "mainnet-cap46-auth-root-deploys-contract",
+            "mainnet-cap67-event-data-muxed-address",
+            "mainnet-cap73-nested-sac-trust-creates-trustline"
+          ],
+          "ledger": 18
+        },
+        {
+          "arm": "contract_code",
+          "entry": [
+            "cap46-11-nested-auth-depth-3",
+            "mainnet-cap46-11-auth-tree-depth-4",
+            "mainnet-cap46-auth-root-deploys-contract",
+            "mainnet-cap67-event-data-muxed-address",
+            "mainnet-cap73-nested-sac-trust-creates-trustline"
+          ],
+          "ledger": 18
+        },
+        {
+          "arm": "config_setting",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "ttl",
+          "entry": [
+            "mainnet-cap46-11-auth-tree-depth-4"
+          ],
+          "ledger": 14
+        }
+      ]
+    },
+    {
+      "type": "LedgerUpgrade",
+      "arms": [
+        {
+          "arm": "version",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "base_fee",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "max_tx_set_size",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "base_reserve",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "flags",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "config",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "max_soroban_tx_set_size",
+          "entry": [],
+          "ledger": 0
+        }
+      ]
+    },
+    {
+      "type": "LiquidityPoolEntryBody",
+      "arms": [
+        {
+          "arm": "liquidity_pool_constant_product",
+          "entry": [
+            "cap38-pool-issuers-strkey-vs-bytes-order"
+          ],
+          "ledger": 14
+        }
+      ]
+    },
+    {
+      "type": "LiquidityPoolParameters",
+      "arms": [
+        {
+          "arm": "liquidity_pool_constant_product",
+          "entry": [
+            "cap38-pool-issuers-strkey-vs-bytes-order"
+          ],
+          "ledger": 3
+        }
+      ]
+    },
+    {
+      "type": "ManageBuyOfferResult",
+      "arms": [
+        {
+          "arm": "malformed",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "sell_no_trust",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "buy_no_trust",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "sell_not_authorized",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "buy_not_authorized",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "line_full",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "underfunded",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "cross_self",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "sell_no_issuer",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "buy_no_issuer",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "not_found",
+          "entry": [],
+          "ledger": 2
+        },
+        {
+          "arm": "low_reserve",
+          "entry": [],
+          "ledger": 2
+        },
+        {
+          "arm": "success",
+          "entry": [],
+          "ledger": 10
+        }
+      ]
+    },
+    {
+      "type": "ManageOfferSuccessResultOffer",
+      "arms": [
+        {
+          "arm": "deleted",
+          "entry": [],
+          "ledger": 10
+        },
+        {
+          "arm": "created",
+          "entry": [],
+          "ledger": 11
+        },
+        {
+          "arm": "updated",
+          "entry": [],
+          "ledger": 10
+        }
+      ]
+    },
+    {
+      "type": "ManageSellOfferResult",
+      "arms": [
+        {
+          "arm": "malformed",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "sell_no_trust",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "buy_no_trust",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "sell_not_authorized",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "buy_not_authorized",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "line_full",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "underfunded",
+          "entry": [],
+          "ledger": 7
+        },
+        {
+          "arm": "cross_self",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "sell_no_issuer",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "buy_no_issuer",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "not_found",
+          "entry": [],
+          "ledger": 3
+        },
+        {
+          "arm": "low_reserve",
+          "entry": [],
+          "ledger": 4
+        },
+        {
+          "arm": "success",
+          "entry": [],
+          "ledger": 11
+        }
+      ]
+    },
+    {
+      "type": "Memo",
+      "arms": [
+        {
+          "arm": "none",
+          "entry": [
+            "cap27-payment-muxed-max-id-to-muxed-zero-id",
+            "cap38-pool-issuers-strkey-vs-bytes-order",
+            "cap40-setoptions-signed-payload-signer",
+            "cap46-11-nested-auth-depth-3",
+            "cap67-sac-transfer-to-muxed-account",
+            "cap73-sac-trust-creates-trustline",
+            "cap84-sac-transfer-to-muxed-contract",
+            "mainnet-cap15-fee-bump-inner-bad-auth",
+            "mainnet-cap21-40-extra-signers-signed-payload",
+            "mainnet-cap27-muxed-id-above-2-53",
+            "mainnet-cap33-revoke-sponsorship-signer",
+            "mainnet-cap46-06-sac-deploy-from-asset",
+            "mainnet-cap46-11-auth-tree-depth-4",
+            "mainnet-cap46-auth-root-deploys-contract",
+            "mainnet-cap67-event-data-muxed-address",
+            "mainnet-cap73-nested-sac-trust-creates-trustline"
+          ],
+          "ledger": 18
+        },
+        {
+          "arm": "text",
+          "entry": [
+            "cap21-preconditions-max-length-vectors",
+            "mainnet-cap23-claimable-predicate-or"
+          ],
+          "ledger": 11
+        },
+        {
+          "arm": "id",
+          "entry": [],
+          "ledger": 11
+        },
+        {
+          "arm": "hash",
+          "entry": [],
+          "ledger": 6
+        },
+        {
+          "arm": "return",
+          "entry": [],
+          "ledger": 0
+        }
+      ]
+    },
+    {
+      "type": "MuxedAccount",
+      "arms": [
+        {
+          "arm": "ed25519",
+          "entry": [
+            "cap38-pool-issuers-strkey-vs-bytes-order",
+            "cap40-setoptions-signed-payload-signer",
+            "cap46-11-nested-auth-depth-3",
+            "cap67-sac-transfer-to-muxed-account",
+            "cap73-sac-trust-creates-trustline",
+            "cap84-sac-transfer-to-muxed-contract",
+            "mainnet-cap15-fee-bump-inner-bad-auth",
+            "mainnet-cap21-40-extra-signers-signed-payload",
+            "mainnet-cap23-claimable-predicate-or",
+            "mainnet-cap27-muxed-id-above-2-53",
+            "mainnet-cap33-revoke-sponsorship-signer",
+            "mainnet-cap46-06-sac-deploy-from-asset",
+            "mainnet-cap46-11-auth-tree-depth-4",
+            "mainnet-cap46-auth-root-deploys-contract",
+            "mainnet-cap67-event-data-muxed-address",
+            "mainnet-cap73-nested-sac-trust-creates-trustline"
+          ],
+          "ledger": 18
+        },
+        {
+          "arm": "muxed_ed25519",
+          "entry": [
+            "cap21-preconditions-max-length-vectors",
+            "cap27-payment-muxed-max-id-to-muxed-zero-id",
+            "mainnet-cap27-muxed-id-above-2-53"
+          ],
+          "ledger": 4
+        }
+      ]
+    },
+    {
+      "type": "OperationBody",
+      "arms": [
+        {
+          "arm": "inflation",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "end_sponsoring_future_reserves",
+          "entry": [],
+          "ledger": 5
+        },
+        {
+          "arm": "create_account",
+          "entry": [],
+          "ledger": 14
+        },
+        {
+          "arm": "payment",
+          "entry": [
+            "cap21-preconditions-max-length-vectors",
+            "cap27-payment-muxed-max-id-to-muxed-zero-id",
+            "mainnet-cap23-claimable-predicate-or",
+            "mainnet-cap27-muxed-id-above-2-53",
+            "mainnet-cap33-revoke-sponsorship-signer"
+          ],
+          "ledger": 18
+        },
+        {
+          "arm": "path_payment_strict_receive",
+          "entry": [
+            "mainnet-cap21-40-extra-signers-signed-payload"
+          ],
+          "ledger": 11
+        },
+        {
+          "arm": "manage_sell_offer",
+          "entry": [],
+          "ledger": 11
+        },
+        {
+          "arm": "create_passive_sell_offer",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "set_options",
+          "entry": [
+            "cap40-setoptions-signed-payload-signer"
+          ],
+          "ledger": 2
+        },
+        {
+          "arm": "change_trust",
+          "entry": [
+            "cap38-pool-issuers-strkey-vs-bytes-order"
+          ],
+          "ledger": 12
+        },
+        {
+          "arm": "allow_trust",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "account_merge",
+          "entry": [],
+          "ledger": 5
+        },
+        {
+          "arm": "manage_data",
+          "entry": [
+            "mainnet-cap27-muxed-id-above-2-53"
+          ],
+          "ledger": 6
+        },
+        {
+          "arm": "bump_sequence",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "manage_buy_offer",
+          "entry": [],
+          "ledger": 10
+        },
+        {
+          "arm": "path_payment_strict_send",
+          "entry": [],
+          "ledger": 10
+        },
+        {
+          "arm": "create_claimable_balance",
+          "entry": [],
+          "ledger": 10
+        },
+        {
+          "arm": "claim_claimable_balance",
+          "entry": [
+            "mainnet-cap23-claimable-predicate-or"
+          ],
+          "ledger": 5
+        },
+        {
+          "arm": "begin_sponsoring_future_reserves",
+          "entry": [],
+          "ledger": 5
+        },
+        {
+          "arm": "revoke_sponsorship",
+          "entry": [
+            "mainnet-cap33-revoke-sponsorship-signer"
+          ],
+          "ledger": 1
+        },
+        {
+          "arm": "clawback",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "clawback_claimable_balance",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "set_trust_line_flags",
+          "entry": [],
+          "ledger": 2
+        },
+        {
+          "arm": "liquidity_pool_deposit",
+          "entry": [
+            "cap38-pool-issuers-strkey-vs-bytes-order"
+          ],
+          "ledger": 2
+        },
+        {
+          "arm": "liquidity_pool_withdraw",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "invoke_host_function",
+          "entry": [
+            "cap46-11-nested-auth-depth-3",
+            "cap67-sac-transfer-to-muxed-account",
+            "cap73-sac-trust-creates-trustline",
+            "cap84-sac-transfer-to-muxed-contract",
+            "mainnet-cap15-fee-bump-inner-bad-auth",
+            "mainnet-cap46-06-sac-deploy-from-asset",
+            "mainnet-cap46-11-auth-tree-depth-4",
+            "mainnet-cap46-auth-root-deploys-contract",
+            "mainnet-cap67-event-data-muxed-address",
+            "mainnet-cap73-nested-sac-trust-creates-trustline"
+          ],
+          "ledger": 18
+        },
+        {
+          "arm": "extend_footprint_ttl",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "restore_footprint",
+          "entry": [],
+          "ledger": 0
+        }
+      ]
+    },
+    {
+      "type": "OperationResult",
+      "arms": [
+        {
+          "arm": "op_bad_auth",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "op_no_account",
+          "entry": [],
+          "ledger": 1
+        },
+        {
+          "arm": "op_not_supported",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "op_too_many_subentries",
+          "entry": [],
+          "ledger": 5
+        },
+        {
+          "arm": "op_exceeded_work_limit",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "op_too_many_sponsoring",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "op_inner",
+          "entry": [
+            "cap21-preconditions-max-length-vectors",
+            "cap27-payment-muxed-max-id-to-muxed-zero-id",
+            "cap38-pool-issuers-strkey-vs-bytes-order",
+            "cap40-setoptions-signed-payload-signer",
+            "cap46-11-nested-auth-depth-3",
+            "cap67-sac-transfer-to-muxed-account",
+            "cap73-sac-trust-creates-trustline",
+            "cap84-sac-transfer-to-muxed-contract",
+            "mainnet-cap21-40-extra-signers-signed-payload",
+            "mainnet-cap23-claimable-predicate-or",
+            "mainnet-cap27-muxed-id-above-2-53",
+            "mainnet-cap33-revoke-sponsorship-signer",
+            "mainnet-cap46-06-sac-deploy-from-asset",
+            "mainnet-cap46-11-auth-tree-depth-4",
+            "mainnet-cap46-auth-root-deploys-contract",
+            "mainnet-cap67-event-data-muxed-address",
+            "mainnet-cap73-nested-sac-trust-creates-trustline"
+          ],
+          "ledger": 18
+        }
+      ]
+    },
+    {
+      "type": "OperationResultTr",
+      "arms": [
+        {
+          "arm": "create_account",
+          "entry": [],
+          "ledger": 14
+        },
+        {
+          "arm": "payment",
+          "entry": [
+            "cap21-preconditions-max-length-vectors",
+            "cap27-payment-muxed-max-id-to-muxed-zero-id",
+            "mainnet-cap23-claimable-predicate-or",
+            "mainnet-cap27-muxed-id-above-2-53",
+            "mainnet-cap33-revoke-sponsorship-signer"
+          ],
+          "ledger": 18
+        },
+        {
+          "arm": "path_payment_strict_receive",
+          "entry": [
+            "mainnet-cap21-40-extra-signers-signed-payload"
+          ],
+          "ledger": 11
+        },
+        {
+          "arm": "manage_sell_offer",
+          "entry": [],
+          "ledger": 11
+        },
+        {
+          "arm": "create_passive_sell_offer",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "set_options",
+          "entry": [
+            "cap40-setoptions-signed-payload-signer"
+          ],
+          "ledger": 2
+        },
+        {
+          "arm": "change_trust",
+          "entry": [
+            "cap38-pool-issuers-strkey-vs-bytes-order"
+          ],
+          "ledger": 12
+        },
+        {
+          "arm": "allow_trust",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "account_merge",
+          "entry": [],
+          "ledger": 5
+        },
+        {
+          "arm": "inflation",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "manage_data",
+          "entry": [
+            "mainnet-cap27-muxed-id-above-2-53"
+          ],
+          "ledger": 1
+        },
+        {
+          "arm": "bump_sequence",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "manage_buy_offer",
+          "entry": [],
+          "ledger": 10
+        },
+        {
+          "arm": "path_payment_strict_send",
+          "entry": [],
+          "ledger": 10
+        },
+        {
+          "arm": "create_claimable_balance",
+          "entry": [],
+          "ledger": 10
+        },
+        {
+          "arm": "claim_claimable_balance",
+          "entry": [
+            "mainnet-cap23-claimable-predicate-or"
+          ],
+          "ledger": 5
+        },
+        {
+          "arm": "begin_sponsoring_future_reserves",
+          "entry": [],
+          "ledger": 5
+        },
+        {
+          "arm": "end_sponsoring_future_reserves",
+          "entry": [],
+          "ledger": 5
+        },
+        {
+          "arm": "revoke_sponsorship",
+          "entry": [
+            "mainnet-cap33-revoke-sponsorship-signer"
+          ],
+          "ledger": 1
+        },
+        {
+          "arm": "clawback",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "clawback_claimable_balance",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "set_trust_line_flags",
+          "entry": [],
+          "ledger": 2
+        },
+        {
+          "arm": "liquidity_pool_deposit",
+          "entry": [
+            "cap38-pool-issuers-strkey-vs-bytes-order"
+          ],
+          "ledger": 2
+        },
+        {
+          "arm": "liquidity_pool_withdraw",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "invoke_host_function",
+          "entry": [
+            "cap46-11-nested-auth-depth-3",
+            "cap67-sac-transfer-to-muxed-account",
+            "cap73-sac-trust-creates-trustline",
+            "cap84-sac-transfer-to-muxed-contract",
+            "mainnet-cap46-06-sac-deploy-from-asset",
+            "mainnet-cap46-11-auth-tree-depth-4",
+            "mainnet-cap46-auth-root-deploys-contract",
+            "mainnet-cap67-event-data-muxed-address",
+            "mainnet-cap73-nested-sac-trust-creates-trustline"
+          ],
+          "ledger": 18
+        },
+        {
+          "arm": "extend_footprint_ttl",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "restore_footprint",
+          "entry": [],
+          "ledger": 0
+        }
+      ]
+    },
+    {
+      "type": "PathPaymentStrictReceiveResult",
+      "arms": [
+        {
+          "arm": "malformed",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "underfunded",
+          "entry": [],
+          "ledger": 1
+        },
+        {
+          "arm": "src_no_trust",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "src_not_authorized",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "no_destination",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "no_trust",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "not_authorized",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "line_full",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "too_few_offers",
+          "entry": [],
+          "ledger": 2
+        },
+        {
+          "arm": "offer_cross_self",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "over_sendmax",
+          "entry": [
+            "mainnet-cap21-40-extra-signers-signed-payload"
+          ],
+          "ledger": 10
+        },
+        {
+          "arm": "success",
+          "entry": [],
+          "ledger": 4
+        },
+        {
+          "arm": "no_issuer",
+          "entry": [],
+          "ledger": 0
+        }
+      ]
+    },
+    {
+      "type": "PathPaymentStrictSendResult",
+      "arms": [
+        {
+          "arm": "malformed",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "underfunded",
+          "entry": [],
+          "ledger": 3
+        },
+        {
+          "arm": "src_no_trust",
+          "entry": [],
+          "ledger": 1
+        },
+        {
+          "arm": "src_not_authorized",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "no_destination",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "no_trust",
+          "entry": [],
+          "ledger": 1
+        },
+        {
+          "arm": "not_authorized",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "line_full",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "too_few_offers",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "offer_cross_self",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "under_destmin",
+          "entry": [],
+          "ledger": 10
+        },
+        {
+          "arm": "success",
+          "entry": [],
+          "ledger": 9
+        },
+        {
+          "arm": "no_issuer",
+          "entry": [],
+          "ledger": 0
+        }
+      ]
+    },
+    {
+      "type": "Preconditions",
+      "arms": [
+        {
+          "arm": "none",
+          "entry": [
+            "mainnet-cap27-muxed-id-above-2-53",
+            "mainnet-cap46-06-sac-deploy-from-asset"
+          ],
+          "ledger": 15
+        },
+        {
+          "arm": "time",
+          "entry": [
+            "cap27-payment-muxed-max-id-to-muxed-zero-id",
+            "cap38-pool-issuers-strkey-vs-bytes-order",
+            "cap40-setoptions-signed-payload-signer",
+            "cap46-11-nested-auth-depth-3",
+            "cap67-sac-transfer-to-muxed-account",
+            "cap73-sac-trust-creates-trustline",
+            "cap84-sac-transfer-to-muxed-contract",
+            "mainnet-cap15-fee-bump-inner-bad-auth",
+            "mainnet-cap23-claimable-predicate-or",
+            "mainnet-cap33-revoke-sponsorship-signer",
+            "mainnet-cap46-11-auth-tree-depth-4",
+            "mainnet-cap46-auth-root-deploys-contract",
+            "mainnet-cap67-event-data-muxed-address",
+            "mainnet-cap73-nested-sac-trust-creates-trustline"
+          ],
+          "ledger": 18
+        },
+        {
+          "arm": "v2",
+          "entry": [
+            "cap21-preconditions-max-length-vectors",
+            "mainnet-cap21-40-extra-signers-signed-payload"
+          ],
+          "ledger": 11
+        }
+      ]
+    },
+    {
+      "type": "RevokeSponsorshipOp",
+      "arms": [
+        {
+          "arm": "ledger_entry",
+          "entry": [
+            "mainnet-cap33-revoke-sponsorship-signer"
+          ],
+          "ledger": 1
+        },
+        {
+          "arm": "signer",
+          "entry": [
+            "mainnet-cap33-revoke-sponsorship-signer"
+          ],
+          "ledger": 1
+        }
+      ]
+    },
+    {
+      "type": "ScAddress",
+      "arms": [
+        {
+          "arm": "account",
+          "entry": [
+            "cap21-preconditions-max-length-vectors",
+            "cap27-payment-muxed-max-id-to-muxed-zero-id",
+            "cap38-pool-issuers-strkey-vs-bytes-order",
+            "cap40-setoptions-signed-payload-signer",
+            "cap46-11-nested-auth-depth-3",
+            "cap67-sac-transfer-to-muxed-account",
+            "cap73-sac-trust-creates-trustline",
+            "cap84-sac-transfer-to-muxed-contract",
+            "mainnet-cap15-fee-bump-inner-bad-auth",
+            "mainnet-cap21-40-extra-signers-signed-payload",
+            "mainnet-cap23-claimable-predicate-or",
+            "mainnet-cap27-muxed-id-above-2-53",
+            "mainnet-cap33-revoke-sponsorship-signer",
+            "mainnet-cap46-06-sac-deploy-from-asset",
+            "mainnet-cap46-11-auth-tree-depth-4",
+            "mainnet-cap46-auth-root-deploys-contract",
+            "mainnet-cap67-event-data-muxed-address",
+            "mainnet-cap73-nested-sac-trust-creates-trustline"
+          ],
+          "ledger": 18
+        },
+        {
+          "arm": "contract",
+          "entry": [
+            "cap46-11-nested-auth-depth-3",
+            "cap67-sac-transfer-to-muxed-account",
+            "cap73-sac-trust-creates-trustline",
+            "cap84-sac-transfer-to-muxed-contract",
+            "mainnet-cap15-fee-bump-inner-bad-auth",
+            "mainnet-cap46-06-sac-deploy-from-asset",
+            "mainnet-cap46-11-auth-tree-depth-4",
+            "mainnet-cap46-auth-root-deploys-contract",
+            "mainnet-cap67-event-data-muxed-address",
+            "mainnet-cap73-nested-sac-trust-creates-trustline"
+          ],
+          "ledger": 18
+        },
+        {
+          "arm": "muxed_account",
+          "entry": [
+            "cap67-sac-transfer-to-muxed-account",
+            "mainnet-cap67-event-data-muxed-address"
+          ],
+          "ledger": 2
+        },
+        {
+          "arm": "claimable_balance",
+          "entry": [
+            "mainnet-cap23-claimable-predicate-or"
+          ],
+          "ledger": 5
+        },
+        {
+          "arm": "liquidity_pool",
+          "entry": [
+            "cap38-pool-issuers-strkey-vs-bytes-order"
+          ],
+          "ledger": 12
+        },
+        {
+          "arm": "muxed_contract",
+          "entry": [
+            "cap84-sac-transfer-to-muxed-contract"
+          ],
+          "ledger": 1
+        }
+      ]
+    },
+    {
+      "type": "ScError",
+      "arms": [
+        {
+          "arm": "contract",
+          "entry": [],
+          "ledger": 5
+        },
+        {
+          "arm": "wasm_vm",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "context",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "storage",
+          "entry": [],
+          "ledger": 4
+        },
+        {
+          "arm": "object",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "crypto",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "events",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "budget",
+          "entry": [],
+          "ledger": 1
+        },
+        {
+          "arm": "value",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "auth",
+          "entry": [],
+          "ledger": 3
+        }
+      ]
+    },
+    {
+      "type": "ScVal",
+      "arms": [
+        {
+          "arm": "void",
+          "entry": [
+            "cap46-11-nested-auth-depth-3",
+            "cap67-sac-transfer-to-muxed-account",
+            "cap73-sac-trust-creates-trustline",
+            "cap84-sac-transfer-to-muxed-contract",
+            "mainnet-cap46-06-sac-deploy-from-asset",
+            "mainnet-cap46-11-auth-tree-depth-4",
+            "mainnet-cap46-auth-root-deploys-contract",
+            "mainnet-cap67-event-data-muxed-address",
+            "mainnet-cap73-nested-sac-trust-creates-trustline"
+          ],
+          "ledger": 18
+        },
+        {
+          "arm": "ledger_key_contract_instance",
+          "entry": [
+            "cap46-11-nested-auth-depth-3",
+            "cap67-sac-transfer-to-muxed-account",
+            "cap73-sac-trust-creates-trustline",
+            "cap84-sac-transfer-to-muxed-contract",
+            "mainnet-cap15-fee-bump-inner-bad-auth",
+            "mainnet-cap46-06-sac-deploy-from-asset",
+            "mainnet-cap46-11-auth-tree-depth-4",
+            "mainnet-cap46-auth-root-deploys-contract",
+            "mainnet-cap67-event-data-muxed-address",
+            "mainnet-cap73-nested-sac-trust-creates-trustline"
+          ],
+          "ledger": 18
+        },
+        {
+          "arm": "bool",
+          "entry": [
+            "cap46-11-nested-auth-depth-3",
+            "cap84-sac-transfer-to-muxed-contract",
+            "mainnet-cap46-11-auth-tree-depth-4",
+            "mainnet-cap67-event-data-muxed-address",
+            "mainnet-cap73-nested-sac-trust-creates-trustline"
+          ],
+          "ledger": 16
+        },
+        {
+          "arm": "error",
+          "entry": [],
+          "ledger": 8
+        },
+        {
+          "arm": "u32",
+          "entry": [
+            "cap46-11-nested-auth-depth-3",
+            "mainnet-cap46-06-sac-deploy-from-asset",
+            "mainnet-cap46-11-auth-tree-depth-4",
+            "mainnet-cap46-auth-root-deploys-contract",
+            "mainnet-cap67-event-data-muxed-address",
+            "mainnet-cap73-nested-sac-trust-creates-trustline",
+            "scval-map-key-collision"
+          ],
+          "ledger": 18
+        },
+        {
+          "arm": "i32",
+          "entry": [
+            "mainnet-cap46-11-auth-tree-depth-4"
+          ],
+          "ledger": 7
+        },
+        {
+          "arm": "u64",
+          "entry": [
+            "cap21-preconditions-max-length-vectors",
+            "cap27-payment-muxed-max-id-to-muxed-zero-id",
+            "cap46-11-nested-auth-depth-3",
+            "cap67-sac-transfer-to-muxed-account",
+            "cap73-sac-trust-creates-trustline",
+            "cap84-sac-transfer-to-muxed-contract",
+            "mainnet-cap27-muxed-id-above-2-53",
+            "mainnet-cap46-06-sac-deploy-from-asset",
+            "mainnet-cap46-11-auth-tree-depth-4",
+            "mainnet-cap46-auth-root-deploys-contract",
+            "mainnet-cap67-event-data-muxed-address",
+            "mainnet-cap73-nested-sac-trust-creates-trustline"
+          ],
+          "ledger": 18
+        },
+        {
+          "arm": "i64",
+          "entry": [
+            "mainnet-cap46-11-auth-tree-depth-4"
+          ],
+          "ledger": 1
+        },
+        {
+          "arm": "timepoint",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "duration",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "u128",
+          "entry": [
+            "mainnet-cap46-11-auth-tree-depth-4",
+            "mainnet-cap73-nested-sac-trust-creates-trustline"
+          ],
+          "ledger": 12
+        },
+        {
+          "arm": "i128",
+          "entry": [
+            "cap21-preconditions-max-length-vectors",
+            "cap27-payment-muxed-max-id-to-muxed-zero-id",
+            "cap38-pool-issuers-strkey-vs-bytes-order",
+            "cap40-setoptions-signed-payload-signer",
+            "cap46-11-nested-auth-depth-3",
+            "cap67-sac-transfer-to-muxed-account",
+            "cap73-sac-trust-creates-trustline",
+            "cap84-sac-transfer-to-muxed-contract",
+            "mainnet-cap15-fee-bump-inner-bad-auth",
+            "mainnet-cap21-40-extra-signers-signed-payload",
+            "mainnet-cap23-claimable-predicate-or",
+            "mainnet-cap27-muxed-id-above-2-53",
+            "mainnet-cap33-revoke-sponsorship-signer",
+            "mainnet-cap46-06-sac-deploy-from-asset",
+            "mainnet-cap46-11-auth-tree-depth-4",
+            "mainnet-cap46-auth-root-deploys-contract",
+            "mainnet-cap67-event-data-muxed-address",
+            "mainnet-cap73-nested-sac-trust-creates-trustline"
+          ],
+          "ledger": 18
+        },
+        {
+          "arm": "u256",
+          "entry": [
+            "mainnet-cap46-11-auth-tree-depth-4"
+          ],
+          "ledger": 6
+        },
+        {
+          "arm": "i256",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "bytes",
+          "entry": [
+            "cap46-11-nested-auth-depth-3",
+            "cap67-sac-transfer-to-muxed-account",
+            "cap73-sac-trust-creates-trustline",
+            "cap84-sac-transfer-to-muxed-contract",
+            "mainnet-cap46-06-sac-deploy-from-asset",
+            "mainnet-cap46-11-auth-tree-depth-4",
+            "mainnet-cap46-auth-root-deploys-contract",
+            "mainnet-cap67-event-data-muxed-address",
+            "mainnet-cap73-nested-sac-trust-creates-trustline"
+          ],
+          "ledger": 18
+        },
+        {
+          "arm": "string",
+          "entry": [
+            "cap21-preconditions-max-length-vectors",
+            "cap27-payment-muxed-max-id-to-muxed-zero-id",
+            "cap38-pool-issuers-strkey-vs-bytes-order",
+            "cap46-11-nested-auth-depth-3",
+            "cap67-sac-transfer-to-muxed-account",
+            "cap84-sac-transfer-to-muxed-contract",
+            "mainnet-cap23-claimable-predicate-or",
+            "mainnet-cap27-muxed-id-above-2-53",
+            "mainnet-cap33-revoke-sponsorship-signer",
+            "mainnet-cap46-06-sac-deploy-from-asset",
+            "mainnet-cap46-11-auth-tree-depth-4",
+            "mainnet-cap46-auth-root-deploys-contract",
+            "mainnet-cap67-event-data-muxed-address",
+            "mainnet-cap73-nested-sac-trust-creates-trustline"
+          ],
+          "ledger": 18
+        },
+        {
+          "arm": "symbol",
+          "entry": [
+            "cap21-preconditions-max-length-vectors",
+            "cap27-payment-muxed-max-id-to-muxed-zero-id",
+            "cap38-pool-issuers-strkey-vs-bytes-order",
+            "cap40-setoptions-signed-payload-signer",
+            "cap46-11-nested-auth-depth-3",
+            "cap67-sac-transfer-to-muxed-account",
+            "cap73-sac-trust-creates-trustline",
+            "cap84-sac-transfer-to-muxed-contract",
+            "mainnet-cap15-fee-bump-inner-bad-auth",
+            "mainnet-cap21-40-extra-signers-signed-payload",
+            "mainnet-cap23-claimable-predicate-or",
+            "mainnet-cap27-muxed-id-above-2-53",
+            "mainnet-cap33-revoke-sponsorship-signer",
+            "mainnet-cap46-06-sac-deploy-from-asset",
+            "mainnet-cap46-11-auth-tree-depth-4",
+            "mainnet-cap46-auth-root-deploys-contract",
+            "mainnet-cap67-event-data-muxed-address",
+            "mainnet-cap73-nested-sac-trust-creates-trustline",
+            "scval-map-key-collision"
+          ],
+          "ledger": 18
+        },
+        {
+          "arm": "vec",
+          "entry": [
+            "cap46-11-nested-auth-depth-3",
+            "cap67-sac-transfer-to-muxed-account",
+            "cap84-sac-transfer-to-muxed-contract",
+            "mainnet-cap15-fee-bump-inner-bad-auth",
+            "mainnet-cap46-06-sac-deploy-from-asset",
+            "mainnet-cap46-11-auth-tree-depth-4",
+            "mainnet-cap46-auth-root-deploys-contract",
+            "mainnet-cap67-event-data-muxed-address",
+            "mainnet-cap73-nested-sac-trust-creates-trustline"
+          ],
+          "ledger": 18
+        },
+        {
+          "arm": "map",
+          "entry": [
+            "cap21-preconditions-max-length-vectors",
+            "cap27-payment-muxed-max-id-to-muxed-zero-id",
+            "cap46-11-nested-auth-depth-3",
+            "cap67-sac-transfer-to-muxed-account",
+            "cap84-sac-transfer-to-muxed-contract",
+            "mainnet-cap23-claimable-predicate-or",
+            "mainnet-cap27-muxed-id-above-2-53",
+            "mainnet-cap46-06-sac-deploy-from-asset",
+            "mainnet-cap46-11-auth-tree-depth-4",
+            "mainnet-cap46-auth-root-deploys-contract",
+            "mainnet-cap67-event-data-muxed-address",
+            "mainnet-cap73-nested-sac-trust-creates-trustline",
+            "scval-map-key-collision"
+          ],
+          "ledger": 18
+        },
+        {
+          "arm": "address",
+          "entry": [
+            "cap21-preconditions-max-length-vectors",
+            "cap27-payment-muxed-max-id-to-muxed-zero-id",
+            "cap38-pool-issuers-strkey-vs-bytes-order",
+            "cap40-setoptions-signed-payload-signer",
+            "cap46-11-nested-auth-depth-3",
+            "cap67-sac-transfer-to-muxed-account",
+            "cap73-sac-trust-creates-trustline",
+            "cap84-sac-transfer-to-muxed-contract",
+            "mainnet-cap15-fee-bump-inner-bad-auth",
+            "mainnet-cap21-40-extra-signers-signed-payload",
+            "mainnet-cap23-claimable-predicate-or",
+            "mainnet-cap27-muxed-id-above-2-53",
+            "mainnet-cap33-revoke-sponsorship-signer",
+            "mainnet-cap46-06-sac-deploy-from-asset",
+            "mainnet-cap46-11-auth-tree-depth-4",
+            "mainnet-cap46-auth-root-deploys-contract",
+            "mainnet-cap67-event-data-muxed-address",
+            "mainnet-cap73-nested-sac-trust-creates-trustline"
+          ],
+          "ledger": 18
+        },
+        {
+          "arm": "contract_instance",
+          "entry": [
+            "cap46-11-nested-auth-depth-3",
+            "mainnet-cap46-06-sac-deploy-from-asset",
+            "mainnet-cap46-11-auth-tree-depth-4",
+            "mainnet-cap46-auth-root-deploys-contract"
+          ],
+          "ledger": 17
+        },
+        {
+          "arm": "ledger_key_nonce",
+          "entry": [
+            "mainnet-cap46-auth-root-deploys-contract"
+          ],
+          "ledger": 10
+        },
+        {
+          "arm": "executable_tag",
+          "entry": [],
+          "ledger": 0
+        }
+      ]
+    },
+    {
+      "type": "ScpHistoryEntry",
+      "arms": [
+        {
+          "arm": "v0",
+          "entry": [],
+          "ledger": 0
+        }
+      ]
+    },
+    {
+      "type": "ScpStatementPledges",
+      "arms": [
+        {
+          "arm": "prepare",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "confirm",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "externalize",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "nominate",
+          "entry": [],
+          "ledger": 0
+        }
+      ]
+    },
+    {
+      "type": "SignerKey",
+      "arms": [
+        {
+          "arm": "ed25519",
+          "entry": [
+            "cap21-preconditions-max-length-vectors",
+            "mainnet-cap15-fee-bump-inner-bad-auth",
+            "mainnet-cap23-claimable-predicate-or",
+            "mainnet-cap33-revoke-sponsorship-signer",
+            "mainnet-cap67-event-data-muxed-address",
+            "mainnet-cap73-nested-sac-trust-creates-trustline"
+          ],
+          "ledger": 12
+        },
+        {
+          "arm": "pre_auth_tx",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "hash_x",
+          "entry": [],
+          "ledger": 4
+        },
+        {
+          "arm": "ed25519_signed_payload",
+          "entry": [
+            "cap21-preconditions-max-length-vectors",
+            "cap40-setoptions-signed-payload-signer",
+            "mainnet-cap21-40-extra-signers-signed-payload"
+          ],
+          "ledger": 3
+        }
+      ]
+    },
+    {
+      "type": "SorobanAuthorizedFunction",
+      "arms": [
+        {
+          "arm": "contract_fn",
+          "entry": [
+            "cap46-11-nested-auth-depth-3",
+            "cap67-sac-transfer-to-muxed-account",
+            "cap73-sac-trust-creates-trustline",
+            "cap84-sac-transfer-to-muxed-contract",
+            "mainnet-cap15-fee-bump-inner-bad-auth",
+            "mainnet-cap46-11-auth-tree-depth-4",
+            "mainnet-cap73-nested-sac-trust-creates-trustline"
+          ],
+          "ledger": 17
+        },
+        {
+          "arm": "create_contract_host_fn",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "create_contract_v2_host_fn",
+          "entry": [
+            "mainnet-cap46-auth-root-deploys-contract"
+          ],
+          "ledger": 2
+        }
+      ]
+    },
+    {
+      "type": "SorobanCredentials",
+      "arms": [
+        {
+          "arm": "source_account",
+          "entry": [
+            "cap46-11-nested-auth-depth-3",
+            "cap67-sac-transfer-to-muxed-account",
+            "cap73-sac-trust-creates-trustline",
+            "cap84-sac-transfer-to-muxed-contract",
+            "mainnet-cap15-fee-bump-inner-bad-auth",
+            "mainnet-cap46-11-auth-tree-depth-4",
+            "mainnet-cap73-nested-sac-trust-creates-trustline"
+          ],
+          "ledger": 17
+        },
+        {
+          "arm": "address",
+          "entry": [
+            "mainnet-cap46-auth-root-deploys-contract"
+          ],
+          "ledger": 8
+        },
+        {
+          "arm": "address_v2",
+          "entry": [],
+          "ledger": 3
+        },
+        {
+          "arm": "address_with_delegates",
+          "entry": [],
+          "ledger": 0
+        }
+      ]
+    },
+    {
+      "type": "SorobanTransactionDataExt",
+      "arms": [
+        {
+          "arm": "v0",
+          "entry": [
+            "cap46-11-nested-auth-depth-3",
+            "cap67-sac-transfer-to-muxed-account",
+            "cap73-sac-trust-creates-trustline",
+            "cap84-sac-transfer-to-muxed-contract",
+            "mainnet-cap15-fee-bump-inner-bad-auth",
+            "mainnet-cap46-06-sac-deploy-from-asset",
+            "mainnet-cap46-11-auth-tree-depth-4",
+            "mainnet-cap46-auth-root-deploys-contract",
+            "mainnet-cap67-event-data-muxed-address",
+            "mainnet-cap73-nested-sac-trust-creates-trustline"
+          ],
+          "ledger": 18
+        },
+        {
+          "arm": "v1",
+          "entry": [],
+          "ledger": 2
+        }
+      ]
+    },
+    {
+      "type": "SorobanTransactionMetaExt",
+      "arms": [
+        {
+          "arm": "v0",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "v1",
+          "entry": [
+            "cap46-11-nested-auth-depth-3",
+            "cap67-sac-transfer-to-muxed-account",
+            "cap73-sac-trust-creates-trustline",
+            "cap84-sac-transfer-to-muxed-contract",
+            "mainnet-cap15-fee-bump-inner-bad-auth",
+            "mainnet-cap46-06-sac-deploy-from-asset",
+            "mainnet-cap46-11-auth-tree-depth-4",
+            "mainnet-cap46-auth-root-deploys-contract",
+            "mainnet-cap67-event-data-muxed-address",
+            "mainnet-cap73-nested-sac-trust-creates-trustline"
+          ],
+          "ledger": 18
+        }
+      ]
+    },
+    {
+      "type": "StellarValueExt",
+      "arms": [
+        {
+          "arm": "basic",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "signed",
+          "entry": [
+            "cap40-setoptions-signed-payload-signer",
+            "mainnet-cap15-fee-bump-inner-bad-auth",
+            "mainnet-cap21-40-extra-signers-signed-payload",
+            "mainnet-cap23-claimable-predicate-or",
+            "mainnet-cap27-muxed-id-above-2-53",
+            "mainnet-cap33-revoke-sponsorship-signer",
+            "mainnet-cap46-06-sac-deploy-from-asset",
+            "mainnet-cap46-11-auth-tree-depth-4",
+            "mainnet-cap46-auth-root-deploys-contract",
+            "mainnet-cap67-event-data-muxed-address",
+            "mainnet-cap73-nested-sac-trust-creates-trustline"
+          ],
+          "ledger": 11
+        },
+        {
+          "arm": "empty_tx_set",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "signed_ms",
+          "entry": [
+            "cap21-preconditions-max-length-vectors",
+            "cap27-payment-muxed-max-id-to-muxed-zero-id",
+            "cap38-pool-issuers-strkey-vs-bytes-order",
+            "cap46-11-nested-auth-depth-3",
+            "cap67-sac-transfer-to-muxed-account",
+            "cap73-sac-trust-creates-trustline",
+            "cap84-sac-transfer-to-muxed-contract",
+            "cap88-ledger-close-time-ms"
+          ],
+          "ledger": 7
+        },
+        {
+          "arm": "empty_tx_set_ms",
+          "entry": [],
+          "ledger": 0
+        }
+      ]
+    },
+    {
+      "type": "TransactionEnvelope",
+      "arms": [
+        {
+          "arm": "tx_v0",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "tx",
+          "entry": [
+            "cap21-preconditions-max-length-vectors",
+            "cap27-payment-muxed-max-id-to-muxed-zero-id",
+            "cap38-pool-issuers-strkey-vs-bytes-order",
+            "cap40-setoptions-signed-payload-signer",
+            "cap46-11-nested-auth-depth-3",
+            "cap67-sac-transfer-to-muxed-account",
+            "cap73-sac-trust-creates-trustline",
+            "cap84-sac-transfer-to-muxed-contract",
+            "mainnet-cap21-40-extra-signers-signed-payload",
+            "mainnet-cap23-claimable-predicate-or",
+            "mainnet-cap27-muxed-id-above-2-53",
+            "mainnet-cap46-06-sac-deploy-from-asset",
+            "mainnet-cap46-11-auth-tree-depth-4",
+            "mainnet-cap67-event-data-muxed-address",
+            "mainnet-cap73-nested-sac-trust-creates-trustline"
+          ],
+          "ledger": 18
+        },
+        {
+          "arm": "tx_fee_bump",
+          "entry": [
+            "mainnet-cap15-fee-bump-inner-bad-auth",
+            "mainnet-cap33-revoke-sponsorship-signer",
+            "mainnet-cap46-auth-root-deploys-contract"
+          ],
+          "ledger": 15
+        }
+      ]
+    },
+    {
+      "type": "TransactionExt",
+      "arms": [
+        {
+          "arm": "v0",
+          "entry": [
+            "cap21-preconditions-max-length-vectors",
+            "cap27-payment-muxed-max-id-to-muxed-zero-id",
+            "cap38-pool-issuers-strkey-vs-bytes-order",
+            "cap40-setoptions-signed-payload-signer",
+            "mainnet-cap21-40-extra-signers-signed-payload",
+            "mainnet-cap23-claimable-predicate-or",
+            "mainnet-cap27-muxed-id-above-2-53",
+            "mainnet-cap33-revoke-sponsorship-signer"
+          ],
+          "ledger": 18
+        },
+        {
+          "arm": "v1",
+          "entry": [
+            "cap46-11-nested-auth-depth-3",
+            "cap67-sac-transfer-to-muxed-account",
+            "cap73-sac-trust-creates-trustline",
+            "cap84-sac-transfer-to-muxed-contract",
+            "mainnet-cap15-fee-bump-inner-bad-auth",
+            "mainnet-cap46-06-sac-deploy-from-asset",
+            "mainnet-cap46-11-auth-tree-depth-4",
+            "mainnet-cap46-auth-root-deploys-contract",
+            "mainnet-cap67-event-data-muxed-address",
+            "mainnet-cap73-nested-sac-trust-creates-trustline"
+          ],
+          "ledger": 18
+        }
+      ]
+    },
+    {
+      "type": "TransactionMeta",
+      "arms": [
+        {
+          "arm": "v0",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "v1",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "v2",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "v3",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "v4",
+          "entry": [
+            "cap21-preconditions-max-length-vectors",
+            "cap27-payment-muxed-max-id-to-muxed-zero-id",
+            "cap38-pool-issuers-strkey-vs-bytes-order",
+            "cap40-setoptions-signed-payload-signer",
+            "cap46-11-nested-auth-depth-3",
+            "cap67-sac-transfer-to-muxed-account",
+            "cap73-sac-trust-creates-trustline",
+            "cap84-sac-transfer-to-muxed-contract",
+            "mainnet-cap15-fee-bump-inner-bad-auth",
+            "mainnet-cap21-40-extra-signers-signed-payload",
+            "mainnet-cap23-claimable-predicate-or",
+            "mainnet-cap27-muxed-id-above-2-53",
+            "mainnet-cap33-revoke-sponsorship-signer",
+            "mainnet-cap46-06-sac-deploy-from-asset",
+            "mainnet-cap46-11-auth-tree-depth-4",
+            "mainnet-cap46-auth-root-deploys-contract",
+            "mainnet-cap67-event-data-muxed-address",
+            "mainnet-cap73-nested-sac-trust-creates-trustline"
+          ],
+          "ledger": 18
+        }
+      ]
+    },
+    {
+      "type": "TransactionPhase",
+      "arms": [
+        {
+          "arm": "v0",
+          "entry": [],
+          "ledger": 18
+        },
+        {
+          "arm": "v1",
+          "entry": [],
+          "ledger": 18
+        }
+      ]
+    },
+    {
+      "type": "TransactionResultResult",
+      "arms": [
+        {
+          "arm": "tx_too_early",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "tx_too_late",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "tx_missing_operation",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "tx_bad_seq",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "tx_bad_auth",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "tx_insufficient_balance",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "tx_no_account",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "tx_insufficient_fee",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "tx_bad_auth_extra",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "tx_internal_error",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "tx_not_supported",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "tx_bad_sponsorship",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "tx_bad_min_seq_age_or_gap",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "tx_malformed",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "tx_soroban_invalid",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "tx_frozen_key_accessed",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "tx_fee_bump_inner_success",
+          "entry": [
+            "mainnet-cap33-revoke-sponsorship-signer",
+            "mainnet-cap46-auth-root-deploys-contract"
+          ],
+          "ledger": 15
+        },
+        {
+          "arm": "tx_fee_bump_inner_failed",
+          "entry": [
+            "mainnet-cap15-fee-bump-inner-bad-auth"
+          ],
+          "ledger": 7
+        },
+        {
+          "arm": "tx_success",
+          "entry": [
+            "cap21-preconditions-max-length-vectors",
+            "cap27-payment-muxed-max-id-to-muxed-zero-id",
+            "cap38-pool-issuers-strkey-vs-bytes-order",
+            "cap40-setoptions-signed-payload-signer",
+            "cap46-11-nested-auth-depth-3",
+            "cap67-sac-transfer-to-muxed-account",
+            "cap73-sac-trust-creates-trustline",
+            "cap84-sac-transfer-to-muxed-contract",
+            "mainnet-cap23-claimable-predicate-or",
+            "mainnet-cap27-muxed-id-above-2-53",
+            "mainnet-cap46-06-sac-deploy-from-asset",
+            "mainnet-cap46-11-auth-tree-depth-4",
+            "mainnet-cap67-event-data-muxed-address",
+            "mainnet-cap73-nested-sac-trust-creates-trustline"
+          ],
+          "ledger": 18
+        },
+        {
+          "arm": "tx_failed",
+          "entry": [
+            "mainnet-cap21-40-extra-signers-signed-payload"
+          ],
+          "ledger": 18
+        }
+      ]
+    },
+    {
+      "type": "TrustLineAsset",
+      "arms": [
+        {
+          "arm": "native",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "credit_alphanum4",
+          "entry": [
+            "cap38-pool-issuers-strkey-vs-bytes-order",
+            "cap73-sac-trust-creates-trustline",
+            "mainnet-cap15-fee-bump-inner-bad-auth",
+            "mainnet-cap33-revoke-sponsorship-signer",
+            "mainnet-cap46-11-auth-tree-depth-4",
+            "mainnet-cap67-event-data-muxed-address",
+            "mainnet-cap73-nested-sac-trust-creates-trustline"
+          ],
+          "ledger": 17
+        },
+        {
+          "arm": "credit_alphanum12",
+          "entry": [
+            "mainnet-cap23-claimable-predicate-or",
+            "mainnet-cap33-revoke-sponsorship-signer",
+            "mainnet-cap46-11-auth-tree-depth-4"
+          ],
+          "ledger": 12
+        },
+        {
+          "arm": "pool_share",
+          "entry": [
+            "cap38-pool-issuers-strkey-vs-bytes-order"
+          ],
+          "ledger": 4
+        }
+      ]
+    },
+    {
+      "type": "TrustLineEntryExt",
+      "arms": [
+        {
+          "arm": "v0",
+          "entry": [
+            "cap38-pool-issuers-strkey-vs-bytes-order",
+            "cap73-sac-trust-creates-trustline",
+            "mainnet-cap23-claimable-predicate-or",
+            "mainnet-cap33-revoke-sponsorship-signer",
+            "mainnet-cap46-11-auth-tree-depth-4",
+            "mainnet-cap67-event-data-muxed-address",
+            "mainnet-cap73-nested-sac-trust-creates-trustline"
+          ],
+          "ledger": 17
+        },
+        {
+          "arm": "v1",
+          "entry": [
+            "cap38-pool-issuers-strkey-vs-bytes-order"
+          ],
+          "ledger": 15
+        }
+      ]
+    },
+    {
+      "type": "TrustLineEntryV1Ext",
+      "arms": [
+        {
+          "arm": "v0",
+          "entry": [],
+          "ledger": 11
+        },
+        {
+          "arm": "v2",
+          "entry": [
+            "cap38-pool-issuers-strkey-vs-bytes-order"
+          ],
+          "ledger": 13
+        }
+      ]
+    },
+    {
+      "type": "TxSetComponent",
+      "arms": [
+        {
+          "arm": "txset_comp_txs_maybe_discounted_fee",
+          "entry": [],
+          "ledger": 18
+        }
+      ]
+    }
+  ],
+  "enums": [
+    {
+      "type": "AllowTrustResult",
+      "arms": [
+        {
+          "arm": "success",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "malformed",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "no_trust_line",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "trust_not_required",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "cant_revoke",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "self_not_allowed",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "low_reserve",
+          "entry": [],
+          "ledger": 0
+        }
+      ]
+    },
+    {
+      "type": "BeginSponsoringFutureReservesResult",
+      "arms": [
+        {
+          "arm": "success",
+          "entry": [],
+          "ledger": 5
+        },
+        {
+          "arm": "malformed",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "already_sponsored",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "recursive",
+          "entry": [],
+          "ledger": 0
+        }
+      ]
+    },
+    {
+      "type": "BumpSequenceResult",
+      "arms": [
+        {
+          "arm": "success",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "bad_seq",
+          "entry": [],
+          "ledger": 0
+        }
+      ]
+    },
+    {
+      "type": "ChangeTrustResult",
+      "arms": [
+        {
+          "arm": "success",
+          "entry": [
+            "cap38-pool-issuers-strkey-vs-bytes-order"
+          ],
+          "ledger": 12
+        },
+        {
+          "arm": "malformed",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "no_issuer",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "invalid_limit",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "low_reserve",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "self_not_allowed",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "trust_line_missing",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "cannot_delete",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "not_auth_maintain_liabilities",
+          "entry": [],
+          "ledger": 0
+        }
+      ]
+    },
+    {
+      "type": "ClaimClaimableBalanceResult",
+      "arms": [
+        {
+          "arm": "success",
+          "entry": [
+            "mainnet-cap23-claimable-predicate-or"
+          ],
+          "ledger": 4
+        },
+        {
+          "arm": "does_not_exist",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "cannot_claim",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "line_full",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "no_trust",
+          "entry": [],
+          "ledger": 2
+        },
+        {
+          "arm": "not_authorized",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "trustline_frozen",
+          "entry": [],
+          "ledger": 0
+        }
+      ]
+    },
+    {
+      "type": "ClaimableBalanceEntryExtensionV1Ext",
+      "arms": [
+        {
+          "arm": "v0",
+          "entry": [
+            "mainnet-cap23-claimable-predicate-or"
+          ],
+          "ledger": 4
+        }
+      ]
+    },
+    {
+      "type": "ClawbackClaimableBalanceResult",
+      "arms": [
+        {
+          "arm": "success",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "does_not_exist",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "not_issuer",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "not_clawback_enabled",
+          "entry": [],
+          "ledger": 0
+        }
+      ]
+    },
+    {
+      "type": "ClawbackResult",
+      "arms": [
+        {
+          "arm": "success",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "malformed",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "not_clawback_enabled",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "no_trust",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "underfunded",
+          "entry": [],
+          "ledger": 0
+        }
+      ]
+    },
+    {
+      "type": "ConfigSettingId",
+      "arms": [
+        {
+          "arm": "contract_max_size_bytes",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "contract_compute_v0",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "contract_ledger_cost_v0",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "contract_historical_data_v0",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "contract_events_v0",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "contract_bandwidth_v0",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "contract_cost_params_cpu_instructions",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "contract_cost_params_memory_bytes",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "contract_data_key_size_bytes",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "contract_data_entry_size_bytes",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "state_archival",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "contract_execution_lanes",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "live_soroban_state_size_window",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "eviction_iterator",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "contract_parallel_compute_v0",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "contract_ledger_cost_ext_v0",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "scp_timing",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "frozen_ledger_keys",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "frozen_ledger_keys_delta",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "freeze_bypass_txs",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "freeze_bypass_txs_delta",
+          "entry": [],
+          "ledger": 0
+        }
+      ]
+    },
+    {
+      "type": "ContractDataDurability",
+      "arms": [
+        {
+          "arm": "temporary",
+          "entry": [
+            "mainnet-cap46-11-auth-tree-depth-4",
+            "mainnet-cap46-auth-root-deploys-contract",
+            "mainnet-cap67-event-data-muxed-address",
+            "mainnet-cap73-nested-sac-trust-creates-trustline"
+          ],
+          "ledger": 17
+        },
+        {
+          "arm": "persistent",
+          "entry": [
+            "cap46-11-nested-auth-depth-3",
+            "cap67-sac-transfer-to-muxed-account",
+            "cap73-sac-trust-creates-trustline",
+            "cap84-sac-transfer-to-muxed-contract",
+            "mainnet-cap15-fee-bump-inner-bad-auth",
+            "mainnet-cap46-06-sac-deploy-from-asset",
+            "mainnet-cap46-11-auth-tree-depth-4",
+            "mainnet-cap46-auth-root-deploys-contract",
+            "mainnet-cap67-event-data-muxed-address",
+            "mainnet-cap73-nested-sac-trust-creates-trustline"
+          ],
+          "ledger": 18
+        }
+      ]
+    },
+    {
+      "type": "ContractEventType",
+      "arms": [
+        {
+          "arm": "system",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "contract",
+          "entry": [
+            "cap21-preconditions-max-length-vectors",
+            "cap27-payment-muxed-max-id-to-muxed-zero-id",
+            "cap38-pool-issuers-strkey-vs-bytes-order",
+            "cap40-setoptions-signed-payload-signer",
+            "cap46-11-nested-auth-depth-3",
+            "cap67-sac-transfer-to-muxed-account",
+            "cap73-sac-trust-creates-trustline",
+            "cap84-sac-transfer-to-muxed-contract",
+            "mainnet-cap15-fee-bump-inner-bad-auth",
+            "mainnet-cap21-40-extra-signers-signed-payload",
+            "mainnet-cap23-claimable-predicate-or",
+            "mainnet-cap27-muxed-id-above-2-53",
+            "mainnet-cap33-revoke-sponsorship-signer",
+            "mainnet-cap46-06-sac-deploy-from-asset",
+            "mainnet-cap46-11-auth-tree-depth-4",
+            "mainnet-cap46-auth-root-deploys-contract",
+            "mainnet-cap67-event-data-muxed-address",
+            "mainnet-cap73-nested-sac-trust-creates-trustline"
+          ],
+          "ledger": 18
+        },
+        {
+          "arm": "diagnostic",
+          "entry": [
+            "cap46-11-nested-auth-depth-3",
+            "cap67-sac-transfer-to-muxed-account",
+            "cap73-sac-trust-creates-trustline",
+            "cap84-sac-transfer-to-muxed-contract",
+            "mainnet-cap46-06-sac-deploy-from-asset",
+            "mainnet-cap46-11-auth-tree-depth-4",
+            "mainnet-cap46-auth-root-deploys-contract",
+            "mainnet-cap67-event-data-muxed-address",
+            "mainnet-cap73-nested-sac-trust-creates-trustline"
+          ],
+          "ledger": 18
+        }
+      ]
+    },
+    {
+      "type": "CreateAccountResult",
+      "arms": [
+        {
+          "arm": "success",
+          "entry": [],
+          "ledger": 14
+        },
+        {
+          "arm": "malformed",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "underfunded",
+          "entry": [],
+          "ledger": 5
+        },
+        {
+          "arm": "low_reserve",
+          "entry": [],
+          "ledger": 1
+        },
+        {
+          "arm": "already_exist",
+          "entry": [],
+          "ledger": 0
+        }
+      ]
+    },
+    {
+      "type": "DataEntryExt",
+      "arms": [
+        {
+          "arm": "v0",
+          "entry": [
+            "mainnet-cap27-muxed-id-above-2-53"
+          ],
+          "ledger": 1
+        }
+      ]
+    },
+    {
+      "type": "EndSponsoringFutureReservesResult",
+      "arms": [
+        {
+          "arm": "success",
+          "entry": [],
+          "ledger": 5
+        },
+        {
+          "arm": "not_sponsored",
+          "entry": [],
+          "ledger": 0
+        }
+      ]
+    },
+    {
+      "type": "ExtendFootprintTtlResult",
+      "arms": [
+        {
+          "arm": "success",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "malformed",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "resource_limit_exceeded",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "insufficient_refundable_fee",
+          "entry": [],
+          "ledger": 0
+        }
+      ]
+    },
+    {
+      "type": "ExtensionPoint",
+      "arms": [
+        {
+          "arm": "v0",
+          "entry": [
+            "cap21-preconditions-max-length-vectors",
+            "cap27-payment-muxed-max-id-to-muxed-zero-id",
+            "cap38-pool-issuers-strkey-vs-bytes-order",
+            "cap40-setoptions-signed-payload-signer",
+            "cap46-11-nested-auth-depth-3",
+            "cap67-sac-transfer-to-muxed-account",
+            "cap73-sac-trust-creates-trustline",
+            "cap84-sac-transfer-to-muxed-contract",
+            "mainnet-cap15-fee-bump-inner-bad-auth",
+            "mainnet-cap21-40-extra-signers-signed-payload",
+            "mainnet-cap23-claimable-predicate-or",
+            "mainnet-cap27-muxed-id-above-2-53",
+            "mainnet-cap33-revoke-sponsorship-signer",
+            "mainnet-cap46-06-sac-deploy-from-asset",
+            "mainnet-cap46-11-auth-tree-depth-4",
+            "mainnet-cap46-auth-root-deploys-contract",
+            "mainnet-cap67-event-data-muxed-address",
+            "mainnet-cap73-nested-sac-trust-creates-trustline"
+          ],
+          "ledger": 18
+        }
+      ]
+    },
+    {
+      "type": "FeeBumpTransactionExt",
+      "arms": [
+        {
+          "arm": "v0",
+          "entry": [
+            "mainnet-cap15-fee-bump-inner-bad-auth",
+            "mainnet-cap33-revoke-sponsorship-signer",
+            "mainnet-cap46-auth-root-deploys-contract"
+          ],
+          "ledger": 15
+        }
+      ]
+    },
+    {
+      "type": "InnerTransactionResultExt",
+      "arms": [
+        {
+          "arm": "v0",
+          "entry": [
+            "mainnet-cap15-fee-bump-inner-bad-auth",
+            "mainnet-cap33-revoke-sponsorship-signer",
+            "mainnet-cap46-auth-root-deploys-contract"
+          ],
+          "ledger": 15
+        }
+      ]
+    },
+    {
+      "type": "LedgerEntryExtensionV1Ext",
+      "arms": [
+        {
+          "arm": "v0",
+          "entry": [
+            "mainnet-cap15-fee-bump-inner-bad-auth",
+            "mainnet-cap23-claimable-predicate-or",
+            "mainnet-cap33-revoke-sponsorship-signer",
+            "mainnet-cap67-event-data-muxed-address"
+          ],
+          "ledger": 11
+        }
+      ]
+    },
+    {
+      "type": "LedgerHeaderExtensionV1Ext",
+      "arms": [
+        {
+          "arm": "v0",
+          "entry": [],
+          "ledger": 0
+        }
+      ]
+    },
+    {
+      "type": "LedgerHeaderHistoryEntryExt",
+      "arms": [
+        {
+          "arm": "v0",
+          "entry": [
+            "cap21-preconditions-max-length-vectors",
+            "cap27-payment-muxed-max-id-to-muxed-zero-id",
+            "cap38-pool-issuers-strkey-vs-bytes-order",
+            "cap40-setoptions-signed-payload-signer",
+            "cap46-11-nested-auth-depth-3",
+            "cap67-sac-transfer-to-muxed-account",
+            "cap73-sac-trust-creates-trustline",
+            "cap84-sac-transfer-to-muxed-contract",
+            "cap88-ledger-close-time-ms",
+            "mainnet-cap15-fee-bump-inner-bad-auth",
+            "mainnet-cap21-40-extra-signers-signed-payload",
+            "mainnet-cap23-claimable-predicate-or",
+            "mainnet-cap27-muxed-id-above-2-53",
+            "mainnet-cap33-revoke-sponsorship-signer",
+            "mainnet-cap46-06-sac-deploy-from-asset",
+            "mainnet-cap46-11-auth-tree-depth-4",
+            "mainnet-cap46-auth-root-deploys-contract",
+            "mainnet-cap67-event-data-muxed-address",
+            "mainnet-cap73-nested-sac-trust-creates-trustline"
+          ],
+          "ledger": 18
+        }
+      ]
+    },
+    {
+      "type": "LiquidityPoolDepositResult",
+      "arms": [
+        {
+          "arm": "success",
+          "entry": [
+            "cap38-pool-issuers-strkey-vs-bytes-order"
+          ],
+          "ledger": 2
+        },
+        {
+          "arm": "malformed",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "no_trust",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "not_authorized",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "underfunded",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "line_full",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "bad_price",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "pool_full",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "trustline_frozen",
+          "entry": [],
+          "ledger": 0
+        }
+      ]
+    },
+    {
+      "type": "LiquidityPoolWithdrawResult",
+      "arms": [
+        {
+          "arm": "success",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "malformed",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "no_trust",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "underfunded",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "line_full",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "under_minimum",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "trustline_frozen",
+          "entry": [],
+          "ledger": 0
+        }
+      ]
+    },
+    {
+      "type": "ManageDataResult",
+      "arms": [
+        {
+          "arm": "success",
+          "entry": [
+            "mainnet-cap27-muxed-id-above-2-53"
+          ],
+          "ledger": 1
+        },
+        {
+          "arm": "not_supported_yet",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "name_not_found",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "low_reserve",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "invalid_name",
+          "entry": [],
+          "ledger": 0
+        }
+      ]
+    },
+    {
+      "type": "OfferEntryExt",
+      "arms": [
+        {
+          "arm": "v0",
+          "entry": [],
+          "ledger": 11
+        }
+      ]
+    },
+    {
+      "type": "PaymentResult",
+      "arms": [
+        {
+          "arm": "success",
+          "entry": [
+            "cap21-preconditions-max-length-vectors",
+            "cap27-payment-muxed-max-id-to-muxed-zero-id",
+            "mainnet-cap23-claimable-predicate-or",
+            "mainnet-cap27-muxed-id-above-2-53",
+            "mainnet-cap33-revoke-sponsorship-signer"
+          ],
+          "ledger": 15
+        },
+        {
+          "arm": "malformed",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "underfunded",
+          "entry": [],
+          "ledger": 9
+        },
+        {
+          "arm": "src_no_trust",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "src_not_authorized",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "no_destination",
+          "entry": [],
+          "ledger": 3
+        },
+        {
+          "arm": "no_trust",
+          "entry": [],
+          "ledger": 2
+        },
+        {
+          "arm": "not_authorized",
+          "entry": [],
+          "ledger": 1
+        },
+        {
+          "arm": "line_full",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "no_issuer",
+          "entry": [],
+          "ledger": 0
+        }
+      ]
+    },
+    {
+      "type": "RestoreFootprintResult",
+      "arms": [
+        {
+          "arm": "success",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "malformed",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "resource_limit_exceeded",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "insufficient_refundable_fee",
+          "entry": [],
+          "ledger": 0
+        }
+      ]
+    },
+    {
+      "type": "RevokeSponsorshipResult",
+      "arms": [
+        {
+          "arm": "success",
+          "entry": [
+            "mainnet-cap33-revoke-sponsorship-signer"
+          ],
+          "ledger": 1
+        },
+        {
+          "arm": "does_not_exist",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "not_sponsor",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "low_reserve",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "only_transferable",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "malformed",
+          "entry": [],
+          "ledger": 0
+        }
+      ]
+    },
+    {
+      "type": "ScErrorCode",
+      "arms": [
+        {
+          "arm": "arith_domain",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "index_bounds",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "invalid_input",
+          "entry": [],
+          "ledger": 1
+        },
+        {
+          "arm": "missing_value",
+          "entry": [],
+          "ledger": 1
+        },
+        {
+          "arm": "existing_value",
+          "entry": [],
+          "ledger": 2
+        },
+        {
+          "arm": "exceeded_limit",
+          "entry": [],
+          "ledger": 3
+        },
+        {
+          "arm": "invalid_action",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "internal_error",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "unexpected_type",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "unexpected_size",
+          "entry": [],
+          "ledger": 0
+        }
+      ]
+    },
+    {
+      "type": "SetOptionsResult",
+      "arms": [
+        {
+          "arm": "success",
+          "entry": [
+            "cap40-setoptions-signed-payload-signer"
+          ],
+          "ledger": 2
+        },
+        {
+          "arm": "low_reserve",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "too_many_signers",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "bad_flags",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "invalid_inflation",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "cant_change",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "unknown_flag",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "threshold_out_of_range",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "bad_signer",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "invalid_home_domain",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "auth_revocable_required",
+          "entry": [],
+          "ledger": 0
+        }
+      ]
+    },
+    {
+      "type": "SetTrustLineFlagsResult",
+      "arms": [
+        {
+          "arm": "success",
+          "entry": [],
+          "ledger": 2
+        },
+        {
+          "arm": "malformed",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "no_trust_line",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "cant_revoke",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "invalid_state",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "low_reserve",
+          "entry": [],
+          "ledger": 0
+        }
+      ]
+    },
+    {
+      "type": "TransactionEventStage",
+      "arms": [
+        {
+          "arm": "before_all_txs",
+          "entry": [
+            "cap21-preconditions-max-length-vectors",
+            "cap27-payment-muxed-max-id-to-muxed-zero-id",
+            "cap38-pool-issuers-strkey-vs-bytes-order",
+            "cap40-setoptions-signed-payload-signer",
+            "cap46-11-nested-auth-depth-3",
+            "cap67-sac-transfer-to-muxed-account",
+            "cap73-sac-trust-creates-trustline",
+            "cap84-sac-transfer-to-muxed-contract",
+            "mainnet-cap15-fee-bump-inner-bad-auth",
+            "mainnet-cap21-40-extra-signers-signed-payload",
+            "mainnet-cap23-claimable-predicate-or",
+            "mainnet-cap27-muxed-id-above-2-53",
+            "mainnet-cap33-revoke-sponsorship-signer",
+            "mainnet-cap46-06-sac-deploy-from-asset",
+            "mainnet-cap46-11-auth-tree-depth-4",
+            "mainnet-cap46-auth-root-deploys-contract",
+            "mainnet-cap67-event-data-muxed-address",
+            "mainnet-cap73-nested-sac-trust-creates-trustline"
+          ],
+          "ledger": 18
+        },
+        {
+          "arm": "after_tx",
+          "entry": [],
+          "ledger": 0
+        },
+        {
+          "arm": "after_all_txs",
+          "entry": [
+            "cap46-11-nested-auth-depth-3",
+            "cap67-sac-transfer-to-muxed-account",
+            "cap73-sac-trust-creates-trustline",
+            "cap84-sac-transfer-to-muxed-contract",
+            "mainnet-cap15-fee-bump-inner-bad-auth",
+            "mainnet-cap46-06-sac-deploy-from-asset",
+            "mainnet-cap46-11-auth-tree-depth-4",
+            "mainnet-cap46-auth-root-deploys-contract",
+            "mainnet-cap67-event-data-muxed-address",
+            "mainnet-cap73-nested-sac-trust-creates-trustline"
+          ],
+          "ledger": 18
+        }
+      ]
+    },
+    {
+      "type": "TransactionResultExt",
+      "arms": [
+        {
+          "arm": "v0",
+          "entry": [
+            "cap21-preconditions-max-length-vectors",
+            "cap27-payment-muxed-max-id-to-muxed-zero-id",
+            "cap38-pool-issuers-strkey-vs-bytes-order",
+            "cap40-setoptions-signed-payload-signer",
+            "cap46-11-nested-auth-depth-3",
+            "cap67-sac-transfer-to-muxed-account",
+            "cap73-sac-trust-creates-trustline",
+            "cap84-sac-transfer-to-muxed-contract",
+            "mainnet-cap15-fee-bump-inner-bad-auth",
+            "mainnet-cap21-40-extra-signers-signed-payload",
+            "mainnet-cap23-claimable-predicate-or",
+            "mainnet-cap27-muxed-id-above-2-53",
+            "mainnet-cap33-revoke-sponsorship-signer",
+            "mainnet-cap46-06-sac-deploy-from-asset",
+            "mainnet-cap46-11-auth-tree-depth-4",
+            "mainnet-cap46-auth-root-deploys-contract",
+            "mainnet-cap67-event-data-muxed-address",
+            "mainnet-cap73-nested-sac-trust-creates-trustline"
+          ],
+          "ledger": 18
+        }
+      ]
+    },
+    {
+      "type": "TransactionV0Ext",
+      "arms": [
+        {
+          "arm": "v0",
+          "entry": [],
+          "ledger": 0
+        }
+      ]
+    },
+    {
+      "type": "TrustLineEntryExtensionV2Ext",
+      "arms": [
+        {
+          "arm": "v0",
+          "entry": [
+            "cap38-pool-issuers-strkey-vs-bytes-order"
+          ],
+          "ledger": 13
+        }
+      ]
+    }
+  ]
+}

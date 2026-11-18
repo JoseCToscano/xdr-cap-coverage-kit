@@ -1,0 +1,174 @@
+{
+  "schema_version": "0.2.0",
+  "id": "cap38-pool-issuers-strkey-vs-bytes-order",
+  "title": "Liquidity pool whose two issuers sort one way by strkey text and the other by XDR bytes",
+  "caps": [
+    "CAP-0038"
+  ],
+  "protocol": {
+    "introduced_in": 18,
+    "captured_on": 30,
+    "xdr_ref": "stellar-xdr 30.0.0 (3c2aa43d2ab54d429ae44aa5143d805bf5dba7e2) xdr: 4f524bbac80c781c06e4fb5fc93a2d0d331d6705 features: <none>"
+  },
+  "network": {
+    "passphrase": "Test SDF Network ; September 2015",
+    "expected_tx_hash": "d5b9828639decaeaf9fd766aec64a3cb73ab4d25d3bbf46c59a483a7c625ffaf"
+  },
+  "xdr": {
+    "type": "TransactionEnvelope",
+    "base64": "AAAAAgAAAADIp/FpQllY52/TKmH7LMlf7x9lY+zZ03LwXT30FnklCwAAB9AAV0KEAAAAAwAAAAEAAAAAAAAAAAAAAABq968CAAAAAAAAAAIAAAAAAAAABgAAAAMAAAAAAAAAAUtJVAAAAAAAcF3VvJ8uLZzDe9vKytjsKLnQkfcIkkCdPDMnIF1Q9JkAAAABS0lUAAAAAAB9vh7vSBvsKCi/skUlTac14le6DN6wEYupm03/CCrRmwAAAB5//////////wAAAAAAAAAWeJT9eXS6du7YwfZACssAft/r699xGT+JxRn7zc08JkAAAAAAO5rKAAAAAAA7msoAAAAAAQAAAAIAAAACAAAAAQAAAAAAAAABFnklCwAAAEBkS19DuxgooY5SUgDf3MP7rCMB9yQjycArX0raQet2/EIIkzO9kkuxsIsWABDi2Y5GzN8x7wEqIPjGLLQWiNsE",
+    "sha256": "11af30b0588ce8e84aeca7d5087dc5c8f3f643d69b20105a23b7a500b6db5e9b"
+  },
+  "provenance": {
+    "kind": "testnet",
+    "origin": "submitted_by_kit",
+    "origin_note": "Submitted to testnet by tools/capture-testnet.mjs from a Friendbot-funded throwaway key that was never written to disk.",
+    "ledger": 5718666,
+    "tx_hash": "d5b9828639decaeaf9fd766aec64a3cb73ab4d25d3bbf46c59a483a7c625ffaf",
+    "source_url": "https://horizon-testnet.stellar.org/transactions/d5b9828639decaeaf9fd766aec64a3cb73ab4d25d3bbf46c59a483a7c625ffaf",
+    "tx_created_at": "2026-11-14T00:42:54.000Z",
+    "pool_id_hex": "7894fd7974ba76eed8c1f6400acb007edfebebdf71193f89c519fbcdcd3c2640",
+    "tool": "tools/make-entry.mjs (cap38-pool-issuers-strkey-vs-bytes-order.mjs)"
+  },
+  "expected": {
+    "json": {
+      "tx": {
+        "tx": {
+          "source_account": "GDEKP4LJIJMVRZ3P2MVGD6ZMZFP66H3FMPWNTU3S6BOT35AWPESQWVP6",
+          "fee": 2000,
+          "seq_num": "24561457676943363",
+          "cond": {
+            "time": {
+              "min_time": "0",
+              "max_time": "1794617090"
+            }
+          },
+          "memo": "none",
+          "operations": [
+            {
+              "source_account": null,
+              "body": {
+                "change_trust": {
+                  "line": {
+                    "pool_share": {
+                      "liquidity_pool_constant_product": {
+                        "asset_a": {
+                          "credit_alphanum4": {
+                            "asset_code": "KIT",
+                            "issuer": "GBYF3VN4T4XC3HGDPPN4VSWY5QULTUER64EJEQE5HQZSOIC5KD2JSHAE"
+                          }
+                        },
+                        "asset_b": {
+                          "credit_alphanum4": {
+                            "asset_code": "KIT",
+                            "issuer": "GB634HXPJAN6YKBIX6ZEKJKNU426EV52BTPLAEMLVGNU37YIFLIZXHGT"
+                          }
+                        },
+                        "fee": 30
+                      }
+                    }
+                  },
+                  "limit": "9223372036854775807"
+                }
+              }
+            },
+            {
+              "source_account": null,
+              "body": {
+                "liquidity_pool_deposit": {
+                  "liquidity_pool_id": "LB4JJ7LZOS5HN3WYYH3EACWLAB7N727L35YRSP4JYUM7XTONHQTEA4QZ",
+                  "max_amount_a": "1000000000",
+                  "max_amount_b": "1000000000",
+                  "min_price": {
+                    "n": 1,
+                    "d": 2
+                  },
+                  "max_price": {
+                    "n": 2,
+                    "d": 1
+                  }
+                }
+              }
+            }
+          ],
+          "ext": "v0"
+        },
+        "signatures": [
+          {
+            "hint": "1679250b",
+            "signature": "644b5f43bb1828a18e525200dfdcc3fbac2301f72423c9c02b5f4ada41eb76fc42089333bd924bb1b08b160010e2d98e46ccdf31ef012a20f8c62cb41688db04"
+          }
+        ]
+      }
+    },
+    "checks": [
+      {
+        "id": "asset-a-issuer-byte-first",
+        "path": "/tx/tx/operations/0/body/change_trust/line/pool_share/liquidity_pool_constant_product/asset_a/credit_alphanum4/issuer",
+        "op": "strkey",
+        "value": "GBYF3VN4T4XC3HGDPPN4VSWY5QULTUER64EJEQE5HQZSOIC5KD2JSHAE",
+        "note": "asset_a is the issuer that is smaller by XDR bytes. Sorting strkeys as text puts it second (js-stellar-sdk #1766)."
+      },
+      {
+        "id": "asset-b-issuer-text-first",
+        "path": "/tx/tx/operations/0/body/change_trust/line/pool_share/liquidity_pool_constant_product/asset_b/credit_alphanum4/issuer",
+        "op": "strkey",
+        "value": "GB634HXPJAN6YKBIX6ZEKJKNU426EV52BTPLAEMLVGNU37YIFLIZXHGT",
+        "note": "asset_b sorts first as text."
+      },
+      {
+        "id": "pool-fee",
+        "path": "/tx/tx/operations/0/body/change_trust/line/pool_share/liquidity_pool_constant_product/fee",
+        "op": "equals",
+        "value": 30,
+        "note": "30 bps constant-product pool."
+      }
+    ],
+    "ledger_checks": [
+      {
+        "id": "lcm-pool-created",
+        "path": "/v2/tx_processing/0/tx_apply_processing/v4/operations/0/changes/7/created/data/liquidity_pool/liquidity_pool_id",
+        "op": "strkey",
+        "value": "LB4JJ7LZOS5HN3WYYH3EACWLAB7N727L35YRSP4JYUM7XTONHQTEA4QZ",
+        "note": "Pool entry created in this tx; its ID is derived from the byte-ordered pair."
+      },
+      {
+        "id": "lcm-deposit-success",
+        "path": "/v2/tx_processing/0/result/result/result/tx_success/1/op_inner/liquidity_pool_deposit",
+        "op": "equals",
+        "value": "success",
+        "note": "Deposit applied."
+      }
+    ]
+  },
+  "tags": [
+    "issuer-sort",
+    "liquidity-pool"
+  ],
+  "linked_issues": [
+    {
+      "url": "https://github.com/stellar/js-stellar-sdk/issues/1766",
+      "role": "reproduces",
+      "component": "LiquidityPoolAsset asset ordering"
+    }
+  ],
+  "ledger": {
+    "type": "LedgerCloseMeta",
+    "lcm_version": "v2",
+    "sequence": 5718666,
+    "protocol_version": 30,
+    "file": "corpus/datalake/testnet/FFA915FF--5696000-5759999/FFA8BD75--5718666.xdr.zst",
+    "format": "galexie: zstd(LedgerCloseMetaBatch), 1 ledger per object, 64000 per partition",
+    "sha256_zst": "59f97704c7bdc96620c492089a87cd121eeeb91d4f2927dc0c2aac94552c7cb8",
+    "sha256_lcm": "9e2ef62455ceb1c260eb617aef050122c2bbe0ed46fa7be595c82374a2afecc0",
+    "tx_index": 0,
+    "source": "galexie-public-archive",
+    "source_url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/v1.1/stellar/ledgers/testnet/2025-12-18/FFA915FF--5696000-5759999/FFA8BD75--5718666.xdr.zst",
+    "alt_source": {
+      "source": "stellar-rpc-getLedgers",
+      "sha256_lcm": "911f439e8cbe050ed1d4a21f7fb59b6a23e3627f8950d36a6d2094ca3482b4f4",
+      "lcm_bytes": 143072,
+      "byte_identical": false
+    }
+  }
+}

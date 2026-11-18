@@ -1,0 +1,226 @@
+{
+  "schema_version": "0.2.0",
+  "id": "cap73-sac-trust-creates-trustline",
+  "title": "SAC trust(G) creates an unlimited trustline with no contract event",
+  "caps": [
+    "CAP-0073",
+    "CAP-0046-06"
+  ],
+  "protocol": {
+    "introduced_in": 26,
+    "captured_on": 30,
+    "xdr_ref": "stellar-xdr 30.0.0 (3c2aa43d2ab54d429ae44aa5143d805bf5dba7e2) xdr: 4f524bbac80c781c06e4fb5fc93a2d0d331d6705 features: <none>"
+  },
+  "network": {
+    "passphrase": "Test SDF Network ; September 2015",
+    "expected_tx_hash": "933b5e6e4fd4e0edf685211b3958d1b33902f73b0432d2c199e5f8bb1be294b8"
+  },
+  "xdr": {
+    "type": "TransactionEnvelope",
+    "base64": "AAAAAgAAAACVOXnhp1XptIkcgCUAPeiR5CYdwSr+I1VzqMoXuuINMgAPcIsAV0KFAAAAAQAAAAEAAAAAAAAAAAAAAABq968LAAAAAAAAAAEAAAAAAAAAGAAAAAAAAAABAASCgYfgOAPuoFEcV3d5ZKAaW2OOyIAubcrLXcjlE4wAAAAFdHJ1c3QAAAAAAAABAAAAEgAAAAAAAAAAlTl54adV6bSJHIAlAD3okeQmHcEq/iNVc6jKF7riDTIAAAABAAAAAAAAAAAAAAABAASCgYfgOAPuoFEcV3d5ZKAaW2OOyIAubcrLXcjlE4wAAAAFdHJ1c3QAAAAAAAABAAAAEgAAAAAAAAAAlTl54adV6bSJHIAlAD3okeQmHcEq/iNVc6jKF7riDTIAAAAAAAAAAQAAAAAAAAACAAAAAAAAAABwXdW8ny4tnMN728rK2OwoudCR9wiSQJ08MycgXVD0mQAAAAYAAAABAASCgYfgOAPuoFEcV3d5ZKAaW2OOyIAubcrLXcjlE4wAAAAUAAAAAQAAAAIAAAAAAAAAAJU5eeGnVem0iRyAJQA96JHkJh3BKv4jVXOoyhe64g0yAAAAAQAAAACVOXnhp1XptIkcgCUAPeiR5CYdwSr+I1VzqMoXuuINMgAAAAFLSVQAAAAAAHBd1byfLi2cw3vbysrY7Ci50JH3CJJAnTwzJyBdUPSZAAM+iQAAASAAAAEEAAAAAAAALksAAAABuuINMgAAAEDTTgUPkWpSazzuijH7Lc0eJuYE1qZ4FNEZ9BVMhl0vW+TYwly2Q7PrjZIz9fL0wDR7+HyoAGW0sMTvRLg2lz4F",
+    "sha256": "1c8a37d0c6640208f6ec1496d83cda4f964f740031a6fed897d3c89489b2caf6"
+  },
+  "provenance": {
+    "kind": "testnet",
+    "origin": "submitted_by_kit",
+    "origin_note": "Submitted to testnet by tools/capture-testnet.mjs from a Friendbot-funded throwaway key that was never written to disk.",
+    "ledger": 5718668,
+    "tx_hash": "933b5e6e4fd4e0edf685211b3958d1b33902f73b0432d2c199e5f8bb1be294b8",
+    "source_url": "https://horizon-testnet.stellar.org/transactions/933b5e6e4fd4e0edf685211b3958d1b33902f73b0432d2c199e5f8bb1be294b8",
+    "tx_created_at": "2026-11-14T00:43:04.000Z",
+    "sac_contract_id": "CAAAJAUBQ7QDQA7OUBIRYV3XPFSKAGS3MOHMRABONXFMWXOI4UJYZFYH",
+    "tool": "tools/make-entry.mjs (cap73-sac-trust-creates-trustline.mjs)"
+  },
+  "expected": {
+    "json": {
+      "tx": {
+        "tx": {
+          "source_account": "GCKTS6PBU5K6TNEJDSACKAB55CI6IJQ5YEVP4I2VOOUMUF524IGTF4H6",
+          "fee": 1011851,
+          "seq_num": "24561461971910657",
+          "cond": {
+            "time": {
+              "min_time": "0",
+              "max_time": "1794617099"
+            }
+          },
+          "memo": "none",
+          "operations": [
+            {
+              "source_account": null,
+              "body": {
+                "invoke_host_function": {
+                  "host_function": {
+                    "invoke_contract": {
+                      "contract_address": "CAAAJAUBQ7QDQA7OUBIRYV3XPFSKAGS3MOHMRABONXFMWXOI4UJYZFYH",
+                      "function_name": "trust",
+                      "args": [
+                        {
+                          "address": "GCKTS6PBU5K6TNEJDSACKAB55CI6IJQ5YEVP4I2VOOUMUF524IGTF4H6"
+                        }
+                      ]
+                    }
+                  },
+                  "auth": [
+                    {
+                      "credentials": "source_account",
+                      "root_invocation": {
+                        "function": {
+                          "contract_fn": {
+                            "contract_address": "CAAAJAUBQ7QDQA7OUBIRYV3XPFSKAGS3MOHMRABONXFMWXOI4UJYZFYH",
+                            "function_name": "trust",
+                            "args": [
+                              {
+                                "address": "GCKTS6PBU5K6TNEJDSACKAB55CI6IJQ5YEVP4I2VOOUMUF524IGTF4H6"
+                              }
+                            ]
+                          }
+                        },
+                        "sub_invocations": []
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          ],
+          "ext": {
+            "v1": {
+              "ext": "v0",
+              "resources": {
+                "footprint": {
+                  "read_only": [
+                    {
+                      "account": {
+                        "account_id": "GBYF3VN4T4XC3HGDPPN4VSWY5QULTUER64EJEQE5HQZSOIC5KD2JSHAE"
+                      }
+                    },
+                    {
+                      "contract_data": {
+                        "contract": "CAAAJAUBQ7QDQA7OUBIRYV3XPFSKAGS3MOHMRABONXFMWXOI4UJYZFYH",
+                        "key": "ledger_key_contract_instance",
+                        "durability": "persistent"
+                      }
+                    }
+                  ],
+                  "read_write": [
+                    {
+                      "account": {
+                        "account_id": "GCKTS6PBU5K6TNEJDSACKAB55CI6IJQ5YEVP4I2VOOUMUF524IGTF4H6"
+                      }
+                    },
+                    {
+                      "trustline": {
+                        "account_id": "GCKTS6PBU5K6TNEJDSACKAB55CI6IJQ5YEVP4I2VOOUMUF524IGTF4H6",
+                        "asset": {
+                          "credit_alphanum4": {
+                            "asset_code": "KIT",
+                            "issuer": "GBYF3VN4T4XC3HGDPPN4VSWY5QULTUER64EJEQE5HQZSOIC5KD2JSHAE"
+                          }
+                        }
+                      }
+                    }
+                  ]
+                },
+                "instructions": 212617,
+                "disk_read_bytes": 288,
+                "write_bytes": 260
+              },
+              "resource_fee": "11851"
+            }
+          }
+        },
+        "signatures": [
+          {
+            "hint": "bae20d32",
+            "signature": "d34e050f916a526b3cee8a31fb2dcd1e26e604d6a67814d119f4154c865d2f5be4d8c25cb643b3eb8d9233f5f2f4c0347bf87ca80065b4b0c4ef44b836973e05"
+          }
+        ]
+      }
+    },
+    "checks": [
+      {
+        "id": "fn-trust",
+        "path": "/tx/tx/operations/0/body/invoke_host_function/host_function/invoke_contract/function_name",
+        "op": "equals",
+        "value": "trust",
+        "note": "SAC trust()."
+      },
+      {
+        "id": "trust-arg-g",
+        "path": "/tx/tx/operations/0/body/invoke_host_function/host_function/invoke_contract/args/0/address",
+        "op": "strkey",
+        "value": "GCKTS6PBU5K6TNEJDSACKAB55CI6IJQ5YEVP4I2VOOUMUF524IGTF4H6",
+        "note": "Trustline holder."
+      }
+    ],
+    "ledger_checks": [
+      {
+        "id": "lcm-trustline-created",
+        "path": "/v2/tx_processing/10/tx_apply_processing/v4/operations/0/changes/0/created/data/trustline/account_id",
+        "op": "strkey",
+        "value": "GCKTS6PBU5K6TNEJDSACKAB55CI6IJQ5YEVP4I2VOOUMUF524IGTF4H6",
+        "note": "Trustline created for the G account. #731: no TRUSTLINE/ADD state change was recorded for this."
+      },
+      {
+        "id": "lcm-trustline-asset",
+        "path": "/v2/tx_processing/10/tx_apply_processing/v4/operations/0/changes/0/created/data/trustline/asset/credit_alphanum4/issuer",
+        "op": "strkey",
+        "value": "GBYF3VN4T4XC3HGDPPN4VSWY5QULTUER64EJEQE5HQZSOIC5KD2JSHAE",
+        "note": "KIT:issuer_1."
+      },
+      {
+        "id": "lcm-trustline-unlimited",
+        "path": "/v2/tx_processing/10/tx_apply_processing/v4/operations/0/changes/0/created/data/trustline/limit",
+        "op": "equals",
+        "value": "9223372036854775807",
+        "note": "i64::MAX limit."
+      },
+      {
+        "id": "lcm-trustline-authorized",
+        "path": "/v2/tx_processing/10/tx_apply_processing/v4/operations/0/changes/0/created/data/trustline/flags",
+        "op": "equals",
+        "value": 1,
+        "note": "AUTHORIZED_FLAG set at creation."
+      },
+      {
+        "id": "lcm-no-contract-event",
+        "path": "/v2/tx_processing/10/tx_apply_processing/v4/operations/0/events",
+        "op": "length",
+        "value": 0,
+        "note": "No contract event. Readers that only follow events see nothing."
+      }
+    ]
+  },
+  "tags": [
+    "sac",
+    "trustline",
+    "no-event"
+  ],
+  "linked_issues": [
+    {
+      "url": "https://github.com/stellar/wallet-backend/issues/731",
+      "role": "reproduces",
+      "component": "state_changes for SAC-created trustlines"
+    }
+  ],
+  "ledger": {
+    "type": "LedgerCloseMeta",
+    "lcm_version": "v2",
+    "sequence": 5718668,
+    "protocol_version": 30,
+    "file": "corpus/datalake/testnet/FFA915FF--5696000-5759999/FFA8BD73--5718668.xdr.zst",
+    "format": "galexie: zstd(LedgerCloseMetaBatch), 1 ledger per object, 64000 per partition",
+    "sha256_zst": "dfd214e52a951e658a3875f246f5cc443bd272862afd242db071d7ac04e9f666",
+    "sha256_lcm": "9abb479255e48bd378ba97ed813cf4df56218222ef4cfd68d888e053439c8584",
+    "tx_index": 10,
+    "source": "galexie-public-archive",
+    "source_url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/v1.1/stellar/ledgers/testnet/2025-12-18/FFA915FF--5696000-5759999/FFA8BD73--5718668.xdr.zst",
+    "alt_source": {
+      "source": "stellar-rpc-getLedgers",
+      "sha256_lcm": "60799092c8215b567821ec190a52d45229523396be0449496c1cb5d762b3665e",
+      "lcm_bytes": 151472,
+      "byte_identical": false
+    }
+  }
+}

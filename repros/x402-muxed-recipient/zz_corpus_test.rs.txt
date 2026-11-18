@@ -1,0 +1,44 @@
+
+// ---- appended by xdr-cap-coverage-kit/repros/x402-muxed-recipient/run.sh ----
+// Feeds the exact SAC transfer `to` ScVal from corpus entry
+// cap67-sac-transfer-to-muxed-account (testnet, M... with muxed ID 0) into the
+// merchant-allowlist policy, with the M address's base G account allowlisted.
+// The ScVal bytes and the merchant come from the corpus via env vars.
+#[test]
+fn zz_corpus_cap67_muxed_to_of_allowlisted_merchant() {
+    use soroban_sdk::xdr::{Limits, ReadXdr};
+    use soroban_sdk::TryFromVal;
+    let e = Env::default();
+    let contract = e.register(MockContract, ());
+    let account = Address::generate(&e);
+    let token = Address::generate(&e);
+    let merchant = Address::from_str(&e, env!("ZZ_MERCHANT_G"));
+    e.mock_all_auths();
+    e.ledger().with_mut(|li| li.sequence_number = 1_000);
+    let r = rule(&e, &token);
+    authed(&e, &contract, || install(&e, &params(&e, &merchant, 100, 50, None), &r, &account));
+    let sc = ScVal::from_xdr_base64(env!("ZZ_TO_SCVAL_M"), Limits::none()).expect("corpus ScVal decodes");
+    let to = soroban_sdk::Val::try_from_val(&e, &sc).expect("host accepts the corpus ScVal");
+    let mut args = Vec::new(&e);
+    args.push_back(Address::generate(&e).into_val(&e));
+    args.push_back(to);
+    args.push_back(10i128.into_val(&e));
+    let ctx = Context::Contract(ContractContext { contract: token.clone(), fn_name: soroban_sdk::symbol_short!("transfer"), args });
+    authed(&e, &contract, || {
+        enforce(&e, &ctx, &r.signers, &r, &account);
+        assert_eq!(get_remaining(&e, &account, r.id, &merchant), 90);
+    });
+}
+
+// The W case: whether this soroban-sdk can even decode the captured CAP-84 arg.
+// Recorded, not asserted.
+#[test]
+fn zz_corpus_cap84_w_scval_decodes_in_this_sdk() {
+    use soroban_sdk::xdr::{Limits, ReadXdr};
+    let res = ScVal::from_xdr_base64(env!("ZZ_TO_SCVAL_W"), Limits::none());
+    match &res {
+        Ok(_) => std::println!("ZZ W decode in this soroban-sdk: ok"),
+        Err(err) => std::println!("ZZ W decode in this soroban-sdk: error: {:?}", err),
+    }
+    // Observation only: run.sh reports the line above.
+}

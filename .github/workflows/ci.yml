@@ -1,0 +1,145 @@
+# Every job here also runs locally with scripts/ci-local.sh.
+name: ci
+on: [push, pull_request]
+env:
+  STELLAR_CLI: "30.0.1"
+jobs:
+  corpus:
+    name: corpus, coverage, golden checks, Go/Rust/JS runners, divergence matrix
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 24 }
+      - uses: actions/setup-go@v5
+        with: { go-version-file: runners/go/go.mod }
+      - uses: dtolnay/rust-toolchain@stable
+      - name: stellar CLI (rs-stellar-xdr 30 reference decoder)
+        run: |
+          mkdir -p "$HOME/bin"
+          curl -sSfL "https://github.com/stellar/stellar-cli/releases/download/v${STELLAR_CLI}/stellar-cli-${STELLAR_CLI}-x86_64-unknown-linux-gnu.tar.gz" | tar xz -C "$HOME/bin" stellar
+          echo "$HOME/bin" >> "$GITHUB_PATH"
+      - run: npm ci
+      - name: schema, Rust CLI + JS round-trip, LCM checks, golden checks (offline)
+        run: node tools/check-corpus.mjs --check-lcm --check
+      - name: union-arm coverage report is fresh
+        run: node tools/coverage-report.mjs --check
+      - name: real-network frequency report matches its committed data (offline)
+        run: node tools/frequency/run.mjs --check
+      - name: Go runner (go-stellar-sdk)
+        working-directory: runners/go
+        run: go run .
+      - name: Rust runner (stellar-xdr crate)
+        working-directory: runners/rust
+        run: cargo run --release --locked
+      - name: runner outputs are committed
+        run: git diff --exit-code reports/raw/rust-cli.json reports/raw/js.json reports/raw/go.json reports/raw/rust.json
+      - name: divergence matrix is fresh
+        run: node tools/divergence-matrix.mjs --check
+
+  livecheck:
+    name: live differential checker (JS / Go / Rust readers on fixture ledgers)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 24 }
+      - uses: actions/setup-go@v5
+        with: { go-version-file: tools/livecheck/go/go.mod }
+      - uses: dtolnay/rust-toolchain@stable
+      - name: stellar CLI
+        run: |
+          mkdir -p "$HOME/bin"
+          curl -sSfL "https://github.com/stellar/stellar-cli/releases/download/v${STELLAR_CLI}/stellar-cli-${STELLAR_CLI}-x86_64-unknown-linux-gnu.tar.gz" | tar xz -C "$HOME/bin" stellar
+          echo "$HOME/bin" >> "$GITHUB_PATH"
+      - run: npm ci
+      - name: fixture ledgers decode identically in all three readers; injected divergences are caught
+        run: node tools/livecheck/test.mjs
+
+  site:
+    name: status site (data freshness, static build)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 24 }
+      - run: npm ci
+      - run: npm ci
+        working-directory: site
+      - name: build-time data matches the reports
+        run: node scripts/build-data.mjs --check
+        working-directory: site
+      - name: static export
+        run: npm run build
+        working-directory: site
+
+  repros-js:
+    name: js-stellar-sdk repros (pinned versions)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 24 }
+      - name: stellar CLI
+        run: |
+          mkdir -p "$HOME/bin"
+          curl -sSfL "https://github.com/stellar/stellar-cli/releases/download/v${STELLAR_CLI}/stellar-cli-${STELLAR_CLI}-x86_64-unknown-linux-gnu.tar.gz" | tar xz -C "$HOME/bin" stellar
+          echo "$HOME/bin" >> "$GITHUB_PATH"
+      - run: npm ci
+      - run: bash repros/js-stellar-sdk/run.sh
+
+  repros-x402:
+    name: stellar-x402-policies muxed recipient repro
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 24 }
+      - uses: dtolnay/rust-toolchain@stable
+      - name: stellar CLI
+        run: |
+          mkdir -p "$HOME/bin"
+          curl -sSfL "https://github.com/stellar/stellar-cli/releases/download/v${STELLAR_CLI}/stellar-cli-${STELLAR_CLI}-x86_64-unknown-linux-gnu.tar.gz" | tar xz -C "$HOME/bin" stellar
+          echo "$HOME/bin" >> "$GITHUB_PATH"
+      - run: bash repros/x402-muxed-recipient/run.sh
+
+  wallet-backend:
+    name: wallet-backend column-type repros + replay harness (real PostgreSQL + TimescaleDB)
+    runs-on: ubuntu-latest
+    services:
+      timescaledb:
+        image: timescale/timescaledb:2.28.2-pg17
+        env:
+          POSTGRES_PASSWORD: postgres
+        ports: ["5432:5432"]
+        options: >-
+          --health-cmd "pg_isready -U postgres" --health-interval 5s --health-timeout 5s --health-retries 20
+    env:
+      XCK_PG_ADMIN_DSN: postgres://postgres:postgres@127.0.0.1:5432/postgres?sslmode=disable
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with: { go-version-file: runners/go/go.mod }
+      - name: harness unit tests (mock RPC serves the data lake bytes)
+        working-directory: harness
+        run: go vet ./... && go test ./...
+      - name: column-type repros (#716, #729)
+        run: bash repros/wallet-backend/run.sh
+      - name: replay matrix (#716, #729, #731 on pre-fix, fix and HEAD)
+        run: bash harness/run.sh
+      - name: replay matrix is committed
+        run: git diff --exit-code reports/replay-matrix.md reports/raw/replay.json
+      - name: mainnet replay probe verdicts match the committed report (P-key extra signers, 7 Soroban trustline txs)
+        run: bash harness/run.sh --mainnet -check
+
+  linter:
+    name: xdrlint (go/analysis) tests + wallet-backend scan
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with: { go-version-file: runners/go/go.mod }
+      - working-directory: linter
+        run: go vet ./... && go test ./...
+      - name: scan of wallet-backend at the pinned commit matches SCAN-wallet-backend.txt
+        run: bash linter/scan-wallet-backend.sh --check

@@ -1,0 +1,1414 @@
+[
+ {
+  "entry": "cap21-preconditions-max-length-vectors",
+  "step": "sha256",
+  "ok": true
+ },
+ {
+  "entry": "cap21-preconditions-max-length-vectors",
+  "step": "re-encode byte-exact",
+  "ok": true
+ },
+ {
+  "entry": "cap21-preconditions-max-length-vectors",
+  "step": "tx hash",
+  "ok": true
+ },
+ {
+  "entry": "cap21-preconditions-max-length-vectors",
+  "step": "check ops-at-max",
+  "ok": true,
+  "na": true,
+  "detail": "pointer check; no SEP-51 encoder in Go"
+ },
+ {
+  "entry": "cap21-preconditions-max-length-vectors",
+  "step": "check extra-signers-at-max",
+  "ok": true,
+  "na": true,
+  "detail": "pointer check; no SEP-51 encoder in Go"
+ },
+ {
+  "entry": "cap21-preconditions-max-length-vectors",
+  "step": "check extra-signer-signed-payload (strkey present in Go decode)",
+  "ok": true
+ },
+ {
+  "entry": "cap21-preconditions-max-length-vectors",
+  "step": "check extra-signer-ed25519 (strkey present in Go decode)",
+  "ok": true
+ },
+ {
+  "entry": "cap21-preconditions-max-length-vectors",
+  "step": "check memo-text-at-max",
+  "ok": true,
+  "na": true,
+  "detail": "pointer check; no SEP-51 encoder in Go"
+ },
+ {
+  "entry": "cap21-preconditions-max-length-vectors",
+  "step": "check ledger-bounds",
+  "ok": true,
+  "na": true,
+  "detail": "pointer check; no SEP-51 encoder in Go"
+ },
+ {
+  "entry": "cap21-preconditions-max-length-vectors",
+  "step": "check min-seq-num",
+  "ok": true,
+  "na": true,
+  "detail": "pointer check; no SEP-51 encoder in Go"
+ },
+ {
+  "entry": "cap21-preconditions-max-length-vectors",
+  "step": "check muxed-source-id-1 (strkey present in Go decode)",
+  "ok": true
+ },
+ {
+  "entry": "cap21-preconditions-max-length-vectors",
+  "step": "check muxed-dest-max-id (strkey present in Go decode)",
+  "ok": true
+ },
+ {
+  "entry": "cap21-preconditions-max-length-vectors",
+  "step": "check muxed-dest-zero-id (strkey present in Go decode)",
+  "ok": true
+ },
+ {
+  "entry": "cap21-preconditions-max-length-vectors",
+  "step": "check three-signatures",
+  "ok": true,
+  "na": true,
+  "detail": "pointer check; no SEP-51 encoder in Go"
+ },
+ {
+  "entry": "cap21-preconditions-max-length-vectors",
+  "step": "lcm object sha256",
+  "ok": true
+ },
+ {
+  "entry": "cap21-preconditions-max-length-vectors",
+  "step": "lcm batch range",
+  "ok": true
+ },
+ {
+  "entry": "cap21-preconditions-max-length-vectors",
+  "step": "lcm re-encode sha256",
+  "ok": true
+ },
+ {
+  "entry": "cap21-preconditions-max-length-vectors",
+  "step": "lcm protocol",
+  "ok": true
+ },
+ {
+  "entry": "cap21-preconditions-max-length-vectors",
+  "step": "lcm CAP-88 closeTimeMs/1000 == closeTime",
+  "ok": true
+ },
+ {
+  "entry": "cap21-preconditions-max-length-vectors",
+  "step": "lcm tx at tx_index",
+  "ok": true
+ },
+ {
+  "entry": "cap21-preconditions-max-length-vectors",
+  "step": "ledger_check lcm-100-op-results",
+  "ok": true,
+  "na": true,
+  "detail": "pointer check; no SEP-51 encoder in Go"
+ },
+ {
+  "entry": "cap21-preconditions-max-length-vectors",
+  "step": "ledger_check lcm-last-op-success",
+  "ok": true,
+  "na": true,
+  "detail": "pointer check; no SEP-51 encoder in Go"
+ },
+ {
+  "entry": "cap27-payment-muxed-max-id-to-muxed-zero-id",
+  "step": "sha256",
+  "ok": true
+ },
+ {
+  "entry": "cap27-payment-muxed-max-id-to-muxed-zero-id",
+  "step": "re-encode byte-exact",
+  "ok": true
+ },
+ {
+  "entry": "cap27-payment-muxed-max-id-to-muxed-zero-id",
+  "step": "tx hash",
+  "ok": true
+ },
+ {
+  "entry": "cap27-payment-muxed-max-id-to-muxed-zero-id",
+  "step": "check source-muxed-max-id (strkey present in Go decode)",
+  "ok": true
+ },
+ {
+  "entry": "cap27-payment-muxed-max-id-to-muxed-zero-id",
+  "step": "check destination-muxed-zero-id (strkey present in Go decode)",
+  "ok": true
+ },
+ {
+  "entry": "cap27-payment-muxed-max-id-to-muxed-zero-id",
+  "step": "check amount",
+  "ok": true,
+  "na": true,
+  "detail": "pointer check; no SEP-51 encoder in Go"
+ },
+ {
+  "entry": "cap27-payment-muxed-max-id-to-muxed-zero-id",
+  "step": "lcm object sha256",
+  "ok": true
+ },
+ {
+  "entry": "cap27-payment-muxed-max-id-to-muxed-zero-id",
+  "step": "lcm batch range",
+  "ok": true
+ },
+ {
+  "entry": "cap27-payment-muxed-max-id-to-muxed-zero-id",
+  "step": "lcm re-encode sha256",
+  "ok": true
+ },
+ {
+  "entry": "cap27-payment-muxed-max-id-to-muxed-zero-id",
+  "step": "lcm protocol",
+  "ok": true
+ },
+ {
+  "entry": "cap27-payment-muxed-max-id-to-muxed-zero-id",
+  "step": "lcm CAP-88 closeTimeMs/1000 == closeTime",
+  "ok": true
+ },
+ {
+  "entry": "cap27-payment-muxed-max-id-to-muxed-zero-id",
+  "step": "lcm tx at tx_index",
+  "ok": true
+ },
+ {
+  "entry": "cap27-payment-muxed-max-id-to-muxed-zero-id",
+  "step": "ledger_check lcm-tx-success",
+  "ok": true,
+  "na": true,
+  "detail": "pointer check; no SEP-51 encoder in Go"
+ },
+ {
+  "entry": "cap27-payment-muxed-max-id-to-muxed-zero-id",
+  "step": "ledger_check lcm-close-time-ms",
+  "ok": true,
+  "na": true,
+  "detail": "pointer check; no SEP-51 encoder in Go"
+ },
+ {
+  "entry": "cap38-pool-issuers-strkey-vs-bytes-order",
+  "step": "sha256",
+  "ok": true
+ },
+ {
+  "entry": "cap38-pool-issuers-strkey-vs-bytes-order",
+  "step": "re-encode byte-exact",
+  "ok": true
+ },
+ {
+  "entry": "cap38-pool-issuers-strkey-vs-bytes-order",
+  "step": "tx hash",
+  "ok": true
+ },
+ {
+  "entry": "cap38-pool-issuers-strkey-vs-bytes-order",
+  "step": "check asset-a-issuer-byte-first (strkey present in Go decode)",
+  "ok": true
+ },
+ {
+  "entry": "cap38-pool-issuers-strkey-vs-bytes-order",
+  "step": "check asset-b-issuer-text-first (strkey present in Go decode)",
+  "ok": true
+ },
+ {
+  "entry": "cap38-pool-issuers-strkey-vs-bytes-order",
+  "step": "check pool-fee",
+  "ok": true,
+  "na": true,
+  "detail": "pointer check; no SEP-51 encoder in Go"
+ },
+ {
+  "entry": "cap38-pool-issuers-strkey-vs-bytes-order",
+  "step": "lcm object sha256",
+  "ok": true
+ },
+ {
+  "entry": "cap38-pool-issuers-strkey-vs-bytes-order",
+  "step": "lcm batch range",
+  "ok": true
+ },
+ {
+  "entry": "cap38-pool-issuers-strkey-vs-bytes-order",
+  "step": "lcm re-encode sha256",
+  "ok": true
+ },
+ {
+  "entry": "cap38-pool-issuers-strkey-vs-bytes-order",
+  "step": "lcm protocol",
+  "ok": true
+ },
+ {
+  "entry": "cap38-pool-issuers-strkey-vs-bytes-order",
+  "step": "lcm CAP-88 closeTimeMs/1000 == closeTime",
+  "ok": true
+ },
+ {
+  "entry": "cap38-pool-issuers-strkey-vs-bytes-order",
+  "step": "lcm tx at tx_index",
+  "ok": true
+ },
+ {
+  "entry": "cap38-pool-issuers-strkey-vs-bytes-order",
+  "step": "ledger_check lcm-pool-created (strkey present in Go decode)",
+  "ok": true
+ },
+ {
+  "entry": "cap38-pool-issuers-strkey-vs-bytes-order",
+  "step": "ledger_check lcm-deposit-success",
+  "ok": true,
+  "na": true,
+  "detail": "pointer check; no SEP-51 encoder in Go"
+ },
+ {
+  "entry": "cap40-setoptions-signed-payload-signer",
+  "step": "sha256",
+  "ok": true
+ },
+ {
+  "entry": "cap40-setoptions-signed-payload-signer",
+  "step": "re-encode byte-exact",
+  "ok": true
+ },
+ {
+  "entry": "cap40-setoptions-signed-payload-signer",
+  "step": "tx hash",
+  "ok": true
+ },
+ {
+  "entry": "cap40-setoptions-signed-payload-signer",
+  "step": "check signer-is-p-strkey (strkey present in Go decode)",
+  "ok": true
+ },
+ {
+  "entry": "cap40-setoptions-signed-payload-signer",
+  "step": "check signer-weight",
+  "ok": true,
+  "na": true,
+  "detail": "pointer check; no SEP-51 encoder in Go"
+ },
+ {
+  "entry": "cap40-setoptions-signed-payload-signer",
+  "step": "check same-key-as-source (strkey present in Go decode)",
+  "ok": true
+ },
+ {
+  "entry": "cap40-setoptions-signed-payload-signer",
+  "step": "lcm object sha256",
+  "ok": true
+ },
+ {
+  "entry": "cap40-setoptions-signed-payload-signer",
+  "step": "lcm batch range",
+  "ok": true
+ },
+ {
+  "entry": "cap40-setoptions-signed-payload-signer",
+  "step": "lcm re-encode sha256",
+  "ok": true
+ },
+ {
+  "entry": "cap40-setoptions-signed-payload-signer",
+  "step": "lcm protocol",
+  "ok": true
+ },
+ {
+  "entry": "cap40-setoptions-signed-payload-signer",
+  "step": "lcm tx at tx_index",
+  "ok": true
+ },
+ {
+  "entry": "cap40-setoptions-signed-payload-signer",
+  "step": "ledger_check lcm-signer-p-key-in-meta (strkey present in Go decode)",
+  "ok": true
+ },
+ {
+  "entry": "cap40-setoptions-signed-payload-signer",
+  "step": "ledger_check lcm-protocol-28",
+  "ok": true,
+  "na": true,
+  "detail": "pointer check; no SEP-51 encoder in Go"
+ },
+ {
+  "entry": "cap46-11-nested-auth-depth-3",
+  "step": "sha256",
+  "ok": true
+ },
+ {
+  "entry": "cap46-11-nested-auth-depth-3",
+  "step": "re-encode byte-exact",
+  "ok": true
+ },
+ {
+  "entry": "cap46-11-nested-auth-depth-3",
+  "step": "tx hash",
+  "ok": true
+ },
+ {
+  "entry": "cap46-11-nested-auth-depth-3",
+  "step": "check root-has-3-subs",
+  "ok": true,
+  "na": true,
+  "detail": "pointer check; no SEP-51 encoder in Go"
+ },
+ {
+  "entry": "cap46-11-nested-auth-depth-3",
+  "step": "check depth-3",
+  "ok": true,
+  "na": true,
+  "detail": "pointer check; no SEP-51 encoder in Go"
+ },
+ {
+  "entry": "cap46-11-nested-auth-depth-3",
+  "step": "check leaf-fn",
+  "ok": true,
+  "na": true,
+  "detail": "pointer check; no SEP-51 encoder in Go"
+ },
+ {
+  "entry": "cap46-11-nested-auth-depth-3",
+  "step": "lcm object sha256",
+  "ok": true
+ },
+ {
+  "entry": "cap46-11-nested-auth-depth-3",
+  "step": "lcm batch range",
+  "ok": true
+ },
+ {
+  "entry": "cap46-11-nested-auth-depth-3",
+  "step": "lcm re-encode sha256",
+  "ok": true
+ },
+ {
+  "entry": "cap46-11-nested-auth-depth-3",
+  "step": "lcm protocol",
+  "ok": true
+ },
+ {
+  "entry": "cap46-11-nested-auth-depth-3",
+  "step": "lcm CAP-88 closeTimeMs/1000 == closeTime",
+  "ok": true
+ },
+ {
+  "entry": "cap46-11-nested-auth-depth-3",
+  "step": "lcm tx at tx_index",
+  "ok": true
+ },
+ {
+  "entry": "cap46-11-nested-auth-depth-3",
+  "step": "ledger_check lcm-success",
+  "ok": true,
+  "na": true,
+  "detail": "pointer check; no SEP-51 encoder in Go"
+ },
+ {
+  "entry": "cap67-sac-transfer-to-muxed-account",
+  "step": "sha256",
+  "ok": true
+ },
+ {
+  "entry": "cap67-sac-transfer-to-muxed-account",
+  "step": "re-encode byte-exact",
+  "ok": true
+ },
+ {
+  "entry": "cap67-sac-transfer-to-muxed-account",
+  "step": "tx hash",
+  "ok": true
+ },
+ {
+  "entry": "cap67-sac-transfer-to-muxed-account",
+  "step": "check to-is-m (strkey present in Go decode)",
+  "ok": true
+ },
+ {
+  "entry": "cap67-sac-transfer-to-muxed-account",
+  "step": "lcm object sha256",
+  "ok": true
+ },
+ {
+  "entry": "cap67-sac-transfer-to-muxed-account",
+  "step": "lcm batch range",
+  "ok": true
+ },
+ {
+  "entry": "cap67-sac-transfer-to-muxed-account",
+  "step": "lcm re-encode sha256",
+  "ok": true
+ },
+ {
+  "entry": "cap67-sac-transfer-to-muxed-account",
+  "step": "lcm protocol",
+  "ok": true
+ },
+ {
+  "entry": "cap67-sac-transfer-to-muxed-account",
+  "step": "lcm CAP-88 closeTimeMs/1000 == closeTime",
+  "ok": true
+ },
+ {
+  "entry": "cap67-sac-transfer-to-muxed-account",
+  "step": "lcm tx at tx_index",
+  "ok": true
+ },
+ {
+  "entry": "cap67-sac-transfer-to-muxed-account",
+  "step": "ledger_check lcm-event-to-plain-g (strkey present in Go decode)",
+  "ok": true
+ },
+ {
+  "entry": "cap67-sac-transfer-to-muxed-account",
+  "step": "ledger_check lcm-event-to-muxed-id-zero",
+  "ok": true,
+  "na": true,
+  "detail": "pointer check; no SEP-51 encoder in Go"
+ },
+ {
+  "entry": "cap73-sac-trust-creates-trustline",
+  "step": "sha256",
+  "ok": true
+ },
+ {
+  "entry": "cap73-sac-trust-creates-trustline",
+  "step": "re-encode byte-exact",
+  "ok": true
+ },
+ {
+  "entry": "cap73-sac-trust-creates-trustline",
+  "step": "tx hash",
+  "ok": true
+ },
+ {
+  "entry": "cap73-sac-trust-creates-trustline",
+  "step": "check fn-trust",
+  "ok": true,
+  "na": true,
+  "detail": "pointer check; no SEP-51 encoder in Go"
+ },
+ {
+  "entry": "cap73-sac-trust-creates-trustline",
+  "step": "check trust-arg-g (strkey present in Go decode)",
+  "ok": true
+ },
+ {
+  "entry": "cap73-sac-trust-creates-trustline",
+  "step": "lcm object sha256",
+  "ok": true
+ },
+ {
+  "entry": "cap73-sac-trust-creates-trustline",
+  "step": "lcm batch range",
+  "ok": true
+ },
+ {
+  "entry": "cap73-sac-trust-creates-trustline",
+  "step": "lcm re-encode sha256",
+  "ok": true
+ },
+ {
+  "entry": "cap73-sac-trust-creates-trustline",
+  "step": "lcm protocol",
+  "ok": true
+ },
+ {
+  "entry": "cap73-sac-trust-creates-trustline",
+  "step": "lcm CAP-88 closeTimeMs/1000 == closeTime",
+  "ok": true
+ },
+ {
+  "entry": "cap73-sac-trust-creates-trustline",
+  "step": "lcm tx at tx_index",
+  "ok": true
+ },
+ {
+  "entry": "cap73-sac-trust-creates-trustline",
+  "step": "ledger_check lcm-trustline-created (strkey present in Go decode)",
+  "ok": true
+ },
+ {
+  "entry": "cap73-sac-trust-creates-trustline",
+  "step": "ledger_check lcm-trustline-asset (strkey present in Go decode)",
+  "ok": true
+ },
+ {
+  "entry": "cap73-sac-trust-creates-trustline",
+  "step": "ledger_check lcm-trustline-unlimited",
+  "ok": true,
+  "na": true,
+  "detail": "pointer check; no SEP-51 encoder in Go"
+ },
+ {
+  "entry": "cap73-sac-trust-creates-trustline",
+  "step": "ledger_check lcm-trustline-authorized",
+  "ok": true,
+  "na": true,
+  "detail": "pointer check; no SEP-51 encoder in Go"
+ },
+ {
+  "entry": "cap73-sac-trust-creates-trustline",
+  "step": "ledger_check lcm-no-contract-event",
+  "ok": true,
+  "na": true,
+  "detail": "pointer check; no SEP-51 encoder in Go"
+ },
+ {
+  "entry": "cap84-sac-transfer-to-muxed-contract",
+  "step": "sha256",
+  "ok": true
+ },
+ {
+  "entry": "cap84-sac-transfer-to-muxed-contract",
+  "step": "re-encode byte-exact",
+  "ok": true
+ },
+ {
+  "entry": "cap84-sac-transfer-to-muxed-contract",
+  "step": "tx hash",
+  "ok": true
+ },
+ {
+  "entry": "cap84-sac-transfer-to-muxed-contract",
+  "step": "check to-is-w (strkey present in Go decode)",
+  "ok": true
+ },
+ {
+  "entry": "cap84-sac-transfer-to-muxed-contract",
+  "step": "check from-g (strkey present in Go decode)",
+  "ok": true
+ },
+ {
+  "entry": "cap84-sac-transfer-to-muxed-contract",
+  "step": "check amount",
+  "ok": true,
+  "na": true,
+  "detail": "pointer check; no SEP-51 encoder in Go"
+ },
+ {
+  "entry": "cap84-sac-transfer-to-muxed-contract",
+  "step": "lcm object sha256",
+  "ok": true
+ },
+ {
+  "entry": "cap84-sac-transfer-to-muxed-contract",
+  "step": "lcm batch range",
+  "ok": true
+ },
+ {
+  "entry": "cap84-sac-transfer-to-muxed-contract",
+  "step": "lcm re-encode sha256",
+  "ok": true
+ },
+ {
+  "entry": "cap84-sac-transfer-to-muxed-contract",
+  "step": "lcm protocol",
+  "ok": true
+ },
+ {
+  "entry": "cap84-sac-transfer-to-muxed-contract",
+  "step": "lcm CAP-88 closeTimeMs/1000 == closeTime",
+  "ok": true
+ },
+ {
+  "entry": "cap84-sac-transfer-to-muxed-contract",
+  "step": "lcm tx at tx_index",
+  "ok": true
+ },
+ {
+  "entry": "cap84-sac-transfer-to-muxed-contract",
+  "step": "ledger_check lcm-event-to-plain-c (strkey present in Go decode)",
+  "ok": true
+ },
+ {
+  "entry": "cap84-sac-transfer-to-muxed-contract",
+  "step": "ledger_check lcm-event-to-muxed-id",
+  "ok": true,
+  "na": true,
+  "detail": "pointer check; no SEP-51 encoder in Go"
+ },
+ {
+  "entry": "cap84-sac-transfer-to-muxed-contract",
+  "step": "ledger_check lcm-event-amount",
+  "ok": true,
+  "na": true,
+  "detail": "pointer check; no SEP-51 encoder in Go"
+ },
+ {
+  "entry": "cap84-sac-transfer-to-muxed-contract",
+  "step": "ledger_check lcm-protocol-30",
+  "ok": true,
+  "na": true,
+  "detail": "pointer check; no SEP-51 encoder in Go"
+ },
+ {
+  "entry": "cap88-ledger-close-time-ms",
+  "step": "sha256",
+  "ok": true
+ },
+ {
+  "entry": "cap88-ledger-close-time-ms",
+  "step": "re-encode byte-exact",
+  "ok": true
+ },
+ {
+  "entry": "cap88-ledger-close-time-ms",
+  "step": "check signed-ms-arm",
+  "ok": true,
+  "na": true,
+  "detail": "pointer check; no SEP-51 encoder in Go"
+ },
+ {
+  "entry": "cap88-ledger-close-time-ms",
+  "step": "check close-time-seconds",
+  "ok": true,
+  "na": true,
+  "detail": "pointer check; no SEP-51 encoder in Go"
+ },
+ {
+  "entry": "cap88-ledger-close-time-ms",
+  "step": "check protocol-30",
+  "ok": true,
+  "na": true,
+  "detail": "pointer check; no SEP-51 encoder in Go"
+ },
+ {
+  "entry": "cap88-ledger-close-time-ms",
+  "step": "lcm object sha256",
+  "ok": true
+ },
+ {
+  "entry": "cap88-ledger-close-time-ms",
+  "step": "lcm batch range",
+  "ok": true
+ },
+ {
+  "entry": "cap88-ledger-close-time-ms",
+  "step": "lcm re-encode sha256",
+  "ok": true
+ },
+ {
+  "entry": "cap88-ledger-close-time-ms",
+  "step": "lcm protocol",
+  "ok": true
+ },
+ {
+  "entry": "cap88-ledger-close-time-ms",
+  "step": "lcm CAP-88 closeTimeMs/1000 == closeTime",
+  "ok": true
+ },
+ {
+  "entry": "cap88-ledger-close-time-ms",
+  "step": "ledger_check lcm-header-ms",
+  "ok": true,
+  "na": true,
+  "detail": "pointer check; no SEP-51 encoder in Go"
+ },
+ {
+  "entry": "mainnet-cap15-fee-bump-inner-bad-auth",
+  "step": "sha256",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap15-fee-bump-inner-bad-auth",
+  "step": "re-encode byte-exact",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap15-fee-bump-inner-bad-auth",
+  "step": "tx hash",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap15-fee-bump-inner-bad-auth",
+  "step": "check fee-source (strkey present in Go decode)",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap15-fee-bump-inner-bad-auth",
+  "step": "check inner-source (strkey present in Go decode)",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap15-fee-bump-inner-bad-auth",
+  "step": "lcm object sha256",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap15-fee-bump-inner-bad-auth",
+  "step": "lcm batch range",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap15-fee-bump-inner-bad-auth",
+  "step": "lcm re-encode sha256",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap15-fee-bump-inner-bad-auth",
+  "step": "lcm protocol",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap15-fee-bump-inner-bad-auth",
+  "step": "lcm tx at tx_index",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap15-fee-bump-inner-bad-auth",
+  "step": "ledger_check lcm-inner-bad-auth",
+  "ok": true,
+  "na": true,
+  "detail": "pointer check; no SEP-51 encoder in Go"
+ },
+ {
+  "entry": "mainnet-cap15-fee-bump-inner-bad-auth",
+  "step": "ledger_check lcm-inner-hash",
+  "ok": true,
+  "na": true,
+  "detail": "pointer check; no SEP-51 encoder in Go"
+ },
+ {
+  "entry": "mainnet-cap21-40-extra-signers-signed-payload",
+  "step": "sha256",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap21-40-extra-signers-signed-payload",
+  "step": "re-encode byte-exact",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap21-40-extra-signers-signed-payload",
+  "step": "tx hash",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap21-40-extra-signers-signed-payload",
+  "step": "check two-extra-signers",
+  "ok": true,
+  "na": true,
+  "detail": "pointer check; no SEP-51 encoder in Go"
+ },
+ {
+  "entry": "mainnet-cap21-40-extra-signers-signed-payload",
+  "step": "check extra-signer-0-P (strkey present in Go decode)",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap21-40-extra-signers-signed-payload",
+  "step": "check extra-signer-1-P (strkey present in Go decode)",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap21-40-extra-signers-signed-payload",
+  "step": "check ledger-bounds",
+  "ok": true,
+  "na": true,
+  "detail": "pointer check; no SEP-51 encoder in Go"
+ },
+ {
+  "entry": "mainnet-cap21-40-extra-signers-signed-payload",
+  "step": "lcm object sha256",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap21-40-extra-signers-signed-payload",
+  "step": "lcm batch range",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap21-40-extra-signers-signed-payload",
+  "step": "lcm re-encode sha256",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap21-40-extra-signers-signed-payload",
+  "step": "lcm protocol",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap21-40-extra-signers-signed-payload",
+  "step": "lcm tx at tx_index",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap21-40-extra-signers-signed-payload",
+  "step": "ledger_check lcm-failed",
+  "ok": true,
+  "na": true,
+  "detail": "pointer check; no SEP-51 encoder in Go"
+ },
+ {
+  "entry": "mainnet-cap23-claimable-predicate-or",
+  "step": "sha256",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap23-claimable-predicate-or",
+  "step": "re-encode byte-exact",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap23-claimable-predicate-or",
+  "step": "tx hash",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap23-claimable-predicate-or",
+  "step": "check claim-op",
+  "ok": true,
+  "na": true,
+  "detail": "pointer check; no SEP-51 encoder in Go"
+ },
+ {
+  "entry": "mainnet-cap23-claimable-predicate-or",
+  "step": "lcm object sha256",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap23-claimable-predicate-or",
+  "step": "lcm batch range",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap23-claimable-predicate-or",
+  "step": "lcm re-encode sha256",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap23-claimable-predicate-or",
+  "step": "lcm protocol",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap23-claimable-predicate-or",
+  "step": "lcm tx at tx_index",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap23-claimable-predicate-or",
+  "step": "ledger_check lcm-or-arms",
+  "ok": true,
+  "na": true,
+  "detail": "pointer check; no SEP-51 encoder in Go"
+ },
+ {
+  "entry": "mainnet-cap23-claimable-predicate-or",
+  "step": "ledger_check lcm-or-unconditional",
+  "ok": true,
+  "na": true,
+  "detail": "pointer check; no SEP-51 encoder in Go"
+ },
+ {
+  "entry": "mainnet-cap23-claimable-predicate-or",
+  "step": "ledger_check lcm-or-not-time",
+  "ok": true,
+  "na": true,
+  "detail": "pointer check; no SEP-51 encoder in Go"
+ },
+ {
+  "entry": "mainnet-cap27-muxed-id-above-2-53",
+  "step": "sha256",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap27-muxed-id-above-2-53",
+  "step": "re-encode byte-exact",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap27-muxed-id-above-2-53",
+  "step": "tx hash",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap27-muxed-id-above-2-53",
+  "step": "check dest-muxed (strkey present in Go decode)",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap27-muxed-id-above-2-53",
+  "step": "check base-is-source (strkey present in Go decode)",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap27-muxed-id-above-2-53",
+  "step": "lcm object sha256",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap27-muxed-id-above-2-53",
+  "step": "lcm batch range",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap27-muxed-id-above-2-53",
+  "step": "lcm re-encode sha256",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap27-muxed-id-above-2-53",
+  "step": "lcm protocol",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap27-muxed-id-above-2-53",
+  "step": "lcm tx at tx_index",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap27-muxed-id-above-2-53",
+  "step": "ledger_check lcm-success",
+  "ok": true,
+  "na": true,
+  "detail": "pointer check; no SEP-51 encoder in Go"
+ },
+ {
+  "entry": "mainnet-cap33-revoke-sponsorship-signer",
+  "step": "sha256",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap33-revoke-sponsorship-signer",
+  "step": "re-encode byte-exact",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap33-revoke-sponsorship-signer",
+  "step": "tx hash",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap33-revoke-sponsorship-signer",
+  "step": "check revoke-signer-account (strkey present in Go decode)",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap33-revoke-sponsorship-signer",
+  "step": "check revoke-signer-key (strkey present in Go decode)",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap33-revoke-sponsorship-signer",
+  "step": "check seven-ops",
+  "ok": true,
+  "na": true,
+  "detail": "pointer check; no SEP-51 encoder in Go"
+ },
+ {
+  "entry": "mainnet-cap33-revoke-sponsorship-signer",
+  "step": "lcm object sha256",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap33-revoke-sponsorship-signer",
+  "step": "lcm batch range",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap33-revoke-sponsorship-signer",
+  "step": "lcm re-encode sha256",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap33-revoke-sponsorship-signer",
+  "step": "lcm protocol",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap33-revoke-sponsorship-signer",
+  "step": "lcm tx at tx_index",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap33-revoke-sponsorship-signer",
+  "step": "ledger_check lcm-result",
+  "ok": true,
+  "na": true,
+  "detail": "pointer check; no SEP-51 encoder in Go"
+ },
+ {
+  "entry": "mainnet-cap46-06-sac-deploy-from-asset",
+  "step": "sha256",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap46-06-sac-deploy-from-asset",
+  "step": "re-encode byte-exact",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap46-06-sac-deploy-from-asset",
+  "step": "tx hash",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap46-06-sac-deploy-from-asset",
+  "step": "check preimage-asset",
+  "ok": true,
+  "na": true,
+  "detail": "pointer check; no SEP-51 encoder in Go"
+ },
+ {
+  "entry": "mainnet-cap46-06-sac-deploy-from-asset",
+  "step": "check preimage-issuer (strkey present in Go decode)",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap46-06-sac-deploy-from-asset",
+  "step": "check executable",
+  "ok": true,
+  "na": true,
+  "detail": "pointer check; no SEP-51 encoder in Go"
+ },
+ {
+  "entry": "mainnet-cap46-06-sac-deploy-from-asset",
+  "step": "lcm object sha256",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap46-06-sac-deploy-from-asset",
+  "step": "lcm batch range",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap46-06-sac-deploy-from-asset",
+  "step": "lcm re-encode sha256",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap46-06-sac-deploy-from-asset",
+  "step": "lcm protocol",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap46-06-sac-deploy-from-asset",
+  "step": "lcm tx at tx_index",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap46-06-sac-deploy-from-asset",
+  "step": "ledger_check lcm-success",
+  "ok": true,
+  "na": true,
+  "detail": "pointer check; no SEP-51 encoder in Go"
+ },
+ {
+  "entry": "mainnet-cap46-11-auth-tree-depth-4",
+  "step": "sha256",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap46-11-auth-tree-depth-4",
+  "step": "re-encode byte-exact",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap46-11-auth-tree-depth-4",
+  "step": "tx hash",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap46-11-auth-tree-depth-4",
+  "step": "check root-has-4-subs",
+  "ok": true,
+  "na": true,
+  "detail": "pointer check; no SEP-51 encoder in Go"
+ },
+ {
+  "entry": "mainnet-cap46-11-auth-tree-depth-4",
+  "step": "check depth-4-leaf",
+  "ok": true,
+  "na": true,
+  "detail": "pointer check; no SEP-51 encoder in Go"
+ },
+ {
+  "entry": "mainnet-cap46-11-auth-tree-depth-4",
+  "step": "check depth-4-leaf-is-leaf",
+  "ok": true,
+  "na": true,
+  "detail": "pointer check; no SEP-51 encoder in Go"
+ },
+ {
+  "entry": "mainnet-cap46-11-auth-tree-depth-4",
+  "step": "lcm object sha256",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap46-11-auth-tree-depth-4",
+  "step": "lcm batch range",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap46-11-auth-tree-depth-4",
+  "step": "lcm re-encode sha256",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap46-11-auth-tree-depth-4",
+  "step": "lcm protocol",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap46-11-auth-tree-depth-4",
+  "step": "lcm tx at tx_index",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap46-11-auth-tree-depth-4",
+  "step": "ledger_check lcm-success",
+  "ok": true,
+  "na": true,
+  "detail": "pointer check; no SEP-51 encoder in Go"
+ },
+ {
+  "entry": "mainnet-cap46-auth-root-deploys-contract",
+  "step": "sha256",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap46-auth-root-deploys-contract",
+  "step": "re-encode byte-exact",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap46-auth-root-deploys-contract",
+  "step": "tx hash",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap46-auth-root-deploys-contract",
+  "step": "check host-fn-v2 (strkey present in Go decode)",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap46-auth-root-deploys-contract",
+  "step": "check auth-root-is-deploy (strkey present in Go decode)",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap46-auth-root-deploys-contract",
+  "step": "check address-credentials (strkey present in Go decode)",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap46-auth-root-deploys-contract",
+  "step": "lcm object sha256",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap46-auth-root-deploys-contract",
+  "step": "lcm batch range",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap46-auth-root-deploys-contract",
+  "step": "lcm re-encode sha256",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap46-auth-root-deploys-contract",
+  "step": "lcm protocol",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap46-auth-root-deploys-contract",
+  "step": "lcm tx at tx_index",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap46-auth-root-deploys-contract",
+  "step": "ledger_check lcm-success",
+  "ok": true,
+  "na": true,
+  "detail": "pointer check; no SEP-51 encoder in Go"
+ },
+ {
+  "entry": "mainnet-cap67-event-data-muxed-address",
+  "step": "sha256",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap67-event-data-muxed-address",
+  "step": "re-encode byte-exact",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap67-event-data-muxed-address",
+  "step": "tx hash",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap67-event-data-muxed-address",
+  "step": "check fn",
+  "ok": true,
+  "na": true,
+  "detail": "pointer check; no SEP-51 encoder in Go"
+ },
+ {
+  "entry": "mainnet-cap67-event-data-muxed-address",
+  "step": "lcm object sha256",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap67-event-data-muxed-address",
+  "step": "lcm batch range",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap67-event-data-muxed-address",
+  "step": "lcm re-encode sha256",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap67-event-data-muxed-address",
+  "step": "lcm protocol",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap67-event-data-muxed-address",
+  "step": "lcm tx at tx_index",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap67-event-data-muxed-address",
+  "step": "ledger_check lcm-event-key",
+  "ok": true,
+  "na": true,
+  "detail": "pointer check; no SEP-51 encoder in Go"
+ },
+ {
+  "entry": "mainnet-cap67-event-data-muxed-address",
+  "step": "ledger_check lcm-event-muxed (strkey present in Go decode)",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap67-event-data-muxed-address",
+  "step": "ledger_check lcm-success",
+  "ok": true,
+  "na": true,
+  "detail": "pointer check; no SEP-51 encoder in Go"
+ },
+ {
+  "entry": "mainnet-cap73-nested-sac-trust-creates-trustline",
+  "step": "sha256",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap73-nested-sac-trust-creates-trustline",
+  "step": "re-encode byte-exact",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap73-nested-sac-trust-creates-trustline",
+  "step": "tx hash",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap73-nested-sac-trust-creates-trustline",
+  "step": "check top-fn-batch",
+  "ok": true,
+  "na": true,
+  "detail": "pointer check; no SEP-51 encoder in Go"
+ },
+ {
+  "entry": "mainnet-cap73-nested-sac-trust-creates-trustline",
+  "step": "check sub-fn-trust",
+  "ok": true,
+  "na": true,
+  "detail": "pointer check; no SEP-51 encoder in Go"
+ },
+ {
+  "entry": "mainnet-cap73-nested-sac-trust-creates-trustline",
+  "step": "check sub-contract-is-sac (strkey present in Go decode)",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap73-nested-sac-trust-creates-trustline",
+  "step": "check sub-trust-arg (strkey present in Go decode)",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap73-nested-sac-trust-creates-trustline",
+  "step": "lcm object sha256",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap73-nested-sac-trust-creates-trustline",
+  "step": "lcm batch range",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap73-nested-sac-trust-creates-trustline",
+  "step": "lcm re-encode sha256",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap73-nested-sac-trust-creates-trustline",
+  "step": "lcm protocol",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap73-nested-sac-trust-creates-trustline",
+  "step": "lcm tx at tx_index",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap73-nested-sac-trust-creates-trustline",
+  "step": "ledger_check lcm-trustline-created (strkey present in Go decode)",
+  "ok": true
+ },
+ {
+  "entry": "mainnet-cap73-nested-sac-trust-creates-trustline",
+  "step": "ledger_check lcm-success",
+  "ok": true,
+  "na": true,
+  "detail": "pointer check; no SEP-51 encoder in Go"
+ },
+ {
+  "entry": "scval-map-key-collision",
+  "step": "sha256",
+  "ok": true
+ },
+ {
+  "entry": "scval-map-key-collision",
+  "step": "re-encode byte-exact",
+  "ok": true
+ },
+ {
+  "entry": "scval-map-key-collision",
+  "step": "check two-entries",
+  "ok": true,
+  "na": true,
+  "detail": "pointer check; no SEP-51 encoder in Go"
+ },
+ {
+  "entry": "scval-map-key-collision",
+  "step": "check first-key-u32",
+  "ok": true,
+  "na": true,
+  "detail": "pointer check; no SEP-51 encoder in Go"
+ },
+ {
+  "entry": "scval-map-key-collision",
+  "step": "check second-key-symbol",
+  "ok": true,
+  "na": true,
+  "detail": "pointer check; no SEP-51 encoder in Go"
+ }
+]

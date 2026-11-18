@@ -1,0 +1,18 @@
+# Own machine as the checker host (Docker Desktop), published through a tunnel
+# instead of Caddy. The status server is bound to localhost only.
+#   cd deploy/checker && docker compose -f docker-compose.local.yml up -d --build
+#   cloudflared tunnel --url http://localhost:8080
+services:
+  checker:
+    build: { context: ../.., dockerfile: deploy/checker/Dockerfile }
+    container_name: xck-checker
+    restart: unless-stopped
+    environment:
+      XCK_NET: pubnet
+      XCK_STATUS_EVERY_S: "60"
+      XCK_LIVE_WORKERS: "3"
+    volumes: ["xck-data:/data"]
+    mem_limit: 3g
+    ports: ["127.0.0.1:8080:8080"]
+volumes:
+  xck-data: { name: xck-data }

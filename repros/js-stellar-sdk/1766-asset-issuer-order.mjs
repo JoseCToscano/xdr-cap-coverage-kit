@@ -3,30 +3,26 @@
 // rejected as out of order.
 // https://github.com/stellar/js-stellar-sdk/pull/1766
 // Buggy: 17.2.0. Fixed: 17.2.1.
+// Input: the corpus entry cap38-pool-issuers-strkey-vs-bytes-order, a pool that
+// stellar-core accepted on testnet (ledger 5718666) with exactly this asset order.
 // Usage: node 1766-asset-issuer-order.mjs <sdk-17-2-0|sdk-17-2-1>
+import { readFileSync } from "node:fs";
 const pkg = process.argv[2];
-const { Asset, Keypair, LiquidityPoolAsset, StrKey } = await import(pkg);
+const { Asset, LiquidityPoolAsset, getLiquidityPoolId, StrKey } = await import(pkg);
 
-// Deterministic search: issuer seeds 1..n, find a pair whose strkey text
-// order disagrees with their raw key byte order.
-function issuer(i) {
-  const seed = Buffer.alloc(32, 0); seed.writeUInt32BE(i, 28);
-  return Keypair.fromRawEd25519Seed(seed).publicKey();
-}
-let pair;
-for (let i = 1; i < 200 && !pair; i++) for (let j = i + 1; j < 200 && !pair; j++) {
-  const a = issuer(i), b = issuer(j);
-  const byText = a < b ? -1 : 1;
-  const byBytes = Buffer.compare(StrKey.decodeEd25519PublicKey(a), StrKey.decodeEd25519PublicKey(b));
-  if (byText !== byBytes) pair = byBytes < 0 ? [a, b] : [b, a]; // pair[0] < pair[1] by bytes
-}
-const [lo, hi] = pair;
-const A = new Asset("USD", lo), B = new Asset("USD", hi);
-console.log(`[#1766] issuers (byte order): ${lo} < ${hi}; text order says the opposite`);
+const e = JSON.parse(readFileSync(new URL("../../corpus/entries/cap38-pool-issuers-strkey-vs-bytes-order.json", import.meta.url)));
+const lp = e.expected.json.tx.tx.operations[0].body.change_trust.line.pool_share.liquidity_pool_constant_product;
+const A = new Asset(lp.asset_a.credit_alphanum4.asset_code, lp.asset_a.credit_alphanum4.issuer);
+const B = new Asset(lp.asset_b.credit_alphanum4.asset_code, lp.asset_b.credit_alphanum4.issuer);
+const poolOnLedger = e.expected.ledger_checks.find((c) => c.id === "lcm-pool-created").value;
+console.log(`[#1766] core-accepted order (testnet ledger ${e.ledger.sequence}): ${A.getIssuer()} then ${B.getIssuer()}; text order says the opposite`);
 try {
-  new LiquidityPoolAsset(A, B, 30);
-  console.log(`[#1766] ${pkg}: PASS - pool asset accepted in network (byte) order`);
-} catch (e) {
-  console.log(`[#1766] ${pkg}: FAIL - valid pair rejected: ${e.message}`);
+  const pool = new LiquidityPoolAsset(A, B, lp.fee);
+  const id = Buffer.from(getLiquidityPoolId("constant_product", pool.getLiquidityPoolParameters())).toString("hex");
+  const onLedger = Buffer.from(StrKey.decodeLiquidityPool(poolOnLedger)).toString("hex");
+  if (id !== onLedger) throw new Error(`pool id ${id} != on-ledger ${onLedger}`);
+  console.log(`[#1766] ${pkg}: PASS - pool asset accepted in network (byte) order; pool id matches the ledger (${poolOnLedger})`);
+} catch (err) {
+  console.log(`[#1766] ${pkg}: FAIL - valid pair rejected: ${err.message}`);
   process.exitCode = 1;
 }

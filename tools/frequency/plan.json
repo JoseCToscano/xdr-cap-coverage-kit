@@ -1,0 +1,9 @@
+{
+  "about": "Ledger sample for the real-network frequency study. Ranges are inclusive. Source objects: SDF's Galexie export on AWS Open Data (s3://aws-public-blockchain/v1.1/stellar/ledgers/<network>), 1 ledger per object, zstd LedgerCloseMetaBatch.",
+  "chunk": 250,
+  "samples": [
+    { "name": "pubnet-recent", "net": "pubnet", "description": "contiguous recent mainnet window (Protocol 29)", "ranges": [[65450000, 65499999]] },
+    { "name": "pubnet-spread", "net": "pubnet", "description": "500 contiguous ledgers every 100,000 ledgers from the Protocol 23 upgrade (Sep 2025) to Nov 2026", "every": { "from": 58800000, "to": 65400000, "step": 100000, "len": 500 } },
+    { "name": "testnet-recent", "net": "testnet", "description": "contiguous recent testnet window (Protocol 30)", "ranges": [[5740000, 5749999]] }
+  ]
+}

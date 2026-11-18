@@ -1,5 +1,5 @@
 {
-  "schema_version": "0.1.0",
+  "schema_version": "0.2.0",
   "id": "cap27-payment-muxed-max-id-to-muxed-zero-id",
   "title": "Payment from a muxed source with ID 2^64-1 to a muxed destination with ID 0",
   "caps": [
@@ -21,10 +21,13 @@
   },
   "provenance": {
     "kind": "testnet",
+    "origin": "mined_from_testnet_history",
+    "origin_note": "Read from existing testnet ledger history. Not submitted by this kit; the source account is not ours.",
     "ledger": 5699707,
     "tx_hash": "fae7b0f2674229543ea86e147902924c538ef77f48a54c4060c4baeaec0489b0",
     "source_url": "https://horizon-testnet.stellar.org/transactions/fae7b0f2674229543ea86e147902924c538ef77f48a54c4060c4baeaec0489b0",
-    "captured_at": "2026-11-12T22:22:59Z",
+    "tx_created_at": "2026-11-12T22:22:59Z",
+    "raw_committed_at": "2026-11-12T23:44:12Z",
     "tool": "tools/make-entry.mjs (cap27-payment-muxed-max-id-to-muxed-zero-id.mjs)"
   },
   "expected": {
@@ -85,6 +88,21 @@
         "value": "10000000",
         "note": "1 XLM in stroops, as a string."
       }
+    ],
+    "ledger_checks": [
+      {
+        "id": "lcm-tx-success",
+        "path": "/v2/tx_processing/0/result/result/result/tx_success/0/op_inner/payment",
+        "op": "equals",
+        "value": "success",
+        "note": "The payment applied. Readers must take participants and balances from this meta, not from the envelope."
+      },
+      {
+        "id": "lcm-close-time-ms",
+        "path": "/v2/ledger_header/header/scp_value/ext/signed_ms/close_time_ms",
+        "op": "preserved",
+        "note": "Protocol 30 ledger (CAP-88 header arm)."
+      }
     ]
   },
   "tags": [
@@ -102,5 +120,24 @@
       "role": "related",
       "component": "muxed participants"
     }
-  ]
+  ],
+  "ledger": {
+    "type": "LedgerCloseMeta",
+    "lcm_version": "v2",
+    "sequence": 5699707,
+    "protocol_version": 30,
+    "file": "corpus/datalake/testnet/FFA915FF--5696000-5759999/FFA90784--5699707.xdr.zst",
+    "format": "galexie: zstd(LedgerCloseMetaBatch), 1 ledger per object, 64000 per partition",
+    "sha256_zst": "3a5757e65fd01807a02cd25c485091d5b3fb0b8d91a57f78d0b1d830c4d81134",
+    "sha256_lcm": "32c5e2ada7cc4932f35173c41cbe99d4f756ce3f7b89de408511b4a41774d922",
+    "tx_index": 0,
+    "source": "galexie-public-archive",
+    "source_url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/v1.1/stellar/ledgers/testnet/2025-12-18/FFA915FF--5696000-5759999/FFA90784--5699707.xdr.zst",
+    "alt_source": {
+      "source": "stellar-rpc-getLedgers",
+      "sha256_lcm": "e1f73ad4ce45205f4a7dbde4d26c89fff7cb8b456ead286aae75053ac6949588",
+      "lcm_bytes": 332264,
+      "byte_identical": false
+    }
+  }
 }

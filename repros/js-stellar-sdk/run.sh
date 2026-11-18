@@ -15,5 +15,10 @@ run 1785-muxed-and-offer-ids.mjs sdk-17-2-1 1
 run 1785-muxed-and-offer-ids.mjs sdk-17-3-0 0
 run 1766-asset-issuer-order.mjs  sdk-17-2-0 1
 run 1766-asset-issuer-order.mjs  sdk-17-2-1 0
+# Protocol 30 probe (records behavior; no upstream issue): SAC transfer `to` = M / W.
+probe() { node p30-muxed-to.mjs "$@" || { echo "  !! unexpected P30 probe result for $1"; bad=1; }; }
+probe sdk-17-2-1 same ERROR
+probe sdk-17-3-0 same same
+probe sdk-17-4-0 same same
 echo; [ $bad = 0 ] && echo "all repros behaved as expected" || echo "some repros did not behave as expected"
 exit $bad

@@ -1,0 +1,266 @@
+{
+  "4437357": {
+    "ledger": 4437357,
+    "object_key": "FFBC9DFF--4416000-4479999/FFBC4A92--4437357.xdr.zst",
+    "source": "galexie-public-archive",
+    "url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/v1.1/stellar/ledgers/testnet/2025-12-18/FFBC9DFF--4416000-4479999/FFBC4A92--4437357.xdr.zst",
+    "fetched_at": "2026-11-14T00:43:50.905Z",
+    "sha256_zst": "24fc6077579e6058512e35401c728288898e6c4fd550b8f26e0a5079aae4001b",
+    "sha256_lcm": "582e694b96bf69f894763909a1b058c1a2523d5634f2e0947393cee9765f4e0e",
+    "lcm_bytes": 58256
+  },
+  "5698682": {
+    "ledger": 5698682,
+    "object_key": "FFA915FF--5696000-5759999/FFA90B85--5698682.xdr.zst",
+    "source": "galexie-public-archive",
+    "url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/v1.1/stellar/ledgers/testnet/2025-12-18/FFA915FF--5696000-5759999/FFA90B85--5698682.xdr.zst",
+    "fetched_at": "2026-11-14T00:43:51.221Z",
+    "sha256_zst": "960e5ccb88ae0084285912680f419fdb0c7279740cde1fd0a6c0a82017db7817",
+    "sha256_lcm": "2ba70f555a99544d2c8775b95e5ac74aa2fb1c182f209dfd3e7346345f1031d2",
+    "lcm_bytes": 101508,
+    "alt": {
+      "source": "stellar-rpc-getLedgers",
+      "fetched_at": "2026-11-14T01:06:33.790Z",
+      "file": "corpus/datalake/testnet-rpc/FFA915FF--5696000-5759999/FFA90B85--5698682.xdr.zst",
+      "sha256_lcm": "ab22100ce1c28212c5297512ed57c9eb2910df7079ebbb9d965dbb25355d5475",
+      "lcm_bytes": 101496,
+      "byte_identical": false
+    }
+  },
+  "5699707": {
+    "ledger": 5699707,
+    "object_key": "FFA915FF--5696000-5759999/FFA90784--5699707.xdr.zst",
+    "source": "galexie-public-archive",
+    "url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/v1.1/stellar/ledgers/testnet/2025-12-18/FFA915FF--5696000-5759999/FFA90784--5699707.xdr.zst",
+    "fetched_at": "2026-11-14T00:43:51.091Z",
+    "sha256_zst": "3a5757e65fd01807a02cd25c485091d5b3fb0b8d91a57f78d0b1d830c4d81134",
+    "sha256_lcm": "32c5e2ada7cc4932f35173c41cbe99d4f756ce3f7b89de408511b4a41774d922",
+    "lcm_bytes": 332276,
+    "alt": {
+      "source": "stellar-rpc-getLedgers",
+      "fetched_at": "2026-11-14T01:06:33.928Z",
+      "file": "corpus/datalake/testnet-rpc/FFA915FF--5696000-5759999/FFA90784--5699707.xdr.zst",
+      "sha256_lcm": "99d99f88b2dc897a0355dae0bcc6c94e9f0848a47ff54d9d7ed5cb29a752d905",
+      "lcm_bytes": 332264,
+      "byte_identical": false
+    }
+  },
+  "5718664": {
+    "ledger": 5718664,
+    "object_key": "FFA915FF--5696000-5759999/FFA8BD77--5718664.xdr.zst",
+    "source": "galexie-public-archive",
+    "url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/v1.1/stellar/ledgers/testnet/2025-12-18/FFA915FF--5696000-5759999/FFA8BD77--5718664.xdr.zst",
+    "fetched_at": "2026-11-14T00:43:51.281Z",
+    "sha256_zst": "a39a446022c4be8b3c97f5e5177221689a26702cb857dd6f4a66d114b406e944",
+    "sha256_lcm": "2a727553a640bf3d353c4bb19f38569cedfc301ab7a7435b38a753025b1a459a",
+    "lcm_bytes": 399200,
+    "alt": {
+      "source": "stellar-rpc-getLedgers",
+      "fetched_at": "2026-11-14T01:06:34.072Z",
+      "file": "corpus/datalake/testnet-rpc/FFA915FF--5696000-5759999/FFA8BD77--5718664.xdr.zst",
+      "sha256_lcm": "9e01e95ca68c266d9471c29d15530cfcefb67b4c7105812be754f7a3ea03002b",
+      "lcm_bytes": 399188,
+      "byte_identical": false
+    }
+  },
+  "5718666": {
+    "ledger": 5718666,
+    "object_key": "FFA915FF--5696000-5759999/FFA8BD75--5718666.xdr.zst",
+    "source": "galexie-public-archive",
+    "url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/v1.1/stellar/ledgers/testnet/2025-12-18/FFA915FF--5696000-5759999/FFA8BD75--5718666.xdr.zst",
+    "fetched_at": "2026-11-14T00:43:51.342Z",
+    "sha256_zst": "59f97704c7bdc96620c492089a87cd121eeeb91d4f2927dc0c2aac94552c7cb8",
+    "sha256_lcm": "9e2ef62455ceb1c260eb617aef050122c2bbe0ed46fa7be595c82374a2afecc0",
+    "lcm_bytes": 143084,
+    "alt": {
+      "source": "stellar-rpc-getLedgers",
+      "fetched_at": "2026-11-14T01:06:34.189Z",
+      "file": "corpus/datalake/testnet-rpc/FFA915FF--5696000-5759999/FFA8BD75--5718666.xdr.zst",
+      "sha256_lcm": "911f439e8cbe050ed1d4a21f7fb59b6a23e3627f8950d36a6d2094ca3482b4f4",
+      "lcm_bytes": 143072,
+      "byte_identical": false
+    }
+  },
+  "5718667": {
+    "ledger": 5718667,
+    "object_key": "FFA915FF--5696000-5759999/FFA8BD74--5718667.xdr.zst",
+    "source": "galexie-public-archive",
+    "url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/v1.1/stellar/ledgers/testnet/2025-12-18/FFA915FF--5696000-5759999/FFA8BD74--5718667.xdr.zst",
+    "fetched_at": "2026-11-14T00:44:12.024Z",
+    "sha256_zst": "f03016d3e74d4972bcde989abf4e1983abf7300fbbcc89c08386ebc06a29b877",
+    "sha256_lcm": "53a3c92ccb3a8aa9289e7b4dc2f64424926ad63f4d93d87b5d670ffda5b36c40",
+    "lcm_bytes": 524204,
+    "alt": {
+      "source": "stellar-rpc-getLedgers",
+      "fetched_at": "2026-11-14T01:06:34.360Z",
+      "file": "corpus/datalake/testnet-rpc/FFA915FF--5696000-5759999/FFA8BD74--5718667.xdr.zst",
+      "sha256_lcm": "8fcea538cd383b5641435dd2bf006ef763a7f2efc6d9cfc02e8d435e6d1765f9",
+      "lcm_bytes": 524192,
+      "byte_identical": false
+    }
+  },
+  "5718668": {
+    "ledger": 5718668,
+    "object_key": "FFA915FF--5696000-5759999/FFA8BD73--5718668.xdr.zst",
+    "source": "galexie-public-archive",
+    "url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/v1.1/stellar/ledgers/testnet/2025-12-18/FFA915FF--5696000-5759999/FFA8BD73--5718668.xdr.zst",
+    "fetched_at": "2026-11-14T00:43:51.399Z",
+    "sha256_zst": "dfd214e52a951e658a3875f246f5cc443bd272862afd242db071d7ac04e9f666",
+    "sha256_lcm": "9abb479255e48bd378ba97ed813cf4df56218222ef4cfd68d888e053439c8584",
+    "lcm_bytes": 151484,
+    "alt": {
+      "source": "stellar-rpc-getLedgers",
+      "fetched_at": "2026-11-14T01:06:34.484Z",
+      "file": "corpus/datalake/testnet-rpc/FFA915FF--5696000-5759999/FFA8BD73--5718668.xdr.zst",
+      "sha256_lcm": "cca13a84320698b4968035c0c2d77f7c03fdc44e1a57a8a90b0269324e4ddd20",
+      "lcm_bytes": 151472,
+      "byte_identical": false
+    }
+  },
+  "5718669": {
+    "ledger": 5718669,
+    "object_key": "FFA915FF--5696000-5759999/FFA8BD72--5718669.xdr.zst",
+    "source": "galexie-public-archive",
+    "url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/v1.1/stellar/ledgers/testnet/2025-12-18/FFA915FF--5696000-5759999/FFA8BD72--5718669.xdr.zst",
+    "fetched_at": "2026-11-14T00:43:51.460Z",
+    "sha256_zst": "6a3f25199389534957a80964e88e304f76a20085dd988b5322a07f5f3d8aee9a",
+    "sha256_lcm": "5bdec9738d4c25c465961a801695eee5af4bf5027e3032e7bd491d303540536e",
+    "lcm_bytes": 122916,
+    "alt": {
+      "source": "stellar-rpc-getLedgers",
+      "fetched_at": "2026-11-14T01:06:34.603Z",
+      "file": "corpus/datalake/testnet-rpc/FFA915FF--5696000-5759999/FFA8BD72--5718669.xdr.zst",
+      "sha256_lcm": "0cd7365233ca6a7c14399cade686634a26f598f51ab5ae2b4d5cd638b4bf7982",
+      "lcm_bytes": 122904,
+      "byte_identical": false
+    }
+  },
+  "5718670": {
+    "ledger": 5718670,
+    "object_key": "FFA915FF--5696000-5759999/FFA8BD71--5718670.xdr.zst",
+    "source": "galexie-public-archive",
+    "url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/v1.1/stellar/ledgers/testnet/2025-12-18/FFA915FF--5696000-5759999/FFA8BD71--5718670.xdr.zst",
+    "fetched_at": "2026-11-14T00:43:51.514Z",
+    "sha256_zst": "a04d10ffe030f3bf7192a098ea1a377d4dce416569c15fd5b5741524c6c33420",
+    "sha256_lcm": "ae4e06c4bb9ff7f32a9bb109348befa58d3f01a3561078c85d337b4e739e5f01",
+    "lcm_bytes": 341948,
+    "alt": {
+      "source": "stellar-rpc-getLedgers",
+      "fetched_at": "2026-11-14T01:06:34.738Z",
+      "file": "corpus/datalake/testnet-rpc/FFA915FF--5696000-5759999/FFA8BD71--5718670.xdr.zst",
+      "sha256_lcm": "cdc7b455fc431eeed2817bb4c2f8afb086b5ce86d86394eeac2155092c4f00a5",
+      "lcm_bytes": 341936,
+      "byte_identical": false
+    }
+  },
+  "65300015": {
+    "network": "pubnet",
+    "ledger": 65300015,
+    "object_key": "FC1BE7FF--65280000-65343999/FC1B99D0--65300015.xdr.zst",
+    "source": "galexie-public-archive",
+    "url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/v1.1/stellar/ledgers/pubnet/FC1BE7FF--65280000-65343999/FC1B99D0--65300015.xdr.zst",
+    "fetched_at": "2026-11-16T19:00:30.211Z",
+    "sha256_zst": "618aa138bb954925f9124cad4df1476673ed46854bb9be25660587a6061b3e38",
+    "sha256_lcm": "9caf21df4cb7d0b5e3af1d81d412e8a070c7326a69852d9099a07176938e7fcf",
+    "lcm_bytes": 1971528
+  },
+  "65300125": {
+    "network": "pubnet",
+    "ledger": 65300125,
+    "object_key": "FC1BE7FF--65280000-65343999/FC1B9962--65300125.xdr.zst",
+    "source": "galexie-public-archive",
+    "url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/v1.1/stellar/ledgers/pubnet/FC1BE7FF--65280000-65343999/FC1B9962--65300125.xdr.zst",
+    "fetched_at": "2026-11-16T19:00:22.785Z",
+    "sha256_zst": "46c127a7ab1848ee9d937139f1f9403d273e8420e08f5a22c7b0b6b5f47cd20c",
+    "sha256_lcm": "01c318913779ad538e93425a5be584a22e36f52a18983b53e26dc52f9476474d",
+    "lcm_bytes": 1768820
+  },
+  "65300357": {
+    "network": "pubnet",
+    "ledger": 65300357,
+    "object_key": "FC1BE7FF--65280000-65343999/FC1B987A--65300357.xdr.zst",
+    "source": "galexie-public-archive",
+    "url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/v1.1/stellar/ledgers/pubnet/FC1BE7FF--65280000-65343999/FC1B987A--65300357.xdr.zst",
+    "fetched_at": "2026-11-16T19:00:20.750Z",
+    "sha256_zst": "ea848ad60a721b58a6b6dffd4c529a29dd6575cfec5e0bd578dad177729de95c",
+    "sha256_lcm": "794e4acc3eb4091c9000e4d1bb4cf1cfb9e6a1993480453a0c1942f3ad9f22a6",
+    "lcm_bytes": 732500
+  },
+  "65300453": {
+    "network": "pubnet",
+    "ledger": 65300453,
+    "object_key": "FC1BE7FF--65280000-65343999/FC1B981A--65300453.xdr.zst",
+    "source": "galexie-public-archive",
+    "url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/v1.1/stellar/ledgers/pubnet/FC1BE7FF--65280000-65343999/FC1B981A--65300453.xdr.zst",
+    "fetched_at": "2026-11-16T19:00:41.140Z",
+    "sha256_zst": "dc00c93721f333143f9eec185c6d187d1a01202deced56afdac1ee45c4abc2f6",
+    "sha256_lcm": "7b87be53e291308bbb22e5eb821db4f43feac151fd8e7851ee3b7dc02cf76b62",
+    "lcm_bytes": 1331012
+  },
+  "65450265": {
+    "network": "pubnet",
+    "ledger": 65450265,
+    "object_key": "FC19F3FF--65408000-65471999/FC194EE6--65450265.xdr.zst",
+    "source": "galexie-public-archive",
+    "url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/v1.1/stellar/ledgers/pubnet/FC19F3FF--65408000-65471999/FC194EE6--65450265.xdr.zst",
+    "fetched_at": "2026-11-16T19:00:44.165Z",
+    "sha256_zst": "b3c516f68bbe01cde360be4d88b72fec5fae95126b77e02111ab5d02388595b5",
+    "sha256_lcm": "76899529d4872214a77e8fbda83671f06aaa8904c568a8d88ff4ecf2689bdac6",
+    "lcm_bytes": 1324216
+  },
+  "65450811": {
+    "network": "pubnet",
+    "ledger": 65450811,
+    "object_key": "FC19F3FF--65408000-65471999/FC194CC4--65450811.xdr.zst",
+    "source": "galexie-public-archive",
+    "url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/v1.1/stellar/ledgers/pubnet/FC19F3FF--65408000-65471999/FC194CC4--65450811.xdr.zst",
+    "fetched_at": "2026-11-16T19:00:26.234Z",
+    "sha256_zst": "39c57b89aa3a15275db83c30a6c771f30b62fc78b28da3405e282131cfe3df96",
+    "sha256_lcm": "2c8f0dcdd957f07f0beb188fdcdb3181a65c9783dd11584af761779b88c967e5",
+    "lcm_bytes": 2347968
+  },
+  "65457408": {
+    "network": "pubnet",
+    "ledger": 65457408,
+    "object_key": "FC19F3FF--65408000-65471999/FC1932FF--65457408.xdr.zst",
+    "source": "galexie-public-archive",
+    "url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/v1.1/stellar/ledgers/pubnet/FC19F3FF--65408000-65471999/FC1932FF--65457408.xdr.zst",
+    "fetched_at": "2026-11-16T19:00:35.153Z",
+    "sha256_zst": "2367eccec22f5ebd9ee3284e2b1b80a335373a8855597a55f6686bdc2d97d3d3",
+    "sha256_lcm": "f420577bdba57be2dc89bdd3678ce3a1eb6970056152a44c397fb37a56055342",
+    "lcm_bytes": 1791396
+  },
+  "65459106": {
+    "network": "pubnet",
+    "ledger": 65459106,
+    "object_key": "FC19F3FF--65408000-65471999/FC192C5D--65459106.xdr.zst",
+    "source": "galexie-public-archive",
+    "url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/v1.1/stellar/ledgers/pubnet/FC19F3FF--65408000-65471999/FC192C5D--65459106.xdr.zst",
+    "fetched_at": "2026-11-16T19:00:30.828Z",
+    "sha256_zst": "de7f4cb5522581bc3120b9ea87bb940abb00e92c218018e9fa772d8881b8ab52",
+    "sha256_lcm": "121f88a8fdfe742b947c8237da22fed775b8e75eaf0f502072e2592721a36a10",
+    "lcm_bytes": 1997096
+  },
+  "65464320": {
+    "network": "pubnet",
+    "ledger": 65464320,
+    "object_key": "FC19F3FF--65408000-65471999/FC1917FF--65464320.xdr.zst",
+    "source": "galexie-public-archive",
+    "url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/v1.1/stellar/ledgers/pubnet/FC19F3FF--65408000-65471999/FC1917FF--65464320.xdr.zst",
+    "fetched_at": "2026-11-16T19:00:37.460Z",
+    "sha256_zst": "02b4f46934ac484dc8f7007bf6076be088db4521519ce08600a32ad23a120624",
+    "sha256_lcm": "1017395277fbc13f632d8bb51ccb6ddbad1d9760ea5007d7a4ea0abb7eb41c74",
+    "lcm_bytes": 2256336
+  },
+  "65465121": {
+    "network": "pubnet",
+    "ledger": 65465121,
+    "object_key": "FC19F3FF--65408000-65471999/FC1914DE--65465121.xdr.zst",
+    "source": "galexie-public-archive",
+    "url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/v1.1/stellar/ledgers/pubnet/FC19F3FF--65408000-65471999/FC1914DE--65465121.xdr.zst",
+    "fetched_at": "2026-11-16T19:00:38.444Z",
+    "sha256_zst": "69c762f8461dfefa8b75e8a4a250ac265b2dd0536d8b9074a206f7ae38283c5b",
+    "sha256_lcm": "c03869609d4d72ca12f14b95ea9e49c03c2f7685d7ad3e81363626b9ba841c0e",
+    "lcm_bytes": 1944288
+  }
+}
