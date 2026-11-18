@@ -46,15 +46,10 @@ export function Decode() {
   const [same, want, got] = split(h.muxedId, h.asNumber);
   const repro = data.repro1785;
   const rows: Row[] = [
-    { k: "Type", note: `Kind of envelope: ${h.envType}`, v: ENVELOPE[h.envType] ?? h.envType, title: `TransactionEnvelope · ${h.envType}` },
-    { k: "Op", note: "What the transaction does", v: `${h.op} · ${h.amount} ${h.asset}` },
-    { k: "To", note: `Muxed M address on base account ${h.base}`, v: mid(h.destination, 10, 8), title: h.destination },
-    { k: "Arm", note: "Which variant of the XDR union this value uses", v: h.arm, strong: true },
+    { k: "Type", note: `Kind of envelope: ${h.envType}`, v: ENVELOPE[h.envType] ?? h.envType },
+    { k: "Op", note: `What the transaction does. Destination ${h.destination}`, v: `${h.op} · ${h.amount} ${h.asset}` },
+    { k: "Arm", note: `Which variant of the XDR union this value uses. Seen in ${fmt(h.seenTxs)} mainnet txs across ${fmt(data.baseline.ledgers)} baseline ledgers`, v: h.arm, strong: true },
     { k: "CAP", note: "Protocol change that added muxed accounts", v: h.cap },
-    { k: "Seen", note: `Transactions with this arm in ${fmt(data.baseline.ledgers)} baseline mainnet ledgers (${fmt(data.baseline.txs)} txs)`, v: `${fmt(h.seenTxs)} txs` },
-    { k: "Tx", note: "Transaction hash, opens in a block explorer", v: mid(h.tx, 8, 6), title: h.tx, href: txUrl(h.tx) },
-    { k: "Ledger", note: `Closed ${utc(h.close)}`, v: fmt(h.ledger), href: ledgerUrl(h.ledger) },
-    { k: "Seg", note: "Checker segment: the unit all three readers hash and compare", v: h.segment },
   ];
   const [shown, setShown] = useState(0);
   const [go, setGo] = useState(false);
@@ -80,20 +75,23 @@ export function Decode() {
               {issue && (
                 <figure className="diff" aria-label={`Muxed id ${h.muxedId} read as a JavaScript number becomes ${h.asNumber}`}>
                   <figcaption className="diff-h">
-                    <span>Bug shape · muxed id &gt; 2^53</span>
+                    <span className="verdict">JS number loses precision</span>
                     <a className="chip amber" href={issue.url} target="_blank" rel="noopener noreferrer" title={issue.label}>#{issue.label.split("#").pop()}</a>
                   </figcaption>
+                  <div className="diff-s">Bug shape · muxed id &gt; 2^53</div>
                   <div className="dl"><span className="dk">expected</span><span className="dv">{same}<b className="okd">{want}</b></span></div>
                   <div className="dl"><span className="dk">js number</span><span className="dv">{same}<b className="badd">{got}</b></span></div>
-                  {repro && (
-                    <div className="chips">
+                  <div className="chips">
+                    {repro && <>
                       <span className="chip"><span className="dim">{repro.before.split(":")[0]}</span> <b className="bad">{repro.before.split(":")[1]?.trim()}</b></span>
                       <span className="chip"><span className="dim">{repro.after.split(":")[0]}</span> <b className="ok">{repro.after.split(":")[1]?.trim()}</b></span>
-                    </div>
-                  )}
+                    </>}
+                    <Link className="next" href="/findings/">See all findings →</Link>
+                  </div>
                 </figure>
               )}
-              <div className="agree" role="group" aria-label="Reader agreement">
+              <div className="agree" role="group" aria-labelledby="agree-h">
+                <div className="agree-h" id="agree-h">All three agree</div>
                 {READERS.map((k) => {
                   const r = s.readers[k];
                   const ok = r && L > 0 && r.ledgers_ok === L && r.roundtrip_ok === L;
@@ -111,17 +109,22 @@ export function Decode() {
                   <span>same tokens <b className={(s.flags.disagreement ?? 0) === 0 ? "ok" : "warn"}>✓</b></span>
                 </div>
               </div>
-              <div className="rawhead">
-                <button type="button" className="rawtoggle" aria-expanded={raw} aria-controls="decode-raw" onClick={() => setRaw((o) => !o)}>
-                  {raw ? "Hide raw XDR" : "Show raw XDR"}
-                </button>
-                <span className="label dim">base64 · {h.base64.length} chars</span>
-              </div>
-              <div id="decode-raw" className={`b64wrap ${raw ? "open" : "closed"}`}>
+              <button type="button" className="rawtoggle" aria-expanded={raw} aria-controls="decode-raw" onClick={() => setRaw((o) => !o)}>
+                {raw ? "Hide raw XDR" : "Show raw XDR"} · {h.base64.length} chars
+              </button>
+              <div id="decode-raw" className="b64wrap" hidden={!raw}>
                 <Scramble as="pre" className="b64" text={h.base64} duration={1800} play={seen} onDone={() => setGo(true)} />
+                <dl className="rawkv">
+                  <div><dt>Tx</dt><dd>{h.tx}</dd></div>
+                  <div><dt>To</dt><dd>{h.destination}</dd></div>
+                  <div><dt>Base</dt><dd>{h.base}</dd></div>
+                  <div><dt>Segment</dt><dd>{h.segment}</dd></div>
+                  <div><dt>Sha256</dt><dd>{h.sha256}</dd></div>
+                </dl>
               </div>
             </div>
-            <dl className="hkv">
+            <div className="hkv">
+              <dl>
               {rows.map((r, i) => (
                 <div className={`kvr ${i < shown ? "on" : ""}`} key={r.k}>
                   <dt><Tip k={r.k} note={r.note} /></dt>
@@ -132,7 +135,13 @@ export function Decode() {
                   </dd>
                 </div>
               ))}
-            </dl>
+              </dl>
+              <div className={`prov ${shown >= rows.length ? "on" : ""}`}>
+                <a href={ledgerUrl(h.ledger)} target="_blank" rel="noopener noreferrer" title={`Closed ${utc(h.close)}`}>Ledger {fmt(h.ledger)}</a>
+                <span className="dim"> · </span>
+                <a href={txUrl(h.tx)} target="_blank" rel="noopener noreferrer" title={h.tx}>Tx {h.tx.slice(0, 8)}…</a>
+              </div>
+            </div>
           </div>
         </>
       )}

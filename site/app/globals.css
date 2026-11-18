@@ -72,18 +72,14 @@ b { font-weight: 600; }
 .chips { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
 .agree { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border: 1px solid var(--line); margin-bottom: 14px; }
 .rd { padding: 10px 12px; border-right: 1px solid var(--line); min-width: 0; }
-.rd:nth-child(3) { border-right: 0; }
+.rd:nth-child(4) { border-right: 0; }
 .rn { display: block; font-family: var(--sans); font-size: clamp(18px, 1.6vw, 24px); font-weight: 500; line-height: 1.2; }
 .rn b { font-weight: 500; margin-left: 4px; }
 .rl { display: block; font-family: var(--mono); font-size: 11px; color: var(--mut); letter-spacing: .04em; margin-top: 2px; overflow-wrap: anywhere; }
 .agree-f { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 4px 18px; border-top: 1px solid var(--line); padding: 8px 12px; font-family: var(--mono); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--mut); }
 .agree-f b { font-weight: 400; } .agree-f b.mono { color: var(--fg); text-transform: none; letter-spacing: .02em; }
-.rawhead { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 8px; }
-.rawhead .label { margin: 0; font-size: 11px; }
 .rawtoggle { font: inherit; font-family: var(--mono); font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--fg); background: transparent; border: 1px solid var(--line2); padding: 6px 10px; cursor: pointer; white-space: nowrap; }
 .rawtoggle:hover { border-color: var(--amber); }
-.b64wrap.closed .b64 { min-height: 0; max-height: 2.6em; overflow: hidden; font-size: 12px; padding: 6px 12px; line-height: 1.6; color: var(--mut); -webkit-mask-image: linear-gradient(180deg, #000 20%, transparent); mask-image: linear-gradient(180deg, #000 20%, transparent); }
-.b64wrap.open .b64 { font-size: clamp(12px, 1vw, 16px); min-height: 0; }
 .hkv { border-left: 1px solid var(--line); padding-left: clamp(20px, 3vw, 56px); }
 .kvr { display: grid; grid-template-columns: 7.5em minmax(0, 1fr); gap: 12px; align-items: baseline; padding: 8px 0; border-bottom: 1px solid var(--line); opacity: 0; transition: opacity .3s; }
 .kvr.on { opacity: 1; }
@@ -96,6 +92,19 @@ b { font-weight: 600; }
 .tip { cursor: help; text-decoration: underline dotted var(--line2); text-underline-offset: 4px; }
 .tipbox { position: absolute; left: 0; top: calc(100% + 6px); z-index: 5; width: max-content; max-width: min(280px, 70vw); background: var(--bg2); border: 1px solid var(--line2); padding: 7px 10px; font-size: 12px; letter-spacing: .02em; text-transform: none; color: var(--fg); line-height: 1.45; display: none; pointer-events: none; }
 .tip:hover + .tipbox, .tip:focus-visible + .tipbox, .tip:focus + .tipbox { display: block; }
+.verdict { font-family: var(--sans); font-size: clamp(17px, 1.5vw, 22px); font-weight: 500; letter-spacing: -.005em; text-transform: none; color: var(--bad); }
+.diff-h { margin-bottom: 2px; }
+.diff-s { font-family: var(--mono); font-size: 11px; letter-spacing: .2em; text-transform: uppercase; color: var(--amber); margin-bottom: 8px; }
+.chips { align-items: center; }
+.next { margin-left: auto; font-family: var(--mono); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--fg); white-space: nowrap; }
+.agree-h { grid-column: 1 / -1; border-bottom: 1px solid var(--line); padding: 6px 12px; font-family: var(--mono); font-size: 11px; letter-spacing: .22em; text-transform: uppercase; color: var(--ok); }
+.rawtoggle { margin-bottom: 8px; }
+.b64wrap .b64 { min-height: 0; font-size: clamp(12px, 1vw, 15px); }
+.rawkv { margin-top: 10px; font-family: var(--mono); font-size: 12px; }
+.rawkv div { display: grid; grid-template-columns: 7em minmax(0, 1fr); gap: 10px; padding: 5px 0; border-bottom: 1px solid var(--line); }
+.rawkv dt { color: var(--mut); font-size: 11px; letter-spacing: .2em; text-transform: uppercase; } .rawkv dd { overflow-wrap: anywhere; }
+.prov { margin-top: 12px; font-family: var(--mono); font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--mut); opacity: 0; transition: opacity .3s; }
+.prov.on { opacity: 1; } .prov a { color: var(--mut); } .prov a:hover { color: var(--fg); }
 #decode.scene { padding-top: 96px; }
 #decode .eyebrow { margin-bottom: clamp(14px, 1.6vw, 24px); }
 #decode .tagline { margin-bottom: clamp(18px, 2.2vw, 28px); }
