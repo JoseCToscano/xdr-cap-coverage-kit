@@ -76,7 +76,7 @@ export function Decode() {
                 <figure className="diff" aria-label={`Muxed id ${h.muxedId} read as a JavaScript number becomes ${h.asNumber}`}>
                   <figcaption className="diff-h">
                     <span className="verdict">JS number loses precision</span>
-                    <a className="chip amber" href={issue.url} target="_blank" rel="noopener noreferrer" title={issue.label}>#{issue.label.split("#").pop()}</a>
+                    <a className="chip accent" href={issue.url} target="_blank" rel="noopener noreferrer" title={issue.label}>#{issue.label.split("#").pop()}</a>
                   </figcaption>
                   <div className="diff-s">Bug shape · muxed id &gt; 2^53</div>
                   <div className="dl"><span className="dk">expected</span><span className="dv">{same}<b className="okd">{want}</b></span></div>
