@@ -97,7 +97,7 @@ const mux = sdk.MuxedAccount.fromAddress(hop.destination, "0");
 const muxId = mux.id(); const asNum = BigInt(Number(muxId));
 const hero = {
   file: HERO, tx: hc.tx_hash, ledger: hc.ledger, close: hc.ledger_close_time, detected_at: hc.provenance.detected_at, source_url: hc.provenance.source_url,
-  base64: hc.xdr[0].base64, segment: hc.xdr[0].segment, envType: sdk.xdr.TransactionEnvelope.fromXDR(hc.xdr[0].base64, "base64").type,
+  base64: hc.xdr[0].base64, segment: hc.xdr[0].segment, sha256: hc.xdr[0].sha256, envType: sdk.xdr.TransactionEnvelope.fromXDR(hc.xdr[0].base64, "base64").type,
   op: hop.type, amount: hop.amount, asset: hop.asset.isNative() ? "XLM" : hop.asset.getCode(), destination: hop.destination, base: mux.baseAccount().accountId(),
   muxedId: muxId, asNumber: asNum.toString(), drift: (BigInt(muxId) - asNum).toString(), arm: "MuxedAccount.muxed_ed25519", cap: "CAP-0027",
   seenTxs: P.arms["MuxedAccount.muxed_ed25519"]?.txs ?? 0, caps: hc.caps, shape: hc.flags[0].shape,
