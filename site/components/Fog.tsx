@@ -11,7 +11,7 @@ export function Fog() {
     const gl = c.getContext("webgl", { antialias: false, preserveDrawingBuffer: false });
     const size = () => { c.width = Math.max(1, Math.round(innerWidth / 3)); c.height = Math.max(1, Math.round(innerHeight / 3)); gl?.viewport(0, 0, c.width, c.height); };
     size(); addEventListener("resize", size);
-    if (!gl) { c.style.background = "radial-gradient(ellipse at 30% 40%,#2a2925,#161513 70%)"; return () => removeEventListener("resize", size); }
+    if (!gl) { c.style.background = "radial-gradient(ellipse at 30% 40%,#24262a,#111214 70%)"; return () => removeEventListener("resize", size); }
     const vs = "attribute vec2 p;void main(){gl_Position=vec4(p,0.,1.);}";
     const fs = `precision mediump float;uniform vec2 r;uniform float t;
 float h(vec2 p){return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453);}
@@ -19,7 +19,7 @@ float n(vec2 p){vec2 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);return mix(mix(h(i),h
 float fbm(vec2 p){float v=0.,a=.5;for(int i=0;i<5;i++){v+=a*n(p);p=p*2.02+vec2(1.7,9.2);a*=.5;}return v;}
 void main(){vec2 uv=gl_FragCoord.xy/r;vec2 p=uv*vec2(r.x/r.y,1.)*2.2;
 float q=fbm(p+vec2(t*.018,t*.011));float w=fbm(p*1.3+vec2(q*1.8,-t*.014)+3.1);
-vec3 a=vec3(.086,.082,.075),b=vec3(.165,.157,.141),c2=vec3(.215,.204,.184);
+vec3 a=vec3(.067,.071,.078),b=vec3(.137,.145,.155),c2=vec3(.180,.188,.198);
 vec3 col=mix(a,b,smoothstep(.25,.85,w));col=mix(col,c2,smoothstep(.62,.95,w*q*1.6)*.55);
 col*=1.-.35*length(uv-.5);col+=(h(gl_FragCoord.xy+t)-.5)*.012;gl_FragColor=vec4(col,1.);}`;
     const sh = (t: number, s: string) => { const o = gl.createShader(t)!; gl.shaderSource(o, s); gl.compileShader(o); return o; };

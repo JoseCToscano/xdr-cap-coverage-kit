@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   description: "Every Stellar mainnet ledger decoded by js-stellar-sdk, go-stellar-sdk and rs-stellar-xdr and compared value by value. Live status, findings, backfill results and union-arm coverage.",
   metadataBase: process.env.NEXT_PUBLIC_SITE_URL ? new URL(process.env.NEXT_PUBLIC_SITE_URL) : undefined,
 };
-export const viewport: Viewport = { themeColor: "#161513", colorScheme: "dark" };
+export const viewport: Viewport = { themeColor: "#111214", colorScheme: "dark" };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (

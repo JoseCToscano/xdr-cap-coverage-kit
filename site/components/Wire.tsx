@@ -16,13 +16,13 @@ export function Wire() {
     const shapes = [{ m: cube, cx: 330, cy: 190, s: 82, sp: 0.4 }, { m: knot, cx: 280, cy: 500, s: 150, sp: -0.3 }, { m: ico, cx: 140, cy: 760, s: 78, sp: 0.55 }];
     let raf = 0; let on = true;
     const draw = (n: number) => {
-      const t = n / 1000; x.clearRect(0, 0, W, H); x.strokeStyle = "rgba(25,24,22,.72)"; x.lineWidth = 1;
+      const t = n / 1000; x.clearRect(0, 0, W, H); x.strokeStyle = "rgba(22,24,27,.72)"; x.lineWidth = 1;
       for (const S of shapes) {
         const a = t * S.sp, b = t * S.sp * 0.7 + 0.6;
         const P = S.m.v.map(([X, Y, Z]) => { const y = Y * Math.cos(b) - Z * Math.sin(b); let z = Y * Math.sin(b) + Z * Math.cos(b); const x2 = X * Math.cos(a) + z * Math.sin(a); z = -X * Math.sin(a) + z * Math.cos(a); const k = 3.2 / (3.2 + z); return [S.cx + x2 * S.s * k, S.cy + y * S.s * k]; });
         x.beginPath(); for (const [i, j] of S.m.e) { x.moveTo(P[i][0], P[i][1]); x.lineTo(P[j][0], P[j][1]); } x.stroke();
       }
-      x.fillStyle = "rgba(25,24,22,.5)"; x.font = "12px var(--f-mono), monospace";
+      x.fillStyle = "rgba(22,24,27,.5)"; x.font = "12px var(--f-mono), monospace";
       x.fillText("[ FIG. 01 : CUBE ]", 265, 340); x.fillText("[ FIG. 02 : KNOT 2,3 ]", 330, 660); x.fillText("[ FIG. 03 : ICOSA ]", 75, 880);
       if (on && !reducedMotion()) raf = requestAnimationFrame(draw);
     };
