@@ -1,6 +1,5 @@
-// Slot for the demo video. Renders nothing until NEXT_PUBLIC_DEMO_VIDEO_URL is set
-// (a YouTube/Vimeo URL or a direct .mp4 link).
-const URL_ = process.env.NEXT_PUBLIC_DEMO_VIDEO_URL ?? "";
+// Demo walkthrough. NEXT_PUBLIC_DEMO_VIDEO_URL overrides the public YouTube link.
+const URL_ = process.env.NEXT_PUBLIC_DEMO_VIDEO_URL || "https://youtu.be/UhD7Ucvz1Ik";
 
 function embed(u: string): { kind: "iframe" | "video"; src: string } | null {
   if (!u) return null;
