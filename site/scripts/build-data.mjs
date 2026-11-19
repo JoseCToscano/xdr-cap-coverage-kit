@@ -3,11 +3,13 @@
 // repo (reports/) or from the live checker's state directory; nothing is typed in.
 //
 //   node scripts/build-data.mjs            write data/static.json, refresh public/status.json
-//                                           from the local checker if it exists
+//                                           from reports/livecheck/live-pubnet-status.json
 //   node scripts/build-data.mjs --check    fail if data/static.json is stale (CI)
 //
 // public/status.json is the bundled fallback snapshot. The live site fetches
-// NEXT_PUBLIC_STATUS_URL first and falls back to this file.
+// NEXT_PUBLIC_STATUS_URL first and falls back to this file. The committed
+// live-pubnet snapshot is the source of truth, so a stale local checker on
+// a dev machine cannot overwrite it.
 import { readFileSync, writeFileSync, existsSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { homedir } from "node:os";
@@ -128,9 +130,15 @@ writeFileSync(out, body);
 console.log(`static.json: ${coverage.universe} arms (${coverage.seen} seen, ${coverage.never} never, ${coverage.tail} long-tail), backfill ${backfill.ledgers} ledgers / ${backfill.txs} txs`);
 
 // ---- bundled live snapshot (fallback when the public status URL is unreachable)
+const SNAP = join(REPO, "reports/livecheck/live-pubnet-status.json");
 const LIVE = process.env.XCK_LIVE_DIR ?? join(homedir(), ".local/share/xck-livecheck/pubnet");
-if (existsSync(join(LIVE, "state.json"))) {
+if (existsSync(SNAP)) {
+  const raw = readFileSync(SNAP, "utf8");
+  const status = JSON.parse(raw);
+  writeFileSync(join(SITE, "public/status.json"), raw.endsWith("\n") ? raw : raw + "\n");
+  console.log(`status.json: cursor ${status.checker.cursor}, ${status.checker.txs} txs (from reports/livecheck/live-pubnet-status.json)`);
+} else if (existsSync(join(LIVE, "state.json"))) {
   const status = buildStatus(JSON.parse(readFileSync(join(LIVE, "state.json"), "utf8")), readFindings(join(LIVE, "findings.jsonl")));
   writeFileSync(join(SITE, "public/status.json"), JSON.stringify(status, null, 1) + "\n");
-  console.log(`status.json: cursor ${status.checker.cursor}, ${status.checker.txs} txs (bundled snapshot)`);
-} else console.log(`no checker state at ${LIVE}; keeping the committed public/status.json`);
+  console.log(`status.json: cursor ${status.checker.cursor}, ${status.checker.txs} txs (from local checker at ${LIVE})`);
+} else console.log(`no committed snapshot or checker state at ${LIVE}; keeping the committed public/status.json`);
