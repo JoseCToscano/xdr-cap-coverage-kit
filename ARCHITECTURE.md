@@ -72,6 +72,30 @@ Tools: `tools/capture-testnet.mjs` (submits the P30 shapes), `tools/mine-testnet
 
 `backfill.mjs` runs it over archived ranges (resumable per 250-ledger chunk; results in `reports/livecheck/`). `live.mjs` follows mainnet: it polls SDF's public Galexie archive for the next ledger object, checks it, appends each flag to a JSONL log, writes candidates and a rolling `latest.md`, and checkpoints its cursor after every ledger; worker processes check ledgers ahead of the cursor in parallel and results are committed in ledger order, and `state.json` / `latest.md` record the measured lag behind the network tip; `run-live.sh` restarts it if it exits. `tools/livecheck/test.mjs` (in CI) runs the three readers on the committed P28/P30 testnet ledgers and one mainnet ledger, requires full agreement and byte round-trips, and checks that a divergence injected into one reader is caught, located and attributed. Limits: three readers can share a mistake; first-seen depends on the baseline sample; CAP tags are inferred. Details: [tools/livecheck/README.md](tools/livecheck/README.md).
 
+## 3c. Live checker deployment [Built now] [Roadmap: always-on hosting]
+
+The live checker runs as one Docker container, `xck-checker`, built from `deploy/checker/Dockerfile` (Go and Rust readers compiled in separate stages, Node 24 runtime, non-root user, `tini` as init). `deploy/checker/entrypoint.sh` starts three processes: `tools/livecheck/run-live.sh`, which restarts the follower if it exits; `tools/status/status.mjs`, which rewrites `status.json` every 60 s and measures the network tip; and `tools/status/serve.mjs`, which serves `/status.json`, `/findings.jsonl`, `/latest.md` and `/healthz` on port 8080. If any of the three exits, the container exits and Docker restarts it (`restart: unless-stopped`); the image's health check polls `/healthz`. Cursor, `state.json`, the findings log, candidates and logs live on a persistent volume mounted at `/data`.
+
+Ledger data comes only from SDF's public Galexie ledger archive on AWS Open Data (`aws-public-blockchain`, us-east-2), read over plain HTTPS: no RPC node, no API keys, no credentials. The network tip for the lag figure is read from public Horizon (`horizon.stellar.org`). The cursor is checkpointed after every ledger and results are committed in ledger order, so a restart or a host pause resumes at the next ledger with no gaps. `status.json` reports what happened, not just the good part: lag behind the network tip and `at_tip`, restarts, and host pauses (count, total seconds, last gap).
+
+The container currently runs on our own hardware with `deploy/checker/docker-compose.local.yml` (port 8080 bound to localhost), published as https://status.xck-status.dev/status.json through a Cloudflare named tunnel. The public site (`site/`, Next.js static export on Vercel at https://xck.stratocaster.ventures) reads that `status.json` in the browser and falls back to its build-time snapshot.
+
+```mermaid
+flowchart LR
+  A[(SDF Galexie archive<br/>AWS Open Data, public)] -->|HTTPS, per ledger| F
+  subgraph C[Docker container xck-checker]
+    F[run-live.sh restart loop<br/>live follower: JS / Go / Rust]
+    S[status.mjs<br/>status.json every 60 s]
+    H[serve.mjs :8080<br/>/status.json /healthz]
+    F --> S --> H
+  end
+  F <--> V[(Volume /data<br/>cursor, state, findings, logs)]
+  H --> T[Cloudflare named tunnel<br/>status.xck-status.dev]
+  T --> W[Site on Vercel<br/>xck.stratocaster.ventures]
+```
+
+Roadmap: the always-on checker moves to managed hosting with the configuration already in `deploy/checker/`: `docker-compose.yml` (one VM, Caddy for TLS) or `fly.toml` (Fly.io, one machine that never stops, `/healthz` check), plus uptime monitoring of the status endpoint. Sizing and host options: [deploy/README.md](deploy/README.md).
+
 ## 4. Replay harness [Built now: wallet-backend] [Roadmap: more adapters]
 
 `harness/adapter.go` defines:
