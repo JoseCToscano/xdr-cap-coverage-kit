@@ -1,6 +1,6 @@
 "use client";
 import { useStatus } from "./StatusProvider";
-import { Caps, Panel, Tx } from "./Ui";
+import { Caps, Ident, Panel, Tx } from "./Ui";
 import { ISSUES, fmt, ledgerUrl, utc } from "@/lib/format";
 import data from "@/data/static.json";
 
@@ -20,7 +20,7 @@ export function FindingsFeed() {
         <div className="cards">
           {s.first_seen.map((f) => (
             <article className="card" key={f.tx + f.arm}>
-              <h3 className="arm big">{f.arm}</h3>
+              <h3 className="arm big"><Ident value={f.arm} /></h3>
               <dl className="kv">
                 <div><dt>Transaction</dt><dd><Tx tx={f.tx} net={s.net} n={16} /></dd></div>
                 <div><dt>Ledger</dt><dd><a href={ledgerUrl(f.ledger, s.net)} target="_blank" rel="noopener noreferrer">{fmt(f.ledger)}</a></dd></div>
@@ -54,7 +54,7 @@ export function FindingsFeed() {
             const baseTxs = b.shape.includes("#1785") ? data.baseline_shapes.muxed_ge_2_53 : b.shape.includes("#731") ? data.baseline_shapes.creates_trustline_731 : null;
             return (
               <article className="card" key={b.shape}>
-                <h3 className="arm">{i ? <a href={i.url} target="_blank" rel="noopener noreferrer">{i.label}</a> : b.shape}</h3>
+                <h3 className="arm">{i ? <a href={i.url} target="_blank" rel="noopener noreferrer">{i.label}</a> : <Ident value={b.shape} />}</h3>
                 <p className="small">{i?.note ?? b.shape}</p>
                 <dl className="kv">
                   <div><dt>Live txs</dt><dd>{fmt(b.txs)}</dd></div>
@@ -76,7 +76,7 @@ export function FindingsFeed() {
             <thead><tr><th scope="col">Build</th><th scope="col">Commit</th><th scope="col">Trustline stored</th><th scope="col">Verdict</th></tr></thead>
             <tbody>
               {data.replay731.builds.map((r) => (
-                <tr key={r.build}><td>{r.build}</td><td className="mono">{r.commit}</td><td>{r.pass} / {r.total}</td><td className={r.verdicts.includes("pass") && r.verdicts.length === 1 ? "ok" : "warn"}>{r.verdicts.join(", ")}</td></tr>
+                <tr key={r.build}><td>{r.build}</td><td className="mono hash" title={r.commit}>{r.commit}</td><td>{r.pass} / {r.total}</td><td className={r.verdicts.includes("pass") && r.verdicts.length === 1 ? "ok" : "warn"}>{r.verdicts.join(", ")}</td></tr>
               ))}
             </tbody>
           </table>
@@ -91,7 +91,7 @@ export function FindingsFeed() {
             <tbody>
               {s.long_tail.top.map((a) => (
                 <tr key={a.arm}>
-                  <td className="mono">{a.arm}</td>
+                  <td className="mono ident"><Ident value={a.arm} /></td>
                   <td className="r">{fmt(a.txs)}</td>
                   <td><Caps caps={a.caps} /></td>
                   <td>{a.example ? <><Tx tx={a.example.tx} net={s.net} /> <span className="dim">L{fmt(a.example.ledger)}</span></> : "-"}</td>

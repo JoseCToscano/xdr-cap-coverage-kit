@@ -33,6 +33,34 @@ export function Tx({ tx, net, n = 12 }: { tx: string; net?: string; n?: number }
   );
 }
 
+// Long identifiers wrap at ".", "_" and camelCase boundaries, not mid-token.
+export function Ident({ value, className }: { value?: string; className?: string }) {
+  if (!value) return null;
+  const nodes: ReactNode[] = [];
+  let buf = "";
+  const flush = (brk: boolean) => {
+    if (buf) nodes.push(<span key={`t${nodes.length}`}>{buf}</span>);
+    buf = "";
+    if (brk) nodes.push(<wbr key={`w${nodes.length}`} />);
+  };
+  for (let i = 0; i < value.length; i++) {
+    const ch = value[i];
+    if (ch === "." || ch === "_") {
+      buf += ch;
+      flush(true);
+      continue;
+    }
+    const prev = i > 0 ? value[i - 1] : "";
+    const next = i + 1 < value.length ? value[i + 1] : "";
+    const camel = /[a-z]/.test(prev) && /[A-Z]/.test(ch);
+    const acronym = /[A-Z]/.test(prev) && /[A-Z]/.test(ch) && /[a-z]/.test(next);
+    if (camel || acronym) flush(true);
+    buf += ch;
+  }
+  flush(false);
+  return <span className={className} title={value}>{nodes}</span>;
+}
+
 export function Caps({ caps }: { caps: string[] }) {
   if (!caps?.length) return <span className="dim">-</span>;
   return <span className="caps">{caps.map((c) => <span key={c} className="cap">{c}</span>)}</span>;

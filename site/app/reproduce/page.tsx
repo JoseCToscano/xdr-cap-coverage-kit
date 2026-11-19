@@ -50,7 +50,7 @@ export default function Reproduce() {
         {STEPS.map((s) => (
           <Panel key={s.label}>
             <CopyBlock label={s.label} code={s.code} />
-            <p className="dim small mt">{s.note}</p>
+            <p className="step-note">{s.note}</p>
           </Panel>
         ))}
       </div>

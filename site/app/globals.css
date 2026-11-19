@@ -227,8 +227,8 @@ table.builds td { padding: 9px 0; border-bottom: 1px solid var(--line); } table.
 .kv > div { display: flex; justify-content: space-between; gap: 12px; padding: 7px 0; border-top: 1px solid var(--line); align-items: baseline; }
 dd { font-family: var(--mono); font-size: 14px; font-variant-numeric: tabular-nums; }
 .kv dd { text-align: right; }
-.arm { font-family: var(--mono); font-size: 15px; word-break: break-word; } .arm.big { font-size: 18px; font-weight: 500; }
-.tx { font-family: var(--mono); font-size: 13px; }
+.arm { font-family: var(--mono); font-size: 15px; overflow-wrap: break-word; word-break: normal; hyphens: none; } .arm.big { font-size: 18px; font-weight: 500; }
+.tx { font-family: var(--mono); font-size: 13px; white-space: nowrap; }
 .caps { display: inline-flex; gap: 4px; flex-wrap: wrap; justify-content: flex-end; }
 .cap { font-family: var(--mono); font-size: 11px; border: 1px solid var(--line); padding: 1px 5px; color: var(--fg2); white-space: nowrap; }
 td .caps { justify-content: flex-start; }
@@ -243,7 +243,8 @@ td .caps { justify-content: flex-start; }
 .tbl { width: 100%; border-collapse: collapse; font-size: 13px; }
 .tblwrap .tbl th { position: sticky; top: 0; background: var(--bg2); }
 .tbl th, .tbl td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
-.tbl td { font-variant-numeric: tabular-nums; } .tbl .r { text-align: right; } .tbl td.mono { font-size: 12px; word-break: break-word; }
+.tbl td { font-variant-numeric: tabular-nums; } .tbl .r { text-align: right; } .tbl td.mono { font-size: 12px; overflow-wrap: break-word; word-break: normal; hyphens: none; }
+.tbl td.hash { max-width: 12em; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .cov .legend { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
 .legend button { font: inherit; font-family: var(--mono); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--mut); background: transparent; border: 1px solid var(--line); padding: 6px 10px; cursor: pointer; display: inline-flex; align-items: center; gap: 0; }
 .legend button b { color: var(--fg); font-weight: 400; margin-left: 8px; } .legend button[aria-pressed="true"] { border-color: var(--accent); color: var(--fg); }
@@ -263,6 +264,7 @@ td .caps { justify-content: flex-start; }
 .code-h button { font: inherit; font-family: var(--mono); font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--mut); background: transparent; border: 1px solid var(--line); padding: 4px 10px; cursor: pointer; }
 .code-h button:hover { color: var(--fg); border-color: var(--line2); }
 .code pre { font-size: 13px; line-height: 1.6; background: rgba(0, 0, 0, .28); border: 1px solid var(--line); padding: 14px 16px; overflow-x: auto; white-space: pre; }
+.step-note { color: var(--fg2); font-size: 14px; line-height: 1.55; margin-top: 14px; }
 .bullets { padding-left: 18px; color: var(--fg2); } .bullets li { margin: 6px 0; }
 .video { margin: 0 var(--inl); }
 .video-box { position: relative; aspect-ratio: 16 / 9; border: 1px solid var(--line); }
@@ -296,7 +298,8 @@ td .caps { justify-content: flex-start; }
   .ticker { font-size: 11px; }
 }
 .scene > *, .grid2 > *, .covwrap > *, .closewrap > *, .page > * { min-width: 0; }
-.label, .meta, .sub, .cfoot, .row .v, .ckv dd { overflow-wrap: anywhere; }
+.label, .meta, .sub, .cfoot { overflow-wrap: break-word; hyphens: none; }
+.hash, .b64, .row .v, .ckv dd { overflow-wrap: anywhere; }
 @media (max-width: 800px) {
   .row { grid-template-columns: 1fr; gap: 4px; }
   .ckv { grid-template-columns: 1fr; gap: 4px; }
