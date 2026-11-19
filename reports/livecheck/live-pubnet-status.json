@@ -1,0 +1,1572 @@
+{
+ "schema": 1,
+ "generated_at": "2026-11-19T15:44:46.730Z",
+ "net": "pubnet",
+ "readers": {
+  "js": {
+   "name": "JS",
+   "lib": "js-stellar-sdk 17.4.0",
+   "ledgers_ok": 49368,
+   "roundtrip_ok": 49368
+  },
+  "go": {
+   "name": "Go",
+   "lib": "go-stellar-sdk 0.9.0",
+   "ledgers_ok": 49368,
+   "roundtrip_ok": 49368
+  },
+  "rust": {
+   "name": "Rust",
+   "lib": "rs-stellar-xdr 30.0.0",
+   "ledgers_ok": 49368,
+   "roundtrip_ok": 49368,
+   "json_roundtrip_ok": 49368
+  }
+ },
+ "checker": {
+  "started_at": "2026-11-16T19:10:23.239Z",
+  "updated_at": "2026-11-19T15:44:21.668Z",
+  "restarts": 7,
+  "first": 65514036,
+  "cursor": 65563403,
+  "last_ledger": {
+   "seq": 65563403,
+   "close_time": 1795103058,
+   "source": "archive",
+   "txs": 368
+  },
+  "ledgers": 49368,
+  "txs": 16451520,
+  "segments": 32952408,
+  "worker_hours": 26.88,
+  "close_time_min": 1794856222,
+  "close_time_max": 1795103058,
+  "protocol": {
+   "29": 49368
+  },
+  "lag": {
+   "cursor": 65563391,
+   "cursor_close_time": "2026-11-19T15:43:18.000Z",
+   "network_tip": 65563402,
+   "network_tip_closed_at": "2026-11-19T15:44:08Z",
+   "tip_source": "https://horizon.stellar.org/",
+   "tip_checked_at": "2026-11-19T15:44:16.062Z",
+   "ledgers_behind": 11,
+   "minutes_behind": 1,
+   "catchup_ledgers_per_min": 11.9,
+   "eta_to_tip_min": null,
+   "at_tip": true,
+   "workers": 3,
+   "measured_at": "2026-11-19T15:44:17.300Z"
+  },
+  "host_pauses": {
+   "count": 16,
+   "total_s": 12332,
+   "last": {
+    "from": "2026-11-19T02:32:40.918Z",
+    "to": "2026-11-19T02:34:23.360Z",
+    "s": 102
+   }
+  }
+ },
+ "network": {
+  "source": "horizon.stellar.org",
+  "ledger": 65563408,
+  "closed_at": "2026-11-19T15:44:43Z",
+  "fetched_at": "2026-11-19T15:44:46.729Z",
+  "lag_ledgers": 5,
+  "lag_seconds": 25
+ },
+ "flags": {
+  "disagreement": 0,
+  "decode_failure": 0,
+  "roundtrip_mismatch": 0,
+  "js_precision": 0,
+  "first_seen": 11,
+  "bug_shape": 210,
+  "long_tail": 19297,
+  "shape_first_seen": 0
+ },
+ "flagged_txs": {
+  "disagreement": 0,
+  "decode_failure": 0,
+  "roundtrip_mismatch": 0,
+  "js_precision": 0,
+  "first_seen": 9,
+  "bug_shape": 210,
+  "long_tail": 12653,
+  "shape_first_seen": 0
+ },
+ "first_seen": [
+  {
+   "type": "first_seen",
+   "arm": "ClawbackResult.no_trust",
+   "tx": "57f7b9eeddbf18dde316c32f5c1ba1f2cfb4df37134533014de015391ef6c8fd",
+   "ledger": 65516147,
+   "close_time": 1794866777,
+   "detected_at": "2026-11-16T22:23:15.673Z",
+   "caps": [
+    "CAP-0035"
+   ],
+   "source": "archive"
+  },
+  {
+   "type": "first_seen",
+   "arm": "ClawbackClaimableBalanceResult.not_issuer",
+   "tx": "278a90f5b7db1853889b0fd7f6a7b6fd86cf3649020d7fe01679585e6df3bf7e",
+   "ledger": 65520888,
+   "close_time": 1794890482,
+   "detected_at": "2026-11-17T18:32:53.471Z",
+   "caps": [
+    "CAP-0023",
+    "CAP-0035"
+   ],
+   "source": "archive"
+  },
+  {
+   "type": "first_seen",
+   "arm": "AllowTrustResult.no_trust_line",
+   "tx": "b0c9502ab0f2e01528c57b7a07f6dd860894332c604bd7715573b708d3d24dc5",
+   "ledger": 65525625,
+   "close_time": 1794914167,
+   "detected_at": "2026-11-17T22:23:56.969Z",
+   "caps": [],
+   "source": "archive"
+  },
+  {
+   "type": "first_seen",
+   "arm": "ScError.crypto",
+   "tx": "5462367b08a6633fe924119f4f9b919cb4e52ce73449d81ac1951f740fc42901",
+   "ledger": 65529218,
+   "close_time": 1794932132,
+   "detected_at": "2026-11-17T22:33:26.481Z",
+   "caps": [],
+   "source": "archive"
+  },
+  {
+   "type": "first_seen",
+   "arm": "PathPaymentStrictReceiveResult.src_not_authorized",
+   "tx": "d565024a8087acd98cbf9635293f8dce2f8ba3804b16cd830a490fa6b1cae086",
+   "ledger": 65531602,
+   "close_time": 1794944052,
+   "detected_at": "2026-11-17T22:38:56.931Z",
+   "caps": [],
+   "source": "archive"
+  },
+  {
+   "type": "first_seen",
+   "arm": "SetOptionsResult.too_many_signers",
+   "tx": "2c66fa3e70191b66465cc05d8e896a8e655dfc2f88d80d2e31bca5e615e7aa14",
+   "ledger": 65532215,
+   "close_time": 1794947117,
+   "detected_at": "2026-11-17T22:40:24.169Z",
+   "caps": [],
+   "source": "archive"
+  },
+  {
+   "type": "first_seen",
+   "arm": "OperationBody.restore_footprint",
+   "tx": "4cbe7adf59c1e273b437ef3206f7e5e8caeaac5472991e28fac818ee905ee225",
+   "ledger": 65547102,
+   "close_time": 1795021553,
+   "detected_at": "2026-11-18T17:06:48.039Z",
+   "caps": [],
+   "source": "archive"
+  },
+  {
+   "type": "first_seen",
+   "arm": "OperationResultTr.restore_footprint",
+   "tx": "4cbe7adf59c1e273b437ef3206f7e5e8caeaac5472991e28fac818ee905ee225",
+   "ledger": 65547102,
+   "close_time": 1795021553,
+   "detected_at": "2026-11-18T17:06:48.039Z",
+   "caps": [],
+   "source": "archive"
+  },
+  {
+   "type": "first_seen",
+   "arm": "RestoreFootprintResult.success",
+   "tx": "4cbe7adf59c1e273b437ef3206f7e5e8caeaac5472991e28fac818ee905ee225",
+   "ledger": 65547102,
+   "close_time": 1795021553,
+   "detected_at": "2026-11-18T17:06:48.039Z",
+   "caps": [
+    "CAP-0046"
+   ],
+   "source": "archive"
+  },
+  {
+   "type": "first_seen",
+   "arm": "ChangeTrustResult.not_auth_maintain_liabilities",
+   "tx": "16d4b66ac7c681c6ae5659d1090f62df5178212e75ac847da488c20a0b4ca901",
+   "ledger": 65549154,
+   "close_time": 1795031813,
+   "detected_at": "2026-11-18T19:57:02.010Z",
+   "caps": [],
+   "source": "archive"
+  },
+  {
+   "type": "first_seen",
+   "arm": "ClawbackClaimableBalanceResult.not_clawback_enabled",
+   "tx": "55184a235934599c4d8ab8c87dd5a0ec479684caf36b8d65f7be9062a1951228",
+   "ledger": 65551328,
+   "close_time": 1795042683,
+   "detected_at": "2026-11-18T22:59:00.101Z",
+   "caps": [
+    "CAP-0023",
+    "CAP-0035"
+   ],
+   "source": "archive"
+  }
+ ],
+ "reader_findings": [],
+ "bug_shapes": [
+  {
+   "shape": "muxed.id_ge_2^53 (JS-unsafe, #1785 shape)",
+   "txs": 199,
+   "caps": [
+    "CAP-0027",
+    "CAP-0046",
+    "CAP-0067"
+   ],
+   "recent": [
+    {
+     "type": "bug_shape",
+     "shape": "muxed.id_ge_2^53 (JS-unsafe, #1785 shape)",
+     "tx": "fbba264ac50d7cea4056e5643e4fb4c7595ce02c663d5a912ccad08696a8118e",
+     "ledger": 65563293,
+     "close_time": 1795102508,
+     "detected_at": "2026-11-19T15:35:17.187Z",
+     "caps": [
+      "CAP-0027",
+      "CAP-0046",
+      "CAP-0067"
+     ],
+     "source": "archive"
+    },
+    {
+     "type": "bug_shape",
+     "shape": "muxed.id_ge_2^53 (JS-unsafe, #1785 shape)",
+     "tx": "600bf61f23df838ea36f920c0d3fb9032e1823598a42d2f33d1be50a74b47d35",
+     "ledger": 65563276,
+     "close_time": 1795102423,
+     "detected_at": "2026-11-19T15:34:16.357Z",
+     "caps": [
+      "CAP-0027",
+      "CAP-0046",
+      "CAP-0067"
+     ],
+     "source": "archive"
+    },
+    {
+     "type": "bug_shape",
+     "shape": "muxed.id_ge_2^53 (JS-unsafe, #1785 shape)",
+     "tx": "73c2fecf7a0538a0a56b689038a8b183af921e4dc57da54ac5651e0b43b66d05",
+     "ledger": 65562799,
+     "close_time": 1795100038,
+     "detected_at": "2026-11-19T14:54:14.622Z",
+     "caps": [
+      "CAP-0027",
+      "CAP-0046",
+      "CAP-0067"
+     ],
+     "source": "archive"
+    },
+    {
+     "type": "bug_shape",
+     "shape": "muxed.id_ge_2^53 (JS-unsafe, #1785 shape)",
+     "tx": "2b065cf9ccdeb8f1a26b50e1ea2f17a073eaa304a2c219275b6d012de6f37b79",
+     "ledger": 65562624,
+     "close_time": 1795099163,
+     "detected_at": "2026-11-19T14:40:12.310Z",
+     "caps": [
+      "CAP-0027",
+      "CAP-0046",
+      "CAP-0067"
+     ],
+     "source": "archive"
+    },
+    {
+     "type": "bug_shape",
+     "shape": "muxed.id_ge_2^53 (JS-unsafe, #1785 shape)",
+     "tx": "62649a7e43e59388db77e9448ceeba22ccda77b9717eecca483d513d0494d28d",
+     "ledger": 65562608,
+     "close_time": 1795099083,
+     "detected_at": "2026-11-19T14:38:14.241Z",
+     "caps": [
+      "CAP-0027",
+      "CAP-0046",
+      "CAP-0067"
+     ],
+     "source": "archive"
+    },
+    {
+     "type": "bug_shape",
+     "shape": "muxed.id_ge_2^53 (JS-unsafe, #1785 shape)",
+     "tx": "a0f13e5a69d9c14c7c357fdca04a88d80511f343fe76dfff64a6c6c5169d0964",
+     "ledger": 65562492,
+     "close_time": 1795098503,
+     "detected_at": "2026-11-19T14:29:12.487Z",
+     "caps": [
+      "CAP-0027",
+      "CAP-0046",
+      "CAP-0067"
+     ],
+     "source": "archive"
+    },
+    {
+     "type": "bug_shape",
+     "shape": "muxed.id_ge_2^53 (JS-unsafe, #1785 shape)",
+     "tx": "4fbbe1c7ae39617595a9eb9557a7114a5aaf227d87604f414eee0731cb72775d",
+     "ledger": 65562192,
+     "close_time": 1795097003,
+     "detected_at": "2026-11-19T14:04:10.392Z",
+     "caps": [
+      "CAP-0027",
+      "CAP-0046",
+      "CAP-0067"
+     ],
+     "source": "archive"
+    },
+    {
+     "type": "bug_shape",
+     "shape": "muxed.id_ge_2^53 (JS-unsafe, #1785 shape)",
+     "tx": "dc847abcc01bc1567fb138cc3f267ffb1708996f616424715368002ffde2b49a",
+     "ledger": 65562131,
+     "close_time": 1795096698,
+     "detected_at": "2026-11-19T13:59:10.169Z",
+     "caps": [
+      "CAP-0027",
+      "CAP-0046",
+      "CAP-0067"
+     ],
+     "source": "archive"
+    },
+    {
+     "type": "bug_shape",
+     "shape": "muxed.id_ge_2^53 (JS-unsafe, #1785 shape)",
+     "tx": "ab9be664be10b01027ca4a7d1a92e406fcb6ed4e3a04338a613aecde2893902a",
+     "ledger": 65562009,
+     "close_time": 1795096088,
+     "detected_at": "2026-11-19T13:48:14.022Z",
+     "caps": [
+      "CAP-0027",
+      "CAP-0046",
+      "CAP-0067"
+     ],
+     "source": "archive"
+    },
+    {
+     "type": "bug_shape",
+     "shape": "muxed.id_ge_2^53 (JS-unsafe, #1785 shape)",
+     "tx": "28495c95c24a0b45631ee8956dc5c3cdebdcbfc24d5fa9bffec7a32c61d05983",
+     "ledger": 65562000,
+     "close_time": 1795096043,
+     "detected_at": "2026-11-19T13:48:09.254Z",
+     "caps": [
+      "CAP-0027",
+      "CAP-0046",
+      "CAP-0067"
+     ],
+     "source": "archive"
+    },
+    {
+     "type": "bug_shape",
+     "shape": "muxed.id_ge_2^53 (JS-unsafe, #1785 shape)",
+     "tx": "2103c4f81dde436e7905722ac03706b713417d43bfe694a14641309dc463242f",
+     "ledger": 65561988,
+     "close_time": 1795095983,
+     "detected_at": "2026-11-19T13:47:09.062Z",
+     "caps": [
+      "CAP-0027",
+      "CAP-0046",
+      "CAP-0067"
+     ],
+     "source": "archive"
+    },
+    {
+     "type": "bug_shape",
+     "shape": "muxed.id_ge_2^53 (JS-unsafe, #1785 shape)",
+     "tx": "0aab690860e46407843dae55cc65123d014ad859f074ac20c517d69d472325a0",
+     "ledger": 65561977,
+     "close_time": 1795095928,
+     "detected_at": "2026-11-19T13:46:09.729Z",
+     "caps": [
+      "CAP-0027",
+      "CAP-0046",
+      "CAP-0067"
+     ],
+     "source": "archive"
+    },
+    {
+     "type": "bug_shape",
+     "shape": "muxed.id_ge_2^53 (JS-unsafe, #1785 shape)",
+     "tx": "b21364d28a0e3e08bb14185ad71887aaf89c8636b28173990645a8566fe7eecd",
+     "ledger": 65561962,
+     "close_time": 1795095853,
+     "detected_at": "2026-11-19T13:45:08.909Z",
+     "caps": [
+      "CAP-0027",
+      "CAP-0046",
+      "CAP-0067"
+     ],
+     "source": "archive"
+    },
+    {
+     "type": "bug_shape",
+     "shape": "muxed.id_ge_2^53 (JS-unsafe, #1785 shape)",
+     "tx": "0cafec89b7e497e527d223785206bf6a012ac8d4bf1b0f58684c7d4ef1a9ce1a",
+     "ledger": 65561711,
+     "close_time": 1795094598,
+     "detected_at": "2026-11-19T13:24:07.928Z",
+     "caps": [
+      "CAP-0027",
+      "CAP-0046",
+      "CAP-0067"
+     ],
+     "source": "archive"
+    },
+    {
+     "type": "bug_shape",
+     "shape": "muxed.id_ge_2^53 (JS-unsafe, #1785 shape)",
+     "tx": "0240a0eed28227ab85edecb96df8604f7e5cdc42d427b03db5e6d78061c8dc25",
+     "ledger": 65561709,
+     "close_time": 1795094588,
+     "detected_at": "2026-11-19T13:23:14.695Z",
+     "caps": [
+      "CAP-0027",
+      "CAP-0046",
+      "CAP-0067"
+     ],
+     "source": "archive"
+    },
+    {
+     "type": "bug_shape",
+     "shape": "muxed.id_ge_2^53 (JS-unsafe, #1785 shape)",
+     "tx": "8381b90506d8969b6e595ca425df9a96a5856c7d53187300646880a1d885b03c",
+     "ledger": 65561634,
+     "close_time": 1795094213,
+     "detected_at": "2026-11-19T13:17:08.972Z",
+     "caps": [
+      "CAP-0027",
+      "CAP-0046",
+      "CAP-0067"
+     ],
+     "source": "archive"
+    },
+    {
+     "type": "bug_shape",
+     "shape": "muxed.id_ge_2^53 (JS-unsafe, #1785 shape)",
+     "tx": "0e73ca6baface4e76dbf8e5cb0ebdc2a8af23a07321f4fa10851bda9580709c6",
+     "ledger": 65561601,
+     "close_time": 1795094048,
+     "detected_at": "2026-11-19T13:14:14.105Z",
+     "caps": [
+      "CAP-0027",
+      "CAP-0046",
+      "CAP-0067"
+     ],
+     "source": "archive"
+    },
+    {
+     "type": "bug_shape",
+     "shape": "muxed.id_ge_2^53 (JS-unsafe, #1785 shape)",
+     "tx": "43fc10f86f85dc50c5e096bed1a21447c2864ca9e716844773aa093feca31648",
+     "ledger": 65561427,
+     "close_time": 1795093178,
+     "detected_at": "2026-11-19T13:00:06.933Z",
+     "caps": [
+      "CAP-0027",
+      "CAP-0046",
+      "CAP-0067"
+     ],
+     "source": "archive"
+    },
+    {
+     "type": "bug_shape",
+     "shape": "muxed.id_ge_2^53 (JS-unsafe, #1785 shape)",
+     "tx": "d045a4df207084377843bb02251410a43c496785067d800dccd505be37b7c6a8",
+     "ledger": 65561249,
+     "close_time": 1795092288,
+     "detected_at": "2026-11-19T12:45:06.546Z",
+     "caps": [
+      "CAP-0027",
+      "CAP-0046",
+      "CAP-0067"
+     ],
+     "source": "archive"
+    },
+    {
+     "type": "bug_shape",
+     "shape": "muxed.id_ge_2^53 (JS-unsafe, #1785 shape)",
+     "tx": "01da07bc20cf18a05ac4e935b432fa17b57a0bee8321db83e5ca050de33288d6",
+     "ledger": 65560934,
+     "close_time": 1795090713,
+     "detected_at": "2026-11-19T12:19:05.065Z",
+     "caps": [
+      "CAP-0027",
+      "CAP-0046",
+      "CAP-0067"
+     ],
+     "source": "archive"
+    },
+    {
+     "type": "bug_shape",
+     "shape": "muxed.id_ge_2^53 (JS-unsafe, #1785 shape)",
+     "tx": "9c13ecd49acff6471dc9e4724e05b4c06f3eda780df796137b846000be6035d3",
+     "ledger": 65560805,
+     "close_time": 1795090068,
+     "detected_at": "2026-11-19T12:08:03.859Z",
+     "caps": [
+      "CAP-0027",
+      "CAP-0046",
+      "CAP-0067"
+     ],
+     "source": "archive"
+    },
+    {
+     "type": "bug_shape",
+     "shape": "muxed.id_ge_2^53 (JS-unsafe, #1785 shape)",
+     "tx": "b62df8377b20d8929a7ffc78834848b12cbf81acff4490d56075823c19d7373f",
+     "ledger": 65560574,
+     "close_time": 1795088913,
+     "detected_at": "2026-11-19T11:49:02.898Z",
+     "caps": [
+      "CAP-0027",
+      "CAP-0046",
+      "CAP-0067"
+     ],
+     "source": "archive"
+    },
+    {
+     "type": "bug_shape",
+     "shape": "muxed.id_ge_2^53 (JS-unsafe, #1785 shape)",
+     "tx": "62828f6a7ba64d3d901e1a1a2b9e8f02f4808c012de6b62df946e7c9636768c1",
+     "ledger": 65559913,
+     "close_time": 1795085608,
+     "detected_at": "2026-11-19T10:53:58.759Z",
+     "caps": [
+      "CAP-0027",
+      "CAP-0046",
+      "CAP-0067"
+     ],
+     "source": "archive"
+    },
+    {
+     "type": "bug_shape",
+     "shape": "muxed.id_ge_2^53 (JS-unsafe, #1785 shape)",
+     "tx": "2755c7f8b7b60a3ece5a8ab3ae55207e2001823b1fcd10364f9d458dcfc932cf",
+     "ledger": 65559870,
+     "close_time": 1795085393,
+     "detected_at": "2026-11-19T10:49:59.400Z",
+     "caps": [
+      "CAP-0027",
+      "CAP-0046",
+      "CAP-0067"
+     ],
+     "source": "archive"
+    },
+    {
+     "type": "bug_shape",
+     "shape": "muxed.id_ge_2^53 (JS-unsafe, #1785 shape)",
+     "tx": "3e9999680433d6fad4d56971c1349172e6f66ea06b3e51c80d1d9da003953c54",
+     "ledger": 65559442,
+     "close_time": 1795083253,
+     "detected_at": "2026-11-19T10:14:56.412Z",
+     "caps": [
+      "CAP-0027",
+      "CAP-0046",
+      "CAP-0067"
+     ],
+     "source": "archive"
+    }
+   ]
+  },
+  {
+   "shape": "soroban.creates_trustline (#731 shape)",
+   "txs": 11,
+   "caps": [
+    "CAP-0046",
+    "CAP-0067"
+   ],
+   "recent": [
+    {
+     "type": "bug_shape",
+     "shape": "soroban.creates_trustline (#731 shape)",
+     "tx": "d7023b23562efae8484d960da9ddea38d007e30b7a7720153428d195ee67e54c",
+     "ledger": 65559854,
+     "close_time": 1795085313,
+     "detected_at": "2026-11-19T10:48:58.775Z",
+     "caps": [
+      "CAP-0046",
+      "CAP-0067"
+     ],
+     "source": "archive"
+    },
+    {
+     "type": "bug_shape",
+     "shape": "soroban.creates_trustline (#731 shape)",
+     "tx": "08f35c150ef38e906cd2a15f5bed158c025480437c2556c890166670187e5057",
+     "ledger": 65557360,
+     "close_time": 1795072843,
+     "detected_at": "2026-11-19T07:20:48.556Z",
+     "caps": [
+      "CAP-0046",
+      "CAP-0067"
+     ],
+     "source": "archive"
+    },
+    {
+     "type": "bug_shape",
+     "shape": "soroban.creates_trustline (#731 shape)",
+     "tx": "e3e8d4629f82710f92719f65da4a96b5c3b63f754db844d037ee05195e5d59ef",
+     "ledger": 65547063,
+     "close_time": 1795021358,
+     "detected_at": "2026-11-18T17:02:49.587Z",
+     "caps": [
+      "CAP-0046",
+      "CAP-0067"
+     ],
+     "source": "archive"
+    },
+    {
+     "type": "bug_shape",
+     "shape": "soroban.creates_trustline (#731 shape)",
+     "tx": "96831dd33636dc85a8dfa29a33d651c89623a87395ac37d17134e6f28360ac61",
+     "ledger": 65547059,
+     "close_time": 1795021338,
+     "detected_at": "2026-11-18T17:02:49.106Z",
+     "caps": [
+      "CAP-0046",
+      "CAP-0067"
+     ],
+     "source": "archive"
+    },
+    {
+     "type": "bug_shape",
+     "shape": "soroban.creates_trustline (#731 shape)",
+     "tx": "8da5c8c81fe5ab012cc8b260ac726ff27b7bd074441c24dcf291c2b87088bb5f",
+     "ledger": 65532575,
+     "close_time": 1794948917,
+     "detected_at": "2026-11-17T22:41:19.009Z",
+     "caps": [
+      "CAP-0046",
+      "CAP-0067"
+     ],
+     "source": "archive"
+    },
+    {
+     "type": "bug_shape",
+     "shape": "soroban.creates_trustline (#731 shape)",
+     "tx": "387ccbc0875d616130a35690dbcd2a7c2eb83aaae62a6262dbd7586c71a0c681",
+     "ledger": 65527370,
+     "close_time": 1794922892,
+     "detected_at": "2026-11-17T22:28:23.090Z",
+     "caps": [
+      "CAP-0046",
+      "CAP-0067"
+     ],
+     "source": "archive"
+    },
+    {
+     "type": "bug_shape",
+     "shape": "soroban.creates_trustline (#731 shape)",
+     "tx": "3c01bc77eb8fb7be1335cb9159f5de82bcb1bf8226a96d2938da39aa048e2af8",
+     "ledger": 65527210,
+     "close_time": 1794922092,
+     "detected_at": "2026-11-17T22:28:00.690Z",
+     "caps": [
+      "CAP-0046",
+      "CAP-0067"
+     ],
+     "source": "archive"
+    },
+    {
+     "type": "bug_shape",
+     "shape": "soroban.creates_trustline (#731 shape)",
+     "tx": "5a0ea4d4a5eb93d08cc5183fe680177302b50906ccdc9c787be30c09fb5084d1",
+     "ledger": 65526333,
+     "close_time": 1794917707,
+     "detected_at": "2026-11-17T22:25:44.126Z",
+     "caps": [
+      "CAP-0046",
+      "CAP-0067"
+     ],
+     "source": "archive"
+    },
+    {
+     "type": "bug_shape",
+     "shape": "soroban.creates_trustline (#731 shape)",
+     "tx": "824cb77d8c984209de7cb6471b6bc2ba705348b34e2e7d0dd34ba26a31bf2894",
+     "ledger": 65526279,
+     "close_time": 1794917437,
+     "detected_at": "2026-11-17T22:25:36.682Z",
+     "caps": [
+      "CAP-0046",
+      "CAP-0067"
+     ],
+     "source": "archive"
+    },
+    {
+     "type": "bug_shape",
+     "shape": "soroban.creates_trustline (#731 shape)",
+     "tx": "47fc14ee476007fdcbc0df2e4d9f4ca05ad2614fa9c1b4c38f7796012b6ec951",
+     "ledger": 65524901,
+     "close_time": 1794910547,
+     "detected_at": "2026-11-17T22:21:55.186Z",
+     "caps": [
+      "CAP-0046",
+      "CAP-0067"
+     ],
+     "source": "archive"
+    },
+    {
+     "type": "bug_shape",
+     "shape": "soroban.creates_trustline (#731 shape)",
+     "tx": "a13647ad42ae6a69a34da9a1a44e011092b5390ff36d228a4b1b287c837f5595",
+     "ledger": 65519330,
+     "close_time": 1794882692,
+     "detected_at": "2026-11-17T17:19:46.680Z",
+     "caps": [
+      "CAP-0046",
+      "CAP-0067"
+     ],
+     "source": "archive"
+    }
+   ]
+  }
+ ],
+ "long_tail": {
+  "arms": 83,
+  "flags": 19297,
+  "txs": 12653,
+  "top": [
+   {
+    "arm": "SorobanTransactionDataExt.v1",
+    "txs": 1757,
+    "caps": [
+     "CAP-0046"
+    ],
+    "example": {
+     "tx": "be9e9773b53a44de65b0db41dc3b1531d63272db8087a4a089d58323c2220640",
+     "ledger": 65514037
+    }
+   },
+   {
+    "arm": "LedgerEntryChange.restored",
+    "txs": 1706,
+    "caps": [],
+    "example": {
+     "tx": "be9e9773b53a44de65b0db41dc3b1531d63272db8087a4a089d58323c2220640",
+     "ledger": 65514037
+    }
+   },
+   {
+    "arm": "ManageSellOfferResult.sell_no_trust",
+    "txs": 1586,
+    "caps": [],
+    "example": {
+     "tx": "9d98ef29c26c82d497b772d86ccd4dc13a0206c94dc90f2f2bbd30ead2153abb",
+     "ledger": 65514099
+    }
+   },
+   {
+    "arm": "Memo.return",
+    "txs": 1508,
+    "caps": [],
+    "example": {
+     "tx": "dac11f666516d2924af6a9f37cd894eb3d6e4e631dca8c8508f6c587f9488ca6",
+     "ledger": 65514054
+    }
+   },
+   {
+    "arm": "DataEntryExt.v0",
+    "txs": 1223,
+    "caps": [],
+    "example": {
+     "tx": "78b633f543eb02771274bb193c5c666c2fbb03a0c8a7f460ab9e2baa4335b11b",
+     "ledger": 65514257
+    }
+   },
+   {
+    "arm": "LedgerEntryData.data",
+    "txs": 1223,
+    "caps": [],
+    "example": {
+     "tx": "78b633f543eb02771274bb193c5c666c2fbb03a0c8a7f460ab9e2baa4335b11b",
+     "ledger": 65514257
+    }
+   },
+   {
+    "arm": "ScVal.i256",
+    "txs": 920,
+    "caps": [
+     "CAP-0046"
+    ],
+    "example": {
+     "tx": "4be5d49c900e9b7bd4ad4ea4df3d43d8346bf705c4d0edbe62a2a872317c6e3d",
+     "ledger": 65514085
+    }
+   },
+   {
+    "arm": "PathPaymentStrictSendResult.no_destination",
+    "txs": 748,
+    "caps": [],
+    "example": {
+     "tx": "6168ce528b0c14f2750d8d77c8a7cdac81a73cec8991d42374d80552c844ac21",
+     "ledger": 65514081
+    }
+   },
+   {
+    "arm": "BumpSequenceResult.success",
+    "txs": 589,
+    "caps": [],
+    "example": {
+     "tx": "ce09d1b1ad97463040757c24426bd30f051f174155ea3179deadb25beb459437",
+     "ledger": 65514333
+    }
+   },
+   {
+    "arm": "OperationBody.bump_sequence",
+    "txs": 589,
+    "caps": [],
+    "example": {
+     "tx": "ce09d1b1ad97463040757c24426bd30f051f174155ea3179deadb25beb459437",
+     "ledger": 65514333
+    }
+   },
+   {
+    "arm": "OperationResultTr.bump_sequence",
+    "txs": 589,
+    "caps": [],
+    "example": {
+     "tx": "ce09d1b1ad97463040757c24426bd30f051f174155ea3179deadb25beb459437",
+     "ledger": 65514333
+    }
+   },
+   {
+    "arm": "ChangeTrustResult.low_reserve",
+    "txs": 526,
+    "caps": [],
+    "example": {
+     "tx": "037bface7b94193092803f8b0c4880199a50bf0553cb5e367df12f5a38d732f4",
+     "ledger": 65516256
+    }
+   },
+   {
+    "arm": "ScError.budget",
+    "txs": 440,
+    "caps": [],
+    "example": {
+     "tx": "e69065f066e54ffbdd7cf948a07a5b5ac0a36d204c3762280227f65c5a3c2fb3",
+     "ledger": 65514944
+    }
+   },
+   {
+    "arm": "ManageBuyOfferResult.cross_self",
+    "txs": 386,
+    "caps": [],
+    "example": {
+     "tx": "79d6a10b232b2b9b88d30788a197f447f7bc75f4ea5f12f10a639a6de860bd7c",
+     "ledger": 65514559
+    }
+   },
+   {
+    "arm": "InvokeHostFunctionResult.resource_limit_exceeded",
+    "txs": 379,
+    "caps": [
+     "CAP-0046"
+    ],
+    "example": {
+     "tx": "e69065f066e54ffbdd7cf948a07a5b5ac0a36d204c3762280227f65c5a3c2fb3",
+     "ledger": 65514944
+    }
+   },
+   {
+    "arm": "OperationResult.op_exceeded_work_limit",
+    "txs": 376,
+    "caps": [],
+    "example": {
+     "tx": "d2403e2e8c4172c88d4288eb5d1725f2baaf3d1bb0d8b5fa95000a3fb67094a6",
+     "ledger": 65514249
+    }
+   },
+   {
+    "arm": "PaymentResult.src_no_trust",
+    "txs": 316,
+    "caps": [],
+    "example": {
+     "tx": "11a357ba3223103758b85951de05d030c0e358bc20d3219921d3ed4bbc07bd71",
+     "ledger": 65514425
+    }
+   },
+   {
+    "arm": "ScError.value",
+    "txs": 284,
+    "caps": [],
+    "example": {
+     "tx": "78e377ffe7d94e5156dee915f06a2d7c1b53e558af96f7b77275dfbbd752ed56",
+     "ledger": 65514441
+    }
+   },
+   {
+    "arm": "InvokeHostFunctionResult.entry_archived",
+    "txs": 279,
+    "caps": [
+     "CAP-0046"
+    ],
+    "example": {
+     "tx": "1af1e4a6d254ae718fd75cf6609daf7a49663d4244652076e36c6ca786e979cd",
+     "ledger": 65523273
+    }
+   },
+   {
+    "arm": "ManageBuyOfferResult.buy_no_trust",
+    "txs": 265,
+    "caps": [],
+    "example": {
+     "tx": "9d98ef29c26c82d497b772d86ccd4dc13a0206c94dc90f2f2bbd30ead2153abb",
+     "ledger": 65514099
+    }
+   },
+   {
+    "arm": "ContractIdPreimage.address",
+    "txs": 233,
+    "caps": [
+     "CAP-0046"
+    ],
+    "example": {
+     "tx": "8304f1579937f8513648925563c8ba7c021a0f8c513f55e87f03db5c4d1af3c1",
+     "ledger": 65514216
+    }
+   },
+   {
+    "arm": "SorobanAuthorizedFunction.create_contract_v2_host_fn",
+    "txs": 233,
+    "caps": [
+     "CAP-0046"
+    ],
+    "example": {
+     "tx": "8304f1579937f8513648925563c8ba7c021a0f8c513f55e87f03db5c4d1af3c1",
+     "ledger": 65514216
+    }
+   },
+   {
+    "arm": "ChangeTrustAsset.pool_share",
+    "txs": 226,
+    "caps": [
+     "CAP-0038"
+    ],
+    "example": {
+     "tx": "724d699397b4609d65ca0b0bb3ff70582db311f196f97ac40258479a3cc9be6b",
+     "ledger": 65514130
+    }
+   },
+   {
+    "arm": "LiquidityPoolParameters.liquidity_pool_constant_product",
+    "txs": 226,
+    "caps": [
+     "CAP-0038"
+    ],
+    "example": {
+     "tx": "724d699397b4609d65ca0b0bb3ff70582db311f196f97ac40258479a3cc9be6b",
+     "ledger": 65514130
+    }
+   },
+   {
+    "arm": "HostFunction.create_contract_v2",
+    "txs": 221,
+    "caps": [
+     "CAP-0046"
+    ],
+    "example": {
+     "tx": "8304f1579937f8513648925563c8ba7c021a0f8c513f55e87f03db5c4d1af3c1",
+     "ledger": 65514216
+    }
+   },
+   {
+    "arm": "SignerKey.pre_auth_tx",
+    "txs": 215,
+    "caps": [],
+    "example": {
+     "tx": "c285c1f07d32fad3bc3330e77e4724db221d28bb4b732a2fa782d0ed3ab44126",
+     "ledger": 65514609
+    }
+   },
+   {
+    "arm": "CreateAccountResult.already_exist",
+    "txs": 141,
+    "caps": [],
+    "example": {
+     "tx": "43d96514a055b2411f11b3bb1af462ab6ab5906beefee7a31276a4cfafa3f92c",
+     "ledger": 65514513
+    }
+   },
+   {
+    "arm": "SetOptionsResult.low_reserve",
+    "txs": 136,
+    "caps": [],
+    "example": {
+     "tx": "7bc8fadb15713b8b3d2eced2a47d81a778ed5f3283e446969f331bf9474cc88a",
+     "ledger": 65523667
+    }
+   },
+   {
+    "arm": "OperationBody.liquidity_pool_withdraw",
+    "txs": 120,
+    "caps": [
+     "CAP-0038"
+    ],
+    "example": {
+     "tx": "724d699397b4609d65ca0b0bb3ff70582db311f196f97ac40258479a3cc9be6b",
+     "ledger": 65514130
+    }
+   },
+   {
+    "arm": "OperationResultTr.liquidity_pool_withdraw",
+    "txs": 120,
+    "caps": [
+     "CAP-0038"
+    ],
+    "example": {
+     "tx": "724d699397b4609d65ca0b0bb3ff70582db311f196f97ac40258479a3cc9be6b",
+     "ledger": 65514130
+    }
+   },
+   {
+    "arm": "LiquidityPoolWithdrawResult.success",
+    "txs": 118,
+    "caps": [
+     "CAP-0038"
+    ],
+    "example": {
+     "tx": "724d699397b4609d65ca0b0bb3ff70582db311f196f97ac40258479a3cc9be6b",
+     "ledger": 65514130
+    }
+   },
+   {
+    "arm": "LedgerKey.data",
+    "txs": 108,
+    "caps": [],
+    "example": {
+     "tx": "00bda212e4366ce7f0b4268fb78fbeaab56c3c46c5b357e062efa599046581c0",
+     "ledger": 65515071
+    }
+   },
+   {
+    "arm": "ExtendFootprintTtlResult.success",
+    "txs": 98,
+    "caps": [
+     "CAP-0046"
+    ],
+    "example": {
+     "tx": "76bcc33a6b1c07482e57f5f5f676e6c181791dbce3ce555b5719aed9da000648",
+     "ledger": 65517516
+    }
+   },
+   {
+    "arm": "OperationBody.extend_footprint_ttl",
+    "txs": 98,
+    "caps": [],
+    "example": {
+     "tx": "76bcc33a6b1c07482e57f5f5f676e6c181791dbce3ce555b5719aed9da000648",
+     "ledger": 65517516
+    }
+   },
+   {
+    "arm": "OperationResultTr.extend_footprint_ttl",
+    "txs": 98,
+    "caps": [],
+    "example": {
+     "tx": "76bcc33a6b1c07482e57f5f5f676e6c181791dbce3ce555b5719aed9da000648",
+     "ledger": 65517516
+    }
+   },
+   {
+    "arm": "ContractCodeEntryExt.v1",
+    "txs": 79,
+    "caps": [],
+    "example": {
+     "tx": "2b716ef0a36709e0af529c55ec5d004a14774152cf749f85f6252226b62fb283",
+     "ledger": 65514214
+    }
+   },
+   {
+    "arm": "LedgerEntryData.contract_code",
+    "txs": 79,
+    "caps": [],
+    "example": {
+     "tx": "2b716ef0a36709e0af529c55ec5d004a14774152cf749f85f6252226b62fb283",
+     "ledger": 65514214
+    }
+   },
+   {
+    "arm": "HostFunction.upload_contract_wasm",
+    "txs": 75,
+    "caps": [
+     "CAP-0046"
+    ],
+    "example": {
+     "tx": "2b716ef0a36709e0af529c55ec5d004a14774152cf749f85f6252226b62fb283",
+     "ledger": 65514214
+    }
+   },
+   {
+    "arm": "ChangeTrustResult.no_issuer",
+    "txs": 55,
+    "caps": [],
+    "example": {
+     "tx": "ec5d628eae597f81b58c499c4dae7c12c45df58f0be2452f8fd02b35fa4b2d33",
+     "ledger": 65518604
+    }
+   },
+   {
+    "arm": "InvokeHostFunctionResult.insufficient_refundable_fee",
+    "txs": 52,
+    "caps": [
+     "CAP-0046"
+    ],
+    "example": {
+     "tx": "428555ae995b2a83af1a314c4e1b4bbd1085e3540ac49f38e3216e1430e3b3fa",
+     "ledger": 65516072
+    }
+   },
+   {
+    "arm": "OperationResult.op_too_many_subentries",
+    "txs": 49,
+    "caps": [],
+    "example": {
+     "tx": "88c7a14c2bd34a54dab77fa98f0002530ff854f8a7599c8d008f30e307cb9947",
+     "ledger": 65515017
+    }
+   },
+   {
+    "arm": "PathPaymentStrictSendResult.src_not_authorized",
+    "txs": 49,
+    "caps": [],
+    "example": {
+     "tx": "5b4edabd019776bc3c483edd63e81ac3a73be7f2d39e70f45a42d59e55b9473a",
+     "ledger": 65516591
+    }
+   },
+   {
+    "arm": "LiquidityPoolDepositResult.bad_price",
+    "txs": 47,
+    "caps": [
+     "CAP-0038"
+    ],
+    "example": {
+     "tx": "f764c933f0f76c5813cd85f9b14fbf52a14e0435f3613c50730c57edb76ae6cf",
+     "ledger": 65518639
+    }
+   },
+   {
+    "arm": "ClaimClaimableBalanceResult.does_not_exist",
+    "txs": 44,
+    "caps": [
+     "CAP-0023"
+    ],
+    "example": {
+     "tx": "91b5c10bfd01fc6703616ee015b4bbc3bbdb3d1998c74ec68991b0124b8ae5a4",
+     "ledger": 65515796
+    }
+   },
+   {
+    "arm": "ScErrorCode.missing_value",
+    "txs": 44,
+    "caps": [],
+    "example": {
+     "tx": "8cd0a20c99f11b61469bfb300cc46e7033257411d895be81ef0dce47147df653",
+     "ledger": 65514416
+    }
+   },
+   {
+    "arm": "AccountMergeResult.is_sponsor",
+    "txs": 43,
+    "caps": [
+     "CAP-0033"
+    ],
+    "example": {
+     "tx": "9d930319faff7d9d3bebc925a1d5fad3bd201f7b76cd84cdd5d10e8096eac70f",
+     "ledger": 65517915
+    }
+   },
+   {
+    "arm": "CreateClaimableBalanceResult.low_reserve",
+    "txs": 43,
+    "caps": [
+     "CAP-0023"
+    ],
+    "example": {
+     "tx": "404415251ef5208b755e8f442740169e67273f2006ad02736764b943408d7431",
+     "ledger": 65515480
+    }
+   },
+   {
+    "arm": "ManageBuyOfferResult.sell_not_authorized",
+    "txs": 41,
+    "caps": [],
+    "example": {
+     "tx": "32de1526bdb3b5f83a30191fb87d8c94f3006f99ced07a7bb3ae8060d627ce94",
+     "ledger": 65524869
+    }
+   },
+   {
+    "arm": "PathPaymentStrictSendResult.not_authorized",
+    "txs": 41,
+    "caps": [],
+    "example": {
+     "tx": "91c26064968ca11435cf39028fdaaad8a330d44795e75b9c1daf2d5cf9ca4f54",
+     "ledger": 65523195
+    }
+   },
+   {
+    "arm": "AccountMergeResult.has_sub_entries",
+    "txs": 34,
+    "caps": [],
+    "example": {
+     "tx": "1fbb913e09d18b3ff7140775ed485c72c390df314a14052111a5f6b6cc3ca1e1",
+     "ledger": 65516079
+    }
+   },
+   {
+    "arm": "ManageSellOfferResult.buy_not_authorized",
+    "txs": 30,
+    "caps": [],
+    "example": {
+     "tx": "2782afa3a758375bd3497e8e75e541f627449a735f85b8e501f487868c3a57b3",
+     "ledger": 65515774
+    }
+   },
+   {
+    "arm": "HostFunction.create_contract",
+    "txs": 29,
+    "caps": [
+     "CAP-0046"
+    ],
+    "example": {
+     "tx": "eead9c43a76eaff199829adff713e97233fb61fb9ef846075f644c96645514de",
+     "ledger": 65524175
+    }
+   },
+   {
+    "arm": "OperationBody.revoke_sponsorship",
+    "txs": 29,
+    "caps": [
+     "CAP-0033"
+    ],
+    "example": {
+     "tx": "d44dd51043d7b7d2f6ed31a529b770e473759c85c6a143e54b03134e374d9c07",
+     "ledger": 65516073
+    }
+   },
+   {
+    "arm": "OperationResultTr.revoke_sponsorship",
+    "txs": 29,
+    "caps": [
+     "CAP-0033"
+    ],
+    "example": {
+     "tx": "d44dd51043d7b7d2f6ed31a529b770e473759c85c6a143e54b03134e374d9c07",
+     "ledger": 65516073
+    }
+   },
+   {
+    "arm": "ClaimPredicate.and",
+    "txs": 28,
+    "caps": [],
+    "example": {
+     "tx": "0bb298354764c59de85b749fffdbb58995ddcbef2a337fd956f2900fbac1bc73",
+     "ledger": 65523699
+    }
+   },
+   {
+    "arm": "ContractExecutable.stellar_asset",
+    "txs": 27,
+    "caps": [
+     "CAP-0046"
+    ],
+    "example": {
+     "tx": "d0e26f2fce113ee7c2b8945a268a0c046089c9c081b54f60980aee955a573315",
+     "ledger": 65518856
+    }
+   },
+   {
+    "arm": "RevokeSponsorshipOp.ledger_entry",
+    "txs": 26,
+    "caps": [
+     "CAP-0033"
+    ],
+    "example": {
+     "tx": "d44dd51043d7b7d2f6ed31a529b770e473759c85c6a143e54b03134e374d9c07",
+     "ledger": 65516073
+    }
+   },
+   {
+    "arm": "LedgerKey.liquidity_pool",
+    "txs": 25,
+    "caps": [
+     "CAP-0038"
+    ],
+    "example": {
+     "tx": "2d372cf3bcf471350360b905612fbded4b333528a7f9f9a6b741728cef146172",
+     "ledger": 65515102
+    }
+   },
+   {
+    "arm": "ManageSellOfferResult.line_full",
+    "txs": 23,
+    "caps": [],
+    "example": {
+     "tx": "ac0ac7d0356c4bc579ceed118e459b3eb0d2d5c06b40692444e6e59c9b0001ab",
+     "ledger": 65548887
+    }
+   },
+   {
+    "arm": "PaymentResult.src_not_authorized",
+    "txs": 22,
+    "caps": [],
+    "example": {
+     "tx": "36c821b9c544d51fcc06405c0854722a6057b54be78fa9a7a8e493a653fb3cca",
+     "ledger": 65514412
+    }
+   },
+   {
+    "arm": "PathPaymentStrictSendResult.offer_cross_self",
+    "txs": 21,
+    "caps": [],
+    "example": {
+     "tx": "81463ff7262ee119c886434627a84bf2fa7197ada4895a351075b738977dc411",
+     "ledger": 65524078
+    }
+   },
+   {
+    "arm": "RevokeSponsorshipResult.success",
+    "txs": 19,
+    "caps": [
+     "CAP-0033"
+    ],
+    "example": {
+     "tx": "d44dd51043d7b7d2f6ed31a529b770e473759c85c6a143e54b03134e374d9c07",
+     "ledger": 65516073
+    }
+   },
+   {
+    "arm": "CreateClaimableBalanceResult.underfunded",
+    "txs": 18,
+    "caps": [
+     "CAP-0023"
+    ],
+    "example": {
+     "tx": "822c1d3500b42e598508a1f29b9b5a1703307b7ef1e4ef744164ef1a00a87fde",
+     "ledger": 65524292
+    }
+   },
+   {
+    "arm": "ContractIdPreimage.asset",
+    "txs": 17,
+    "caps": [
+     "CAP-0046"
+    ],
+    "example": {
+     "tx": "eead9c43a76eaff199829adff713e97233fb61fb9ef846075f644c96645514de",
+     "ledger": 65524175
+    }
+   },
+   {
+    "arm": "ChangeTrustResult.cannot_delete",
+    "txs": 15,
+    "caps": [],
+    "example": {
+     "tx": "4cedbbbd15354367a86491ac536cb43fd741c5698dfce60e7d651e254eded0b4",
+     "ledger": 65516352
+    }
+   },
+   {
+    "arm": "ClawbackClaimableBalanceResult.does_not_exist",
+    "txs": 13,
+    "caps": [
+     "CAP-0023",
+     "CAP-0035"
+    ],
+    "example": {
+     "tx": "253efc81e8685139bbd615fc3e6a8eb4d848334959e6a84b64f17efe04ef8def",
+     "ledger": 65523635
+    }
+   },
+   {
+    "arm": "ContractEventType.system",
+    "txs": 9,
+    "caps": [
+     "CAP-0067"
+    ],
+    "example": {
+     "tx": "a1d773ef16d615d572090f20c14876bbb9157ba0a0ae511eed2b15ec64c9979d",
+     "ledger": 65514367
+    }
+   },
+   {
+    "arm": "RevokeSponsorshipResult.only_transferable",
+    "txs": 9,
+    "caps": [
+     "CAP-0033"
+    ],
+    "example": {
+     "tx": "d103a26e3af6ba7a89ab6a92e635ed4dd71116663583a3451208d997d11a034d",
+     "ledger": 65520631
+    }
+   },
+   {
+    "arm": "RevokeSponsorshipResult.not_sponsor",
+    "txs": 8,
+    "caps": [
+     "CAP-0033"
+    ],
+    "example": {
+     "tx": "d44dd51043d7b7d2f6ed31a529b770e473759c85c6a143e54b03134e374d9c07",
+     "ledger": 65516073
+    }
+   },
+   {
+    "arm": "AccountMergeResult.no_account",
+    "txs": 7,
+    "caps": [],
+    "example": {
+     "tx": "d5e2c177c1ae44e607598cc95c2b8b29bbb3e8f22dee77dfe92586e08dae0dd7",
+     "ledger": 65523810
+    }
+   },
+   {
+    "arm": "ClaimClaimableBalanceResult.not_authorized",
+    "txs": 6,
+    "caps": [
+     "CAP-0023"
+    ],
+    "example": {
+     "tx": "fe6c51e171f5bb1cd3ac93b0c5c04f3411e4c1638662fc6fddd74f7e652b6638",
+     "ledger": 65523414
+    }
+   },
+   {
+    "arm": "RevokeSponsorshipOp.signer",
+    "txs": 6,
+    "caps": [
+     "CAP-0033"
+    ],
+    "example": {
+     "tx": "747237b67df028a1aa650fb2f1277d8c1ab66abb8c7605e557da778786a54c3e",
+     "ledger": 65517153
+    }
+   },
+   {
+    "arm": "ScErrorCode.unexpected_type",
+    "txs": 5,
+    "caps": [],
+    "example": {
+     "tx": "78e377ffe7d94e5156dee915f06a2d7c1b53e558af96f7b77275dfbbd752ed56",
+     "ledger": 65514441
+    }
+   },
+   {
+    "arm": "ClawbackResult.underfunded",
+    "txs": 4,
+    "caps": [
+     "CAP-0035"
+    ],
+    "example": {
+     "tx": "e638db9e7bcdc61c34a0480e7514e19d4a5b2d94335d7ba198e0fe0756f58820",
+     "ledger": 65518615
+    }
+   },
+   {
+    "arm": "CreateClaimableBalanceResult.not_authorized",
+    "txs": 4,
+    "caps": [
+     "CAP-0023"
+    ],
+    "example": {
+     "tx": "789d5c3c5807ed6251c93bda3a1b6aef30bea47688f55bff9f870ccf165b5a66",
+     "ledger": 65524595
+    }
+   },
+   {
+    "arm": "PathPaymentStrictSendResult.line_full",
+    "txs": 4,
+    "caps": [],
+    "example": {
+     "tx": "a85cd6c34b112d5374f8bb42f7e2644155dbe14f5a922fc191937e91888d40a2",
+     "ledger": 65530997
+    }
+   },
+   {
+    "arm": "ManageDataResult.low_reserve",
+    "txs": 2,
+    "caps": [],
+    "example": {
+     "tx": "e881d7b04e02c9b26a7bf4ebc38e96998798b05d7139333c3e368766fcf4e37a",
+     "ledger": 65521002
+    }
+   },
+   {
+    "arm": "PathPaymentStrictReceiveResult.offer_cross_self",
+    "txs": 2,
+    "caps": [],
+    "example": {
+     "tx": "6c3338b66fe034caaa007410dbbc1dfe12094963a81e802b0a4ff45f1f010bd9",
+     "ledger": 65559706
+    }
+   },
+   {
+    "arm": "ClaimPredicate.or",
+    "txs": 1,
+    "caps": [],
+    "example": {
+     "tx": "6bc5d92da9499ce572fafa90431cf89657998263cfb19af7f03c21c5aaa0f9c1",
+     "ledger": 65532973
+    }
+   },
+   {
+    "arm": "LiquidityPoolDepositResult.no_trust",
+    "txs": 1,
+    "caps": [
+     "CAP-0038"
+    ],
+    "example": {
+     "tx": "16d4b66ac7c681c6ae5659d1090f62df5178212e75ac847da488c20a0b4ca901",
+     "ledger": 65549154
+    }
+   },
+   {
+    "arm": "LiquidityPoolWithdrawResult.no_trust",
+    "txs": 1,
+    "caps": [
+     "CAP-0038"
+    ],
+    "example": {
+     "tx": "b98171b45ba826d8a3d439c5e0f93f1668fe1f38ef0e1987166bf5b760f8ce63",
+     "ledger": 65558509
+    }
+   },
+   {
+    "arm": "LiquidityPoolWithdrawResult.under_minimum",
+    "txs": 1,
+    "caps": [
+     "CAP-0038"
+    ],
+    "example": {
+     "tx": "bd9e94445aeb625ec2208f68e22994d53f2d86e46e17b23330fcb4b965345c54",
+     "ledger": 65525380
+    }
+   },
+   {
+    "arm": "SetTrustLineFlagsResult.no_trust_line",
+    "txs": 1,
+    "caps": [],
+    "example": {
+     "tx": "7fabf1d1198ce6032b74e875f2c2d67f8a6b06043ee739c1a740e09e9123d836",
+     "ledger": 65523406
+    }
+   }
+  ]
+ }
+}

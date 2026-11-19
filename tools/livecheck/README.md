@@ -61,6 +61,7 @@ node tools/livecheck/test.mjs                                 # fixtures, offlin
 node tools/livecheck/backfill.mjs --range 65450000-65499999   # resumable, .work/ per 250-ledger chunk
 node tools/livecheck/backfill.mjs --name spread --every 58800000:65400000:100000:500
 node tools/livecheck/backfill.mjs --report [--name spread]    # reports/livecheck/backfill[-spread].{md,json}
+node tools/livecheck/snapshot.mjs [--candidates]              # reports/livecheck/live-pubnet-snapshot.md from the public status.json
 setsid nohup nice -n 10 bash tools/livecheck/run-live.sh pubnet \
   >> ~/.local/share/xck-livecheck/pubnet/live.log 2>&1 < /dev/null &   # live follower
 ```
