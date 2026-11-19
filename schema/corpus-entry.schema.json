@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/JoseCToscano/xdr-cap-coverage-kit/schema/corpus-entry.schema.json",
-  "title": "XDR/CAP coverage corpus entry (draft v0.2)",
+  "title": "XDR/CAP coverage corpus entry (v0.2.0)",
   "description": "One entry = one rare but valid XDR shape. Language neutral: any SDK or indexer reads the base64 (and, when present, the LedgerCloseMeta it was applied in) and checks the expected values.",
   "type": "object",
   "additionalProperties": false,

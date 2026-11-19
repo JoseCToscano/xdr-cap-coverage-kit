@@ -52,28 +52,28 @@ if (process.argv.includes("--check")) {
 if (!process.argv.includes("--report")) {
   if (!existsSync(TXHASH)) execFileSync("go", ["build", "-o", TXHASH, "."], { cwd: join(HERE, "txhash"), stdio: "inherit" });
   const only = arg("--only");
-  const todo = plan.samples.filter((s) => !only || s.name === only).flatMap(chunksOf).filter((c) => !existsSync(c.out));
+  const pending = plan.samples.filter((s) => !only || s.name === only).flatMap(chunksOf).filter((c) => !existsSync(c.out));
   const W = Number(arg("--workers", Math.max(1, cpus().length - 1)));
-  console.log(`${todo.length} chunks to do with ${W} workers`);
+  console.log(`${pending.length} chunks to do with ${W} workers`);
   const t0 = Date.now(); let done = 0, failed = [];
   const retries = new Map();
   await new Promise((res) => {
     let live = 0;
-    const next = (w) => { const j = todo.shift(); if (!j) { w.send("exit"); if (--live === 0) res(); return; } w.send(j); };
-    for (let i = 0; i < Math.min(W, todo.length); i++) {
+    const next = (w) => { const j = pending.shift(); if (!j) { w.send("exit"); if (--live === 0) res(); return; } w.send(j); };
+    for (let i = 0; i < Math.min(W, pending.length); i++) {
       const w = fork(join(HERE, "worker.mjs")); live++;
       w.on("message", (m) => {
         if (m.ready) return next(w);
-        if (m.ok) { done++; const rate = (done * plan.chunk) / ((Date.now() - t0) / 1000); console.log(`done ${m.job.sample} ${m.job.start} (${m.ms} ms) ${done}/${done + todo.length} ~${rate.toFixed(1)} ledgers/s`); }
+        if (m.ok) { done++; const rate = (done * plan.chunk) / ((Date.now() - t0) / 1000); console.log(`done ${m.job.sample} ${m.job.start} (${m.ms} ms) ${done}/${done + pending.length} ~${rate.toFixed(1)} ledgers/s`); }
         else {
           const n = (retries.get(m.job.out) ?? 0) + 1; retries.set(m.job.out, n);
           console.log(`FAIL ${m.job.sample} ${m.job.start}: ${m.error.split("\n")[0]}`);
-          if (n < 3) todo.push(m.job); else failed.push(m.job);
+          if (n < 3) pending.push(m.job); else failed.push(m.job);
         }
         next(w);
       });
     }
-    if (!todo.length && live === 0) res();
+    if (!pending.length && live === 0) res();
   });
   console.log(`fetch+walk finished in ${((Date.now() - t0) / 1000).toFixed(0)} s; ${failed.length} chunks failed`);
 }
