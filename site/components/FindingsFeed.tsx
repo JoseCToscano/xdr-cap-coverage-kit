@@ -1,38 +1,75 @@
 "use client";
 import { useStatus } from "./StatusProvider";
-import { Caps, Ident, Panel, Tx } from "./Ui";
-import { ISSUES, fmt, ledgerUrl, utc } from "@/lib/format";
+import { Caps, Ident, Panel, Stat, Tx } from "./Ui";
+import { ISSUES, duration, fmt, ledgerUrl, utc } from "@/lib/format";
+import { HEALTH_LABEL, lagView } from "@/lib/lag";
+import { ARM_MEANING } from "@/lib/meanings";
 import data from "@/data/static.json";
 
 export function FindingsFeed() {
-  const { status: s, source } = useStatus();
+  const { status: s, source, tip, now, error } = useStatus();
   const base = data.baseline;
+  const lag = lagView(s, tip, now);
+  const last = s.checker.last_ledger?.seq ?? s.checker.cursor;
+  const F = s.flags;
+  const fresh = source === "live" && lag.health !== "stale";
+  const first = [...s.first_seen].sort((a, b) =>
+    (Date.parse(b.detected_at ?? "") || 0) - (Date.parse(a.detected_at ?? "") || 0) || b.ledger - a.ledger || (a.arm ?? "").localeCompare(b.arm ?? ""));
+  const firstTxs = new Set(first.map((f) => f.tx)).size;
+  const ago = (iso?: string) => {
+    const t = Date.parse(iso ?? "");
+    if (Number.isNaN(t)) return null;
+    const sec = Math.max(0, (now - t) / 1000);
+    return sec < 86_400 ? duration(sec) : `${Math.floor(sec / 86_400)} d ${Math.floor((sec % 86_400) / 3600)} h`;
+  };
   return (
     <>
       <p className="srcline">
-        Source: {source === "live" ? "live feed" : "bundled snapshot"} written {utc(s.generated_at)}, ledgers {fmt(s.checker.first)} to {fmt(s.checker.last_ledger?.seq ?? s.checker.cursor)}.
+        Source: {source === "live" ? "live feed" : "bundled snapshot"} written {utc(s.generated_at)}, ledgers {fmt(s.checker.first)} to {fmt(last)}. Refreshes every minute.
       </p>
+      {error && <p className="srcline warn">{error}</p>}
 
-      <Panel label="First sightings" corner={`${s.first_seen.length} arms`}>
+      <div className="counters" role="group" aria-label="Live checker freshness">
+        <Stat n={s.checker.ledgers} t="Ledgers checked" sub={`${fmt(s.checker.first)} to ${fmt(last)}, in order`} />
+        <Stat n={s.checker.txs} t="Transactions" sub={`${fmt(s.checker.segments)} segments × 3 readers`} />
+        <Stat n={lag.ledgersBehind ?? "-"} t="Ledgers behind tip" sub={`${HEALTH_LABEL[lag.health]}${lag.secondsBehind != null ? ` · ${duration(lag.secondsBehind)}` : ""}${lag.tip ? ` · tip ${fmt(lag.tip.ledger)}` : ""}`} />
+        <Stat n={duration(lag.feedAgeSec)} t="Since last update" sub={utc(s.generated_at)} />
+        <Stat n={F.disagreement} t="Disagreements" zero={F.disagreement === 0} sub={`across 3 readers · ${fmt(F.decode_failure)} decode failures · ${fmt(F.roundtrip_mismatch)} round-trip mismatches`} />
+      </div>
+      <div className={`livebar on h-${lag.health}`} role="status" aria-live="polite">
+        <span>{fresh ? <><i className="dot" /><b>Live follower</b></> : <b>Live follower snapshot</b>}</span>
+        <span>Since <b>{utc(s.checker.started_at)}</b></span>
+        <span>Readers <b>{Object.values(s.readers).map((r) => r.lib).join(" · ")}</b></span>
+        {lag.measuredBy && <span>Tip from <b>{lag.measuredBy === "browser" ? "your browser" : "the checker"}</b></span>}
+      </div>
+
+      <Panel label="First seen by our checker" corner={`${first.length} arms · ${firstTxs} txs`}>
         <p className="dim small">
-          Union arms with zero occurrences in the {fmt(base.ledgers)}-ledger, {fmt(base.txs)}-transaction mainnet baseline, seen live for the first time.
+          Union arms with zero occurrences in our {fmt(base.ledgers)}-ledger, {fmt(base.txs)}-transaction mainnet baseline, then seen by the live follower. Newest first. Not in our baseline does not mean never used on the network before.
         </p>
-        <div className="cards">
-          {s.first_seen.map((f) => (
-            <article className="card" key={f.tx + f.arm}>
-              <h3 className="arm big"><Ident value={f.arm} /></h3>
-              <dl className="kv">
-                <div><dt>Transaction</dt><dd><Tx tx={f.tx} net={s.net} n={16} /></dd></div>
-                <div><dt>Ledger</dt><dd><a href={ledgerUrl(f.ledger, s.net)} target="_blank" rel="noopener noreferrer">{fmt(f.ledger)}</a></dd></div>
-                <div><dt>Closed</dt><dd>{utc(f.close_time)}</dd></div>
-                <div><dt>Detected</dt><dd>{utc(f.detected_at)}</dd></div>
-                <div><dt>CAPs (inferred)</dt><dd><Caps caps={f.caps} /></dd></div>
-                <div><dt>Baseline txs</dt><dd>0</dd></div>
-              </dl>
-            </article>
-          ))}
-          {!s.first_seen.length && <p className="dim">None yet.</p>}
-        </div>
+        {first.length === 0 ? <p className="dim">None yet.</p> : (
+          <div className="tblwrap full">
+            <table className="tbl findings-tbl">
+              <thead><tr><th scope="col">Detected</th><th scope="col">Arm</th><th scope="col">Transaction</th><th scope="col" className="r">Ledger</th><th scope="col">CAPs (inferred)</th></tr></thead>
+              <tbody>
+                {first.map((f, i) => {
+                  const meaning = f.arm ? ARM_MEANING[f.arm] : undefined;
+                  const a = ago(f.detected_at);
+                  return (
+                    <tr key={f.tx + f.arm}>
+                      <td className="nw">{utc(f.detected_at)}{a && <div className="dim small">{a} ago{i === 0 ? " · latest" : ""}</div>}</td>
+                      <td><span className="mono ident"><Ident value={f.arm} /></span>{meaning && <div className="dim small meaning">{meaning}</div>}</td>
+                      <td><Tx tx={f.tx} net={s.net} n={16} /></td>
+                      <td className="r"><a href={ledgerUrl(f.ledger, s.net)} target="_blank" rel="noopener noreferrer">{fmt(f.ledger)}</a></td>
+                      <td><Caps caps={f.caps} /></td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+          </div>
+        )}
+        <p className="fine">Meanings paraphrase the Stellar XDR definitions. CAP tags are inferred from the arm. Each arm also has a corpus candidate in the repository under corpus/candidates/livecheck/pubnet-live.</p>
       </Panel>
 
       <Panel label="Reader findings" corner={`${s.reader_findings.length}`}>

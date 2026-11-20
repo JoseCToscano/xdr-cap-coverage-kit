@@ -7,8 +7,8 @@ export const metadata: Metadata = { title: "Findings" };
 export default function Findings() {
   return (
     <div className="page">
-      <PageHead eyebrow="Findings feed" title="What the live checker flagged">
-        <p>First sightings of union arms, transactions with known bug shapes, and the long tail of rarely seen arms. Every transaction links to stellar.expert.</p>
+      <PageHead eyebrow="Live findings" title="What the live checker flagged">
+        <p>Read from the live checker as it follows mainnet: union arms first seen by our checker, reader disagreements, transactions with known bug shapes, and the long tail of rarely seen arms. Every transaction links to stellar.expert.</p>
       </PageHead>
       <FindingsFeed />
     </div>

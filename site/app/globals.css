@@ -308,3 +308,8 @@ td .caps { justify-content: flex-start; }
   #decode.scene { padding-top: 104px; }
   .hud-bot span:first-child { display: none; }
 }
+
+/* findings: first-seen table */
+.findings-tbl .meaning { margin-top: 4px; max-width: 46em; font-family: var(--sans); }
+.findings-tbl td .ident { font-size: 13px; }
+.tblwrap.full { max-height: none; }
