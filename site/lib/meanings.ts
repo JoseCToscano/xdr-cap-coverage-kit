@@ -16,4 +16,6 @@ export const ARM_MEANING: Record<string, string> = {
   "ChangeTrustResult.not_auth_maintain_liabilities": "A ChangeTrust operation failed because an asset trustline it depends on is deauthorized.",
   "AccountMergeResult.immutable_set": "An AccountMerge operation failed because the source account has the AUTH_IMMUTABLE flag set.",
   "ContractCodeEntryExt.v0": "A contract code ledger entry in its v0 form, without the v1 extension that carries the code's cost inputs.",
+  "ManageDataResult.name_not_found": "A Manage Data operation failed because the named data entry to delete was not found.",
+  "RevokeSponsorshipResult.low_reserve": "A Revoke Sponsorship operation failed because the account taking over the reserve did not have enough balance.",
 };
