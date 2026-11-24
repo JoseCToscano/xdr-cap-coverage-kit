@@ -18,4 +18,6 @@ export const ARM_MEANING: Record<string, string> = {
   "ContractCodeEntryExt.v0": "A contract code ledger entry in its v0 form, without the v1 extension that carries the code's cost inputs.",
   "ManageDataResult.name_not_found": "A Manage Data operation failed because the named data entry to delete was not found.",
   "RevokeSponsorshipResult.low_reserve": "A Revoke Sponsorship operation failed because the account taking over the reserve did not have enough balance.",
+  "SorobanAuthorizedFunction.create_contract_host_fn": "A Soroban authorization to create a new contract instance, without constructor arguments.",
+  "ScAddress.muxed_contract": "A Soroban address that identifies a contract together with a muxed ID.",
 };
