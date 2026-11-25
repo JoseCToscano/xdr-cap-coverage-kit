@@ -20,4 +20,5 @@ export const ARM_MEANING: Record<string, string> = {
   "RevokeSponsorshipResult.low_reserve": "A Revoke Sponsorship operation failed because the account taking over the reserve did not have enough balance.",
   "SorobanAuthorizedFunction.create_contract_host_fn": "A Soroban authorization to create a new contract instance, without constructor arguments.",
   "ScAddress.muxed_contract": "A Soroban address that identifies a contract together with a muxed ID.",
+  "SetOptionsResult.cant_change": "A SetOptions operation failed because the account did not allow that setting to be changed.",
 };
