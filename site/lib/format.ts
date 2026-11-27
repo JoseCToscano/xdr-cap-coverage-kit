@@ -33,4 +33,9 @@ export const ISSUES: Record<string, { label: string; url: string; note: string }
     url: "https://github.com/stellar/wallet-backend/issues/731",
     note: "Soroban transaction that creates a trustline through a SAC trust() call nested in the auth tree.",
   },
+  "sac.trust_creates_trustline (#731 exact)": {
+    label: "wallet-backend #731",
+    url: "https://github.com/stellar/wallet-backend/issues/731",
+    note: "The same creates_trustline shape as #731, in the SAC trust form: the host function itself is trust().",
+  },
 };
